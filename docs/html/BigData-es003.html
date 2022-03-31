@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Data tema 3 &#8212; Curso Introducción a Big Data</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Big Data tema 4" href="BigData-es004.html" />
+    <link rel="prev" title="Big Data tema 2" href="BigData-es002.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso Introducción a Big Data</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introducción a Big Data
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es001.html">
+   Big Data tema 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es002.html">
+   Big Data tema 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Big Data tema 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es004.html">
+   Big Data tema 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es004MongoDB.html">
+   Tutorial MongoDB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es005.html">
+   Big Data tema 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es005Hadoop.html">
+   Tutorial Apache Hadoop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es005Kafka.html">
+   Tutorial Apache Kafka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es006.html">
+   Big Data tema 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es007.html">
+   Big Data tema 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BigData-es007sparkMLlib.html">
+   Tutorial Spark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/BigData-es003.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fortinux/bigdata-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fortinux/bigdata-book/issues/new?title=Issue%20on%20page%20%2FBigData-es003.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fortinux/bigdata-book/master?urlpath=tree/docs/BigData-es003.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesos-en-big-data">
+   Procesos en Big Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">
+   Procesamiento, análisis y consulta de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-scoop-attic">
+   Apache Scoop (Attic)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-spark">
+   Apache Spark
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-storm">
+   Apache Storm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storm-vs-spark">
+   Storm vs. Spark
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-impala">
+   Apache Impala
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-kudu">
+   Apache Kudu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-hive">
+   Apache Hive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-drill">
+   Apache Drill
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presto">
+   Presto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trino">
+   Trino
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-hadoop-yarn">
+   Apache Hadoop YARN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otras-herramientas">
+   Otras herramientas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">
+   Perfilado de datos y linaje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calidad-de-los-datos">
+   Calidad de los datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limpieza-de-datos">
+   Limpieza de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prevencion-y-perdida-de-datos">
+   Prevención y pérdida de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#big-data-visualization">
+   Big Data Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elasticsearch">
+   Elasticsearch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-lucene">
+   Apache Lucene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-solr">
+   Apache Solr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elastic-stack">
+   Elastic Stack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kibana">
+   Kibana
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#salesforce-google-y-microsoft">
+   Salesforce, Google y Microsoft
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monitoreo-de-datos">
+   Monitoreo de datos
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Big Data tema 3</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesos-en-big-data">
+   Procesos en Big Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">
+   Procesamiento, análisis y consulta de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-scoop-attic">
+   Apache Scoop (Attic)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-spark">
+   Apache Spark
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-storm">
+   Apache Storm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storm-vs-spark">
+   Storm vs. Spark
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-impala">
+   Apache Impala
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-kudu">
+   Apache Kudu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-hive">
+   Apache Hive
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-drill">
+   Apache Drill
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presto">
+   Presto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trino">
+   Trino
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-hadoop-yarn">
+   Apache Hadoop YARN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#otras-herramientas">
+   Otras herramientas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">
+   Perfilado de datos y linaje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calidad-de-los-datos">
+   Calidad de los datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limpieza-de-datos">
+   Limpieza de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prevencion-y-perdida-de-datos">
+   Prevención y pérdida de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#big-data-visualization">
+   Big Data Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elasticsearch">
+   Elasticsearch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-lucene">
+   Apache Lucene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-solr">
+   Apache Solr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elastic-stack">
+   Elastic Stack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kibana">
+   Kibana
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#salesforce-google-y-microsoft">
+   Salesforce, Google y Microsoft
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monitoreo-de-datos">
+   Monitoreo de datos
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="big-data-tema-3">
+<h1>Big Data tema 3<a class="headerlink" href="#big-data-tema-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="procesos-en-big-data">
+<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Para proyectos de Big Data los procesos básicamente se pueden dividir en cuatro fases:</p>
+<ul>
+<li><p>Ingestión de datos (<em>Data Ingestion</em>).</p></li>
+<li><p>Almacenamiento de datos (<em>Data Storage</em>).</p></li>
+<li><p>Procesamiento, análisis y consulta de datos (<em>Data Processing / Data Query</em>).</p></li>
+<li><p>Visalización de datos (<em>Data Visualization</em>).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="procesamiento-analisis-y-consulta-de-datos">
+<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Los datos recolectados en la fase anterior serán procesados en este paso.</p></li>
+<li><p>Aquí, el sistema de procesamiento de canalización de datos enruta los datos a un destino diferente, clasifica el flujo de datos y es el primer punto donde puede tener lugar el análisis.</p></li>
+<li><p>Esta es la capa donde las consultas (<em>queries</em>) y el proceso analítico activo se ejecutan.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para ello, los analistas emplean diferentes herramientas y estrategias como, por ejemplo:</p>
+<ul>
+<li><p>Modelado estadístico</p></li>
+<li><p>Algoritmos</p></li>
+<li><p>Inteligencia artificial (AI)</p></li>
+<li><p>Minería de datos</p></li>
+<li><p>Aprendizaje automático (ML)</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Las consultas interactivas para el procesamiento de datos son necesarias y es una zona tradicionalmente dominada por desarrolladores expertos en SQL.</p></li>
+<li><p>Con Hadoop, la ingesta de datos, el almacenamiento, el proceso y el análisis se volvieron fáciles de trabajar cuando se cuenta con una gran cantidad de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para análisis fuera de línea, se utiliza un sistema de procesamiento por lotes simple.</p></li>
+<li><p>Apache Sqoop es la aplicación que se encarga de esto.</p></li>
+<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p></li>
+<li><p>Spark por otro lado, es utilizado mayoritariamente para el análisis y procesamiento de datos en tiempo real.</p></li>
+<li><p>Otra herramienta pero menos utilizada es Apache Storm.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>KNIME hace que la comprensión de datos y el diseño de flujos de trabajo de ciencia de datos y componentes reutilizables sean accesibles para todos.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.knime.com/">https://www.knime.com/</a>.</p></li>
+</ul>
+</li>
+<li><p>Apache Mahout es un framework distribuido de álgebra linear y Scala DSL matemáticamente expresivo.</p>
+<ul>
+<li><p><a class="reference external" href="https://mahout.apache.org/">https://mahout.apache.org/</a>.</p></li>
+</ul>
+</li>
+<li><p>Weka 3: Machine Learning Software en Java para hacer análisis simple.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.cs.waikato.ac.nz/ml/weka/">https://www.cs.waikato.ac.nz/ml/weka/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Materialize es una base de datos útil para análisis en tiempo real que ofrece actualizaciones de vista incrementales.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://materialize.com/">https://materialize.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-scoop-attic">
+<h2>Apache Scoop (Attic)<a class="headerlink" href="#apache-scoop-attic" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Se puede usar Sqoop para importar datos desde un sistema de administración de bases de datos relacionales (RDBMS) como MySQL u Oracle o un mainframe al sistema de archivos distribuidos de Hadoop (HDFS), transformar los datos en Hadoop MapReduce y luego exportar los datos nuevamente a un RDBMS.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Apache Sqoop también puede ser utilizado para extraer datos de Hadoop y exportarlos a almacenes de datos estructurados externos.</p></li>
+<li><p>Apache Sqoop trabaja con bases de datos relacionales como Teradata, Netezza, Oracle, MySQL, Postgres, y HSQLDB.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sqoop automatiza la mayor parte de este proceso, basándose en la base de datos para describir el esquema de los datos que se importarán.</p></li>
+<li><p>Sqoop utiliza MapReduce para importar y exportar los datos, lo cual proporciona procesamiento en paralelo y tolerancia a fallos.</p></li>
+</ul>
+</div>
+<div class="section" id="apache-spark">
+<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Framework de procesamiento paralelo y de código abierto para ejecutar aplicaciones de análisis de datos a gran escala en sistemas agrupados.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://spark.apache.org/">https://spark.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>También es compatible con un amplio conjunto de herramientas de alto nivel, que incluyen:</p>
+<ul>
+<li><p>Spark SQL para SQL y procesamiento de datos estructurados,</p></li>
+<li><p>MLlib para aprendizaje automático,</p></li>
+<li><p>GraphX para procesamiento de gráficos, y</p></li>
+<li><p>Transmisión estructurada para procesamiento incremental y de streaming.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Spark SQL incluye un optimizador basado en costes, almacenamiento en columnas y generación de código para agilizar las consultas.</p></li>
+<li><p>Al mismo tiempo, se escala a miles de nodos y consultas de varias horas mediante el motor Spark, que proporciona tolerancia completa a fallas en la mitad de la consulta.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Se utiliza para realizar trabajos informáticos con grandes cargas de datos junto a Apache Kafka.</p></li>
+<li><p>Fue desarrollado en la University of California, Berkeley.</p></li>
+<li><p>Con Spark ejecutándose en Apache Hadoop YARN, los desarrolladores pueden crear aplicaciones para explotar el poder de Spark, obtener información y enriquecer sus cargas de trabajo de ciencia de datos dentro de un único conjunto de datos compartidos en Hadoop.</p></li>
+</ul>
+</div>
+<div class="section" id="apache-storm">
+<h2>Apache Storm<a class="headerlink" href="#apache-storm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Es un sistema distribuido open source para procesar datos en tiempo real durante la ingesta de datos.</p></li>
+<li><p>Es escalable, tiene tolerancia a fallos, y es fácil de configurar y operar.</p></li>
+<li><p>Facilita el procesamiento confiable de flujos ilimitados de datos, haciendo para el procesamiento en tiempo real lo que Hadoop hizo para el procesamiento por lotes.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://storm.apache.org/">https://storm.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>No existe ningún truco que convierta a Hadoop en un sistema en tiempo real.</p></li>
+<li><p>El procesamiento de datos en tiempo real tiene un conjunto de requisitos fundamentalmente diferente al procesamiento por lotes.</p></li>
+<li><p>Apache Storm agrega a Hadoop esta funcionalidad de manera sencilla.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Casos de uso:</p>
+<ul>
+<li><p>Análisis en tiempo real</p></li>
+<li><p>Aprendizaje automático</p></li>
+<li><p>Monitoreo continuo de operaciones</p></li>
+<li><p>RPC distribuido, ETL, y más.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="storm-vs-spark">
+<h2>Storm vs. Spark<a class="headerlink" href="#storm-vs-spark" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Spark</p></th>
+<th class="head"><p>Storm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stream processing</p></td>
+<td><p>Batch processing</p></td>
+<td><p>Micro-batch processing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Latency</p></td>
+<td><p>Latency of a few seconds</p></td>
+<td><p>Latency of milliseconds</p></td>
+</tr>
+<tr class="row-even"><td><p>Multi-language support</p></td>
+<td><p>Lesser language support</p></td>
+<td><p>Multiple language support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Languages</p></td>
+<td><p>Java – Scala</p></td>
+<td><p>Java – Scala – Clojure</p></td>
+</tr>
+<tr class="row-even"><td><p>Stream sources</p></td>
+<td><p>HDFS</p></td>
+<td><p>Spout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resource management</p></td>
+<td><p>Yarn, Mesos</p></td>
+<td><p>Yarn, Mesos</p></td>
+</tr>
+<tr class="row-even"><td><p>Provisioning</p></td>
+<td><p>Basic using Ganglia</p></td>
+<td><p>Apache Ambari</p></td>
+</tr>
+<tr class="row-odd"><td><p>Messaging</p></td>
+<td><p>Netty, Akka</p></td>
+<td><p>ZeroMQ, Netty</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="apache-impala">
+<h2>Apache Impala<a class="headerlink" href="#apache-impala" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Impala eleva el nivel de rendimiento de las consultas SQL en Apache Hadoop al mismo tiempo que conserva una experiencia de usuario familiar.</p></li>
+<li><p>Con Impala, se puede consultar datos, ya sea que estén almacenados en HDFS o Apache HBase, incluidas las funciones SELECT, JOIN y agregadas, en tiempo real.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://impala.apache.org/">https://impala.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Impala utiliza los mismos metadatos, sintaxis SQL (Hive SQL), controlador ODBC e interfaz de usuario (Hue Beeswax) que Apache Hive, lo que proporciona una plataforma familiar y unificada para consultas en tiempo real o por lotes.</p></li>
+<li><p>Los usuarios de Hive pueden utilizar Impala con algunos pocos ajustes.</p></li>
+</ul>
+</div>
+<div class="section" id="apache-kudu">
+<h2>Apache Kudu<a class="headerlink" href="#apache-kudu" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Apache Kudu es un motor de almacenamiento columnar open source para datos estructurados.</p></li>
+<li><p>Está diseñado y optimizado para análisis de big data en datos que cambian rápidamente o para un rendimiento rápido en consultas analíticas - OLAP.</p></li>
+<li><p>Es distribuido, permite varios tipos de partición de datos y carga compartida en varios servidores.</p></li>
+<li><p>Es parte del ecosistema Hadoop y se integra con frameworks de procesamiento de datos como Spark, Impala y MapReduce.</p>
+<ul>
+<li><p><a class="reference external" href="https://kudu.apache.org/">https://kudu.apache.org/</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-hive">
+<h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Apache Hive es una infraestructura de almacenamiento de datos construida sobre Apache Hadoop para proporcionar resúmenes de datos, consultas ad-hoc y análisis de grandes conjuntos de datos.</p></li>
+<li><p>Los analistas de datos usan Hive para consultar, resumir, explorar y analizar esos datos, y luego convertirlos en información empresarial procesable.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://hive.apache.org/">https://hive.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>El software de almacenamiento de datos Apache Hive facilita la lectura, escritura y administración de grandes conjuntos de datos que residen en almacenamiento distribuido mediante SQL.</p></li>
+<li><p>La estructura se puede proyectar sobre los datos que ya están almacenados.</p></li>
+<li><p>Se proporciona una herramienta de línea de comandos y un controlador JDBC para conectar a los usuarios a Hive.</p></li>
+<li><p>Proporciona un mecanismo para la estructura del proyecto de ingesta de datos en los datos de Hadoop y para consultar esos datos mediante con un lenguaje tipo SQL llamado HiveQL (HQL).</p></li>
+</ul>
+</div>
+<div class="section" id="apache-drill">
+<h2>Apache Drill<a class="headerlink" href="#apache-drill" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Es un motor SQL para Hadoop, NoSQL y almacenamiento en la nube.</p></li>
+<li><p>Soporta variadas bases de datos NoSQL y sistemas de ficheros:</p></li>
+<li><p>HBase, MongoDB, HDFS, Amazon S3, Azure Blob Storage, Google Cloud Storage, NAS y ficheros locales.</p></li>
+<li><p>Una única consulta puede obtener datos de múltiples bases de datos.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://drill.apache.org/">https://drill.apache.org/</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="presto">
+<h2>Presto<a class="headerlink" href="#presto" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Motor SQL desarrollado por Facebook para análisis ad-hoc e informes rápidos.</p></li>
+<li><p>Es un motor de consulta SQL distribuido de código abierto que ejecuta consultas analíticas interactivas en fuentes de datos de todos los tamaños, desde gigabytes hasta petabytes.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://prestodb.io/">https://prestodb.io/</a></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Facebook usa Presto para consultas interactivas en varios almacenes de datos internos, incluido su almacén de datos de 300 PB.</p></li>
+<li><p>Más de 1000 empleados de Facebook usan Presto diariamente para ejecutar más de 30000 consultas que, en total, escanean más de un petabyte por día.</p></li>
+</ul>
+</div>
+<div class="section" id="trino">
+<h2>Trino<a class="headerlink" href="#trino" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Trino es un motor de consulta SQL distribuido diseñado para consultar grandes conjuntos de datos distribuidos en una o más fuentes de datos heterogéneas.</p></li>
+<li><p>Son los fundadores del proyecto Presto que tuvieron que cambiarle el nombre por cuestiones legales.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://trino.io/">https://trino.io/</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-hadoop-yarn">
+<h2>Apache Hadoop YARN<a class="headerlink" href="#apache-hadoop-yarn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
+<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en servicios separados: un <em>ResourceManager</em> (RM) global y un <em>ApplicationMaster</em> (AM) por aplicación.</p></li>
+<li><p>Una aplicación es un solo trabajo o un DAG de trabajos.</p></li>
+<li><p>El <em>ResourceManager</em> y el <em>NodeManager</em> forman el framework de cálculo de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El <em>ResourceManager</em> arbitra los recursos entre todas las aplicaciones del sistema.</p></li>
+<li><p>El <em>NodeManager</em> es el agente del framework por máquina que es responsable de los contenedores, monitorea el uso de sus recursos (cpu, memoria, disco, red) e informa al <em>ResourceManager/Scheduler</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La aplicación <em>ApplicationMaster</em> es en efecto una biblioteca específica del framework y tiene la tarea de negociar recursos del <em>ResourceManager</em> y trabajar con el/los <em>NodeManager(s)</em> para ejecutar y monitorear las tareas.</p></li>
+</ul>
+</div>
+<div class="section" id="otras-herramientas">
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Vertica es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
+<li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
+<ul>
+<li><p>Extraído de <a class="reference external" href="https://www.vertica.com/landing-page/start-your-free-trial-today/">https://www.vertica.com/landing-page/start-your-free-trial-today/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Hue es un asistente open source de SQL para bases de datos y <em>data warehouses</em>.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://gethue.com/">https://gethue.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="perfilado-de-datos-y-linaje">
+<h2>Perfilado de datos y linaje<a class="headerlink" href="#perfilado-de-datos-y-linaje" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Perfilado de datos y linaje (<em>data profiling and lineage</em>) son técnicas que permiten identificar la calidad de los datos y su ciclo de vida durante las varias fases que percorren.</p></li>
+<li><p>Es importante capturar los metadatos en cada paso del proceso para que puedan ser utilizados posteriormente para verificación y personalización.</p></li>
+<li><p>Algunas aplicacione disponibles: Talend, Hive, Pig.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Talend Data Fabric es un conjunto de aplicaciones nativas de la nube que lidera la industria en integración y gestión de datos:</p>
+<ul>
+<li><p>Identifica elementos de datos.</p></li>
+<li><p>Realiza un seguimiento hasta el origen de los datos.</p></li>
+<li><p>Combina fuentes de datos y enlaces a los mismos.</p></li>
+<li><p>Crea un mapa para cada sistema y un mapa maestro de la imagen completa.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://www.talend.com/">https://www.talend.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>OpenLineage es un framework open source para la recopilación y el análisis del linaje de datos</p></li>
+<li><p>Permite una recopilación consistente de metadatos de linaje, creando una comprensión más profunda de cómo se producen y utilizan los datos.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://openlineage.io/">https://openlineage.io/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="calidad-de-los-datos">
+<h2>Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>La ingesta de datos se considera de alta calidad si cumple con las necesidades comerciales y satisface el uso previsto, de modo que sea útil para tomar decisiones de negocio con éxito.</p></li>
+<li><p>Por lo tanto, es un paso importante entender la dimensión de mayor interés e implementar métodos para lograrla.</p></li>
+</ul>
+</div>
+<div class="section" id="limpieza-de-datos">
+<h2>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>La limpieza de datos (<em>data cleansing</em>) significa implementar varias soluciones para corregir datos incorrectos o corruptos.</p></li>
+</ul>
+</div>
+<div class="section" id="prevencion-y-perdida-de-datos">
+<h2>Prevención y pérdida de datos<a class="headerlink" href="#prevencion-y-perdida-de-datos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Deben existir políticas para asegurarse de que se resuelvan las lagunas en la pérdida de datos.</p></li>
+<li><p>La identificación de dicha pérdida de datos necesita un control cuidadoso y procesos de evaluación de la calidad en el flujo del proceso de ingesta de datos.</p></li>
+</ul>
+</div>
+<div class="section" id="big-data-visualization">
+<h2>Big Data Visualization<a class="headerlink" href="#big-data-visualization" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>La fase de visualización o presentación es donde los usuarios pueden sentir el VALOR de los DATOS.</p></li>
+<li><p>La visualización de hallazgos ayuda a tomar mejores decisiones de negocios.</p></li>
+<li><p>Aquí se generan informes por tipo de audiencia (comerciales, marketing, estrategia, técnicos, etc).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Si bien está diseñado para manejar y almacenar grandes volúmenes de datos, Hadoop y otras herramientas no tienen disposiciones integradas para la visualización de datos y la distribución de información, lo que no permite que los usuarios finales del negocio puedan consumir fácilmente esos datos en la canalización de ingesta de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los paneles personalizados son útiles para crear vistas generales únicas que presentan los datos de manera diferente.</p></li>
+<li><p>Puede mostrar la información de la aplicación web y móvil, la información del servidor, los datos de métricas personalizadas y los datos de métricas de complementos, todo en un único tablero personalizado.</p></li>
+<li><p>Los paneles en tiempo real guardan, comparten y comunican información.</p></li>
+<li><p>Ayuda a los usuarios a generar preguntas al revelar la profundidad, el rango y el contenido de los almacenes de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los paneles de visualización de datos siempre cambian a medida que llegan nuevos datos.</p></li>
+<li><p>Los tableros pueden contener múltiples visualizaciones de múltiples conexiones una al lado de la otra.</p></li>
+<li><p>Se pueden crear, editar, filtrar y eliminar tableros rápidamente y moverlos y cambiar su tamaño y luego compartirlos o integrarlos en su aplicación web.</p></li>
+<li><p>Se puede exportar un tablero como una imagen o utilizando una configuración de archivo tipo JSON.</p></li>
+</ul>
+</div>
+<div class="section" id="elasticsearch">
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Elasticsearch es un motor de análisis y búsqueda de código abierto distribuido para todo tipo de datos, incluidos textuales, numéricos, geoespaciales, estructurados y no estructurados.</p></li>
+<li><p>Elasticsearch se basa en Apache Lucene y fue lanzado por primera vez en 2010 por Elasticsearch N.V. (ahora conocido como Elastic).</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/">https://www.elastic.co/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-lucene">
+<h2>Apache Lucene<a class="headerlink" href="#apache-lucene" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lucene Core es una biblioteca de Java que proporciona potentes funciones de indexación y búsqueda, así como funciones de corrección ortográfica, resaltado de aciertos y análisis/tokenización avanzados.</p></li>
+<li><p>El subproyecto PyLucene proporciona enlaces de Python para Lucene Core.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/">https://lucene.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-solr">
+<h2>Apache Solr<a class="headerlink" href="#apache-solr" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Solr es un servidor de búsqueda de alto rendimiento creado con Lucene Core.</p></li>
+<li><p>Solr es altamente escalable y proporciona indexación, búsqueda y análisis distribuidos totalmente tolerantes a fallas.</p></li>
+<li><p>Expone las características de Lucene a través de interfaces JSON/HTTP fáciles de usar o clientes nativos para Java y otros lenguajes.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/">https://lucene.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="elastic-stack">
+<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Conocido por sus API REST simples, naturaleza distribuida, velocidad y escalabilidad, Elasticsearch es el componente central de Elastic Stack, un conjunto de herramientas de código abierto para la ingesta, el enriquecimiento, el almacenamiento, el análisis y la visualización de datos.</p></li>
+<li><p>El ELK Stack se compone de las aplicaciones Elasticsearch, Logstash, Kibana, y Beats.</p></li>
+<li><p>Actualmente se lo conoce como Elastic Stack, nombre que le permite agregar nuevas funcionalidades.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Beats 8.0</p></li>
+<li><p>Elasticsearch 8.0</p></li>
+<li><p>Kibana 8.0</p></li>
+<li><p>Logstash 8.0</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/what-is/elasticsearch">https://www.elastic.co/what-is/elasticsearch</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Casos de uso:</p>
+<ul>
+<li><p>Búsqueda de aplicaciones</p></li>
+<li><p>Búsqueda de sitio web</p></li>
+<li><p>Búsqueda Empresarial</p></li>
+<li><p>Logging y analíticas de log</p></li>
+<li><p>Métricas de infraestructura y monitoreo de contenedores</p></li>
+<li><p>Monitoreo de rendimiento de aplicaciones</p></li>
+<li><p>Análisis y visualización de datos geoespaciales</p></li>
+<li><p>Analítica de Seguridad</p></li>
+<li><p>Analítica de Negocios</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="kibana">
+<h2>Kibana<a class="headerlink" href="#kibana" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Kibana es una herramienta de visualización y gestión de datos para Elasticsearch que brinda histogramas en tiempo real, gráficos circulares y mapas.</p></li>
+<li><p>Kibana también incluye aplicaciones avanzadas, como Canvas, que permite a los usuarios crear infografías dinámicas personalizadas con base en sus datos, y Elastic Maps para visualizar los datos geoespaciales.</p></li>
+</ul>
+</div>
+<div class="section" id="salesforce-google-y-microsoft">
+<h2>Salesforce, Google y Microsoft<a class="headerlink" href="#salesforce-google-y-microsoft" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Google y Microsoft.</p></li>
+<li><p>Salesforce adquirió Tableau y google hizo lo mismo con Looker en 2019.</p></li>
+<li><p>La reciente integración entre estos productos le permitirán al usuario modelar datos con LookML y usar Tableau, o Looker para explorar ese modelo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Tableau es una plataforma de análisis de datos que puede ser implementada en la nube, localmente o integrada de forma nativa con Salesforce CRM.</p></li>
+<li><p>Contiene capacidades de IA/ML completamente integradas, gobernanza y gestión de datos, narración visual y colaboración.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://www.tableau.com/">https://www.tableau.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Google Looker conecta, analiza, y visualiza datos en ambientes multicloud.</p></li>
+<li><p>Looker puede facilitar la creación de una plataforma de exploración de datos que facilite el acceso a datos de una manera significativa e intuitiva para la organización.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://looker.com/google-cloud">https://looker.com/google-cloud</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Microsoft cuenta por su parte con PowerBI.</p></li>
+<li><p>PowerBI se conecta a las fuentes de datos, los modela y presenta en paneles con facilidad.</p></li>
+<li><p>Permite obtener respuestas rápidas y con tecnología de IA a preguntas empresariales.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://powerbi.microsoft.com/es-es/">https://powerbi.microsoft.com/es-es/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="monitoreo-de-datos">
+<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
+<li><p>Apache Flume es útil para procesar datos de registro.</p></li>
+<li><p>Apache Storm se utiliza para el monitoreo de operaciones</p></li>
+<li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
+<li><p>El monitoreo puede ocurrir en el paso de almacenamiento de datos.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="BigData-es002.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Big Data tema 2</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="BigData-es004.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Big Data tema 4</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fortinux - Marcelo Horacio Fortino<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
