@@ -1,4 +1,4 @@
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](<https://fortinux.com>)
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](<https://jupyterbook.org>)
 [![Fortinux Book Badge](https://fortinux.com/FortinuxBook.svg)](<https://fortinux.com>) 
 
 # Introducción a Big Data
@@ -48,9 +48,3 @@ Esta obra se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARA
 - Spark (MLlib, Streaming).
 - TensorFlow.    
 
-## Capítulos
-```{tableofcontents}
-```
-## Bibliografía
-```{bibliography}
-```
