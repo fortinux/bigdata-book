@@ -1,0 +1,18 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: BigData-es001
+  title: Big Data tema 1
+- file: BigData-es002
+- file: BigData-es003
+- file: BigData-es004
+- file: BigData-es004MongoDB
+- file: BigData-es005
+- file: BigData-es005Hadoop
+- file: BigData-es005Kafka
+- file: BigData-es006
+- file: BigData-es007
+- file: BigData-es007sparkMLlib
