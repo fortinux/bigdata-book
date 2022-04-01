@@ -1,5 +1,5 @@
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](<https://fortinux.com>)
-[![Fortinux Book Badge](https://fortinux.com/FortinuxBook.svg)](<https://fortinux.com>) 
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](<https://jupyterbook.org/intro.html>)
+[![Fortinux Book Badge](https://fortinux.com/FortinuxBook.svg)](<https://fortinux.github.io/bigdata-book/intro.html>) 
 
 # Introducción a Big Data
 ## Apuntes del curso
