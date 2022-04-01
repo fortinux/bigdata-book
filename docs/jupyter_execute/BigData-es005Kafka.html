@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Apache Kafka &#8212; Curso Introducción a Big Data</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso Introducción a Big Data</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introducción a Big Data
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es001.html">
+   Big Data tema 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es002.html">
+   Big Data tema 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es003.html">
+   Big Data tema 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es004.html">
+   Big Data tema 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es004MongoDB.html">
+   Tutorial MongoDB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es005.html">
+   Big Data tema 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es005Hadoop.html">
+   Tutorial Apache Hadoop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es005Kafka.html">
+   Tutorial Apache Kafka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es006.html">
+   Big Data tema 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es007.html">
+   Big Data tema 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../BigData-es007sparkMLlib.html">
+   Tutorial Spark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/jupyter_execute/BigData-es005Kafka.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fortinux/bigdata-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fortinux/bigdata-book/issues/new?title=Issue%20on%20page%20%2Fdocs/jupyter_execute/BigData-es005Kafka.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fortinux/bigdata-book/master?urlpath=tree/docs/docs/jupyter_execute/BigData-es005Kafka.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tutorial Apache Kafka
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuracion-inicial">
+     Configuración inicial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejecutar-un-productor-y-un-consumidor-en-kafka">
+   Ejecutar un productor y un consumidor en Kafka
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial Apache Kafka</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tutorial Apache Kafka
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuracion-inicial">
+     Configuración inicial
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejecutar-un-productor-y-un-consumidor-en-kafka">
+   Ejecutar un productor y un consumidor en Kafka
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="tutorial-apache-kafka">
+<h1>Tutorial Apache Kafka<a class="headerlink" href="#tutorial-apache-kafka" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Apache Kafka es una plataforma de transmisión de eventos distribuidos de código abierto utilizada por miles de empresas para canalizaciones de datos de alto rendimiento, análisis de streaming, integración de datos y aplicaciones de misión crítica.</p></li>
+<li><p>Es un sistema de mensajería escalable que permite a los usuarios publicar y consumir grandes cantidades de mensajes en tiempo real por suscripción.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://kafka.apache.org/">https://kafka.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="configuracion-inicial">
+<h2>Configuración inicial<a class="headerlink" href="#configuracion-inicial" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>La máquina virtual con Hadoop instalado se descarga de:</p></li>
+<li><p><a class="reference external" href="https://bitnami.com/stack/kafka">https://bitnami.com/stack/kafka</a>.</p></li>
+<li><p>Se puede acceder a la información sobre la configuración predeterminada de la máquina virtual de Bitnami en:</p></li>
+<li><p><a class="reference external" href="https://docs.bitnami.com/general/infrastructure/kafka/get-started/understand-default-config/">https://docs.bitnami.com/general/infrastructure/kafka/get-started/understand-default-config/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Una vez instalado Apache Kafka se deberán abrir los puertos del servidor para los distintos servicios del framework.</p></li>
+<li><p>Puerto 9092 para Kafka y puerto 2181 para Zookeeper.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">9092</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">9092</span>
+         <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">2081</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Mostrar el estado de los servicios</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Iniciar un servicio</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">start</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Reiniciar un servicio</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">restart</span> <span class="n">apache</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Detener todos los servicios</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">stop</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="ejecutar-un-productor-y-un-consumidor-en-kafka">
+<h1>Ejecutar un productor y un consumidor en Kafka<a class="headerlink" href="#ejecutar-un-productor-y-un-consumidor-en-kafka" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Crear y colectar un tópico en Kafka utilizando la consola.</p></li>
+<li><p>Se inicia exportando la configuración de autenticación a Kafka.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">KAFKA_OPTS</span><span class="o">=</span><span class="s2">&quot;-Djava.security.auth.login.config=/opt/bitnami/kafka/config/kafka_jaas.conf&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Crear un nuevo tópico con una única partición y una única réplica.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">topics</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">create</span> <span class="o">--</span><span class="n">zookeeper</span> \ 
+<span class="n">SERVER</span><span class="o">-</span><span class="n">IP</span><span class="p">:</span><span class="mi">2181</span> <span class="o">--</span><span class="n">replication</span><span class="o">-</span><span class="n">factor</span> <span class="mi">1</span> <span class="o">--</span><span class="n">partitions</span> <span class="mi">1</span> <span class="o">--</span><span class="n">topic</span> <span class="n">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Crear un nuevo productor y generar el mensaje para el tópico.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">producer</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">broker</span><span class="o">-</span><span class="nb">list</span> \
+<span class="n">SERVER</span><span class="o">-</span><span class="n">IP</span><span class="p">:</span><span class="mi">9092</span> <span class="o">--</span><span class="n">producer</span><span class="o">.</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">producer</span><span class="o">.</span><span class="n">properties</span> <span class="o">--</span><span class="n">topic</span> <span class="n">test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  <span class="n">Este</span> <span class="n">es</span> <span class="n">mi</span> <span class="n">primer</span> <span class="n">mensaje</span>
+  <span class="o">...</span> <span class="n">y</span> <span class="n">este</span> <span class="n">es</span> <span class="n">el</span> <span class="n">segundo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Recuperar y presentar los mensajes.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">consumer</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">server</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">9092</span> \
+<span class="o">--</span><span class="n">topic</span> <span class="n">test</span> <span class="o">--</span><span class="n">consumer</span><span class="o">.</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">consumer</span><span class="o">.</span><span class="n">properties</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">beginning</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fuentes:</p></li>
+<li><p><a class="reference external" href="https://docs.bitnami.com/virtual-machine/apps/kafka/">https://docs.bitnami.com/virtual-machine/apps/kafka/</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.bitnami.com/general/infrastructure/kafka/administration/run-producer-consumer/">https://docs.bitnami.com/general/infrastructure/kafka/administration/run-producer-consumer/</a>.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/jupyter_execute"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fortinux - Marcelo Horacio Fortino<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
