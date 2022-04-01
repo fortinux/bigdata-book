@@ -1,0 +1,1098 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Data tema 4 &#8212; Curso Introducción a Big Data</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso Introducción a Big Data</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Introducción a Big Data
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es001.html">
+   Big Data tema 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es002.html">
+   Big Data tema 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es003.html">
+   Big Data tema 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es004.html">
+   Big Data tema 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es004MongoDB.html">
+   Tutorial MongoDB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es005.html">
+   Big Data tema 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es005Hadoop.html">
+   Tutorial Apache Hadoop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es005Kafka.html">
+   Tutorial Apache Kafka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es006.html">
+   Big Data tema 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es007.html">
+   Big Data tema 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../BigData-es007sparkMLlib.html">
+   Tutorial Spark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/docs/_build/jupyter_execute/BigData-es004.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fortinux/bigdata-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fortinux/bigdata-book/issues/new?title=Issue%20on%20page%20%2Fdocs/_build/jupyter_execute/BigData-es004.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fortinux/bigdata-book/master?urlpath=tree/docs/docs/_build/jupyter_execute/BigData-es004.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatos-de-archivos-para-big-data">
+   Formatos de archivos para Big Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-para-big-data">
+   Bases de datos para Big Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-nosql">
+   Bases de datos NoSQL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-de-documentos">
+   Bases de datos de documentos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mongodb">
+   MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versiones-de-mongodb">
+   Versiones de MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-de-mongodb">
+   Características de MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principales-funcionalidades">
+   Principales funcionalidades
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-mongodb">
+   Tutorial MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">
+   Bases de datos con pares de valores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redis">
+   Redis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arquitectura-de-redis">
+   Arquitectura de Redis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-redis">
+   Tutorial Redis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-columnares">
+   Bases de datos columnares
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-cassandra">
+   Apache Cassandra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-cassandra">
+   Tutorial Cassandra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-hbase">
+   Apache HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-de-hbase">
+   Características de HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usos-de-apache-hbase">
+   Usos de Apache HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requisitos-de-apache-hbase">
+   Requisitos de Apache HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-graficas">
+   Bases de datos gráficas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neo4j">
+   Neo4j
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Big Data tema 4</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatos-de-archivos-para-big-data">
+   Formatos de archivos para Big Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-para-big-data">
+   Bases de datos para Big Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-nosql">
+   Bases de datos NoSQL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-de-documentos">
+   Bases de datos de documentos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mongodb">
+   MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versiones-de-mongodb">
+   Versiones de MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-de-mongodb">
+   Características de MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principales-funcionalidades">
+   Principales funcionalidades
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-mongodb">
+   Tutorial MongoDB
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">
+   Bases de datos con pares de valores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redis">
+   Redis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arquitectura-de-redis">
+   Arquitectura de Redis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-redis">
+   Tutorial Redis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-columnares">
+   Bases de datos columnares
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-cassandra">
+   Apache Cassandra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-cassandra">
+   Tutorial Cassandra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-hbase">
+   Apache HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-de-hbase">
+   Características de HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#usos-de-apache-hbase">
+   Usos de Apache HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requisitos-de-apache-hbase">
+   Requisitos de Apache HBase
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bases-de-datos-graficas">
+   Bases de datos gráficas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neo4j">
+   Neo4j
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="big-data-tema-4">
+<h1>Big Data tema 4<a class="headerlink" href="#big-data-tema-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="formatos-de-archivos-para-big-data">
+<h2>Formatos de archivos para Big Data<a class="headerlink" href="#formatos-de-archivos-para-big-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Beneficios de elegir un formato apropiado de archivos:</p>
+<ul>
+<li><p>Tiempos de lectura y escritura más veloces.</p></li>
+<li><p>Se pueden dividir en múltiples discos.</p></li>
+<li><p>Compatibilidad con la evolución del esquema.</p></li>
+<li><p>Soporte de compresión.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Formatos de archivos optimizados para Apache Hadoop:</p>
+<ul>
+<li><p>Apache Optimized Row Columnar (ORC) <a class="reference external" href="https://orc.apache.org/">https://orc.apache.org/</a></p></li>
+<li><p>Apache Parquet (almacenamiento en columnas) <a class="reference external" href="https://parquet.apache.org/documentation/latest/">https://parquet.apache.org/documentation/latest/</a></p></li>
+<li><p>Apache Avro (almacenamiento en fila) <a class="reference external" href="https://avro.apache.org/">https://avro.apache.org/</a></p></li>
+<li><p>Avro es popular en sistemas de streaming con Kafka y Schema Registry gracias a su rendimiento.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Otros formatos de archivos:</p>
+<ul>
+<li><p>JSON <a class="reference external" href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a>.</p></li>
+<li><p>CSV / TSV.</p></li>
+<li><p>XML.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bases-de-datos-para-big-data">
+<h2>Bases de datos para Big Data<a class="headerlink" href="#bases-de-datos-para-big-data" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bases-de-datos-nosql">
+<h2>Bases de datos NoSQL<a class="headerlink" href="#bases-de-datos-nosql" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de Big Data.</p></li>
+<li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
+<li><p>Las bases de datos relacionales, por otro lado, tienen un diseño estructurado y tabular.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Bases de datos basadas en columnas están optimizadas para los trabajos analíticos intensivos de lectura.</p>
+<ul>
+<li><p><em>Online Analytical Processing (OLAP)</em></p></li>
+</ul>
+</li>
+<li><p>Bases de datos basadas en filas son mejores para trabajos intensivos de escritura transaccional.</p>
+<ul>
+<li><p><em>Online Transactional Processing (OLTP)</em></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Existen diversos tipos de bases de datos No SQL:</p>
+<ul>
+<li><p>Bases de datos de documentos (MongoDB, Couch DB)</p></li>
+<li><p>Pares de valores (Amazon DynamoDB, Redis)</p></li>
+<li><p>Columnares (Apache Cassandra, Apache HBase)</p></li>
+<li><p>Gráficas (Neo4j, Stardog)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bases-de-datos-de-documentos">
+<h2>Bases de datos de documentos<a class="headerlink" href="#bases-de-datos-de-documentos" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="mongodb">
+<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de big data.</p></li>
+<li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
+<li><p>Las bases de datos relacionales, por otro lado, tienen un diseño estructurado y tabular.</p></li>
+</ul>
+<ul class="simple">
+<li><p>MongoDB es una base de datos distribuida de propósito general y basada en documentos.</p></li>
+<li><p>Fue creada para el desarrollo de aplicaciones modernas y para la era de la nube.</p></li>
+<li><p>Es una base de datos de documentos, lo que significa que almacena datos en documentos similares a JSON.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://www.mongodb.com/">https://www.mongodb.com/</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="versiones-de-mongodb">
+<h2>Versiones de MongoDB<a class="headerlink" href="#versiones-de-mongodb" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>MongoDB Community es la fuente disponible y la edición de uso gratuito de MongoDB.</p></li>
+<li><p>MongoDB Enterprise está disponible como parte de la suscripción MongoDB Enterprise Advanced e incluye soporte integral para su implementación de MongoDB.</p></li>
+<li><p>MongoDB Enterprise también agrega funciones centradas en la empresa, como compatibilidad con LDAP y Kerberos, cifrado en disco y auditoría.</p></li>
+</ul>
+<ul class="simple">
+<li><p>MongoDB también ofrece Atlas, una opción de servicio alojado de MongoDB Enterprise en la nube que no requiere gastos generales de instalación y ofrece un nivel gratuito para comenzar.</p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/cloud/atlas/signup">https://www.mongodb.com/cloud/atlas/signup</a></p></li>
+</ul>
+</div>
+<div class="section" id="caracteristicas-de-mongodb">
+<h2>Características de MongoDB<a class="headerlink" href="#caracteristicas-de-mongodb" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Un registro en MongoDB es un documento, que es una estructura de datos compuesta por pares de campo y valor.</p></li>
+<li><p>Los documentos MongoDB son similares a los objetos JSON.</p></li>
+<li><p>Los valores de los campos pueden incluir otros documentos, matrices y matrices de documentos.</p>
+<ul>
+<li><p>Extraído de: MongoDB Documentation &amp; website: <a class="reference external" href="https://docs.mongodb.com/">https://docs.mongodb.com/</a></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Las ventajas de utilizar documentos son:</p>
+<ul>
+<li><p>Los documentos (es decir, los objetos) corresponden a tipos de datos nativos en muchos lenguajes de programación.</p></li>
+<li><p>Los documentos y matrices integrados reducen la necesidad de uniones costosas.</p></li>
+<li><p>El esquema dinámico admite polimorfismo fluido.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>MongoDB almacena documentos en colecciones.</p></li>
+<li><p>Las colecciones son análogas a las tablas en las bases de datos relacionales.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Además de las colecciones, MongoDB admite:</p>
+<ul>
+<li><p>Vistas de solo lectura (a partir de MongoDB 3.4).</p></li>
+<li><p>Vistas materializadas bajo demanda (a partir de MongoDB 4.2).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="principales-funcionalidades">
+<h2>Principales funcionalidades<a class="headerlink" href="#principales-funcionalidades" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Alto rendimiento</p>
+<ul>
+<li><p>MongoDB proporciona persistencia de datos de alto rendimiento.</p></li>
+<li><p>La compatibilidad con modelos de datos integrados reduce la actividad de E/S en el sistema de base de datos.</p></li>
+<li><p>Los índices admiten consultas más rápidas y pueden incluir claves de documentos incrustados y matrices.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Lenguaje de consulta enriquecido</p>
+<ul>
+<li><p>MongoDB admite un lenguaje de consulta enriquecido para admitir operaciones de lectura y escritura (CRUD), así como:</p>
+<ul>
+<li><p>Agregación de datos.</p></li>
+<li><p>Búsqueda de Texto y Consultas Geoespaciales.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Alta disponibilidad</p>
+<ul>
+<li><p>La función de replicación de MongoDB, denominada conjunto de réplicas (<em>replica set</em>), proporciona:</p>
+<ul>
+<li><p>Conmutación por error automática.</p></li>
+<li><p>Redundancia de datos.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Escalabilidad Horizontal</p>
+<ul>
+<li><p>MongoDB proporciona escalabilidad horizontal como parte de su funcionalidad principal:</p>
+<ul>
+<li><p>La fragmentación (<em>sharding</em>) distribuye datos a través de un grupo de máquinas.</p></li>
+<li><p>A partir de 3.4, MongoDB admite la creación de zonas de datos basadas en la clave del fragmento (<em>shard</em>).</p></li>
+<li><p>En un clúster equilibrado, MongoDB dirige las lecturas y escrituras de una zona solo a los fragmentos dentro de la zona.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Soporte para Múltiples Motores de Almacenamiento</p>
+<ul>
+<li><p>MongoDB admite múltiples motores de almacenamiento:</p>
+<ul>
+<li><p>Motor de almacenamiento <em>WiredTiger</em> (incluida la compatibilidad con el cifrado en reposo).</p></li>
+<li><p>Motor de almacenamiento en memoria.</p></li>
+<li><p>Además, MongoDB proporciona una API de motor de almacenamiento conectable que permite a terceros desarrollar motores de almacenamiento para MongoDB.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="tutorial-mongodb">
+<h2>Tutorial MongoDB<a class="headerlink" href="#tutorial-mongodb" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Crear una cuenta gratuita en:</p>
+<ul>
+<li><p>MongoDB Atlas: <a class="reference external" href="https://account.mongodb.com/account/login">https://account.mongodb.com/account/login</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.atlas.mongodb.com/tutorial/deploy-free-tier-cluster/">https://docs.atlas.mongodb.com/tutorial/deploy-free-tier-cluster/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bases-de-datos-con-pares-de-valores">
+<h2>Bases de datos con pares de valores<a class="headerlink" href="#bases-de-datos-con-pares-de-valores" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="redis">
+<h2>Redis<a class="headerlink" href="#redis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Redis es un almacén de estructura de datos en memoria (<em>in-memory data structure store</em>) de código abierto (con licencia BSD), que se utiliza como base de datos, caché y agente de mensajes.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://redislabs.com/">https://redislabs.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Su estructura de datos soporta:</p></li>
+<li><p>Cadenas, hashes, listas, conjuntos, conjuntos ordenados con consultas de rango, mapas de bits, hiperloglogs, índices geoespaciales con consultas de radio y flujos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Tiene replicación integrada, secuencias de comandos Lua, LRU eviction, transacciones y diferentes niveles de persistencia en disco.</p></li>
+<li><p>Proporciona alta disponibilidad a través de Redis Sentinel.</p></li>
+<li><p>Particionamiento automático con Redis Cluster.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Redis Enterprise:</p></li>
+<li><p>Es una sólida plataforma de base de datos en memoria creada por las mismas personas que desarrollan Redis de código abierto.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://redislabs.com/redis-enterprise-software/overview/">https://redislabs.com/redis-enterprise-software/overview/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Agrega muchas capacidades de nivel empresarial, que incluyen:</p>
+<ul>
+<li><p>Escalado lineal a cientos de millones de operaciones por segundo.</p></li>
+<li><p>Distribución global Activo-Activo con latencia local.</p></li>
+<li><p>Redis en Flash para admitir grandes conjuntos de datos y minimizar los costos de infraestructura.</p></li>
+<li><p>99,999% de tiempo de actividad.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Redis Enterprise está disponible como software y como servicio de nube alojado.</p></li>
+<li><p>Se puede ejecutar Redis Enterprise Software (RS) en un centro de datos local o en plataformas de nube.</p></li>
+<li><p>RS también funciona con varios sistemas de orquestación de contenedores, como Kubernetes.</p></li>
+<li><p>Para desarrollo y pruebas, también se puede ejecutar RS usando contenedores Docker.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Redis Enterprise Software facilita la ejecución de Redis a escala.</p></li>
+<li><p>Se puede usar un único clúster empresarial de Redis para aprovisionar tantas bases de datos de Redis como se necesitan, y cada una de estas bases de datos se puede ajustar y escalar de forma independiente.</p></li>
+<li><p>Además, Redis Enterprise admite muchas funciones de seguridad empresarial, incluido el control de acceso basado en funciones.</p></li>
+</ul>
+</div>
+<div class="section" id="arquitectura-de-redis">
+<h2>Arquitectura de Redis<a class="headerlink" href="#arquitectura-de-redis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Bases de datos Redis replicadas Activo-Activo (CRDB).</p></li>
+<li><p>Proporciona replicación de base de datos global y distribuida geográficamente con escrituras locales sin conflictos.</p></li>
+<li><p>Esto simplifica enormemente el desarrollo de aplicaciones distribuidas globalmente.</p></li>
+<li><p>Las bases de datos activas-activas distribuidas geográficamente combinan tipos de datos replicados sin conflictos con tipos de datos Redis para proporcionar una resolución automática de conflictos basada en la semántica de cada tipo de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Redis en flash:</p></li>
+<li><p>Ayuda a ahorrar costes para bases de datos Redis extra grandes.</p></li>
+<li><p>Las bases de datos Redis estándar mantienen todos sus datos en RAM</p></li>
+<li><p>Las DB Redis on Flash (RoF) distribuyen datos a través de RAM y memoria flash dedicada (SSD).</p></li>
+<li><p>Esto reduce los costes y mantiene un rendimiento similar al de las DB completamente basadas en RAM.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://redislabs.com/redis-enterprise/technology/redis-on-flash/">https://redislabs.com/redis-enterprise/technology/redis-on-flash/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Con RS, un conjunto de datos puede crecer más allá del tamaño del nodo más grande del clúster y ser procesado por cualquier cantidad de núcleos.</p></li>
+<li><p>Al particionar el conjunto de datos en varios nodos mediante una política de fragmentación, RS supera las limitaciones de memoria de un solo nodo y las limitaciones de rendimiento de un solo núcleo.</p></li>
+<li><p>Se puede escalar dinámicamente las bases de datos de Redis aumentando los límites de memoria o aumentando la cantidad de fragmentos, todo usando la interfaz de usuario integrada.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Además de replicar una base de datos dentro del mismo centro de datos, también se puede replicar un conjunto de datos entre centros de datos y entre regiones.</p></li>
+<li><p>Esto proporciona alta disponibilidad, recuperación ante desastres y mejoras de rendimiento para aplicaciones distribuidas globalmente.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Si un nodo falla, los datos se entregan sin problemas desde un nodo de reemplazo en el clúster sin intervención humana.</p></li>
+<li><p>Redis Enterprise puede manejar automáticamente fallas de nodos, fallas de procesos de Redis y fallas de proxy.</p></li>
+<li><p>La conmutación por error generalmente se completa en unos pocos segundos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>RS permite el uso de Redis AOF (<em>Append-Only File</em>) cada segundo o en cada escritura, o instantáneas (RDB) del conjunto de datos cada 1, 6 o 12 horas para almacenamiento persistente.</p></li>
+<li><p>Además, se puede hacer una copia de seguridad del conjunto de datos periódicamente o bajo demanda en un servidor FTP, almacenamiento en red o servicio de almacenamiento en la nube.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Las solicitudes son procesadas por múltiples núcleos para garantizar el mejor rendimiento.</p></li>
+<li><p>Se pueden ejecutar varias bases de datos en un único clúster empresarial de Redis.</p></li>
+<li><p>Cada base de datos se ejecuta con sus propios procesos dedicados sin bloqueo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Un clúster de Redis Enterprise se compone de nodos idénticos que se implementan dentro de un centro de datos o se extienden a través de zonas de disponibilidad local.</p></li>
+<li><p>La arquitectura de Redis Enterprise se compone de una ruta de administración y una ruta de acceso a los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La ruta de administración incluye el administrador de clústeres, el proxy y la interfaz de usuario/API REST segura para la administración programática.</p></li>
+<li><p>En resumen, el administrador de clústeres es responsable de orquestar el clúster, colocar fragmentos de bases de datos y detectar y mitigar fallas.</p></li>
+<li><p>El proxy por otro lado ayuda a escalar la gestión de conexiones.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La ruta de acceso a datos se compone de fragmentos (<em>shards</em>) de Redis maestros y esclavos.</p></li>
+<li><p>Los clientes realizan operaciones de datos en el fragmento maestro.</p></li>
+<li><p>Los fragmentos maestros mantienen fragmentos esclavos mediante la replicación en memoria para la protección contra fallas que pueden hacer que el fragmento maestro sea inaccesible.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Redis Enterprise utiliza la replicación en memoria para mantener réplicas maestras y esclavas.</p></li>
+<li><p>Viene con varios <em>watchdogs</em> que detectan y protegen contra varios tipos de fallas.</p></li>
+<li><p>En las fallas en nodo, red, y fallas de proceso que hacen que la réplica maestra sea inaccesible; promueve automáticamente la réplica esclava para que sea una réplica maestra y redirige la conexión del cliente de forma transparente a la nueva réplica maestra.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Además de la replicación dentro del clúster, Redis Enterprise también tiene una replicación basada en WAN integrada para implementaciones de Redis en varios centros de datos.</p></li>
+<li><p>Los mecanismos de replicación basados en WAN en Redis Enterprise están diseñados para proteger contra fallas totales del centro de datos o de redes más amplias.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Cada clúster de Redis Enterprise puede contener varias bases de datos.</p></li>
+<li><p>En Redis, las bases de datos representan datos que pertenecen a una sola aplicación, inquilino (<em>tenant</em>) o microservicio.</p></li>
+<li><p>Redis Enterprise está diseñado para escalar a cientos de bases de datos por clúster para proporcionar modelos de tenencia múltiple flexibles y eficientes.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Cada base de datos puede contener pocos o muchos fragmentos (<em>shards</em>) de Redis.</p></li>
+<li><p>La fragmentación es transparente para las aplicaciones de Redis.</p></li>
+<li><p>Shards maestros en las base de datos procesan operaciones de datos para un subconjunto dado de claves.</p></li>
+<li><p>La cantidad de shards por base de datos es configurable y depende de las necesidades de rendimiento de las aplicaciones.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Las bases de datos en Redis Enterprise se pueden volver a dividir en más fragmentos de Redis para escalar el rendimiento mientras se mantienen latencias de menos de un milisegundo.</p></li>
+<li><p>La fragmentación se realiza sin tiempo de inactividad.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En Redis Enterprise, cada base de datos tiene una cuota de RAM.</p></li>
+<li><p>La cuota no puede exceder los límites de la RAM disponible en el nodo.</p></li>
+<li><p>Sin embargo, con Redis Enterprise Flash, la memoria RAM se extiende a la unidad flash local (SATA, SSD NVMe, etc.).</p></li>
+</ul>
+<ul class="simple">
+<li><p>La cuota total de la base de datos puede aprovechar tanto la memoria RAM como la unidad flash.</p></li>
+<li><p>El administrador puede elegir la relación RAM vs Flash y ajustarla en cualquier momento durante la vida útil de la base de datos sin tiempo de inactividad.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Con Redis en Flash, en lugar de almacenar todas las claves y datos para un fragmento determinado en la RAM,  se envían a flash los valores a los que se accede con menos frecuencia.</p></li>
+<li><p>Si las aplicaciones necesitan acceder a un valor que está en flash, Redis Enterprise trae automáticamente el valor a la RAM.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Dependiendo del hardware flash en uso, las aplicaciones experimentan una latencia ligeramente más alta al devolver valores a la RAM desde flash.</p></li>
+<li><p>Sin embargo, los accesos posteriores al mismo valor son rápidos, una vez que el valor está en la RAM.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Redis Enterprise tiene dos opciones de durabilidad:</p>
+<ul>
+<li><p>Durabilidad basada en disco.</p></li>
+<li><p>Durabilidad basada en replicación.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Durabilidad basada en disco:</p>
+<ul>
+<li><p>Redis Enterprise aún mantiene una copia duradera en el disco.</p></li>
+<li><p>Al igual que los sistemas basados en disco, esta ruta de E/S se coloca en un dispositivo de almacenamiento conectado a la red más lento y duradero.</p></li>
+<li><p>Las bases de datos de Redis brindan opciones ajustables para mantener esta copia duradera y mantenerla actualizada con escrituras periódicas frecuentes hasta cada operación de escritura.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Durabilidad basada en replicación:</p>
+<ul>
+<li><p>Redis Enterprise también mantiene una réplica, un fragmento esclavo, para mayor durabilidad.</p></li>
+<li><p>Esta durabilidad replicada protege contra fallas de nodo, rack o de zona.</p></li>
+<li><p>La durabilidad replicada proporciona un mejor rendimiento de escritura sobre las escrituras de almacenamiento conectado a la red.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Esto significa que bajo una interrupción no planificada, es más probable que la réplica esté más actualizada en comparación con la copia duradera en el disco.</p></li>
+<li><p>Para aprovechar al máximo la durabilidad replicada, Redis proporciona el comando WAIT.</p></li>
+</ul>
+<ul class="simple">
+<li><p>WAIT se asegura de que una escritura pueda esperar el reconocimiento hasta que varias réplicas confirmen esa escritura.</p></li>
+<li><p>Esto garantiza que una escritura confirmada con WAIT en las réplicas sea duradera incluso si un nodo se incendia y nunca más vuelve al clúster.</p></li>
+</ul>
+</div>
+<div class="section" id="tutorial-redis">
+<h2>Tutorial Redis<a class="headerlink" href="#tutorial-redis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Free plan 30MB: <a class="reference external" href="https://redis.com/redis-enterprise-cloud/pricing/">https://redis.com/redis-enterprise-cloud/pricing/</a>.</p></li>
+<li><p>Free plan 5MB: <a class="reference external" href="https://redistogo.com/">https://redistogo.com/</a>.</p></li>
+<li><p>Tutorial: <a class="reference external" href="https://try.redis.io/">https://try.redis.io/</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="bases-de-datos-columnares">
+<h2>Bases de datos columnares<a class="headerlink" href="#bases-de-datos-columnares" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="apache-cassandra">
+<h2>Apache Cassandra<a class="headerlink" href="#apache-cassandra" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Apache Cassandra es una base de datos distribuida NoSQL de código abierto.</p></li>
+<li><p>La escalabilidad lineal y la tolerancia a fallas comprobada en hardware básico o infraestructura en la nube la convierten en la plataforma perfecta para datos de misión crítica.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://cassandra.apache.org/_/index.html">https://cassandra.apache.org/_/index.html</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Híbrida</p></li>
+<li><p>La arquitectura sin servidor maestro y la baja latencia significan que Cassandra resistirá una interrupción completa del centro de datos sin pérdida de datos, en nubes públicas o privadas, o en las instalaciones.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Tolerante a fallos</p></li>
+<li><p>El soporte de Cassandra para la replicación en varios centros de datos es el mejor de su clase, lo que proporciona una latencia más baja para sus usuarios y la tranquilidad de saber que puede sobrevivir a las interrupciones regionales.</p></li>
+<li><p>Los nodos con fallas se pueden reemplazar sin tiempo de inactividad.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Centrada en la calidad</p></li>
+<li><p>Para garantizar la confiabilidad y la estabilidad, Cassandra se prueba en clústeres de hasta 1,000 nodos y con cientos de casos de uso y esquemas del mundo real probados con pruebas de reproducción, fuzz, basadas en propiedades, inyección de fallas y de rendimiento.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Desempeño</p></li>
+<li><p>Cassandra supera sistemáticamente a las populares alternativas de NoSQL en pruebas comparativas y aplicaciones reales, principalmente debido a las elecciones de arquitectura tomadas.</p></li>
+<li><p><a class="reference external" href="https://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf">https://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Cassandra transmite datos entre nodos durante las operaciones de escalado, como agregar un nuevo nodo o centro de datos durante las horas pico de tráfico.</p></li>
+<li><p>Zero Copy Streaming lo hace hasta 5 veces más rápido sin <em>vnodes</em> para una arquitectura más elástica, especialmente en entornos de nube y Kubernetes.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Distribuida</p></li>
+<li><p>Cassandra es adecuada para aplicaciones que no pueden darse el lujo de perder datos, incluso cuando un centro de datos completo deja de funcionar.</p></li>
+<li><p>No hay puntos únicos de falla. No hay cuellos de botella en la red. Todos los nodos del clúster son idénticos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Opciones</p></li>
+<li><p>Se puede elegir entre replicación síncrona o asíncrona para cada actualización. Las operaciones asincrónicas de alta disponibilidad se optimizan con funciones como <em>Hinted Handoff</em> y <em>Read Repair</em>.</p></li>
+<li><p>La función de registro de auditoría para operadores rastrea la actividad DML, DDL y DCL con un impacto mínimo en el rendimiento normal de la carga de trabajo, mientras que <em>fqltool</em> permite la captura y reproducción de cargas de trabajo de producción para su análisis.</p></li>
+</ul>
+</div>
+<div class="section" id="tutorial-cassandra">
+<h2>Tutorial Cassandra<a class="headerlink" href="#tutorial-cassandra" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Se utilizará una imagen de Docker con Cassandra para realizar el tutorial</p></li>
+<li><p><a class="reference external" href="https://cassandra.apache.org/_/quickstart.html">https://cassandra.apache.org/_/quickstart.html</a></p></li>
+</ul>
+</div>
+<div class="section" id="apache-hbase">
+<h2>Apache HBase<a class="headerlink" href="#apache-hbase" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Es una base de datos distribuida no relacional open source modelada en base al artículo científico Google’s Bigtable: A Distributed Storage System for Structured Data de Chang et al.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Así como Bigtable aprovecha el almacenamiento de datos distribuido proporcionado por el sistema de archivos de Google, Apache HBase proporciona capacidades similares a las de Bigtable junto con Hadoop y HDFS.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: Apache HBase Docs &amp; website: <a class="reference external" href="https://hbase.apache.com/">https://hbase.apache.com/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Se utiliza Apache HBase cuando se necesita acceso de lectura/escritura aleatorio y en tiempo real a Big Data.</p></li>
+<li><p>El objetivo de HBase es el alojamiento de tablas muy grandes:</p>
+<ul>
+<li><p>Miles de millones de filas por millones de columnas.</p></li>
+<li><p>Utilizando clusters con hardware de bajo coste.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>BerkeleyDB es un ejemplo de una base de datos NoSQL local, mientras que HBase es en gran medida una base de datos distribuida.</p></li>
+<li><p>Técnicamente hablando, HBase es más un “almacén de datos” que una “base de datos” porque carece de muchas de las funciones que se encuentran en un RDBMS, como columnas escritas, índices secundarios, activadores y lenguajes de consulta avanzados, etc.</p></li>
+</ul>
+<ul class="simple">
+<li><p>HBase tiene muchas características que admiten escalado tanto lineal como modular.</p></li>
+<li><p>Los clústeres de HBase se expanden agregando <em>Region Servers</em> que están alojados en servidores con hardware de bajo coste.</p></li>
+<li><p>Si un clúster se expande de 10 a 20 <em>Region Servers</em>, por ejemplo, se duplica tanto en términos de almacenamiento como de capacidad de procesamiento.</p></li>
+</ul>
+</div>
+<div class="section" id="caracteristicas-de-hbase">
+<h2>Características de HBase<a class="headerlink" href="#caracteristicas-de-hbase" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lecturas/escrituras consistentes: HBase no es un DataStore “eventualmente consistente”. Esto lo hace muy adecuado para tareas como la agregación de contadores de alta velocidad.</p></li>
+<li><p>Fragmentación automática: las tablas de HBase se distribuyen en el clúster a través de regiones, y las regiones se dividen y redistribuyen automáticamente a medida que aumentan los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Conmutación por error automática de <em>Region Server</em></p></li>
+<li><p>Integración de Hadoop/HDFS: HBase es compatible con HDFS de fábrica como su sistema de archivos distribuido.</p></li>
+<li><p>MapReduce: HBase admite procesamiento en paralelo masivo a través de MapReduce para usar HBase como fuente y receptor.</p></li>
+</ul>
+<ul class="simple">
+<li><p>API de cliente de Java: HBase admite una API de Java fácil de usar para el acceso programático.</p></li>
+<li><p>API Thrift/REST: HBase también es compatible con Thrift y REST para front-ends que no son de Java.</p></li>
+<li><p>Block Cache y Bloom Filters: HBase admite <em>Block Cache</em> y <em>Bloom Filters</em> para la optimización de consultas de gran volumen.</p></li>
+<li><p>Gestión operativa: HBase proporciona páginas web integradas para obtener información operativa y métricas JMX.</p></li>
+</ul>
+<ul class="simple">
+<li><p>HBase, se basa en HDFS y proporciona búsquedas rápidas de registros (y actualizaciones) para tablas grandes.</p></li>
+<li><p>Esto a veces puede ser un punto de confusión conceptual.</p></li>
+<li><p>HBase coloca internamente sus datos en “StoreFiles” indexados que existen en HDFS para búsquedas de alta velocidad.</p></li>
+</ul>
+</div>
+<div class="section" id="usos-de-apache-hbase">
+<h2>Usos de Apache HBase<a class="headerlink" href="#usos-de-apache-hbase" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>HDFS es un sistema de archivos distribuido muy adecuado para el almacenamiento de archivos de gran tamaño.</p></li>
+<li><p>Su documentación establece que, sin embargo, no es un sistema de archivos de propósito general y no proporciona búsquedas rápidas de registros individuales en archivos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Si se tienen cientos de millones o miles de millones de filas, HBase es un buen candidato.</p></li>
+<li><p>Si solo se tienen unos pocos miles/millones de filas, entonces usar un RDBMS tradicional podría ser una mejor opción debido al hecho de que todos los datos pueden terminar en un solo nodo (o dos) y el resto del clúster puede estar sentado inactivo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Una aplicación construida contra un RDBMS no se puede “portar” a HBase simplemente cambiando un controlador JDBC, por ejemplo.</p></li>
+<li><p>Considere pasar de un RDBMS a HBase como un rediseño completo en lugar de un puerto.</p></li>
+</ul>
+</div>
+<div class="section" id="requisitos-de-apache-hbase">
+<h2>Requisitos de Apache HBase<a class="headerlink" href="#requisitos-de-apache-hbase" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Asegurarse de tener suficiente hardware.</p></li>
+<li><p>HDFS no funciona bien con menos de 5 DataNodes (debido a cosas como la replicación de bloques de HDFS que tiene un valor predeterminado de 3), más un NameNode.</p></li>
+<li><p>HBase puede funcionar bastante bien de forma independiente en una computadora portátil, pero esto debe considerarse solo como una configuración de desarrollo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Tutorial: <a class="reference external" href="https://hbase.apache.org/book.html#quickstart">https://hbase.apache.org/book.html#quickstart</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="bases-de-datos-graficas">
+<h2>Bases de datos gráficas<a class="headerlink" href="#bases-de-datos-graficas" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="neo4j">
+<h2>Neo4j<a class="headerlink" href="#neo4j" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Neo4j permite construir aplicaciones y flujos de trabajos de ML.</p></li>
+<li><p>Almacena y administra datos manteniendo relaciones que brindan consultas veloces, un contexto más profundo para el análisis y un modelo de datos modificable sin complicaciones.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://neo4j.com/">https://neo4j.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/_build/jupyter_execute"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fortinux - Marcelo Horacio Fortino<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
