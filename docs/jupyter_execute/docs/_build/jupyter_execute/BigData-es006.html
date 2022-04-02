@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Data tema 6 &#8212; Curso Introducción a Big Data</title>
+    
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../_static/jquery.js"></script>
+    <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso Introducción a Big Data</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../intro.html">
+   Introducción a Big Data
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es001.html">
+   Big Data tema 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es002.html">
+   Big Data tema 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es003.html">
+   Big Data tema 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es004.html">
+   Big Data tema 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es004MongoDB.html">
+   Tutorial MongoDB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es005.html">
+   Big Data tema 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es005Hadoop.html">
+   Tutorial Apache Hadoop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es005Kafka.html">
+   Tutorial Apache Kafka
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es006.html">
+   Big Data tema 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es007.html">
+   Big Data tema 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../../../BigData-es007sparkMLlib.html">
+   Tutorial Spark
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../../../_sources/docs/jupyter_execute/docs/_build/jupyter_execute/BigData-es006.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/fortinux/bigdata-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/fortinux/bigdata-book/issues/new?title=Issue%20on%20page%20%2Fdocs/jupyter_execute/docs/_build/jupyter_execute/BigData-es006.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/fortinux/bigdata-book/master?urlpath=tree/docs/docs/jupyter_execute/docs/_build/jupyter_execute/BigData-es006.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elastic-stack">
+   Elastic Stack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#casos-de-uso">
+   Casos de uso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elasticsearch">
+   Elasticsearch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-lucene">
+   Apache Lucene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-solr">
+   Apache Solr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logstash">
+   Logstash
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elasticsearch-kibana">
+   Elasticsearch Kibana
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lenguajes-soportados">
+   Lenguajes soportados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#herramientas-para-la-linea-de-comandos">
+   Herramientas para la línea de comandos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kibana-dev-tools">
+   Kibana dev tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-elasticsearch">
+   Tutorial Elasticsearch
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Big Data tema 6</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elastic-stack">
+   Elastic Stack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#casos-de-uso">
+   Casos de uso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elasticsearch">
+   Elasticsearch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-lucene">
+   Apache Lucene
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apache-solr">
+   Apache Solr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logstash">
+   Logstash
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elasticsearch-kibana">
+   Elasticsearch Kibana
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lenguajes-soportados">
+   Lenguajes soportados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#herramientas-para-la-linea-de-comandos">
+   Herramientas para la línea de comandos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kibana-dev-tools">
+   Kibana dev tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-elasticsearch">
+   Tutorial Elasticsearch
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="big-data-tema-6">
+<h1>Big Data tema 6<a class="headerlink" href="#big-data-tema-6" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="elastic-stack">
+<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>El ELK Stack se compone de las aplicaciones Elasticsearch, Logstash, Kibana, y Beats.</p></li>
+<li><p>Actualmente se lo conoce como Elastic Stack, nombre que le permite agregar nuevas funcionalidades denominadas <em>beats</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Elasticsearch 8.0</p></li>
+<li><p>Logstash 8.0</p></li>
+<li><p>Kibana 8.0</p></li>
+<li><p>Beats 8.0</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/what-is/elasticsearch">https://www.elastic.co/what-is/elasticsearch</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="casos-de-uso">
+<h2>Casos de uso<a class="headerlink" href="#casos-de-uso" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Búsqueda de aplicaciones</p></li>
+<li><p>Búsqueda de sitio web</p></li>
+<li><p>Búsqueda Empresarial</p></li>
+<li><p>Logging y analíticas de log</p></li>
+<li><p>Métricas de infraestructura y monitoreo de contenedores</p></li>
+<li><p>Monitoreo de rendimiento de aplicaciones</p></li>
+<li><p>Análisis y visualización de datos geoespaciales</p></li>
+<li><p>Analítica de Seguridad</p></li>
+<li><p>Analítica de Negocios</p></li>
+</ul>
+</div>
+<div class="section" id="elasticsearch">
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Elasticsearch es un motor de análisis y búsqueda de código abierto distribuido para todo tipo de datos, incluidos textuales, numéricos, geoespaciales, estructurados y no estructurados.</p></li>
+<li><p>Elasticsearch se basa en Apache Lucene y fue lanzado por primera vez en 2010 por Elasticsearch N.V. (ahora conocido como Elastic).</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/">https://www.elastic.co/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Conocido por sus API REST simples, naturaleza distribuida, velocidad y escalabilidad, Elasticsearch es el componente central de Elastic Stack, un conjunto de herramientas de código abierto para la ingesta, el enriquecimiento, el almacenamiento, el análisis y la visualización de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La ingesta de datos es el proceso mediante el cual estos datos sin procesar se analizan, normalizan y enriquecen antes de indexarlos en Elasticsearch.</p></li>
+<li><p>Los datos sin procesar fluyen hacia Elasticsearch desde una variedad de fuentes, incluidos registros, métricas del sistema y aplicaciones web.</p></li>
+</ul>
+</div>
+<div class="section" id="apache-lucene">
+<h2>Apache Lucene<a class="headerlink" href="#apache-lucene" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lucene Core es una biblioteca de Java que proporciona potentes funciones de indexación y búsqueda, así como funciones de corrección ortográfica, resaltado de aciertos y análisis/tokenización avanzados.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/">https://lucene.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Entre los proyectos relacionados se encuentra PyLucene que proporciona enlaces de Python para Lucene Core.</p></li>
+<li><p>PyLucene incorpora una VM de Java con Lucene en un proceso de Python.</p></li>
+<li><p>El módulo de Python llamado <em>lucene</em> es generado por máquina por JCC.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/pylucene/">https://lucene.apache.org/pylucene/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Lucene Core tiene una serie de proyectos relacionados, entre los cuales se encuentran:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Manifold: Framework de código abierto para conectar repositorios de contenido de origen, como Microsoft Sharepoint y EMC Documentum, a repositorios o índices de destino, como Apache Solr, Open Search Server o ElasticSearch.</p>
+<ul>
+<li><p><a class="reference external" href="https://manifoldcf.apache.org/en_US/index.html">https://manifoldcf.apache.org/en_US/index.html</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://LUCENE.net">LUCENE.net</a>: biblioteca de motor de búsqueda de alto rendimiento para .NET</p>
+<ul>
+<li><p><a class="reference external" href="https://lucenenet.apache.org/">https://lucenenet.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Apache Tika: El kit de herramientas Apache Tika detecta y extrae metadatos y texto de más de mil tipos de archivos diferentes (como PPT, XLS y PDF). Todos estos tipos de archivos se pueden analizar a través de una sola interfaz, lo que hace que Tika sea útil para la indexación de motores de búsqueda, el análisis de contenido, la traducción y mucho más.</p>
+<ul>
+<li><p><a class="reference external" href="https://tika.apache.org/">https://tika.apache.org/</a></p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Nutch es un rastreador web altamente extensible, altamente escalable, maduro y listo para producción que permite una configuración detallada y se adapta a una amplia variedad de tareas de adquisición de datos.</p>
+<ul>
+<li><p><a class="reference external" href="https://nutch.apache.org/">https://nutch.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>La biblioteca Apache OpenNLP es un conjunto de herramientas basado en el aprendizaje automático para el procesamiento de texto en lenguaje natural.</p></li>
+<li><p>Admite las tareas más comunes de NLP, como la tokenización, la segmentación de oraciones, el etiquetado de partes del discurso, la extracción de entidades nombradas, la fragmentación, el análisis y la resolución de correferencias.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://opennlp.apache.org/">https://opennlp.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Apache Mahout es un framework distribuido de álgebra linear y Scala DSL que tiene como objetivo crear aplicaciones de aprendizaje automático (ML) escalables y eficaces.</p>
+<ul>
+<li><p><a class="reference external" href="https://mahout.apache.org/">https://mahout.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="apache-solr">
+<h2>Apache Solr<a class="headerlink" href="#apache-solr" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Solr es un servidor de búsqueda de alto rendimiento creado con Lucene Core.</p></li>
+<li><p>Solr es altamente escalable y proporciona indexación, búsqueda y análisis distribuidos totalmente tolerantes a fallas.</p></li>
+<li><p>Expone las características de Lucene a través de interfaces JSON/HTTP fáciles de usar o de clientes nativos para Java y otros lenguajes.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/">https://lucene.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Tutorial Sorl:</p>
+<ul>
+<li><p><a class="reference external" href="https://solr.apache.org/guide/8_11/solr-tutorial.html/">https://solr.apache.org/guide/8_11/solr-tutorial.html/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="logstash">
+<h2>Logstash<a class="headerlink" href="#logstash" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Logstash se usa para agregar y procesar datos y enviarlos a Elasticsearch.</p></li>
+<li><p>Es una canalización (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que le permite ingerir datos de múltiples fuentes simultáneamente y enriquecerlos y transformarlos antes de que se indexen en Elasticsearch.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Un índice de Elasticsearch es una colección de documentos que están relacionados entre sí.</p></li>
+<li><p>Elasticsearch almacena datos como documentos JSON.</p></li>
+<li><p>Cada documento correlaciona un conjunto de claves (nombres de campos o propiedades) con sus valores correspondientes (cadenas, números, booleanos, fechas, matrices de valores, geolocalizaciones u otros tipos de datos).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Elasticsearch utiliza una estructura de datos denominada índice invertido, que está diseñada para permitir búsquedas de texto completo muy rápidas.</p></li>
+<li><p>Un índice invertido enumera cada palabra única que aparece en cualquier documento e identifica todos los documentos en los que aparece cada palabra.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La indexación se inicia con la API de índice, a través de la cual puede agregar o actualizar un documento JSON en un índice específico.</p></li>
+<li><p>Durante el proceso de indexación, Elasticsearch almacena documentos y crea un índice invertido para que los datos del documento se puedan buscar casi en tiempo real.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Una vez indexados en Elasticsearch, los usuarios pueden ejecutar consultas complejas en sus datos y usar agregaciones para recuperar resúmenes complejos de sus datos.</p></li>
+<li><p>Desde Kibana, los usuarios pueden crear potentes visualizaciones de sus datos, compartir paneles y administrar el Elastic Stack.</p></li>
+</ul>
+</div>
+<div class="section" id="elasticsearch-kibana">
+<h2>Elasticsearch Kibana<a class="headerlink" href="#elasticsearch-kibana" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Kibana es una herramienta de visualización y gestión de datos para Elasticsearch que brinda histogramas en tiempo real, gráficos circulares y mapas.</p></li>
+<li><p>Kibana también incluye aplicaciones avanzadas, como Canvas, que permite a los usuarios crear infografías dinámicas personalizadas con base en sus datos, y Elastic Maps para visualizar los datos geoespaciales.</p></li>
+</ul>
+</div>
+<div class="section" id="lenguajes-soportados">
+<h2>Lenguajes soportados<a class="headerlink" href="#lenguajes-soportados" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Elasticsearch soporta una variedad de lenguajes de programación facilitando clientes para:</p>
+<ul>
+<li><p>Java</p></li>
+<li><p>JavaScript (Node.js)</p></li>
+<li><p>Go</p></li>
+<li><p>.NET (C#)</p></li>
+<li><p>PHP</p></li>
+<li><p>Perl</p></li>
+<li><p>Python</p></li>
+<li><p>Ruby</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="herramientas-para-la-linea-de-comandos">
+<h2>Herramientas para la línea de comandos<a class="headerlink" href="#herramientas-para-la-linea-de-comandos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>elasticsearch-certgen</p></li>
+<li><p>elasticsearch-certutil</p></li>
+<li><p>elasticsearch-croneval</p></li>
+<li><p>elasticsearch-keystore</p></li>
+<li><p>elasticsearch-migrate</p></li>
+</ul>
+<ul class="simple">
+<li><p>Font: <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>elasticsearch-node</p></li>
+<li><p>elasticsearch-saml-metadata</p></li>
+<li><p>elasticsearch-setup-passwords</p></li>
+<li><p>elasticsearch-shard</p></li>
+<li><p>elasticsearch-syskeygen</p></li>
+<li><p>elasticsearch-users</p></li>
+</ul>
+</div>
+<div class="section" id="kibana-dev-tools">
+<h2>Kibana dev tools<a class="headerlink" href="#kibana-dev-tools" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un documento puede contener varios campos con valores</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Elastic&quot;</span><span class="p">,</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fuente: (<a class="reference external" href="http://assets.contentstack.io">assets.contentstack.io</a>) [<a class="reference external" href="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt">https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt</a>]</p></li>
+</ul>
+</div>
+<div class="section" id="tutorial-elasticsearch">
+<h2>Tutorial Elasticsearch<a class="headerlink" href="#tutorial-elasticsearch" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Descargar e instalar la máquina virtual de elasticsearch en Bitnami</p></li>
+<li><p><a class="reference external" href="https://bitnami.com/stack/elasticsearch/virtual-machine">https://bitnami.com/stack/elasticsearch/virtual-machine</a>.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/jupyter_execute/docs/_build/jupyter_execute"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Fortinux - Marcelo Horacio Fortino<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -22,6 +22,13 @@ Esta obra se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARA
 - Estos apuntes se basan en: 
     - La bibliografía presentada al final de este documento, y
     - Documentación propia recogida a lo largo de los años de diversas fuentes.
+
+## Introducción
+En el pasado solo las grandes organizaciones podían aprovecharse de Big Data. Empresas  como Walmart, Google, y/o agentes financieros especializados. Actualmente con [Hadoop](https://hadoop.apache.org/ "Hadoop"), hardware de bajo coste (*commodity*) con el kernel de Linux, y el *cloud computing*, casi cualquier organización se lo puede permitir.
+
+![bigdata Hadoop logo](https://fortinux.com/wp-content/uploads/2020/11/bigdata-Hadoop_logo-300x78.png)
+
+Basta considerar que hay una revolución de datos: los datos que se generan en el mundo aumentan anualmente un 40%.  Se estima que para el 2025 se crearán más de 180 zetabytes. Fuente: <https://es.statista.com/>. En consecuencia, todos esos datos que obtenemos deben ser tratados para ser convertidos en información y poder así tomar decisiones estratégicas.
         
 ## Objetivos del curso    
 
