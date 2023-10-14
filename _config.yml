@@ -2,8 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Curso Introducción a Big Data
-author: Fortinux - Marcelo Horacio Fortino
-copyright: "2022" 
+author: Fortinux - Marcelo Horacio Fortino 
+copyright: ""
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -31,3 +31,8 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  extra_footer : |
+      <div>
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/3.0/88x31.png"></a>
+          Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>. Puede hallar permisos más allá de los concedidos con esta licencia en <a href="https://fortinux.com" rel="nofollow">https://fortinux.com</a>. Sugerencias y comentarios a <a href="mailto:info@fortinux.com">info@fortinux.com</a>.
+      </div>
