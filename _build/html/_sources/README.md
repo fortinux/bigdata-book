@@ -57,9 +57,3 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
 - Spark (MLlib, Streaming).
 - TensorFlow.    
 
-## Capítulos
-```{tableofcontents}
-```
-## Bibliografía
-```{bibliography}
-```
