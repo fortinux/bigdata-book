@@ -52,6 +52,7 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
 - Column stores: HBase + Cassandra.
 - Big Data analytics: Spark, Storm.
 - Elastic Stack: Logstash, ElasticSearch y Kibana.
+- Datascience
 - Técnicas de Machine learning:
 - Spark (MLlib, Streaming).
 - TensorFlow.    
