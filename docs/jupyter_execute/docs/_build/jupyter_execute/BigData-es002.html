@@ -1,774 +1,437 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Big Data tema 2 &#8212; Curso Introducción a Big Data</title>
-    
-  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
+    <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
     <script src="../../../../../_static/clipboard.min.js"></script>
     <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jupyter_execute/docs/_build/jupyter_execute/BigData-es002';</script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../../../index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Curso Introducción a Big Data</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../../../intro.html">
+                    Introducción a Big Data
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../intro.html">
-   Introducción a Big Data
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es001.html">
-   Big Data tema 1
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es002.html">
-   Big Data tema 2
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es003.html">
-   Big Data tema 3
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es004.html">
-   Big Data tema 4
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es004MongoDB.html">
-   Tutorial MongoDB
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es005.html">
-   Big Data tema 5
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es005Hadoop.html">
-   Tutorial Apache Hadoop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es005Kafka.html">
-   Tutorial Apache Kafka
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es006.html">
-   Big Data tema 6
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es007.html">
-   Big Data tema 7
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../../../BigData-es007sparkMLlib.html">
-   Tutorial Spark
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es001.html">Definición y características</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es003.html">Consulta y visualización de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es005.html">Frameworks y aplicaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es006.html">Elastic stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es007.html">Big Data stacks y Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../BigData-es007sparkMLlib.html">Tutorial Spark</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../../../_sources/docs/jupyter_execute/docs/_build/jupyter_execute/BigData-es002.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/fortinux/bigdata-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/fortinux/bigdata-book/issues/new?title=Issue%20on%20page%20%2Fdocs/jupyter_execute/docs/_build/jupyter_execute/BigData-es002.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fortinux/bigdata-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fortinux/bigdata-book/issues/new?title=Issue%20on%20page%20%2Fdocs/jupyter_execute/docs/_build/jupyter_execute/BigData-es002.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/fortinux/bigdata-book/master?urlpath=tree/docs/docs/jupyter_execute/docs/_build/jupyter_execute/BigData-es002.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../../_sources/docs/jupyter_execute/docs/_build/jupyter_execute/BigData-es002.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Big Data tema 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procesos-en-big-data">
-   Procesos en Big Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ingestion-de-datos">
-   Ingestión de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cuestiones-a-considerar">
-   Cuestiones a considerar
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">
-   Buenas prácticas en ingestión de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-para-la-ingesta-de-datos">
-   Herramientas para la ingesta de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sistemas-de-mensajeria">
-   Sistemas de mensajería
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">
-   Problemas en la ingesta de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">
-   Modelo semántico de datos (SDM)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">
-   Almacenamiento de datos (Data Storage)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">
-   Herramientas de almacenamiento para Big Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hdfs">
-   HDFS
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-ozone">
-   Apache Ozone
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glusterfs">
-   GlusterFS
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ceph">
-   Ceph
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#amazon-services">
-   Amazon Services
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">
-   Microsoft Azure Data Lake Store
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#google-bigquery">
-   Google BigQuery
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#databricks">
-   Databricks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#snowflake">
-   Snowflake
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nosql-databases">
-   NoSQL databases
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-de-documentos">
-   Bases de datos de documentos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mongodb">
-   MongoDB
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-couchdb">
-   Apache CouchDB
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#couchbase">
-   Couchbase
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">
-   Bases de datos con pares de valores
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#redis-database">
-   Redis database
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-columnares">
-   Bases de datos columnares
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-cassandra">
-   Apache Cassandra
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-hbase">
-   Apache HBase
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-graficas">
-   Bases de datos gráficas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#amazon-neptune">
-   Amazon Neptune
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stardog">
-   Stardog
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neo4j">
-   Neo4j
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">
-   Procesamiento, análisis y consulta de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-sqoop-in-the-attic">
-   Apache Sqoop (in the Attic)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-spark">
-   Apache Spark
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-storm">
-   Apache Storm
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizacion-de-datos-big-data-visualization">
-   Visualización de datos (Big Data Visualization)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#elastic-stack">
-   Elastic Stack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#salesforce-google-y-microsoft">
-   Salesforce, Google y Microsoft
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#monitoreo-de-datos">
-   Monitoreo de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-para-big-data">
-   Herramientas para Big Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-mesos">
-   Apache Mesos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-zookeeper">
-   Apache Zookeeper
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-ambari-in-the-attic">
-   Apache Ambari (in the Attic)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-ranger">
-   Apache Ranger
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-sentry">
-   Apache Sentry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-airflow">
-   Apache Airflow
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingestion-de-datos">Ingestión de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuestiones-a-considerar">Cuestiones a considerar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">Buenas prácticas en ingestión de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-la-ingesta-de-datos">Herramientas para la ingesta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">Herramientas de almacenamiento para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hdfs">HDFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ozone">Apache Ozone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glusterfs">GlusterFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ceph">Ceph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-services">Amazon Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">Microsoft Azure Data Lake Store</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-bigquery">Google BigQuery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databricks">Databricks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snowflake">Snowflake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-de-documentos">Bases de datos de documentos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">MongoDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-couchdb">Apache CouchDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#couchbase">Couchbase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">Bases de datos con pares de valores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis-database">Redis database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hbase">Apache HBase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-graficas">Bases de datos gráficas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-neptune">Amazon Neptune</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stardog">Stardog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j">Neo4j</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sqoop-in-the-attic">Apache Sqoop (in the Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos-big-data-visualization">Visualización de datos (Big Data Visualization)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-google-y-microsoft">Salesforce, Google y Microsoft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-big-data">Herramientas para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari-in-the-attic">Apache Ambari (in the Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ranger">Apache Ranger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry">Apache Sentry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Big Data tema 2</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procesos-en-big-data">
-   Procesos en Big Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ingestion-de-datos">
-   Ingestión de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cuestiones-a-considerar">
-   Cuestiones a considerar
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">
-   Buenas prácticas en ingestión de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-para-la-ingesta-de-datos">
-   Herramientas para la ingesta de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sistemas-de-mensajeria">
-   Sistemas de mensajería
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">
-   Problemas en la ingesta de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">
-   Modelo semántico de datos (SDM)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">
-   Almacenamiento de datos (Data Storage)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">
-   Herramientas de almacenamiento para Big Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hdfs">
-   HDFS
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-ozone">
-   Apache Ozone
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#glusterfs">
-   GlusterFS
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ceph">
-   Ceph
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#amazon-services">
-   Amazon Services
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">
-   Microsoft Azure Data Lake Store
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#google-bigquery">
-   Google BigQuery
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#databricks">
-   Databricks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#snowflake">
-   Snowflake
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nosql-databases">
-   NoSQL databases
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-de-documentos">
-   Bases de datos de documentos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mongodb">
-   MongoDB
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-couchdb">
-   Apache CouchDB
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#couchbase">
-   Couchbase
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">
-   Bases de datos con pares de valores
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#redis-database">
-   Redis database
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-columnares">
-   Bases de datos columnares
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-cassandra">
-   Apache Cassandra
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-hbase">
-   Apache HBase
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bases-de-datos-graficas">
-   Bases de datos gráficas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#amazon-neptune">
-   Amazon Neptune
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stardog">
-   Stardog
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neo4j">
-   Neo4j
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">
-   Procesamiento, análisis y consulta de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-sqoop-in-the-attic">
-   Apache Sqoop (in the Attic)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-spark">
-   Apache Spark
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-storm">
-   Apache Storm
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualizacion-de-datos-big-data-visualization">
-   Visualización de datos (Big Data Visualization)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#elastic-stack">
-   Elastic Stack
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#salesforce-google-y-microsoft">
-   Salesforce, Google y Microsoft
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#monitoreo-de-datos">
-   Monitoreo de datos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-para-big-data">
-   Herramientas para Big Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-mesos">
-   Apache Mesos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-zookeeper">
-   Apache Zookeeper
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-ambari-in-the-attic">
-   Apache Ambari (in the Attic)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-ranger">
-   Apache Ranger
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-sentry">
-   Apache Sentry
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apache-airflow">
-   Apache Airflow
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="big-data-tema-2">
-<h1>Big Data tema 2<a class="headerlink" href="#big-data-tema-2" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="procesos-en-big-data">
-<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="big-data-tema-2">
+<h1>Big Data tema 2<a class="headerlink" href="#big-data-tema-2" title="Permalink to this heading">#</a></h1>
+<section id="procesos-en-big-data">
+<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Existen varias metodologías disponibles en el mercado para la recopilación, almacenamiento, consulta y visualización de datos.</p></li>
 <li><p>Provienen del mundo de la minería de datos, y entre ellas se pueden mencionar KDD (<em>Knowledge Discovery in Databases</em>), SEMMA y CRISP-DM.</p></li>
@@ -790,9 +453,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="ingestion-de-datos">
-<h2>Ingestión de datos<a class="headerlink" href="#ingestion-de-datos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ingestion-de-datos">
+<h2>Ingestión de datos<a class="headerlink" href="#ingestion-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Obtención, procesado (separación, agrupación, filtrado) y limpieza de datos (eliminar duplicados y errores).</p></li>
 <li><p>Es el primer paso donde se obtienen los datos que provienen de varias fuentes y que irán a dispositivos de almacenamiento para su posterior acceso, uso y análisis por parte de la organización.</p></li>
@@ -806,9 +469,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="cuestiones-a-considerar">
-<h2>Cuestiones a considerar<a class="headerlink" href="#cuestiones-a-considerar" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cuestiones-a-considerar">
+<h2>Cuestiones a considerar<a class="headerlink" href="#cuestiones-a-considerar" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Velocidad de la entrada de datos (frecuencia: <em>Batch, Real-Time</em>).</p></li>
 <li><p>Volumen de los datos.</p></li>
@@ -841,10 +504,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-<p>Fuente: <span id="id1">[<a class="reference internal" href="../../../../../intro.html#id6" title="Edd. Dumbill. Planning for Big Data: A CIO's Handbook to the Changing Data Landscape. O’Reilly Media, Inc., 2012.">Dum12</a>]</span></p>
-</div>
-<div class="section" id="buenas-practicas-en-ingestion-de-datos">
-<h2>Buenas prácticas en ingestión de datos<a class="headerlink" href="#buenas-practicas-en-ingestion-de-datos" title="Permalink to this headline">¶</a></h2>
+<p>Fuente: <span id="id1">[<a class="reference internal" href="../../../../../intro.html#id7" title="Edd. Dumbill. Planning for Big Data: A CIO's Handbook to the Changing Data Landscape. O’Reilly Media, Inc., 2012.">Dum12</a>]</span></p>
+</section>
+<section id="buenas-practicas-en-ingestion-de-datos">
+<h2>Buenas prácticas en ingestión de datos<a class="headerlink" href="#buenas-practicas-en-ingestion-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Ancho de banda de la red:</p></li>
 <li><p>El flujo de datos (<em>Data Pipeline</em>) debe poder competir con el tráfico comercial.</p></li>
@@ -894,9 +557,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>El uso y tratamiento de los datos no es uniforme.</p></li>
 <li><p>Se debe hacer que la canalización sea tan escalable que pueda manejar cualquier cantidad de datos que lleguen a una velocidad variable.</p></li>
 </ul>
-</div>
-<div class="section" id="herramientas-para-la-ingesta-de-datos">
-<h2>Herramientas para la ingesta de datos<a class="headerlink" href="#herramientas-para-la-ingesta-de-datos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="herramientas-para-la-ingesta-de-datos">
+<h2>Herramientas para la ingesta de datos<a class="headerlink" href="#herramientas-para-la-ingesta-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Flume</p>
 <ul>
@@ -987,9 +650,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="sistemas-de-mensajeria">
-<h2>Sistemas de mensajería<a class="headerlink" href="#sistemas-de-mensajeria" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sistemas-de-mensajeria">
+<h2>Sistemas de mensajería<a class="headerlink" href="#sistemas-de-mensajeria" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Kafka</p>
 <ul>
@@ -1043,9 +706,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="problemas-en-la-ingesta-de-datos">
-<h2>Problemas en la ingesta de datos<a class="headerlink" href="#problemas-en-la-ingesta-de-datos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="problemas-en-la-ingesta-de-datos">
+<h2>Problemas en la ingesta de datos<a class="headerlink" href="#problemas-en-la-ingesta-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Cuando existen numerosas fuentes de Big Data con diferentes formatos, el mayor desafío para el negocio es ingerir datos a una velocidad razonable y procesarlos de manera eficiente.</p></li>
 <li><p>De esta manera los datos pueden priorizarse y en consecuencia mejorar la toma de decisiones de negocio.</p></li>
@@ -1059,16 +722,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>También lo es por tratar con baja latencia (una red informática que está optimizada para procesar un volumen muy alto de mensajes de datos con un retraso mínimo).</p></li>
 <li><p>Estas redes están diseñadas para admitir operaciones que requieren acceso casi en tiempo real a datos que cambian rápidamente.</p></li>
 </ul>
-</div>
-<div class="section" id="modelo-semantico-de-datos-sdm">
-<h2>Modelo semántico de datos (SDM)<a class="headerlink" href="#modelo-semantico-de-datos-sdm" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="modelo-semantico-de-datos-sdm">
+<h2>Modelo semántico de datos (SDM)<a class="headerlink" href="#modelo-semantico-de-datos-sdm" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El modelo semántico de datos (SDM) también cambia con el tiempo.</p></li>
 <li><p>Se necesita un modelo de datos (<em>DM</em>) en el que se incluya información semántica.</p></li>
 <li><p>Un <em>DM</em> que incluya la capacidad de expresar e intercambiar información permite a las partes interpretar el significado (semántica) de las instancias.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Extraído de: Semantic Data Model: <a class="reference external" href="https://es.wikipedia.org/wiki/Modelo_sem%C3%A1ntico_de_datos">https://es.wikipedia.org/wiki/Modelo_sem%C3%A1ntico_de_datos</a>.</p></li>
+<li><p>Extraído de: Semantic Data Model: <a class="reference external" href="https://es.wikipedia.org/wiki/Modelo_sem%C3%A1ntico_de_datos">https://es.wikipedia.org/wiki/Modelo_semántico_de_datos</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>En un modelo semántico los hechos generalmente se expresan mediante relaciones binarias entre elementos de datos, mientras que las relaciones de orden superior se expresan como colecciones de relaciones binarias.</p></li>
@@ -1122,10 +785,10 @@ end.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">database</span> <span class="n">warehouse</span><span class="o">.</span>
-             <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In [1], line 19
+    …
+    ^
+SyntaxError: invalid character &#39;…&#39; (U+2026)
 </pre></div>
 </div>
 </div>
@@ -1137,9 +800,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="almacenamiento-de-datos-data-storage">
-<h2>Almacenamiento de datos (Data Storage)<a class="headerlink" href="#almacenamiento-de-datos-data-storage" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="almacenamiento-de-datos-data-storage">
+<h2>Almacenamiento de datos (Data Storage)<a class="headerlink" href="#almacenamiento-de-datos-data-storage" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El almacenamiento se convierte en un desafío cuando el tamaño de los datos es muy grande.</p></li>
 <li><p>Varias posibles soluciones pueden ayudar a resolver este problema.</p></li>
@@ -1172,9 +835,9 @@ end.
 <ul class="simple">
 <li><p>Como contrapartida, tiene como desventaja la necesidad de contratar personal especializado para la integración de las bases de datos y una mayor cantidad de recursos de almacenamiento.</p></li>
 </ul>
-</div>
-<div class="section" id="herramientas-de-almacenamiento-para-big-data">
-<h2>Herramientas de almacenamiento para Big Data<a class="headerlink" href="#herramientas-de-almacenamiento-para-big-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="herramientas-de-almacenamiento-para-big-data">
+<h2>Herramientas de almacenamiento para Big Data<a class="headerlink" href="#herramientas-de-almacenamiento-para-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>HDFS : Hadoop Distributed File System.</p></li>
 <li><p>Ozone: Un <em>object store</em> para Hadoop, la próxima generación de HDFS.</p></li>
@@ -1182,9 +845,9 @@ end.
 <li><p>Ceph: Proporciona almacenamiento de objetos, bloques y sistemas de archivos en un solo clúster.</p></li>
 <li><p>Cloud storage: Amazon S3 Storage Service, IBM Cloud Object Storage, Azure Blob Storage, Google Cloud Storage.</p></li>
 </ul>
-</div>
-<div class="section" id="hdfs">
-<h2>HDFS<a class="headerlink" href="#hdfs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="hdfs">
+<h2>HDFS<a class="headerlink" href="#hdfs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>HDFS es un sistema de ficheros basado en Java que provee almacenamiento confiable y escalable.</p></li>
 <li><p>Fue diseñado para abarcar grandes grupos de servidores básicos (commodity servers).</p></li>
@@ -1209,9 +872,9 @@ end.
 <li><p>Cuando HDFS toma datos, divide la información en partes separadas y las distribuye a diferentes nodos en un clúster, lo que permite el procesamiento paralelo.</p></li>
 <li><p>El sistema de archivos en Ingestión de datos también copia cada pieza de datos varias veces y distribuye las copias a nodos individuales, colocando al menos una copia en un rack de servidor diferente.</p></li>
 </ul>
-</div>
-<div class="section" id="apache-ozone">
-<h2>Apache Ozone<a class="headerlink" href="#apache-ozone" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-ozone">
+<h2>Apache Ozone<a class="headerlink" href="#apache-ozone" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Ozone es un <em>object store</em> escalable, redundante, y distribuído para Hadoop.</p></li>
 <li><p>Además de escalar a billones de objetos de cualquier tamaño, Ozone puede trabajar puede funcionar de manera efectiva en entornos en contenedores como Kubernetes y YARN.</p>
@@ -1234,9 +897,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="glusterfs">
-<h2>GlusterFS<a class="headerlink" href="#glusterfs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="glusterfs">
+<h2>GlusterFS<a class="headerlink" href="#glusterfs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Gluster es un sistema de ficheros en red escalable libre y de fuente abierta.</p>
 <ul>
@@ -1261,9 +924,9 @@ end.
 <li><p>El rendimiento aumenta al implementar el almacenamiento entre más nodos.</p></li>
 <li><p>La alta disponibilidad se logra mediante la replicación de datos de <em>n</em> vías entre nodos.</p></li>
 </ul>
-</div>
-<div class="section" id="ceph">
-<h2>Ceph<a class="headerlink" href="#ceph" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ceph">
+<h2>Ceph<a class="headerlink" href="#ceph" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La base de Ceph es el <em>Reliable Autonomic Distributed Object Store (RADOS)</em></p></li>
 <li><p>Proporciona a las aplicaciones almacenamiento de objetos, bloques y sistemas de archivos en un solo clúster de almacenamiento unificado.</p></li>
@@ -1286,9 +949,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="amazon-services">
-<h2>Amazon Services<a class="headerlink" href="#amazon-services" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="amazon-services">
+<h2>Amazon Services<a class="headerlink" href="#amazon-services" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Amazon Simple Storage Service (Amazon S3) es un almacenamiento de objetos con una interfaz web simple que permite almacenar y recuparar cualquier volumen de datos desde cualquier lugar en Internet.</p></li>
 <li><p>Está diseñado para entregar un 99.999% de durabilidad y escalar a más de trillones de objetos en todo el mundo.</p>
@@ -1313,9 +976,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="microsoft-azure-data-lake-store">
-<h2>Microsoft Azure Data Lake Store<a class="headerlink" href="#microsoft-azure-data-lake-store" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="microsoft-azure-data-lake-store">
+<h2>Microsoft Azure Data Lake Store<a class="headerlink" href="#microsoft-azure-data-lake-store" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Lago de datos seguro y escalable de forma masiva para sus cargas de trabajo de análisis de alto rendimiento.</p></li>
 <li><p>Fuente: <a class="reference external" href="https://azure.microsoft.com/es-es/services/storage/data-lake-storage/">https://azure.microsoft.com/es-es/services/storage/data-lake-storage/</a>.</p></li>
@@ -1327,9 +990,9 @@ end.
 <li><p>Sin infraestructura para administrar, se procesan los datos a petición, escalando las unidades de análisis de forma instantánea.</p></li>
 <li><p>Fuente: <a class="reference external" href="https://azure.microsoft.com/es-es/services/data-lake-analytics/#overview">https://azure.microsoft.com/es-es/services/data-lake-analytics/#overview</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="google-bigquery">
-<h2>Google BigQuery<a class="headerlink" href="#google-bigquery" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="google-bigquery">
+<h2>Google BigQuery<a class="headerlink" href="#google-bigquery" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Almacén de datos multinube de alta escalabilidad, rentable y sin servidor.</p>
 <ul>
@@ -1346,9 +1009,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="databricks">
-<h2>Databricks<a class="headerlink" href="#databricks" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="databricks">
+<h2>Databricks<a class="headerlink" href="#databricks" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fundada en 2013 por los creadores originales de Apache Spark, Delta Lake y MLflow, Databricks reúne ingeniería de datos, ciencia y análisis en una plataforma abierta y unificada para que los equipos de datos puedan colaborar e innovar más rápido.</p></li>
 <li><p>Está alojada en Microsoft Azure.</p>
@@ -1357,9 +1020,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="snowflake">
-<h2>Snowflake<a class="headerlink" href="#snowflake" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="snowflake">
+<h2>Snowflake<a class="headerlink" href="#snowflake" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Permite acceder, integrar y analizar datos de manera fácil y segura con una escalabilidad casi infinita, habilitada automáticamente o sobre la marcha.</p></li>
 <li><p>Está alojada en Amazon AWS.</p>
@@ -1368,9 +1031,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="nosql-databases">
-<h2>NoSQL databases<a class="headerlink" href="#nosql-databases" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="nosql-databases">
+<h2>NoSQL databases<a class="headerlink" href="#nosql-databases" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de Big Data.</p></li>
 <li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
@@ -1386,12 +1049,12 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="bases-de-datos-de-documentos">
-<h2>Bases de datos de documentos<a class="headerlink" href="#bases-de-datos-de-documentos" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="mongodb">
-<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="bases-de-datos-de-documentos">
+<h2>Bases de datos de documentos<a class="headerlink" href="#bases-de-datos-de-documentos" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="mongodb">
+<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>MongoDB es una base de datos distribuida de propósito general, basada en documentos, creada para desarrolladores de aplicaciones modernas y para la era de la nube.</p></li>
 <li><p>MongoDB es una base de datos de documentos, lo que significa que almacena datos en documentos similares a JSON.</p>
@@ -1400,9 +1063,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-couchdb">
-<h2>Apache CouchDB<a class="headerlink" href="#apache-couchdb" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-couchdb">
+<h2>Apache CouchDB<a class="headerlink" href="#apache-couchdb" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache CouchDB es una base de datos NoSQL orientada a documentos de código abierto, implementada en Erlang.</p></li>
 <li><p>CouchDB usa múltiples formatos y protocolos para almacenar, transferir y procesar sus datos.</p></li>
@@ -1415,9 +1078,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="couchbase">
-<h2>Couchbase<a class="headerlink" href="#couchbase" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="couchbase">
+<h2>Couchbase<a class="headerlink" href="#couchbase" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Couchbase es una base de datos en la nube NoSQL distribuida.</p></li>
 <li><p>Ofrece versatilidad, rendimiento, escalabilidad y un valor financiero inigualables en implementaciones informáticas en la nube, en las instalaciones híbridas, en la nube distribuida y en edge computing.</p>
@@ -1426,12 +1089,12 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="bases-de-datos-con-pares-de-valores">
-<h2>Bases de datos con pares de valores<a class="headerlink" href="#bases-de-datos-con-pares-de-valores" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="redis-database">
-<h2>Redis database<a class="headerlink" href="#redis-database" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="bases-de-datos-con-pares-de-valores">
+<h2>Bases de datos con pares de valores<a class="headerlink" href="#bases-de-datos-con-pares-de-valores" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="redis-database">
+<h2>Redis database<a class="headerlink" href="#redis-database" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Redis es un almacén de estructura de datos en memoria de código abierto (con licencia BSD), que se utiliza como base de datos, caché y agente de mensajes.</p>
 <ul>
@@ -1439,12 +1102,12 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="bases-de-datos-columnares">
-<h2>Bases de datos columnares<a class="headerlink" href="#bases-de-datos-columnares" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="apache-cassandra">
-<h2>Apache Cassandra<a class="headerlink" href="#apache-cassandra" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="bases-de-datos-columnares">
+<h2>Bases de datos columnares<a class="headerlink" href="#bases-de-datos-columnares" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="apache-cassandra">
+<h2>Apache Cassandra<a class="headerlink" href="#apache-cassandra" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Cassandra es una base de datos distribuida NoSQL de código abierto.</p></li>
 <li><p>La escalabilidad lineal y la tolerancia a fallas comprobada en hardware básico o infraestructura en la nube la convierten en la plataforma perfecta para datos de misión crítica.</p></li>
@@ -1454,9 +1117,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-hbase">
-<h2>Apache HBase<a class="headerlink" href="#apache-hbase" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-hbase">
+<h2>Apache HBase<a class="headerlink" href="#apache-hbase" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es una base de datos distribuida no relacional open source modelada en base al artículo científico <em>Google’s Bigtable: A Distributed Storage System for Structured Data</em> de Chang et al.</p></li>
 </ul>
@@ -1467,12 +1130,12 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="bases-de-datos-graficas">
-<h2>Bases de datos gráficas<a class="headerlink" href="#bases-de-datos-graficas" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="amazon-neptune">
-<h2>Amazon Neptune<a class="headerlink" href="#amazon-neptune" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="bases-de-datos-graficas">
+<h2>Bases de datos gráficas<a class="headerlink" href="#bases-de-datos-graficas" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="amazon-neptune">
+<h2>Amazon Neptune<a class="headerlink" href="#amazon-neptune" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Amazon Neptune es un motor de base de datos de gráficos de alto rendimiento optimizado para almacenar miles de millones de relaciones y consultar el gráfico con una latencia de milisegundos.</p></li>
 <li><p>Admite los modelos de gráficos populares Property Graph y Resource Description Framework (RDF) del W3C, así como sus lenguajes de consulta asociados, Apache TinkerPop Gremlin y SPARQL.</p>
@@ -1482,9 +1145,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="stardog">
-<h2>Stardog<a class="headerlink" href="#stardog" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="stardog">
+<h2>Stardog<a class="headerlink" href="#stardog" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Stardog es la única plataforma de gráficos que conecta datos en la capa de cómputo en lugar de la capa de almacenamiento.</p></li>
 <li><p>No se necesita migrar las bases de datos ni copiarlas.</p></li>
@@ -1506,9 +1169,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="neo4j">
-<h2>Neo4j<a class="headerlink" href="#neo4j" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="neo4j">
+<h2>Neo4j<a class="headerlink" href="#neo4j" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Neo4j permite construir aplicaciones y flujos de trabajos de ML.</p></li>
 <li><p>Almacena y administra datos manteniendo relaciones que brindan consultas veloces, un contexto más profundo para el análisis y un modelo de datos modificable sin complicaciones.</p>
@@ -1517,9 +1180,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="procesamiento-analisis-y-consulta-de-datos">
-<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="procesamiento-analisis-y-consulta-de-datos">
+<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Los datos recolectados en la fase anterior serán procesados en este paso.</p></li>
 <li><p>Aquí, el sistema de procesamiento de canalización de datos enruta los datos a un destino diferente, clasifica el flujo de datos y es el primer punto donde puede tener lugar el análisis.</p></li>
@@ -1564,9 +1227,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-sqoop-in-the-attic">
-<h2>Apache Sqoop (in the Attic)<a class="headerlink" href="#apache-sqoop-in-the-attic" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-sqoop-in-the-attic">
+<h2>Apache Sqoop (in the Attic)<a class="headerlink" href="#apache-sqoop-in-the-attic" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
 <ul>
@@ -1577,9 +1240,9 @@ end.
 <ul class="simple">
 <li><p>Se puede usar Sqoop para importar datos desde un sistema de administración de bases de datos relacionales (RDBMS) como MySQL, Oracle, o un mainframe al sistema de archivos distribuidos de Hadoop (HDFS), transformar los datos utilizando Hadoop MapReduce, y luego exportar los datos nuevamente a un RDBMS.</p></li>
 </ul>
-</div>
-<div class="section" id="apache-spark">
-<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-spark">
+<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Framework de procesamiento paralelo y de código abierto para ejecutar aplicaciones de análisis de datos a gran escala en sistemas agrupados.</p>
 <ul>
@@ -1592,9 +1255,9 @@ end.
 <li><p>Fue desarrollado en la University of California, Berkeley.</p></li>
 <li><p>Con Spark ejecutándose en Apache Hadoop YARN, los desarrolladores pueden crear aplicaciones para explotar el poder de Spark, obtener información y enriquecer sus cargas de trabajo de ciencia de datos dentro de un único conjunto de datos compartidos en Hadoop.</p></li>
 </ul>
-</div>
-<div class="section" id="apache-storm">
-<h2>Apache Storm<a class="headerlink" href="#apache-storm" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-storm">
+<h2>Apache Storm<a class="headerlink" href="#apache-storm" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es un sistema distribuido open source para procesar datos en tiempo real durante la ingesta de datos.</p></li>
 <li><p>Es escalable, tiene tolerancia a fallos, y es fácil de configurar y operar.</p></li>
@@ -1614,17 +1277,17 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="visualizacion-de-datos-big-data-visualization">
-<h2>Visualización de datos (Big Data Visualization)<a class="headerlink" href="#visualizacion-de-datos-big-data-visualization" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="visualizacion-de-datos-big-data-visualization">
+<h2>Visualización de datos (Big Data Visualization)<a class="headerlink" href="#visualizacion-de-datos-big-data-visualization" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La fase de visualización o presentación es donde los usuarios pueden sentir el VALOR de los DATOS.</p></li>
 <li><p>La visualización de hallazgos ayuda a tomar mejores decisiones de negocios.</p></li>
 <li><p>Aquí se generan informes por tipo de audiencia (comerciales, marketing, estrategia, técnicos, etc).</p></li>
 </ul>
-</div>
-<div class="section" id="elastic-stack">
-<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="elastic-stack">
+<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Elasticsearch es el componente central de Elastic Stack, un conjunto de herramientas de código abierto para la ingesta, el enriquecimiento, el almacenamiento, el análisis y la visualización de datos.</p></li>
 <li><p>El ELK Stack se compone de las aplicaciones Elasticsearch, Logstash, Kibana, y Beats.</p></li>
@@ -1649,9 +1312,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="salesforce-google-y-microsoft">
-<h2>Salesforce, Google y Microsoft<a class="headerlink" href="#salesforce-google-y-microsoft" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="salesforce-google-y-microsoft">
+<h2>Salesforce, Google y Microsoft<a class="headerlink" href="#salesforce-google-y-microsoft" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Google y Microsoft.</p></li>
 <li><p>Salesforce adquirió Tableau y google hizo lo mismo con Looker en 2019.</p></li>
@@ -1668,9 +1331,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="monitoreo-de-datos">
-<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="monitoreo-de-datos">
+<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
 <li><p>Apache Flume es útil para procesar datos de registro.</p></li>
@@ -1678,12 +1341,12 @@ end.
 <li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
 <li><p>El monitoreo puede ocurrir en el paso de almacenamiento de datos.</p></li>
 </ul>
-</div>
-<div class="section" id="herramientas-para-big-data">
-<h2>Herramientas para Big Data<a class="headerlink" href="#herramientas-para-big-data" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="apache-mesos">
-<h2>Apache Mesos<a class="headerlink" href="#apache-mesos" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="herramientas-para-big-data">
+<h2>Herramientas para Big Data<a class="headerlink" href="#herramientas-para-big-data" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="apache-mesos">
+<h2>Apache Mesos<a class="headerlink" href="#apache-mesos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un núcleo (<em>kernel</em>) de sistemas distribuidos.</p></li>
 <li><p>Mesos está construido usando los mismos principios que el <em>kernel</em> de Linux, solo que en un nivel diferente de abstracción.</p></li>
@@ -1696,9 +1359,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-zookeeper">
-<h2>Apache Zookeeper<a class="headerlink" href="#apache-zookeeper" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-zookeeper">
+<h2>Apache Zookeeper<a class="headerlink" href="#apache-zookeeper" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>ZooKeeper es un servicio centralizado para mantener la información de configuración, nombrar, brindar sincronización distribuida y servicios grupales.</p>
 <ul>
@@ -1706,9 +1369,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-ambari-in-the-attic">
-<h2>Apache Ambari (in the Attic)<a class="headerlink" href="#apache-ambari-in-the-attic" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-ambari-in-the-attic">
+<h2>Apache Ambari (in the Attic)<a class="headerlink" href="#apache-ambari-in-the-attic" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El proyecto Apache Ambari tiene como objetivo simplificar la administración de Hadoop mediante el desarrollo de software para el aprovisionamiento, la administración y el monitoreo de clústeres de Apache Hadoop.</p></li>
 <li><p>Ambari proporciona una interfaz de usuario web de administración de Hadoop intuitiva y fácil de usar respaldada por sus API RESTful.</p>
@@ -1717,9 +1380,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-ranger">
-<h2>Apache Ranger<a class="headerlink" href="#apache-ranger" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-ranger">
+<h2>Apache Ranger<a class="headerlink" href="#apache-ranger" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Ranger™ es un framework para habilitar, monitorear y administrar la seguridad integral de los datos en toda la plataforma Hadoop.</p>
 <ul>
@@ -1727,9 +1390,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-sentry">
-<h2>Apache Sentry<a class="headerlink" href="#apache-sentry" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-sentry">
+<h2>Apache Sentry<a class="headerlink" href="#apache-sentry" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Sentry™ es un sistema para hacer cumplir la autorización detallada basada en roles para datos y metadatos almacenados en un clúster de Hadoop.</p>
 <ul>
@@ -1737,9 +1400,9 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="apache-airflow">
-<h2>Apache Airflow<a class="headerlink" href="#apache-airflow" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apache-airflow">
+<h2>Apache Airflow<a class="headerlink" href="#apache-airflow" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Airflow es una plataforma que permite crear, programar temporalmente, y monitorar flujos de trabajo utilizando Python como lenguaje.</p></li>
 <li><p>Automatiza la ingestas de datos, acciones de mantenimiento periódicas y realiza tareas de administración.</p>
@@ -1756,8 +1419,8 @@ end.
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1771,7 +1434,7 @@ end.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./docs/jupyter_execute/docs/_build/jupyter_execute"
         },
         predefinedOutput: true
@@ -1779,30 +1442,130 @@ end.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingestion-de-datos">Ingestión de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuestiones-a-considerar">Cuestiones a considerar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">Buenas prácticas en ingestión de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-la-ingesta-de-datos">Herramientas para la ingesta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">Herramientas de almacenamiento para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hdfs">HDFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ozone">Apache Ozone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glusterfs">GlusterFS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ceph">Ceph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-services">Amazon Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">Microsoft Azure Data Lake Store</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-bigquery">Google BigQuery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databricks">Databricks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snowflake">Snowflake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-de-documentos">Bases de datos de documentos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">MongoDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-couchdb">Apache CouchDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#couchbase">Couchbase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">Bases de datos con pares de valores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis-database">Redis database</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hbase">Apache HBase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-graficas">Bases de datos gráficas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-neptune">Amazon Neptune</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stardog">Stardog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j">Neo4j</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sqoop-in-the-attic">Apache Sqoop (in the Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos-big-data-visualization">Visualización de datos (Big Data Visualization)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-google-y-microsoft">Salesforce, Google y Microsoft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-big-data">Herramientas para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari-in-the-attic">Apache Ambari (in the Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ranger">Apache Ranger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry">Apache Sentry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
+          </div>
+          <footer class="bd-footer-content">
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Fortinux - Marcelo Horacio Fortino<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
-
-
-      </div>
-    </div>
+<div class="bd-footer-content__inner container">
   
-  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fortinux - Marcelo Horacio Fortino
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+<a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/3.0/88x31.png"></a>
+    Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>. Puede hallar permisos más allá de los concedidos con esta licencia en <a href="https://fortinux.com" rel="nofollow">https://fortinux.com</a>. Sugerencias y comentarios a <a href="mailto:info@fortinux.com">info@fortinux.com</a>.
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
