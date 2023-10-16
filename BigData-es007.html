@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Big Data stacks y Machine Learning &#8212; Curso Introducción a Big Data</title>
+    <title>Big Data Science &#8212; Curso Introducción a Big Data</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es007';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial Spark" href="BigData-es007sparkMLlib.html" />
+    <link rel="next" title="Big Data stacks y Machine Learning" href="BigData-es008.html" />
     <link rel="prev" title="Elastic stack" href="BigData-es006.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,8 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Big Data stacks y Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es007sparkMLlib.html">Tutorial Spark</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Big Data Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
 </ul>
 
     </div>
@@ -361,7 +362,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Big Data stacks y Machine Learning</h1>
+    <h1>Big Data Science</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -371,23 +372,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-stacks">Big data stacks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-stack">Apache Hadoop Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bdas-berkeley-data-analytics-stack">BDAS - Berkeley Data Analytics Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-stack-alternativo">Big data stack alternativo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">Machine Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neuronales">Redes neuronales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-una-red-neuronal">Entrenar una red neuronal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mllib">Apache MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-ciencia-de-datos">Introducción a la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-de-la-ciencia-de-datos">Alcance de la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mineria-de-datos">Minería de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a></li>
 </ul>
             </nav>
         </div>
@@ -399,436 +387,84 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="big-data-stacks-y-machine-learning">
-<h1>Big Data stacks y Machine Learning<a class="headerlink" href="#big-data-stacks-y-machine-learning" title="Permalink to this heading">#</a></h1>
-<section id="big-data-stacks">
-<h2>Big data stacks<a class="headerlink" href="#big-data-stacks" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="big-data-science">
+<h1>Big Data Science<a class="headerlink" href="#big-data-science" title="Permalink to this heading">#</a></h1>
+<section id="introduccion-a-la-ciencia-de-datos">
+<h2>Introducción a la ciencia de datos<a class="headerlink" href="#introduccion-a-la-ciencia-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Teniendo en cuenta las numerosas opciones que existen en el mercado para implantar una solución de Big data en la organización, se enumeran a continuación tres arquitecturas que tienen en cuenta los procesos de ingestión de datos, almacenamiento, tratamiento y análisis de datos, y presentación.</p></li>
+<li><p>El NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id1">[<a class="reference internal" href="README.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span> define ciencia de datos (<em>data science</em>) como:</p></li>
+</ul>
+<p><em>la metodología para la síntesis de conocimientos útiles (obtenidos) directamente a partir de datos a través de un proceso de descubrimiento o de formulación y prueba de hipótesis.</em></p>
+<ul class="simple">
+<li><p>Big Data en este contexto está estrechamente ligada a la ciencia de datos.</p></li>
+<li><p>El análisis de grandes cantidades de datos sirve para validar hipótesis, reformularlas, o generar nuevas.</p></li>
+<li><p>Como toda ciencia empírica, se aprende directamente de los datos adquiridos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El proceso de resolución de problemas puede tomar dos vías:</p>
+<ul>
+<li><p>Recolectar datos y hacer un análisis abierto sobre ellos sin hipótesis preconcebidas (<em>discovery or data exploration</em>).</p></li>
+<li><p>Se formula una hipótesis, se recogen datos para la misma y se confirma o refuta la hipótesis (o se determina que se necesitan más estudios).</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Es importante aclarar que la ciencia de datos está en contraste con los modelos climáticos simulados (<em>physics-based modeling and simulation - M&amp;S</em>).</p></li>
+<li><p>Éstos usan datos como condición inicial para crear, siguiendo el modelo, nuevos datos. Los mismos se verificarán (o no) con la realidad en el futuro.</p></li>
+<li><p>Por el contrario, la ciencia de datos analizaría los datos para predecir el clima basándose en los patrones detectados de esos datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id2">[<a class="reference internal" href="README.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span>. Pág.25.</p></li>
 </ul>
 </section>
-<section id="apache-hadoop-stack">
-<h2>Apache Hadoop Stack<a class="headerlink" href="#apache-hadoop-stack" title="Permalink to this heading">#</a></h2>
+<section id="alcance-de-la-ciencia-de-datos">
+<h2>Alcance de la ciencia de datos<a class="headerlink" href="#alcance-de-la-ciencia-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>La biblioteca de software Apache Hadoop es un framework para el procesamiento distribuido de grandes conjuntos de datos en grupos de computadoras.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/">https://hadoop.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Ingestión de datos: Apache Flume, Apache Nifi.</p>
-<ul>
-<li><p>Mensajería: Apache Kafka.</p></li>
-</ul>
-</li>
-<li><p>Almacenamiento:</p>
-<ul>
-<li><p>Gestión de recursos: Apache Hadoop YARN.</p></li>
-<li><p>Sistema de ficheros: HDFS.</p></li>
-<li><p>Datalakes/Datawarehouses: Databrics, Snowflake.</p></li>
-<li><p>Bases de datos: Apache Cassandra, Apache HBase.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Análisis y tratamiento de los datos: Apache Hadoop MapReduce, Apache Spark, Apache Flink.</p>
-<ul>
-<li><p>SQL: Apache Hive, Apache Pig.</p></li>
-<li><p>ML: Apache Mahout, Apache Spark MLLib.</p></li>
-<li><p>Orquestación: Apache Zookeeper.</p></li>
-</ul>
-</li>
-<li><p>Presentación: Kibana, Grafana.</p></li>
-<li><p>Gestión:</p>
-<ul>
-<li><p>Seguridad: Apache Zookeeper.</p></li>
-<li><p>Gobernanza: Apache Atlas.</p></li>
-</ul>
-</li>
+<li><p>La ciencia de datos es un campo académico interdisciplinario.</p></li>
+<li><p>Utiliza elementos de estadística, computación y sistemas científicos para obtener, analizar y presentar datos en forma de información y conocimiento.</p></li>
+<li><p>Para ello se hace con un conjunto heterogéneo de métodos y procesos que la pueden convertir, según la Wikipedia <span id="id3">[]</span> en <em>una ciencia, un paradigma de investigación, un método de investigación, una disciplina, un flujo de trabajo o una profesión</em>.​</p></li>
 </ul>
 </section>
-<section id="bdas-berkeley-data-analytics-stack">
-<h2>BDAS - Berkeley Data Analytics Stack<a class="headerlink" href="#bdas-berkeley-data-analytics-stack" title="Permalink to this heading">#</a></h2>
+<section id="mineria-de-datos">
+<h2>Minería de datos<a class="headerlink" href="#mineria-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>BDAS (<em>Berkeley Data Analytics Stack</em>) es un stack de software open source que integra componentes creados por el AMPLab para Big Data, entre ellos, el framework <em>Apache Spark</em>.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://amplab.cs.berkeley.edu/software/">https://amplab.cs.berkeley.edu/software/</a></p></li>
-</ul>
-</li>
+<li><p>La minería de datos (<em>data mining</em>) nació a finales de los años ‘90 cuando las grandes organizaciones ya contaban con una sustancial cantidad de datos.</p></li>
+<li><p>También llamada exploración de datos (<em>knowledge discovery in databases - KDD</em>) es un campo de la estadística y las ciencias de la computación.</p></li>
+<li><p>El objetivo de la minería de datos es descubrir patrones en grandes volúmenes de conjuntos de datos (big data).</p></li>
 </ul>
 <ul class="simple">
-<li><p>Ingestión de datos: Apache Flume, Apache Nifi.</p>
-<ul>
-<li><p>Mensajería: Apache Kafka.</p></li>
-</ul>
-</li>
-<li><p>Almacenamiento:</p>
-<ul>
-<li><p>Gestión de recursos: Apache Mesos, Apache Hadoop YARN.</p></li>
-<li><p>Sistema de ficheros: HDFS, S3, Ceph.</p></li>
-<li><p>Datalakes/Datawarehouses: Alluxio.</p></li>
-<li><p>Bases de datos: Apache Cassandra, Apache HBase.</p></li>
-</ul>
-</li>
+<li><p>Se podría también definir <em>data mining</em> como <em>la aplicación de algoritmos específicos para extraer patrones de los datos</em> (NIST <span id="id4">[<a class="reference internal" href="README.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span>. Pág.26.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Análisis y tratamiento de los datos: Apache Spark.</p>
+<li><p>La minería de datos no solamente necesita conocimientos de estadística y matemática sino además saber como los datos fueron producidos y de que manera se pueden utilizar.</p></li>
+<li><p>En este contexto, a mediados de los 2000 nació la ciencia de datos que juntaba varias disciplinas para poder extraer información:</p>
 <ul>
-<li><p>ML: Apache Spark MLLib.</p></li>
-<li><p>Orquestación: Apache Zookeeper, Apache Airflow.</p></li>
-</ul>
-</li>
-<li><p>Presentación: Google Looker, Microsoft Power BI, Tableau.</p></li>
-<li><p>Gestión:</p>
-<ul>
-<li><p>Seguridad: Apache Zookeeeper.</p></li>
-<li><p>Gobernanza: Apache Atlas.</p></li>
+<li><p>Conocimiento de los datos y procesos.</p></li>
+<li><p>Minería de datos.</p></li>
+<li><p>Estadística.</p></li>
+<li><p>Matemática.</p></li>
+<li><p>Machine Learning.</p></li>
+<li><p>Algoritmos.</p></li>
+<li><p>Sistemas analíticos.</p></li>
+<li><p>Ingeniería de software y sistemas.</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="big-data-stack-alternativo">
-<h2>Big data stack alternativo<a class="headerlink" href="#big-data-stack-alternativo" title="Permalink to this heading">#</a></h2>
+<section id="consideraciones">
+<h2>Consideraciones<a class="headerlink" href="#consideraciones" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Este es un ejemplo de un stack basado en un artículo de la empresa <em>dbt</em>.</p>
-<ul>
-<li><p><a class="reference external" href="https://blog.getdbt.com/future-of-the-modern-data-stack/">https://blog.getdbt.com/future-of-the-modern-data-stack/</a>.</p></li>
-</ul>
-</li>
+<li><p>Algunas consideraciones a tener en cuenta con respecto a la ciencia de datos son:</p></li>
 </ul>
 <ul class="simple">
-<li><p>Ingestión de datos: Fivetran, Stitch.</p></li>
-<li><p>Almacenamiento:</p>
-<ul>
-<li><p>Gestión de recursos: Apache Hadoop YARN.</p></li>
-<li><p>Sistema de ficheros: S3, Kubernetes.</p></li>
-<li><p>Datalakes/Datawarehouses: Snowflake, Databricks, Bigquery, Redshift.</p></li>
-</ul>
-</li>
-<li><p>Análisis y tratamiento de los datos: dbt.</p></li>
-<li><p>Presentación: Looker, Mode, Periscope.</p></li>
-</ul>
-</section>
-<section id="big-data-cloud">
-<h2>Big data cloud<a class="headerlink" href="#big-data-cloud" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>En esta comparación de productos para big data y análisis se presentan las soluciones que ofrecen los tres grandes actores del mundo de servicios <em>cloud computing</em>.</p></li>
+<li><p>Se requiere un muestreo cuidadoso de los datos para garantizar que La población esta siendo representada adecuadamente. En la ciencia de datos, normalmente todos los datos son procesados y analizados mediante escalamiento.</p></li>
+<li><p>En algunos problemas, se supone que, en el gran volumen de datos, los pequeños errores tenderán a cancelarse; reduciendo o eliminando así la necesidad de limpiar los datos.</p></li>
+<li><p>En grandes conjuntos de datos a veces los algoritmos más simples pueden producir resultados aceptables. Esto ha llevado al debate sobre si más datos son superiores a mejores algoritmos.</p></li>
+<li><p>Muchas hipótesis pueden ser difíciles de analizar, por lo que la ciencia de datos también se centra en determinar una pregunta sustituta que no aborda la hipótesis original, pero cuyo resultado analítico puede aplicarse a la misión original.</p></li>
+<li><p>La riqueza de las fuentes de datos ha aumentado la necesidad de explorar datos para determinar qué podría ser de utilidad ya que puede conducir al descubrimiento de ideas o a la formulación de hipótesis para probar.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Ingestión de datos: Amazon Kinesis/Glue, Azure Synapse Analytics, Google Dataflow.</p></li>
-<li><p>Almacenamiento:</p>
-<ul>
-<li><p>AWS Simple Storage Service (S3), Azure Blob Storage, Google Cloud Storage.</p></li>
-</ul>
-</li>
-<li><p>Datalakes/Datawarehouses:</p>
-<ul>
-<li><p>Amazon Redshift, Azure SQL Data Warehouse (SQL DW), Google BigQuery.</p></li>
-</ul>
-</li>
-<li><p>Bases de datos:</p>
-<ul>
-<li><p>Amazon Relational Database Service, Azure SQL Database, Google Cloud SQL.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Análisis y tratamiento de los datos:</p>
-<ul>
-<li><p>Amazon Kinesis, Azure Synapse Analytics, Google Cloud Smart Analytics Platform.</p></li>
-<li><p>ML: Amazon SageMaker, Azure Machine Learning, Google Cloud Machine Learning Engine.</p></li>
-</ul>
-</li>
-<li><p>Presentación:</p>
-<ul>
-<li><p>Amazon OpenSearch, Microsoft Power BI, Google Looker.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Amazon EMR es un servicio gestionado que permite procesar y analizar datos utilizando herramientas y frameworks como Apache Hadoop, Spark, HBase, y Presto.</p>
-<ul>
-<li><p><a class="reference external" href="https://aws.amazon.com/es/emr/">https://aws.amazon.com/es/emr/</a></p></li>
-</ul>
-</li>
-<li><p>Azure HDInsight es una solución completa de Apache Hadoop, Spark, R Server, HBase y Storm en la nube.</p>
-<ul>
-<li><p><a class="reference external" href="https://azure.microsoft.com/es-es/services/hdinsight/">https://azure.microsoft.com/es-es/services/hdinsight/</a></p></li>
-</ul>
-</li>
-<li><p>Google Dataproc es un servicio totalmente gestionado y escalable que permite ejecutar Apache Spark, Apache Flink, y más de 30 herramientas y frameworks de código abierto.</p>
-<ul>
-<li><p><a class="reference external" href="https://cloud.google.com/dataproc">https://cloud.google.com/dataproc</a></p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Enlaces:</p>
-<ul>
-<li><p><a class="reference external" href="https://aws.amazon.com/es/big-data/datalakes-and-analytics/">https://aws.amazon.com/es/big-data/datalakes-and-analytics/</a>.</p></li>
-<li><p><a class="reference external" href="https://aws.amazon.com/es/architecture/analytics-big-data/">https://aws.amazon.com/es/architecture/analytics-big-data/</a></p></li>
-<li><p><a class="reference external" href="https://azure.microsoft.com/es-es/services/">https://azure.microsoft.com/es-es/services/</a>.</p></li>
-<li><p><a class="reference external" href="https://cloud.google.com/solutions/smart-analytics">https://cloud.google.com/solutions/smart-analytics</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Arquitectura Big data en Amazon</p>
-<ul>
-<li><p>Modern Data Analytics Reference Architecture on AWS.</p></li>
-<li><p><a class="reference external" href="https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/modern-data-analytics-using-lake-house-ra.pdf">https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/modern-data-analytics-using-lake-house-ra.pdf</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Ejemplo Azure</p>
-<ul>
-<li><p>Análisis de un extremo a otro con Azure Synapse.</p></li>
-<li><p><a class="reference external" href="https://docs.microsoft.com/es-es/azure/architecture/example-scenario/dataplate2e/data-platform-end-to-end">https://docs.microsoft.com/es-es/azure/architecture/example-scenario/dataplate2e/data-platform-end-to-end</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Ejemplo Google</p>
-<ul>
-<li><p>How Renault solved scaling and cost challenges on its Industrial Data platform using BigQuery and Dataflow.</p></li>
-<li><p><a class="reference external" href="https://cloud.google.com/blog/topics/manufacturing/renault-improves-its-industrial-data-platform-with-bigquery">https://cloud.google.com/blog/topics/manufacturing/renault-improves-its-industrial-data-platform-with-bigquery</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="machine-learning">
-<h2>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Si bien se viene estudiando la forma de hacer que las máquinas puedan aprender por si solas desde 1970 aproximadamente, no fue hasta 1983 cuando se publicó <em>Machine learning: The AI Apprioach</em>, que la disciplina de <em>Machine learning</em> tomó el impulso luego sistematizado en el libro de T. Mitchell <em>Machine Learning</em> (1997).</p></li>
-</ul>
-<p>Fuente: <span id="id1">[<a class="reference internal" href="intro.html#id6" title="Miroslav Kubat. A Simple Machine-Learning Task, pages 1–18. Springer International Publishing, Cham, 2017. URL: https://doi.org/10.1007/978-3-319-63913-0_1, doi:10.1007/978-3-319-63913-0_1.">Kub17</a>]</span></p>
-</section>
-<section id="tensorflow">
-<h2>TensorFlow<a class="headerlink" href="#tensorflow" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>El aprendizaje automático es la práctica de ayudar al software a realizar una tarea sin programación o reglas explícitas.</p></li>
-<li><p>Con la programación tradicional de computadoras, un programador especifica las reglas que debe usar la computadora.</p>
-<ul>
-<li><p>Extraído de TensorFlow: <a class="reference external" href="https://www.tensorflow.org/about">https://www.tensorflow.org/about</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Sin embargo, ML requiere una mentalidad diferente.</p></li>
-<li><p>El aprendizaje automático del mundo real se centra mucho más en el análisis de datos que en la codificación.</p></li>
-<li><p>Los programadores proporcionan un conjunto de ejemplos y la computadora aprende patrones a partir de los datos.</p></li>
-<li><p>Se puede entender el aprendizaje automático como “programación con datos”.</p></li>
-</ul>
-</section>
-<section id="pasos-en-ml">
-<h2>Pasos en ML<a class="headerlink" href="#pasos-en-ml" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Paso 1: recopilar datos.</p></li>
-<li><p>Paso 2: Explorar los datos.</p></li>
-<li><p>Paso 2.5: Eligir un modelo.</p></li>
-<li><p>Paso 3: Preparar los datos.</p></li>
-<li><p>Paso 4: construir, entrenar y evaluar el modelo.</p></li>
-<li><p>Paso 5: Sintonizar los hiperparámetros.</p></li>
-<li><p>Paso 6: Implementar el modelo.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Extraído de Maching Learning:</p></li>
-<li><p><a class="reference external" href="https://developers.google.com/machine-learning/guides/text-classification/">https://developers.google.com/machine-learning/guides/text-classification/</a>.</p></li>
-</ul>
-</section>
-<section id="redes-neuronales">
-<h2>Redes neuronales<a class="headerlink" href="#redes-neuronales" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es un tipo de modelo que se puede entrenar para reconocer patrones.</p></li>
-<li><p>Está compuesto por capas, incluidas las de entrada y salida, y al menos una capa oculta.</p></li>
-<li><p>Las neuronas de cada capa aprenden representaciones cada vez más abstractas de los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Extraído de TensorFlow: <a class="reference external" href="https://www.tensorflow.org/about">https://www.tensorflow.org/about</a>.</p></li>
-</ul>
-</section>
-<section id="entrenar-una-red-neuronal">
-<h2>Entrenar una red neuronal<a class="headerlink" href="#entrenar-una-red-neuronal" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Las redes neuronales se entrenan por descenso de gradiente.</p></li>
-<li><p>Los pesos en cada capa comienzan con valores aleatorios, y estos se mejoran iterativamente con el tiempo para hacer que la red sea más precisa.</p></li>
-<li><p>Se usa una función de pérdida para cuantificar qué tan imprecisa es la red, y se usa un procedimiento llamado retropropagación para determinar si se debe aumentar o disminuir cada peso para reducir la pérdida.</p></li>
-</ul>
-</section>
-<section id="apache-mllib">
-<h2>Apache MLlib<a class="headerlink" href="#apache-mllib" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>MLlib es la biblioteca escalable de aprendizaje automático (ML) de Apache Spark.</p></li>
-<li><p>Su objetivo es hacer que el aprendizaje automático práctico sea escalable y fácil.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/mllib/">https://spark.apache.org/mllib/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Las utilidades de flujo de trabajo de ML incluyen:</p>
-<ul>
-<li><p>Algoritmos de ML: algoritmos de aprendizaje comunes como clasificación, regresión, agrupamiento y filtrado colaborativo.</p></li>
-<li><p>Caracterización: extracción de características, transformación, reducción de dimensionalidad y selección.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/latest/ml-guide.html">https://spark.apache.org/docs/latest/ml-guide.html</a>.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Pipelines:</p>
-<ul>
-<li><p>Incluye herramientas para construir, evaluar y ajustar ML Pipelines.</p></li>
-</ul>
-</li>
-<li><p>Persistencia:</p>
-<ul>
-<li><p>Guarda y carga algoritmos, modelos y Pipelines.</p></li>
-</ul>
-</li>
-<li><p>Utilidades:</p>
-<ul>
-<li><p>Disponibles para álgebra lineal, estadística, manejo de datos, etc.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="lenguajes-soportados-por-mllib">
-<h2>Lenguajes soportados por MLlib<a class="headerlink" href="#lenguajes-soportados-por-mllib" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>MLlib utiliza las API de Spark e interactúa con NumPy en las bibliotecas de Python y R.</p></li>
-<li><p>Puede usar cualquier fuente de datos de Hadoop (por ejemplo, HDFS, HBase o archivos locales), lo que facilita la conexión a los flujos de trabajo de Hadoop.</p></li>
-</ul>
-</section>
-<section id="desempeno-de-mllib">
-<h2>Desempeño de MLlib<a class="headerlink" href="#desempeno-de-mllib" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Algoritmos de alta calidad, 100 veces más rápidos que MapReduce.</p></li>
-<li><p>Spark sobresale en el cálculo iterativo, lo que permite que MLlib se ejecute rápidamente.</p></li>
-<li><p>MLlib contiene algoritmos de alta calidad que aprovechan la iteración y pueden generar mejores resultados que las aproximaciones de un solo paso que a veces se usan en MapReduce.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Se puede ejecutar Spark con su modo de clúster independiente, en EC2, en Hadoop YARN, en Mesos o en Kubernetes.</p></li>
-<li><p>Acceso a datos en HDFS, Apache Cassandra, Apache HBase, Apache Hive y cientos de otras fuentes de datos.</p></li>
-</ul>
-</section>
-<section id="estadisticas-en-mllib">
-<h2>Estadísticas en MLlib<a class="headerlink" href="#estadisticas-en-mllib" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Correlación:</p>
-<ul>
-<li><p>Los métodos admitidos actualmente son la correlación de Pearson y Spearman.</p></li>
-</ul>
-</li>
-<li><p>Prueba de hipótesis:</p>
-<ul>
-<li><p><a class="reference external" href="http://spark.ml">spark.ml</a> actualmente es compatible con las pruebas de independencia chi-cuadrado (<em>Chi-squared - χ2</em>) de Pearson.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Resumidor (<em>summarizer</em>):</p>
-<ul>
-<li><p>Proporciona estadísticas de resumen de columnas vectoriales para el <em>dataframe</em> a través de <em>Summarizer</em>.</p></li>
-<li><p>Las métricas disponibles son el máximo, el mínimo, la media, la suma, la varianza, la desviación estándar y la cantidad de valores distintos de cero por columna, así como el recuento total.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="estadisticas-correlacion">
-<h2>Estadísticas: correlación<a class="headerlink" href="#estadisticas-correlacion" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>La correlación calcula la matriz de correlación para el conjunto de datos de vectores de entrada utilizando el método especificado.</p></li>
-<li><p>La salida será un <em>dataframe</em> que contiene la matriz de correlación de la columna de vectores.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de correlación en Python </span>
-<span class="c1"># Fuente:</span>
-<span class="c1"># https://spark.apache.org/docs/latest/ml-statistics.html</span>
-
-<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.stat</span> <span class="kn">import</span> <span class="n">Correlation</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)]),),</span>
-        <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),),</span>
-        <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]),),</span>
-        <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]),)]</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">])</span>
-
-<span class="n">r1</span> <span class="o">=</span> <span class="n">Correlation</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pearson correlation matrix:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-
-<span class="n">r2</span> <span class="o">=</span> <span class="n">Correlation</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="s2">&quot;spearman&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spearman correlation matrix:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r2</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Ejemplo de correlación en Python </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Fuente:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># https://spark.apache.org/docs/latest/ml-statistics.html</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">pyspark.ml.stat</span> <span class="kn">import</span> <span class="n">Correlation</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)]),),</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),),</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]),),</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]),)]</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyspark&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>El código fuente del ejemplo completo se encuentra en <em>examples/src/main/python/ml/correlation_example.py</em> en el repositorio de Spark.</p></li>
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/latest/ml-guide.html">https://spark.apache.org/docs/latest/ml-guide.html</a>.</p></li>
-</ul>
-</section>
-<section id="tacticas-adversarias-en-ml">
-<h2>Tácticas adversarias en ML<a class="headerlink" href="#tacticas-adversarias-en-ml" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Adversarial Machine Learning Threat Matrix es un framework abierto centrado en la industria para empoderar a los analistas de seguridad para detectar, responder y remediar amenazas contra sistemas de ML.</p></li>
-<li><p>Recientemente este framework se ha ampliado conviertiéndose en MITRE ATLAS, Adversarial Threat Landscape for Artificial-Intelligence Systems.</p></li>
-</ul>
-<ul class="simple">
-<li><p>MITRE ATLAS, Adversarial Threat Landscape for Artificial-Intelligence Systems, es una base de conocimiento de tácticas adversarias, técnicas y estudios de casos para sistemas de aprendizaje automático (ML) basados en observaciones del mundo real, demostraciones de equipos rojos y grupos de seguridad de ML, y el estado de lo posible a partir de la investigación académica.</p></li>
-<li><p>ATLAS sigue el modelo del marco MITRE ATT&amp;CK® y sus tácticas y técnicas son complementarias a las de ATT&amp;CK.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://atlas.mitre.org/">https://atlas.mitre.org/</a></p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Estas tácticas adversarias pueden ser:</p>
-<ul>
-<li><p>Hacer que el sistema ML aprenda algo incorrecto (envenenamiento de datos),</p></li>
-<li><p>Hacer algo incorrecto (ataques de evasión), o</p></li>
-<li><p>Revelar lo incorrecto (inversión del modelo).</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Extraído de: <a class="reference external" href="https://insights.sei.cmu.edu/cert/2020/10/adversarial-ml-threat-matrix-adversarial-tactics-techniques-and-common-knowledge-of-machine-learning.html">SEI</a>.</p></li>
-<li><p>Repositorio Github:</p></li>
-<li><p><a class="github reference external" href="https://github.com/mitre/advmlthreatmatrix">mitre/advmlthreatmatrix</a>.</p></li>
-</ul>
-</section>
-<section id="tutorial-mllib">
-<h2>Tutorial MLlib<a class="headerlink" href="#tutorial-mllib" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Práctica: Aplicaciones de ML en datasets.</p></li>
-<li><p><a class="reference external" href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb">https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb</a></p></li>
-<li><p><a class="reference external" href="https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986">https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986</a></p></li>
-<li><p><a class="reference external" href="https://sparkbyexamples.com/">https://sparkbyexamples.com/</a></p></li>
+<li><p>Fuente: NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id5">[<a class="reference internal" href="README.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span>. Pág.27.</p></li>
 </ul>
 </section>
 </section>
@@ -873,11 +509,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="BigData-es007sparkMLlib.html"
+       href="BigData-es008.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial Spark</p>
+        <p class="prev-next-title">Big Data stacks y Machine Learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -896,23 +532,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-stacks">Big data stacks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-stack">Apache Hadoop Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bdas-berkeley-data-analytics-stack">BDAS - Berkeley Data Analytics Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-stack-alternativo">Big data stack alternativo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">Machine Learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neuronales">Redes neuronales</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-una-red-neuronal">Entrenar una red neuronal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mllib">Apache MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-ciencia-de-datos">Introducción a la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-de-la-ciencia-de-datos">Alcance de la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mineria-de-datos">Minería de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a></li>
 </ul>
   </nav></div>
 

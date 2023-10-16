@@ -4,7 +4,7 @@
 # Introducción a Big Data
 ## Apuntes del curso
 
-Introducción a Big Data. Apuntes del curso por Marcelo Horacio Fortino. Versión 2.0.0. Octubre 2023.    
+Introducción a Big Data. Apuntes del curso por Marcelo Horacio Fortino. Versión 2.0.1. Octubre 2023.    
 
 Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <http://creativecommons.org/licenses/by-sa/4.0/>. Puede hallar permisos más allá de los concedidos con esta licencia en <https://fortinux.com>. Sugerencias y comentarios a <info@fortinux.com>.     
 
@@ -52,8 +52,13 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
 - Column stores: HBase + Cassandra.
 - Big Data analytics: Spark, Storm.
 - Elastic Stack: Logstash, ElasticSearch y Kibana.
-- Datascience
 - Técnicas de Machine learning:
 - Spark (MLlib, Streaming).
 - TensorFlow.    
 
+## Capítulos
+```{tableofcontents}
+```
+## Bibliografía
+```{bibliography}
+```
