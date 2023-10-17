@@ -55,4 +55,7 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
 - Técnicas de Machine learning:
 - Spark (MLlib, Streaming).
 - TensorFlow.    
-
+    
+## Bibliografía
+```{bibliography}
+```  
