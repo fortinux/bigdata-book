@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Ingesta y almacenamiento de datos &#8212; Curso Introducción a Big Data</title>
   
@@ -176,8 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data stacks y Machine Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es007sparkMLlib.html">Tutorial Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
 </ul>
 
     </div>
@@ -380,6 +381,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistencia-poliglota">Persistencia políglota</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">Herramientas de almacenamiento para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hdfs">HDFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ozone">Apache Ozone</a></li>
@@ -435,25 +437,24 @@ document.write(`
 <section id="procesos-en-big-data">
 <h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Existen varias metodologías disponibles en el mercado para la recopilación, almacenamiento, consulta y visualización de datos.</p></li>
-<li><p>Provienen del mundo de la minería de datos, y entre ellas se pueden mencionar KDD (<em>Knowledge Discovery in Databases</em>), SEMMA y CRISP-DM.</p></li>
-<li><p>CRISP-DM (<em>Cross Industry Standard Process for Data Mining</em>) por ejemplo, es un proceso iterativo centrado en el negocio.</p></li>
-<li><p>Sus fases son: comprensión del negocio, Comprensión de los datos, Preparación de los datos, Fase de Modelado, Evaluación e Implantación.</p>
+<li><p>Existen varias metodologías y modelos disponibles en el mercado para la recopilación, almacenamiento, consulta, visualización de datos, y su posterior acción.</p></li>
+<li><p>Provienen del mundo de la minería de datos y de la comunidad KDD (<em>Knowledge Discovery in Databases</em>).</p></li>
+<li><p>CRISP-DM (<em>Cross Industry Standard Process for Data Mining</em>) por ejemplo, es un modelo de procesos estandarizado e iterativo centrado en el negocio.</p></li>
+<li><p>Fue desarrollado para ser distribuido libremente y promueve las mejores prácticas en minería de datos. Más información en la sección <a class="reference internal" href="BigData-es007.html#content-references-crisp-dm"><span class="std std-ref">Procesos en la ciencia de datos</span></a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para el NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id1">[<a class="reference internal" href="intro.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span> (Pág.29), el ciclo de vida del análisis de los datos se compone de cinco fases:</p>
 <ul>
-<li><p>Fuente: Metodología para el Desarrollo de proyectos en Minería de Datos CRISP-DM</p></li>
-<li><p><a class="reference external" href="http://www.oldemarrodriguez.com/yahoo_site_admin/assets/docs/Documento_CRISP-DM.2385037.pdf">http://www.oldemarrodriguez.com/yahoo_site_admin/assets/docs/Documento_CRISP-DM.2385037.pdf</a>.</p></li>
+<li><p>Captura de los datos en su formato original. Ingestión de datos (<em>Data Ingestion</em>).</p></li>
+<li><p>Preparación y modelado. Almacenamiento de datos (<em>Data Storage</em>).</p></li>
+<li><p>Análisis y consulta de datos (<em>Data Processing / Data Query</em>).</p></li>
+<li><p>Visualización de los datos. (<em>Data Visualization</em>).</p></li>
+<li><p>Acción con el uso de los mismos.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Para proyectos de Big Data los procesos básicamente se pueden dividir en cuatro fases:</p>
-<ul>
-<li><p>Ingestión de datos (<em>Data Ingestion</em>).</p></li>
-<li><p>Almacenamiento de datos (<em>Data Storage</em>).</p></li>
-<li><p>Procesamiento, análisis y consulta de datos (<em>Data Processing / Data Query</em>).</p></li>
-<li><p>Visalización de datos (<em>Data Visualization</em>).</p></li>
-</ul>
-</li>
+<li><p>Veremos a continuación las fases una a una más en detalle.</p></li>
 </ul>
 </section>
 <section id="ingestion-de-datos">
@@ -506,7 +507,7 @@ document.write(`
 </ul>
 </li>
 </ul>
-<p>Fuente: <span id="id1">[<a class="reference internal" href="intro.html#id7" title="Edd. Dumbill. Planning for Big Data: A CIO's Handbook to the Changing Data Landscape. O’Reilly Media, Inc., 2012.">Dum12</a>]</span></p>
+<p>Fuente: <span id="id2">[<a class="reference internal" href="intro.html#id7" title="Edd. Dumbill. Planning for Big Data: A CIO's Handbook to the Changing Data Landscape. O’Reilly Media, Inc., 2012.">Dum12</a>]</span></p>
 </section>
 <section id="buenas-practicas-en-ingestion-de-datos">
 <h2>Buenas prácticas en ingestión de datos<a class="headerlink" href="#buenas-practicas-en-ingestion-de-datos" title="Permalink to this heading">#</a></h2>
@@ -757,43 +758,31 @@ document.write(`
 <li><p>Relatividad: cada atributo en una definición de tipo está relacionado con uno y solo un tipo con el mismo nombre, mientras que cada tipo puede corresponder con varios atributos en otros tipos.</p></li>
 <li><p>Convertibilidad: Cada definición de tipo es única: no hay definiciones de tipo que lleven el mismo nombre o la misma colección de atributos.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>database warehouse.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">database</span> <span class="n">warehouse</span><span class="o">.</span>
 
-base description (A16).
-type product kind (A8) = description.
+<span class="n">base</span> <span class="n">description</span> <span class="p">(</span><span class="n">A16</span><span class="p">)</span><span class="o">.</span>
+<span class="nb">type</span> <span class="n">product</span> <span class="n">kind</span> <span class="p">(</span><span class="n">A8</span><span class="p">)</span> <span class="o">=</span> <span class="n">description</span><span class="o">.</span>
 
-base color (A10).
-base stock (I8).
-base price (R4,2).
-type product (I7) = description, color, stock, price, product kind.
+<span class="n">base</span> <span class="n">color</span> <span class="p">(</span><span class="n">A10</span><span class="p">)</span><span class="o">.</span>
+<span class="n">base</span> <span class="n">stock</span> <span class="p">(</span><span class="n">I8</span><span class="p">)</span><span class="o">.</span>
+<span class="n">base</span> <span class="n">price</span> <span class="p">(</span><span class="n">R4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span>
+<span class="nb">type</span> <span class="n">product</span> <span class="p">(</span><span class="n">I7</span><span class="p">)</span> <span class="o">=</span> <span class="n">description</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">stock</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">product</span> <span class="n">kind</span><span class="o">.</span>
 
-base company name (A20).
-base address (A20).
-base zip (A6).
-base city (A16).
-type supplier (A8) = company name, address, zip, city.
+<span class="n">base</span> <span class="n">company</span> <span class="n">name</span> <span class="p">(</span><span class="n">A20</span><span class="p">)</span><span class="o">.</span>
+<span class="n">base</span> <span class="n">address</span> <span class="p">(</span><span class="n">A20</span><span class="p">)</span><span class="o">.</span>
+<span class="n">base</span> <span class="nb">zip</span> <span class="p">(</span><span class="n">A6</span><span class="p">)</span><span class="o">.</span>
+<span class="n">base</span> <span class="n">city</span> <span class="p">(</span><span class="n">A16</span><span class="p">)</span><span class="o">.</span>
+<span class="nb">type</span> <span class="n">supplier</span> <span class="p">(</span><span class="n">A8</span><span class="p">)</span> <span class="o">=</span> <span class="n">company</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="nb">zip</span><span class="p">,</span> <span class="n">city</span><span class="o">.</span>
 
-type purchased product (A9) = supplier, product, price.
+<span class="nb">type</span> <span class="n">purchased</span> <span class="n">product</span> <span class="p">(</span><span class="n">A9</span><span class="p">)</span> <span class="o">=</span> <span class="n">supplier</span><span class="p">,</span> <span class="n">product</span><span class="p">,</span> <span class="n">price</span><span class="o">.</span>
 
-…
+<span class="o">...</span>
 
-base prepaid (R4,2).
-type sale (A7) = sold product, quantity, price, customer, date, prepaid.
+<span class="n">base</span> <span class="n">prepaid</span> <span class="p">(</span><span class="n">R4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span>
+<span class="nb">type</span> <span class="n">sale</span> <span class="p">(</span><span class="n">A7</span><span class="p">)</span> <span class="o">=</span> <span class="n">sold</span> <span class="n">product</span><span class="p">,</span> <span class="n">quantity</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">customer</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">prepaid</span><span class="o">.</span>
 
-end.
+<span class="n">end</span><span class="o">.</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In [1], line 19
-    …
-    ^
-SyntaxError: invalid character &#39;…&#39; (U+2026)
-</pre></div>
-</div>
-</div>
 </div>
 <ul class="simple">
 <li><p>Artículo Semantic (Big) Data Analysis: An Extensive Literature Review.</p>
@@ -810,6 +799,18 @@ SyntaxError: invalid character &#39;…&#39; (U+2026)
 <li><p>Varias posibles soluciones pueden ayudar a resolver este problema.</p></li>
 <li><p>Encontrar la solución de almacenamiento más eficiente es el objetivo de este paso.</p></li>
 </ul>
+<ul class="simple">
+<li><p>Dependiendo de las funciones y características del <em>dataset</em> los datos se pueden almacenar de la siguiente forma:</p>
+<ul>
+<li><p>Almacén de datos (<em>Data warehouse</em>) para el almacenamiento persistente.</p></li>
+<li><p><em>Big Data volume system</em> para los datos originales antes de la preparación.</p></li>
+<li><p><em>Big Data velocity application</em> durante la recoleción, preparación y análisis al vuelo.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="persistencia-poliglota">
+<h2>Persistencia políglota<a class="headerlink" href="#persistencia-poliglota" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Se necesitan diferentes tipos de bases de datos para manejar las diferentes variedades de datos, pero el uso de las mismas crea una sobrecarga en el sistema.</p></li>
 <li><p>Es por este motivo que hay un nuevo concepto en el mundo de las bases de datos: la persistencia políglota. Es la idea de usar múltiples bases de datos para impulsar una sola aplicación.</p>
@@ -1496,6 +1497,7 @@ SyntaxError: invalid character &#39;…&#39; (U+2026)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistencia-poliglota">Persistencia políglota</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">Herramientas de almacenamiento para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hdfs">HDFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ozone">Apache Ozone</a></li>
