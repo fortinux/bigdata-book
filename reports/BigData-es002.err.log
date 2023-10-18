@@ -35,7 +35,7 @@ type supplier (A8) = company name, address, zip, city.
 
 type purchased product (A9) = supplier, product, price.
 
-…
+...
 
 base prepaid (R4,2).
 type sale (A7) = sold product, quantity, price, customer, date, prepaid.
@@ -43,10 +43,10 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.
 end.
 ------------------
 
-[0;36m  Cell [0;32mIn [1], line 19[0;36m[0m
-[0;31m    …[0m
-[0m    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid character '…' (U+2026)
+[0;36m  Cell [0;32mIn [1], line 1[0;36m[0m
+[0;31m    database warehouse.[0m
+[0m             ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid character '…' (U+2026) (656204593.py, line 19)
+SyntaxError: invalid syntax (1517809641.py, line 1)
 
