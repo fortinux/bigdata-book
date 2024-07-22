@@ -169,13 +169,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -376,7 +375,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-stack">Apache Hadoop Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bdas-berkeley-data-analytics-stack">BDAS - Berkeley Data Analytics Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-stack-alternativo">Big data stack alternativo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloudera">Cloudera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
@@ -388,6 +389,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caldera-atlas">Caldera + Atlas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
 </ul>
             </nav>
@@ -440,7 +442,7 @@ document.write(`
 <li><p>Orquestación: Apache Zookeeper.</p></li>
 </ul>
 </li>
-<li><p>Presentación: Kibana, Grafana.</p></li>
+<li><p>Presentación: Apache Superset, Kibana.</p></li>
 <li><p>Gestión:</p>
 <ul>
 <li><p>Seguridad: Apache Zookeeper.</p></li>
@@ -454,7 +456,7 @@ document.write(`
 <ul class="simple">
 <li><p>BDAS (<em>Berkeley Data Analytics Stack</em>) es un stack de software open source que integra componentes creados por el AMPLab para Big Data, entre ellos, el framework <em>Apache Spark</em>.</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://amplab.cs.berkeley.edu/software/">https://amplab.cs.berkeley.edu/software/</a></p></li>
+<li><p>Fuente: <a class="reference external" href="https://amplab.cs.berkeley.edu/software/">https://amplab.cs.berkeley.edu/software/</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -467,8 +469,8 @@ document.write(`
 <li><p>Almacenamiento:</p>
 <ul>
 <li><p>Gestión de recursos: Apache Mesos, Apache Hadoop YARN.</p></li>
-<li><p>Sistema de ficheros: HDFS, S3, Ceph.</p></li>
-<li><p>Datalakes/Datawarehouses: Alluxio.</p></li>
+<li><p>Sistema de ficheros: HDFS.</p></li>
+<li><p>Almacenamiento: Alluxio, S3, Ceph.</p></li>
 <li><p>Bases de datos: Apache Cassandra, Apache HBase.</p></li>
 </ul>
 </li>
@@ -509,6 +511,18 @@ document.write(`
 </li>
 <li><p>Análisis y tratamiento de los datos: dbt.</p></li>
 <li><p>Presentación: Looker, Mode, Periscope.</p></li>
+</ul>
+</section>
+<section id="cloudera">
+<h2>Cloudera<a class="headerlink" href="#cloudera" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Cloudera es una empresa de software que provee una plataforma de Big Data para análisis de datos, ML e inteligencia artificial.</p></li>
+<li><p>La plataforma CDP (<em>Cloudera Data Platform</em>) está basada en Apache Hadoop e integra las aplicaciones más populares de ese ecosistema en una única solución que se puede instalar <em>on premises</em> o en la nube (Amazon, Azure, Google Cloud).</p></li>
+<li><p>Los fundadores de Cloudera fueron de los primeros desarrolladores de Hadoop que ofrecieron una solución comercial basada en este software.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sitio web: <a class="reference external" href="https://www.cloudera.com/">https://www.cloudera.com/</a>.</p></li>
+<li><p>Tutoriales y documentación: <a class="reference external" href="https://www.cloudera.com/services-and-support/tutorials.html">https://www.cloudera.com/services-and-support/tutorials.html</a>.</p></li>
 </ul>
 </section>
 <section id="big-data-cloud">
@@ -597,6 +611,28 @@ document.write(`
 <li><p><a class="reference external" href="https://cloud.google.com/blog/topics/manufacturing/renault-improves-its-industrial-data-platform-with-bigquery">https://cloud.google.com/blog/topics/manufacturing/renault-improves-its-industrial-data-platform-with-bigquery</a>.</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="infraestructura-de-prueba-de-big-data-bdti">
+<h2>Infraestructura de prueba de Big Data (BDTI)<a class="headerlink" href="#infraestructura-de-prueba-de-big-data-bdti" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La Infraestructura de prueba de Big Data (BDTI) es un <em>stack</em> analítico realizado con software libre y de fuente abierta gratuito listo para usar que se ofrece a todas las administraciones públicas europeas para experimentar con herramientas de código abierto y fomentar la reutilización de datos del sector público.</p></li>
+<li><p>Ofrece además un curso también gratuito y recursos para poder aprender a implementar soluciones de Big Data en todas las administraciones europeas.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La oferta de servicios de BDTI está organizada en las siguientes categorías:</p>
+<ul>
+<li><p>Bases de datos (PostgreSQL, MongoDB, Virtuoso).</p></li>
+<li><p>Lago de datos (MinIO).</p></li>
+<li><p>Entornos de desarrollo (JupyterLab, Rstudio, KNIME, H20).</p></li>
+<li><p>Procesamiento avanzado (Apache Spark, Elasticsearch, Kibana).</p></li>
+<li><p>Visualización (Apache Superset, Metabase).</p></li>
+<li><p>Orquestación (Apache Airflow, MageAI).</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://big-data-test-infrastructure.ec.europa.eu/index_en">https://big-data-test-infrastructure.ec.europa.eu/index_en</a>.</p></li>
 </ul>
 </section>
 <section id="machine-learning">
@@ -823,6 +859,33 @@ document.write(`
 <li><p><a class="github reference external" href="https://github.com/mitre/advmlthreatmatrix">mitre/advmlthreatmatrix</a>.</p></li>
 </ul>
 </section>
+<section id="caldera-atlas">
+<h2>Caldera + Atlas<a class="headerlink" href="#caldera-atlas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Caldera + Atlas es una solución que une varios proyectos y los plugins de MITRE ATLAS™ en la imagen de Docker MITRE CALDERA™.</p></li>
+<li><p>Esta solución facilita la emulación de adversarios y red-teaming en sistemas de machine learning - ML.</p></li>
+<li><p>Provee además muestras de servicios y ambientes de ML para testing.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sus componentes son:</p></li>
+</ul>
+<ul class="simple">
+<li><p>CALDERA: una plataforma de ciberseguridad diseñada para automatizar facilmente la emulación de adversarios, asistencia a <em>red teams</em>,  manuales y automatización de respuesta a incidentes.</p></li>
+<li><p>MITRE ATLAS (<em>The Adversarial Threat Landscape for AI Systems</em>): la base de datos de conocimiento sobre tácticas, técnicas y procedimientos del adversario dirigidos a sistemas de aprendizaje automático - ML.</p></li>
+</ul>
+<ul class="simple">
+<li><p>ATLAS CALDERA Plugins:</p>
+<ul>
+<li><p>Almanac: Agrega el <em>ATLAS Navigator</em> a CALDERA.</p></li>
+<li><p>Arsenal: Implementa las técnicas de ATLAS en CALDERA y provee muestras de adversarios de CALDERA que apuntan a sistemas ML.</p></li>
+<li><p>ML-Vulhub: Colección de scripts para instanciar servicios y modelar ambientes ML.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="github reference external" href="https://github.com/mitre-atlas/caldera-atlas">mitre-atlas/caldera-atlas</a>.</p></li>
+</ul>
+</section>
 <section id="tutorial-mllib">
 <h2>Tutorial MLlib<a class="headerlink" href="#tutorial-mllib" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -901,7 +964,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-stack">Apache Hadoop Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bdas-berkeley-data-analytics-stack">BDAS - Berkeley Data Analytics Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-stack-alternativo">Big data stack alternativo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloudera">Cloudera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning">Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
@@ -913,6 +978,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caldera-atlas">Caldera + Atlas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
 </ul>
   </nav></div>

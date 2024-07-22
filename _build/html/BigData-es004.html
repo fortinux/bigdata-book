@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Bases de datos para Big Data &#8212; Curso Introducción a Big Data</title>
+    <title>Consulta y visualización de datos &#8212; Curso Introducción a Big Data</title>
   
   
   
@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tutorial MongoDB" href="BigData-es004MongoDB.html" />
-    <link rel="prev" title="Consulta y visualización de datos" href="BigData-es003.html" />
+    <link rel="prev" title="Bases de datos para Big Data" href="BigData-es003.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,13 +169,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Consulta y visualización de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -362,7 +361,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bases de datos para Big Data</h1>
+    <h1>Consulta y visualización de datos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -372,27 +371,38 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatos-de-archivos-para-big-data">Formatos de archivos para Big Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-nosql">Bases de datos NoSQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-de-documentos">Bases de datos de documentos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versiones-de-mongodb">Versiones de MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-mongodb">Características de MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-funcionalidades">Principales funcionalidades</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mongodb">Tutorial MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">Bases de datos con pares de valores</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis">Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-de-redis">Arquitectura de Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-redis">Tutorial Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-cassandra">Tutorial Cassandra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hbase">Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-hbase">Características de HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-de-apache-hbase">Usos de Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-de-apache-hbase">Requisitos de Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-graficas">Bases de datos gráficas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j">Neo4j</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-scoop-attic">Apache Scoop (Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-vs-spark">Storm vs. Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-impala">Apache Impala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kudu">Apache Kudu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hive">Apache Hive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-drill">Apache Drill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presto">Presto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trino">Trino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alluxio">Alluxio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prevencion-y-perdida-de-datos">Prevención y pérdida de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticsearch">Elasticsearch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-lucene">Apache Lucene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-solr">Apache Solr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logstash">Logstash</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kibana">Kibana</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-elasticsearch">Tutorial Elasticsearch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-amazon-google-y-microsoft">Salesforce, Amazon, Google y Microsoft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-superset">Apache Superset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
 </ul>
             </nav>
         </div>
@@ -404,543 +414,832 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bases-de-datos-para-big-data">
-<h1>Bases de datos para Big Data<a class="headerlink" href="#bases-de-datos-para-big-data" title="Permalink to this heading">#</a></h1>
-<section id="formatos-de-archivos-para-big-data">
-<h2>Formatos de archivos para Big Data<a class="headerlink" href="#formatos-de-archivos-para-big-data" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="consulta-y-visualizacion-de-datos">
+<h1>Consulta y visualización de datos<a class="headerlink" href="#consulta-y-visualizacion-de-datos" title="Permalink to this heading">#</a></h1>
+<section id="procesos-en-big-data">
+<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Beneficios de elegir un formato apropiado de archivos:</p>
+<li><p>Para el NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id1">[<a class="reference internal" href="intro.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span> (Pág.29), el ciclo de vida del análisis de los datos se compone de cinco fases:</p>
 <ul>
-<li><p>Tiempos de lectura y escritura más veloces.</p></li>
-<li><p>Se pueden dividir en múltiples discos.</p></li>
-<li><p>Compatibilidad con la evolución del esquema.</p></li>
-<li><p>Soporte de compresión.</p></li>
+<li><p>Captura de los datos en su formato original. Ingestión de datos (<em>Data Ingestion</em>).</p></li>
+<li><p>Preparación y modelado. Almacenamiento de datos (<em>Data Storage</em>).</p></li>
+<li><p>Análisis y consulta de datos (<em>Data Processing / Data Query</em>).</p></li>
+<li><p>Visualización de los datos. (<em>Data Visualization</em>).</p></li>
+<li><p>Acción con el uso de los mismos.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Formatos de archivos optimizados para Apache Hadoop:</p>
+<li><p>En este apartado se verán las fases de análisis y consulta de datos, y visualización.</p></li>
+</ul>
+</section>
+<section id="procesamiento-analisis-y-consulta-de-datos">
+<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Los datos recolectados en la fase anterior serán procesados en este paso.</p></li>
+<li><p>Aquí, el sistema de procesamiento de canalización de datos enruta los datos a un destino diferente, clasifica el flujo de datos y es el primer punto donde puede tener lugar el análisis.</p></li>
+<li><p>Esta es la capa donde las consultas (<em>queries</em>) y el proceso analítico activo se ejecutan.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para ello, los analistas emplean diferentes herramientas y estrategias como, por ejemplo:</p>
 <ul>
-<li><p>Apache Optimized Row Columnar (ORC) <a class="reference external" href="https://orc.apache.org/">https://orc.apache.org/</a></p></li>
-<li><p>Apache Parquet (almacenamiento en columnas) <a class="reference external" href="https://parquet.apache.org/documentation/latest/">https://parquet.apache.org/documentation/latest/</a></p></li>
-<li><p>Apache Avro (almacenamiento en fila) <a class="reference external" href="https://avro.apache.org/">https://avro.apache.org/</a></p></li>
-<li><p>Avro es popular en sistemas de streaming con Kafka y Schema Registry gracias a su rendimiento.</p></li>
+<li><p>Modelado estadístico.</p></li>
+<li><p>Algoritmos.</p></li>
+<li><p>Inteligencia artificial (AI).</p></li>
+<li><p>Minería de datos.</p></li>
+<li><p>Aprendizaje automático (ML).</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Otros formatos de archivos:</p>
+<li><p>Las consultas interactivas para el procesamiento de datos son necesarias y es una zona tradicionalmente dominada por desarrolladores expertos en SQL.</p></li>
+<li><p>Con Hadoop, la ingesta de datos, el almacenamiento, el proceso y el análisis se volvieron fáciles de trabajar cuando se cuenta con una gran cantidad de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para análisis fuera de línea, se utiliza un sistema de procesamiento por lotes simple.</p></li>
+<li><p>Apache Sqoop es la aplicación que se encarga de esto.</p></li>
+<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p></li>
+<li><p>Spark por otro lado, es utilizado mayoritariamente para el análisis y procesamiento de datos en tiempo real.</p></li>
+<li><p>Otra herramienta pero menos utilizada es Apache Storm.</p>
 <ul>
-<li><p>JSON <a class="reference external" href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a>.</p></li>
-<li><p>CSV / TSV.</p></li>
-<li><p>XML.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Otras herramientas a considerar útiles en este proceso son:</p></li>
+</ul>
+<ul class="simple">
+<li><p>KNIME hace que la comprensión de datos y el diseño de flujos de trabajo de ciencia de datos y componentes reutilizables sean accesibles para todos.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.knime.com/">https://www.knime.com/</a>.</p></li>
+</ul>
+</li>
+<li><p>Apache Mahout es un framework distribuido de álgebra linear y Scala DSL matemáticamente expresivo.</p>
+<ul>
+<li><p><a class="reference external" href="https://mahout.apache.org/">https://mahout.apache.org/</a>.</p></li>
+</ul>
+</li>
+<li><p>Weka 3: Machine Learning Software en Java para hacer análisis simple.</p>
+<ul>
+<li><p><a class="reference external" href="https://www.cs.waikato.ac.nz/ml/weka/">https://www.cs.waikato.ac.nz/ml/weka/</a>.</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="bases-de-datos-nosql">
-<h2>Bases de datos NoSQL<a class="headerlink" href="#bases-de-datos-nosql" title="Permalink to this heading">#</a></h2>
+<section id="apache-scoop-attic">
+<h2>Apache Scoop (Attic)<a class="headerlink" href="#apache-scoop-attic" title="Permalink to this heading">#</a></h2>
+<p><em>Apache Attic <a class="reference external" href="https://attic.apache.org/">https://attic.apache.org/</a> es utilizado por la Apache Software Foundation como espacio para los proyectos que ya han llegado a su final de vida y no cuentan con más desarrollo ni mantenimiento.</em></p>
 <ul class="simple">
-<li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de Big Data.</p></li>
-<li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
-<li><p>Las bases de datos relacionales, por otro lado, tienen un diseño estructurado y tabular.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Bases de datos basadas en columnas están optimizadas para los trabajos analíticos intensivos de lectura.</p>
+<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
 <ul>
-<li><p><em>Online Analytical Processing (OLAP)</em></p></li>
-</ul>
-</li>
-<li><p>Bases de datos basadas en filas son mejores para trabajos intensivos de escritura transaccional.</p>
-<ul>
-<li><p><em>Online Transactional Processing (OLTP)</em></p></li>
+<li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Existen diversos tipos de bases de datos No SQL:</p>
+<li><p>Se puede usar Sqoop para importar datos desde un sistema de administración de bases de datos relacionales (RDBMS) como MySQL u Oracle o un mainframe al sistema de archivos distribuidos de Hadoop (HDFS), transformar los datos en Hadoop MapReduce y luego exportar los datos nuevamente a un RDBMS.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Apache Sqoop también puede ser utilizado para extraer datos de Hadoop y exportarlos a almacenes de datos estructurados externos.</p></li>
+<li><p>Apache Sqoop trabaja con bases de datos relacionales como Teradata, Netezza, Oracle, MySQL, Postgres, y HSQLDB.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sqoop automatiza la mayor parte de este proceso, basándose en la base de datos para describir el esquema de los datos que se importarán.</p></li>
+<li><p>Sqoop utiliza MapReduce para importar y exportar los datos, lo cual proporciona procesamiento en paralelo y tolerancia a fallos.</p></li>
+</ul>
+</section>
+<section id="apache-spark">
+<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Framework de procesamiento paralelo y de código abierto para ejecutar aplicaciones de análisis de datos a gran escala en sistemas agrupados.</p></li>
+<li><p>Utilizado por más del 80% de las empresas <em>Fortune 500</em> y miles de otras empresas en todo el mundo.</p></li>
+<li><p>Fue desarrollado en la <em>University of California</em>, Berkeley, EE.UU.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: <a class="reference external" href="https://spark.apache.org/">https://spark.apache.org/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sus funcionalidades básicas son:</p>
 <ul>
-<li><p>Bases de datos de documentos (MongoDB, Couch DB)</p></li>
-<li><p>Pares de valores (Amazon DynamoDB, Redis)</p></li>
-<li><p>Columnares (Apache Cassandra, Apache HBase)</p></li>
-<li><p>Gráficas (Neo4j, Stardog)</p></li>
+<li><p>Procesamiento de datos en <em>batch/streaming</em> utilizando Python, SQL, Scala, Java o R.</p></li>
+<li><p>Analíticas mediante SQL ejecutando consultas para <em>dashboards</em> e informes más rápudas que la mayoría de los <em>data warehouses</em>.</p></li>
+<li><p>Ciencia de datos en escala realizando <em>Exploratory Data Analysis - EDA</em> con petabytes de datos.</p></li>
+<li><p>Machine learning para entrenar algoritmos en un <em>laptop</em> usando el mismo código que luego se utilizará en clústeres de miles de máquinas.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>También es compatible con un amplio conjunto de herramientas de alto nivel, que incluyen:</p>
+<ul>
+<li><p>Spark SQL para SQL y procesamiento de datos estructurados,</p></li>
+<li><p>MLlib para aprendizaje automático,</p></li>
+<li><p>GraphX para procesamiento de gráficos, y</p></li>
+<li><p>Transmisión estructurada para procesamiento incremental y de streaming.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Se utiliza para realizar trabajos informáticos con grandes cargas de datos junto a Apache Kafka.</p></li>
+<li><p>Con Spark ejecutándose en Apache Hadoop YARN, los desarrolladores pueden crear aplicaciones para explotar el poder de Spark, obtener información y enriquecer sus cargas de trabajo de ciencia de datos dentro de un único conjunto de datos compartidos en Hadoop.</p></li>
+</ul>
+</section>
+<section id="apache-storm">
+<h2>Apache Storm<a class="headerlink" href="#apache-storm" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es un sistema distribuido open source para procesar datos en tiempo real durante la ingesta de datos.</p></li>
+<li><p>Es escalable, tiene tolerancia a fallos, y es fácil de configurar y operar.</p></li>
+<li><p>Facilita el procesamiento confiable de flujos ilimitados de datos, haciendo para el procesamiento en tiempo real lo que Hadoop hizo para el procesamiento por lotes.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://storm.apache.org/">https://storm.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>No existe ningún truco que convierta a Hadoop en un sistema en tiempo real.</p></li>
+<li><p>El procesamiento de datos en tiempo real tiene un conjunto de requisitos fundamentalmente diferente al procesamiento por lotes.</p></li>
+<li><p>Apache Storm agrega a Hadoop esta funcionalidad de manera sencilla.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Casos de uso:</p>
+<ul>
+<li><p>Análisis en tiempo real</p></li>
+<li><p>Aprendizaje automático</p></li>
+<li><p>Monitoreo continuo de operaciones</p></li>
+<li><p>RPC distribuido, ETL, y más.</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="bases-de-datos-de-documentos">
-<h2>Bases de datos de documentos<a class="headerlink" href="#bases-de-datos-de-documentos" title="Permalink to this heading">#</a></h2>
+<section id="storm-vs-spark">
+<h2>Storm vs. Spark<a class="headerlink" href="#storm-vs-spark" title="Permalink to this heading">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Spark</p></th>
+<th class="head"><p>Storm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stream processing</p></td>
+<td><p>Batch processing</p></td>
+<td><p>Micro-batch processing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Latency</p></td>
+<td><p>Latency of a few seconds</p></td>
+<td><p>Latency of milliseconds</p></td>
+</tr>
+<tr class="row-even"><td><p>Multi-language support</p></td>
+<td><p>Lesser language support</p></td>
+<td><p>Multiple language support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Languages</p></td>
+<td><p>Java – Scala</p></td>
+<td><p>Java – Scala – Clojure</p></td>
+</tr>
+<tr class="row-even"><td><p>Stream sources</p></td>
+<td><p>HDFS</p></td>
+<td><p>Spout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resource management</p></td>
+<td><p>Yarn, Mesos</p></td>
+<td><p>Yarn, Mesos</p></td>
+</tr>
+<tr class="row-even"><td><p>Provisioning</p></td>
+<td><p>Basic using Ganglia</p></td>
+<td><p>Apache Ambari</p></td>
+</tr>
+<tr class="row-odd"><td><p>Messaging</p></td>
+<td><p>Netty, Akka</p></td>
+<td><p>ZeroMQ, Netty</p></td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="mongodb">
-<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this heading">#</a></h2>
+<section id="apache-impala">
+<h2>Apache Impala<a class="headerlink" href="#apache-impala" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de big data.</p></li>
-<li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
-<li><p>Las bases de datos relacionales, por otro lado, tienen un diseño estructurado y tabular.</p></li>
-</ul>
-<ul class="simple">
-<li><p>MongoDB es una base de datos distribuida de propósito general y basada en documentos.</p></li>
-<li><p>Fue creada para el desarrollo de aplicaciones modernas y para la era de la nube.</p></li>
-<li><p>Es una base de datos de documentos, lo que significa que almacena datos en documentos similares a JSON.</p>
+<li><p>Impala eleva el nivel de rendimiento de las consultas SQL en Apache Hadoop al mismo tiempo que conserva una experiencia de usuario familiar.</p></li>
+<li><p>Con Impala, se puede consultar datos, ya sea que estén almacenados en HDFS o Apache HBase, incluidas las funciones SELECT, JOIN y agregadas, en tiempo real.</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://www.mongodb.com/">https://www.mongodb.com/</a></p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="versiones-de-mongodb">
-<h2>Versiones de MongoDB<a class="headerlink" href="#versiones-de-mongodb" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>MongoDB Community es la fuente disponible y la edición de uso gratuito de MongoDB.</p></li>
-<li><p>MongoDB Enterprise está disponible como parte de la suscripción MongoDB Enterprise Advanced e incluye soporte integral para su implementación de MongoDB.</p></li>
-<li><p>MongoDB Enterprise también agrega funciones centradas en la empresa, como compatibilidad con LDAP y Kerberos, cifrado en disco y auditoría.</p></li>
-</ul>
-<ul class="simple">
-<li><p>MongoDB también ofrece Atlas, una opción de servicio alojado de MongoDB Enterprise en la nube que no requiere gastos generales de instalación y ofrece un nivel gratuito para comenzar.</p></li>
-<li><p><a class="reference external" href="https://www.mongodb.com/cloud/atlas/signup">https://www.mongodb.com/cloud/atlas/signup</a></p></li>
-</ul>
-</section>
-<section id="caracteristicas-de-mongodb">
-<h2>Características de MongoDB<a class="headerlink" href="#caracteristicas-de-mongodb" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Un registro en MongoDB es un documento, que es una estructura de datos compuesta por pares de campo y valor.</p></li>
-<li><p>Los documentos MongoDB son similares a los objetos JSON.</p></li>
-<li><p>Los valores de los campos pueden incluir otros documentos, matrices y matrices de documentos.</p>
-<ul>
-<li><p>Extraído de: MongoDB Documentation &amp; website: <a class="reference external" href="https://docs.mongodb.com/">https://docs.mongodb.com/</a></p></li>
+<li><p>Extraído de: <a class="reference external" href="https://impala.apache.org/">https://impala.apache.org/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Las ventajas de utilizar documentos son:</p>
-<ul>
-<li><p>Los documentos (es decir, los objetos) corresponden a tipos de datos nativos en muchos lenguajes de programación.</p></li>
-<li><p>Los documentos y matrices integrados reducen la necesidad de uniones costosas.</p></li>
-<li><p>El esquema dinámico admite polimorfismo fluido.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>MongoDB almacena documentos en colecciones.</p></li>
-<li><p>Las colecciones son análogas a las tablas en las bases de datos relacionales.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Además de las colecciones, MongoDB admite:</p>
-<ul>
-<li><p>Vistas de solo lectura (a partir de MongoDB 3.4).</p></li>
-<li><p>Vistas materializadas bajo demanda (a partir de MongoDB 4.2).</p></li>
-</ul>
-</li>
+<li><p>Impala utiliza los mismos metadatos, sintaxis SQL (Hive SQL), controlador ODBC e interfaz de usuario (Hue Beeswax) que Apache Hive, lo que proporciona una plataforma familiar y unificada para consultas en tiempo real o por lotes.</p></li>
+<li><p>Los usuarios de Hive pueden utilizar Impala con algunos pocos ajustes.</p></li>
 </ul>
 </section>
-<section id="principales-funcionalidades">
-<h2>Principales funcionalidades<a class="headerlink" href="#principales-funcionalidades" title="Permalink to this heading">#</a></h2>
+<section id="apache-kudu">
+<h2>Apache Kudu<a class="headerlink" href="#apache-kudu" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Alto rendimiento</p>
+<li><p>Apache Kudu es un motor de almacenamiento columnar open source para datos estructurados.</p></li>
+<li><p>Está diseñado y optimizado para análisis de big data en datos que cambian rápidamente o para un rendimiento rápido en consultas analíticas - OLAP.</p></li>
+<li><p>Es distribuido, permite varios tipos de partición de datos y carga compartida en varios servidores.</p></li>
+<li><p>Es parte del ecosistema Hadoop y se integra con frameworks de procesamiento de datos como Spark, Impala y MapReduce.</p>
 <ul>
-<li><p>MongoDB proporciona persistencia de datos de alto rendimiento.</p></li>
-<li><p>La compatibilidad con modelos de datos integrados reduce la actividad de E/S en el sistema de base de datos.</p></li>
-<li><p>Los índices admiten consultas más rápidas y pueden incluir claves de documentos incrustados y matrices.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Lenguaje de consulta enriquecido</p>
-<ul>
-<li><p>MongoDB admite un lenguaje de consulta enriquecido para admitir operaciones de lectura y escritura (CRUD), así como:</p>
-<ul>
-<li><p>Agregación de datos.</p></li>
-<li><p>Búsqueda de Texto y Consultas Geoespaciales.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Alta disponibilidad</p>
-<ul>
-<li><p>La función de replicación de MongoDB, denominada conjunto de réplicas (<em>replica set</em>), proporciona:</p>
-<ul>
-<li><p>Conmutación por error automática.</p></li>
-<li><p>Redundancia de datos.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Escalabilidad Horizontal</p>
-<ul>
-<li><p>MongoDB proporciona escalabilidad horizontal como parte de su funcionalidad principal:</p>
-<ul>
-<li><p>La fragmentación (<em>sharding</em>) distribuye datos a través de un grupo de máquinas.</p></li>
-<li><p>A partir de 3.4, MongoDB admite la creación de zonas de datos basadas en la clave del fragmento (<em>shard</em>).</p></li>
-<li><p>En un clúster equilibrado, MongoDB dirige las lecturas y escrituras de una zona solo a los fragmentos dentro de la zona.</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Soporte para Múltiples Motores de Almacenamiento</p>
-<ul>
-<li><p>MongoDB admite múltiples motores de almacenamiento:</p>
-<ul>
-<li><p>Motor de almacenamiento <em>WiredTiger</em> (incluida la compatibilidad con el cifrado en reposo).</p></li>
-<li><p>Motor de almacenamiento en memoria.</p></li>
-<li><p>Además, MongoDB proporciona una API de motor de almacenamiento conectable que permite a terceros desarrollar motores de almacenamiento para MongoDB.</p></li>
-</ul>
-</li>
+<li><p><a class="reference external" href="https://kudu.apache.org/">https://kudu.apache.org/</a></p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="tutorial-mongodb">
-<h2>Tutorial MongoDB<a class="headerlink" href="#tutorial-mongodb" title="Permalink to this heading">#</a></h2>
+<section id="apache-hive">
+<h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Crear una cuenta gratuita en:</p>
+<li><p>Apache Hive es una infraestructura de almacenamiento de datos construida sobre Apache Hadoop para proporcionar resúmenes de datos, consultas ad-hoc y análisis de grandes conjuntos de datos.</p></li>
+<li><p>Los analistas de datos usan Hive para consultar, resumir, explorar y analizar esos datos, y luego convertirlos en información empresarial procesable.</p>
 <ul>
-<li><p>MongoDB Atlas: <a class="reference external" href="https://account.mongodb.com/account/login?">https://account.mongodb.com/account/login?</a>.</p></li>
-<li><p><a class="reference external" href="https://docs.atlas.mongodb.com/tutorial/deploy-free-tier-cluster/">https://docs.atlas.mongodb.com/tutorial/deploy-free-tier-cluster/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="bases-de-datos-con-pares-de-valores">
-<h2>Bases de datos con pares de valores<a class="headerlink" href="#bases-de-datos-con-pares-de-valores" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="redis">
-<h2>Redis<a class="headerlink" href="#redis" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Redis es un almacén de estructura de datos en memoria (<em>in-memory data structure store</em>) de código abierto (con licencia BSD), que se utiliza como base de datos, caché y agente de mensajes.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://redislabs.com/">https://redislabs.com/</a>.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://hive.apache.org/">https://hive.apache.org/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Su estructura de datos soporta:</p></li>
-<li><p>Cadenas, hashes, listas, conjuntos, conjuntos ordenados con consultas de rango, mapas de bits, hiperloglogs, índices geoespaciales con consultas de radio y flujos.</p></li>
+<li><p>El software de almacenamiento de datos Apache Hive facilita la lectura, escritura y administración de grandes conjuntos de datos que residen en almacenamiento distribuido mediante SQL.</p></li>
+<li><p>La estructura se puede proyectar sobre los datos que ya están almacenados.</p></li>
+<li><p>Se proporciona una herramienta de línea de comandos y un controlador JDBC para conectar a los usuarios a Hive.</p></li>
+<li><p>Proporciona un mecanismo para la estructura del proyecto de ingesta de datos en los datos de Hadoop y para consultar esos datos mediante con un lenguaje tipo SQL llamado HiveQL (HQL).</p></li>
 </ul>
 <ul class="simple">
-<li><p>Tiene replicación integrada, secuencias de comandos Lua, LRU eviction, transacciones y diferentes niveles de persistencia en disco.</p></li>
-<li><p>Proporciona alta disponibilidad a través de Redis Sentinel.</p></li>
-<li><p>Particionamiento automático con Redis Cluster.</p></li>
+<li><p>Sus características principales son:</p></li>
 </ul>
 <ul class="simple">
-<li><p>Redis Enterprise:</p></li>
-<li><p>Es una sólida plataforma de base de datos en memoria creada por las mismas personas que desarrollan Redis de código abierto.</p>
+<li><p><em>Hive-Server 2 - HS2</em> para multi-client concurrency y autenticación.</p></li>
+<li><p>Provee un repositorio central de metadatos mediante <em>Hive Metastore(HMS)</em> y soporta el almacenamiento en S3, adls, gs, etc. a través de HDFS.</p></li>
+<li><p><em>Hive ACID</em> provee soporte completo ACID para las tabls ORC e <em>insert only</em> para todos los otros formatos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Ofrece soporte de autenticación mediante kerberos y se integra con <em>Apache Ranger</em> y <em>Apache Atlas</em> para seguridad y <em>observability</em>.</p></li>
+<li><p>Compactación de datos <em>out-of-the-box</em> y soporte para tablas de <em>Apache Iceberg</em>.</p></li>
+<li><p>Incluye LLAP (<em>Low Latency Analytical Processing</em>), un planificador de consultas y costes utilizando <em>Apache Calcite</em> <a class="reference external" href="https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive">https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive</a> y replicación.</p></li>
+</ul>
+</section>
+<section id="apache-drill">
+<h2>Apache Drill<a class="headerlink" href="#apache-drill" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es un motor SQL para Hadoop, NoSQL y almacenamiento en la nube.</p></li>
+<li><p>Soporta variadas bases de datos NoSQL y sistemas de ficheros:</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://redislabs.com/redis-enterprise-software/overview/">https://redislabs.com/redis-enterprise-software/overview/</a>.</p></li>
+<li><p>HBase, MongoDB, HDFS, Amazon S3, Azure Blob Storage, Google Cloud Storage, NAS y ficheros locales.</p></li>
+</ul>
+</li>
+<li><p>Una única consulta puede obtener datos de múltiples bases de datos.</p></li>
+<li><p>Integración con <em>Apache Hive</em>:</p>
+<ul>
+<li><p>Consultas en las tablas y vistas, soporte para todos los formatos de ficheros y <em>User-Defined Functions - UDFs</em>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Agrega muchas capacidades de nivel empresarial, que incluyen:</p>
+<li><p>Fuente: <a class="reference external" href="https://drill.apache.org/">https://drill.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="presto">
+<h2>Presto<a class="headerlink" href="#presto" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Motor SQL desarrollado por Meta (Facebook) para análisis ad-hoc e informes rápidos.</p></li>
+<li><p>Es un motor de consulta SQL distribuido de código abierto que ejecuta consultas analíticas interactivas en fuentes de datos de todos los tamaños, desde gigabytes hasta petabytes.</p>
 <ul>
-<li><p>Escalado lineal a cientos de millones de operaciones por segundo.</p></li>
-<li><p>Distribución global Activo-Activo con latencia local.</p></li>
-<li><p>Redis en Flash para admitir grandes conjuntos de datos y minimizar los costos de infraestructura.</p></li>
-<li><p>99,999% de tiempo de actividad.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://prestodb.io/">https://prestodb.io/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Redis Enterprise está disponible como software y como servicio de nube alojado.</p></li>
-<li><p>Se puede ejecutar Redis Enterprise Software (RS) en un centro de datos local o en plataformas de nube.</p></li>
-<li><p>RS también funciona con varios sistemas de orquestación de contenedores, como Kubernetes.</p></li>
-<li><p>Para desarrollo y pruebas, también se puede ejecutar RS usando contenedores Docker.</p></li>
+<li><p>Meta utiliza Presto para consultas interactivas en varios almacenes de datos internos, incluido su almacén de datos de 300 PB.</p></li>
+<li><p>Más de 1000 empleados de Meta usan Presto diariamente para ejecutar más de 30000 consultas que, en total, escanean más de un petabyte por día.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Redis Enterprise Software facilita la ejecución de Redis a escala.</p></li>
-<li><p>Se puede usar un único clúster empresarial de Redis para aprovisionar tantas bases de datos de Redis como se necesitan, y cada una de estas bases de datos se puede ajustar y escalar de forma independiente.</p></li>
-<li><p>Además, Redis Enterprise admite muchas funciones de seguridad empresarial, incluido el control de acceso basado en funciones.</p></li>
+<li><p>Se puede descargar el libro electrónico <em>Learning and operating presto</em> registrándose en <a class="reference external" href="https://prestodb.io/getting-started/">https://prestodb.io/getting-started/</a>.</p></li>
 </ul>
 </section>
-<section id="arquitectura-de-redis">
-<h2>Arquitectura de Redis<a class="headerlink" href="#arquitectura-de-redis" title="Permalink to this heading">#</a></h2>
+<section id="trino">
+<h2>Trino<a class="headerlink" href="#trino" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Bases de datos Redis replicadas Activo-Activo (CRDB).</p></li>
-<li><p>Proporciona replicación de base de datos global y distribuida geográficamente con escrituras locales sin conflictos.</p></li>
-<li><p>Esto simplifica enormemente el desarrollo de aplicaciones distribuidas globalmente.</p></li>
-<li><p>Las bases de datos activas-activas distribuidas geográficamente combinan tipos de datos replicados sin conflictos con tipos de datos Redis para proporcionar una resolución automática de conflictos basada en la semántica de cada tipo de datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Redis en flash:</p></li>
-<li><p>Ayuda a ahorrar costes para bases de datos Redis extra grandes.</p></li>
-<li><p>Las bases de datos Redis estándar mantienen todos sus datos en RAM</p></li>
-<li><p>Las DB Redis on Flash (RoF) distribuyen datos a través de RAM y memoria flash dedicada (SSD).</p></li>
-<li><p>Esto reduce los costes y mantiene un rendimiento similar al de las DB completamente basadas en RAM.</p>
+<li><p>Trino es un motor de consulta SQL distribuido diseñado para consultar grandes conjuntos de datos distribuidos en una o más fuentes de datos heterogéneas.</p></li>
+<li><p>Son los fundadores del proyecto Presto que tuvieron que cambiarle el nombre por cuestiones legales.</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://redislabs.com/redis-enterprise/technology/redis-on-flash/">https://redislabs.com/redis-enterprise/technology/redis-on-flash/</a>.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://trino.io/">https://trino.io/</a></p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Con RS, un conjunto de datos puede crecer más allá del tamaño del nodo más grande del clúster y ser procesado por cualquier cantidad de núcleos.</p></li>
-<li><p>Al particionar el conjunto de datos en varios nodos mediante una política de fragmentación, RS supera las limitaciones de memoria de un solo nodo y las limitaciones de rendimiento de un solo núcleo.</p></li>
-<li><p>Se puede escalar dinámicamente las bases de datos de Redis aumentando los límites de memoria o aumentando la cantidad de fragmentos, todo usando la interfaz de usuario integrada.</p></li>
+<li><p>Se puede descargar el libro <em>Trino: The Definitive Guide, 2nd Edition</em> (los autores son los creadores de Trino) registrándose en <a class="reference external" href="https://www.starburst.io/info/oreilly-trino-guide/">https://www.starburst.io/info/oreilly-trino-guide/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-hadoop-yarn">
+<h2>Apache Hadoop YARN<a class="headerlink" href="#apache-hadoop-yarn" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
+<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en servicios separados: un <em>ResourceManager</em> (RM) global y un <em>ApplicationMaster</em> (AM) por aplicación.</p></li>
+<li><p>Una aplicación es un solo trabajo o un DAG de trabajos.</p></li>
+<li><p>El <em>ResourceManager</em> y el <em>NodeManager</em> forman el framework de cálculo de datos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Además de replicar una base de datos dentro del mismo centro de datos, también se puede replicar un conjunto de datos entre centros de datos y entre regiones.</p></li>
-<li><p>Esto proporciona alta disponibilidad, recuperación ante desastres y mejoras de rendimiento para aplicaciones distribuidas globalmente.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Si un nodo falla, los datos se entregan sin problemas desde un nodo de reemplazo en el clúster sin intervención humana.</p></li>
-<li><p>Redis Enterprise puede manejar automáticamente fallas de nodos, fallas de procesos de Redis y fallas de proxy.</p></li>
-<li><p>La conmutación por error generalmente se completa en unos pocos segundos.</p></li>
+<li><p>El <em>ResourceManager</em> arbitra los recursos entre todas las aplicaciones del sistema.</p></li>
+<li><p>El <em>NodeManager</em> es el agente del framework por máquina que es responsable de los contenedores, monitorea el uso de sus recursos (cpu, memoria, disco, red) e informa al <em>ResourceManager/Scheduler</em>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>RS permite el uso de Redis AOF (<em>Append-Only File</em>) cada segundo o en cada escritura, o instantáneas (RDB) del conjunto de datos cada 1, 6 o 12 horas para almacenamiento persistente.</p></li>
-<li><p>Además, se puede hacer una copia de seguridad del conjunto de datos periódicamente o bajo demanda en un servidor FTP, almacenamiento en red o servicio de almacenamiento en la nube.</p></li>
+<li><p>La aplicación <em>ApplicationMaster</em> es en efecto una biblioteca específica del framework y tiene la tarea de negociar recursos del <em>ResourceManager</em> y trabajar con el/los <em>NodeManager(s)</em> para ejecutar y monitorear las tareas.</p></li>
+</ul>
+</section>
+<section id="alluxio">
+<h2>Alluxio<a class="headerlink" href="#alluxio" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Alluxio es una plataforma de orquestación de datos (<em>data orchestration platform</em>) que habilita la separación entre las capas de cómputo y almacenamiento.</p></li>
+<li><p>Brinda velocidad y agilidad a las cargas de datos en Big Data e inteligencia artificial reduciendo costes gracias a la eliminación de datos duplicados.</p></li>
+<li><p>Permite también trabajar con <em>object stores</em>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Las solicitudes son procesadas por múltiples núcleos para garantizar el mejor rendimiento.</p></li>
-<li><p>Se pueden ejecutar varias bases de datos en un único clúster empresarial de Redis.</p></li>
-<li><p>Cada base de datos se ejecuta con sus propios procesos dedicados sin bloqueo.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://www.alluxio.io/data-orchestration/">https://www.alluxio.io/data-orchestration/</a>.</p></li>
 </ul>
+</section>
+<section id="otras-herramientas">
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Un clúster de Redis Enterprise se compone de nodos idénticos que se implementan dentro de un centro de datos o se extienden a través de zonas de disponibilidad local.</p></li>
-<li><p>La arquitectura de Redis Enterprise se compone de una ruta de administración y una ruta de acceso a los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La ruta de administración incluye el administrador de clústeres, el proxy y la interfaz de usuario/API REST segura para la administración programática.</p></li>
-<li><p>En resumen, el administrador de clústeres es responsable de orquestar el clúster, colocar fragmentos de bases de datos y detectar y mitigar fallas.</p></li>
-<li><p>El proxy por otro lado ayuda a escalar la gestión de conexiones.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La ruta de acceso a datos se compone de fragmentos (<em>shards</em>) de Redis maestros y esclavos.</p></li>
-<li><p>Los clientes realizan operaciones de datos en el fragmento maestro.</p></li>
-<li><p>Los fragmentos maestros mantienen fragmentos esclavos mediante la replicación en memoria para la protección contra fallas que pueden hacer que el fragmento maestro sea inaccesible.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Redis Enterprise utiliza la replicación en memoria para mantener réplicas maestras y esclavas.</p></li>
-<li><p>Viene con varios <em>watchdogs</em> que detectan y protegen contra varios tipos de fallas.</p></li>
-<li><p>En las fallas en nodo, red, y fallas de proceso que hacen que la réplica maestra sea inaccesible; promueve automáticamente la réplica esclava para que sea una réplica maestra y redirige la conexión del cliente de forma transparente a la nueva réplica maestra.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Además de la replicación dentro del clúster, Redis Enterprise también tiene una replicación basada en WAN integrada para implementaciones de Redis en varios centros de datos.</p></li>
-<li><p>Los mecanismos de replicación basados en WAN en Redis Enterprise están diseñados para proteger contra fallas totales del centro de datos o de redes más amplias.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Cada clúster de Redis Enterprise puede contener varias bases de datos.</p></li>
-<li><p>En Redis, las bases de datos representan datos que pertenecen a una sola aplicación, inquilino (<em>tenant</em>) o microservicio.</p></li>
-<li><p>Redis Enterprise está diseñado para escalar a cientos de bases de datos por clúster para proporcionar modelos de tenencia múltiple flexibles y eficientes.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Cada base de datos puede contener pocos o muchos fragmentos (<em>shards</em>) de Redis.</p></li>
-<li><p>La fragmentación es transparente para las aplicaciones de Redis.</p></li>
-<li><p>Shards maestros en las base de datos procesan operaciones de datos para un subconjunto dado de claves.</p></li>
-<li><p>La cantidad de shards por base de datos es configurable y depende de las necesidades de rendimiento de las aplicaciones.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Las bases de datos en Redis Enterprise se pueden volver a dividir en más fragmentos de Redis para escalar el rendimiento mientras se mantienen latencias de menos de un milisegundo.</p></li>
-<li><p>La fragmentación se realiza sin tiempo de inactividad.</p></li>
-</ul>
-<ul class="simple">
-<li><p>En Redis Enterprise, cada base de datos tiene una cuota de RAM.</p></li>
-<li><p>La cuota no puede exceder los límites de la RAM disponible en el nodo.</p></li>
-<li><p>Sin embargo, con Redis Enterprise Flash, la memoria RAM se extiende a la unidad flash local (SATA, SSD NVMe, etc.).</p></li>
-</ul>
-<ul class="simple">
-<li><p>La cuota total de la base de datos puede aprovechar tanto la memoria RAM como la unidad flash.</p></li>
-<li><p>El administrador puede elegir la relación RAM vs Flash y ajustarla en cualquier momento durante la vida útil de la base de datos sin tiempo de inactividad.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Con Redis en Flash, en lugar de almacenar todas las claves y datos para un fragmento determinado en la RAM,  se envían a flash los valores a los que se accede con menos frecuencia.</p></li>
-<li><p>Si las aplicaciones necesitan acceder a un valor que está en flash, Redis Enterprise trae automáticamente el valor a la RAM.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Dependiendo del hardware flash en uso, las aplicaciones experimentan una latencia ligeramente más alta al devolver valores a la RAM desde flash.</p></li>
-<li><p>Sin embargo, los accesos posteriores al mismo valor son rápidos, una vez que el valor está en la RAM.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Redis Enterprise tiene dos opciones de durabilidad:</p>
+<li><p>Vertica es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
+<li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
 <ul>
-<li><p>Durabilidad basada en disco.</p></li>
-<li><p>Durabilidad basada en replicación.</p></li>
+<li><p>Extraído de <a class="reference external" href="https://www.vertica.com/landing-page/start-your-free-trial-today/">https://www.vertica.com/landing-page/start-your-free-trial-today/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Durabilidad basada en disco:</p>
+<li><p>Hue es un asistente open source de SQL para bases de datos y <em>data warehouses</em>.</p></li>
+<li><p>Provee un editor de código SQL con componentes y autocompletado que permite conectarse a cualquier base de datos.</p>
 <ul>
-<li><p>Redis Enterprise aún mantiene una copia duradera en el disco.</p></li>
-<li><p>Al igual que los sistemas basados en disco, esta ruta de E/S se coloca en un dispositivo de almacenamiento conectado a la red más lento y duradero.</p></li>
-<li><p>Las bases de datos de Redis brindan opciones ajustables para mantener esta copia duradera y mantenerla actualizada con escrituras periódicas frecuentes hasta cada operación de escritura.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://gethue.com/">https://gethue.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="perfilado-de-datos-y-linaje">
+<h2>Perfilado de datos y linaje<a class="headerlink" href="#perfilado-de-datos-y-linaje" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Perfilado de datos y linaje (<em>data profiling and lineage</em>) son técnicas que permiten identificar la calidad de los datos y su ciclo de vida durante las varias fases que percorren.</p></li>
+<li><p>Es importante capturar los metadatos en cada paso del proceso para que puedan ser utilizados posteriormente para verificación y personalización.</p></li>
+<li><p>Algunas aplicacione disponibles: <em>Talend, Hive, Pig</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Talend Data Fabric</em> es un conjunto de aplicaciones nativas de la nube que lidera la industria en integración y gestión de datos:</p>
+<ul>
+<li><p>Identifica elementos de datos.</p></li>
+<li><p>Realiza un seguimiento hasta el origen de los datos.</p></li>
+<li><p>Combina fuentes de datos y enlaces a los mismos.</p></li>
+<li><p>Crea un mapa para cada sistema y un mapa maestro de la imagen completa.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://www.talend.com/">https://www.talend.com/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Durabilidad basada en replicación:</p>
+<li><p><em>OpenLineage</em> es un framework open source para la recopilación y el análisis del linaje de datos.</p></li>
+<li><p>Permite una recopilación consistente de metadatos de linaje, creando una comprensión más profunda de cómo se producen y utilizan los datos.</p></li>
+<li><p>se integra con <em>Airflow, Spark</em> y <em>dbt</em>.</p>
 <ul>
-<li><p>Redis Enterprise también mantiene una réplica, un fragmento esclavo, para mayor durabilidad.</p></li>
-<li><p>Esta durabilidad replicada protege contra fallas de nodo, rack o de zona.</p></li>
-<li><p>La durabilidad replicada proporciona un mejor rendimiento de escritura sobre las escrituras de almacenamiento conectado a la red.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://openlineage.io/">https://openlineage.io/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="calidad-de-los-datos">
+<h2>Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La ingesta de datos se considera de alta calidad si cumple con las necesidades comerciales y satisface el uso previsto, de modo que sea útil para tomar decisiones de negocio con éxito.</p></li>
+<li><p>Por lo tanto, es un paso importante entender la dimensión de mayor interés e implementar métodos para lograrla.</p></li>
+</ul>
+</section>
+<section id="limpieza-de-datos">
+<h2>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La limpieza de datos (<em>data cleansing</em>) significa implementar varias soluciones para corregir datos incorrectos o corruptos.</p></li>
+</ul>
+</section>
+<section id="prevencion-y-perdida-de-datos">
+<h2>Prevención y pérdida de datos<a class="headerlink" href="#prevencion-y-perdida-de-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Deben existir políticas para asegurarse de que se resuelvan las lagunas en la pérdida de datos.</p></li>
+<li><p>La identificación de dicha pérdida de datos necesita un control cuidadoso y procesos de evaluación de la calidad en el flujo del proceso de ingesta de datos.</p></li>
+</ul>
+</section>
+<section id="visualizacion-de-datos">
+<h2>Visualización de datos<a class="headerlink" href="#visualizacion-de-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La fase de visualización o presentación es donde los usuarios pueden sentir el VALOR de los DATOS.</p></li>
+<li><p>La visualización de hallazgos ayuda a tomar mejores decisiones de negocios.</p></li>
+<li><p>Aquí se generan informes por tipo de audiencia (comerciales, marketing, estrategia, técnicos, etc).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Si bien está diseñado para manejar y almacenar grandes volúmenes de datos, Hadoop y otras herramientas no tienen disposiciones integradas para la visualización de datos y la distribución de información, lo que no permite que los usuarios finales del negocio puedan consumir fácilmente esos datos en la canalización de ingesta de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los paneles personalizados son útiles para crear vistas generales únicas que presentan los datos de manera diferente.</p></li>
+<li><p>Puede mostrar la información de la aplicación web y móvil, la información del servidor, los datos de métricas personalizadas y los datos de métricas de complementos, todo en un único tablero personalizado.</p></li>
+<li><p>Los paneles en tiempo real guardan, comparten y comunican información.</p></li>
+<li><p>Ayuda a los usuarios a generar preguntas al revelar la profundidad, el rango y el contenido de los almacenes de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los paneles de visualización de datos siempre cambian a medida que llegan nuevos datos.</p></li>
+<li><p>Los tableros pueden contener múltiples visualizaciones de múltiples conexiones una al lado de la otra.</p></li>
+<li><p>Se pueden crear, editar, filtrar y eliminar tableros rápidamente y moverlos y cambiar su tamaño y luego compartirlos o integrarlos en su aplicación web.</p></li>
+<li><p>Se puede exportar un tablero como una imagen o utilizando una configuración de archivo tipo JSON.</p></li>
+</ul>
+<ul class="simple">
+<li><p>De acuerdo con el NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id2">[<a class="reference internal" href="intro.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span> (Pág.31) tres son los tipos de visualizaciones que varían en técnicas y en propósito:</p>
+<ul>
+<li><p>Visualización exploratoria: técnicas para entender la distribución de los valores en los elementos. Se pueden necesitar también técnicas de agregación o de resumen.</p></li>
+<li><p>Visualización evaluatoria: permite comprender el desempeño y exactitud de un método particular de análisis o <em>machine learning</em>.</p>
+<ul>
+<li><p>Los datos pequeños (<em>small data</em>) se refieren a los límites en el tamaño de los conjuntos de datos que los analistas pueden evaluar y comprender por completo.</p></li>
+</ul>
+</li>
+<li><p>Visualización exploratoria: la presentación de datos complejos de manera fácil para ser entendidos por quienes toman decisiones.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="elastic-stack">
+<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>En sus inicios el ELK Stack se componía de las aplicaciones Elasticsearch, Logstash, Kibana, y Beats.</p></li>
+<li><p>Actualmente se lo conoce como Elastic Stack, nombre que le permite agregar nuevas funcionalidades.</p></li>
+<li><p>Conocido por sus API REST simples, naturaleza distribuida, velocidad y escalabilidad, Elasticsearch es el componente central de Elastic Stack, un conjunto de herramientas de código abierto para la ingesta, el enriquecimiento, el almacenamiento, el análisis y la visualización de datos.</p></li>
+<li><p>Kibana es la interfaz de usuario gratuita y abierta que permite visualizar los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/what-is/elasticsearch">https://www.elastic.co/what-is/elasticsearch</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Casos de uso:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Búsqueda de aplicaciones.</p></li>
+<li><p>Búsqueda de sitio web.</p></li>
+<li><p>Búsqueda Empresarial.</p></li>
+<li><p>Logging y analíticas de log.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Métricas de infraestructura y monitoreo de contenedores.</p></li>
+<li><p>Monitoreo de rendimiento de aplicaciones.</p></li>
+<li><p>Análisis y visualización de datos geoespaciales.</p></li>
+<li><p>Analítica de Seguridad.</p></li>
+<li><p>Analítica de Negocios.</p></li>
+</ul>
+</section>
+<section id="elasticsearch">
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Elasticsearch es un motor de análisis y búsqueda de código abierto distribuido para todo tipo de datos, incluidos textuales, numéricos, geoespaciales, estructurados y no estructurados.</p></li>
+<li><p>Elasticsearch se basa en Apache Lucene y fue lanzado por primera vez en 2010 por Elasticsearch N.V. (ahora conocido como Elastic).</p></li>
+</ul>
+<ul class="simple">
+<li><p>La ingesta de datos es el proceso mediante el cual estos datos sin procesar se analizan, normalizan y enriquecen antes de indexarlos en Elasticsearch.</p></li>
+<li><p>Los datos sin procesar fluyen hacia Elasticsearch desde una variedad de fuentes, incluidos registros, métricas del sistema y aplicaciones web.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/">https://www.elastic.co/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-lucene">
+<h2>Apache Lucene<a class="headerlink" href="#apache-lucene" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Lucene Core es una biblioteca de Java que proporciona potentes funciones de indexación y búsqueda, así como funciones de corrección ortográfica, resaltado de aciertos y análisis/tokenización avanzados.</p></li>
+<li><p>El subproyecto PyLucene proporciona enlaces de Python para Lucene Core.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/">https://lucene.apache.org/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Esto significa que bajo una interrupción no planificada, es más probable que la réplica esté más actualizada en comparación con la copia duradera en el disco.</p></li>
-<li><p>Para aprovechar al máximo la durabilidad replicada, Redis proporciona el comando WAIT.</p></li>
-</ul>
-<ul class="simple">
-<li><p>WAIT se asegura de que una escritura pueda esperar el reconocimiento hasta que varias réplicas confirmen esa escritura.</p></li>
-<li><p>Esto garantiza que una escritura confirmada con WAIT en las réplicas sea duradera incluso si un nodo se incendia y nunca más vuelve al clúster.</p></li>
-</ul>
-</section>
-<section id="tutorial-redis">
-<h2>Tutorial Redis<a class="headerlink" href="#tutorial-redis" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Free plan 30MB: <a class="reference external" href="https://redis.com/redis-enterprise-cloud/pricing/">https://redis.com/redis-enterprise-cloud/pricing/</a>.</p></li>
-<li><p>Free plan 5MB: <a class="reference external" href="https://redistogo.com/">https://redistogo.com/</a>.</p></li>
-<li><p>Tutorial: <a class="reference external" href="https://try.redis.io/">https://try.redis.io/</a>.</p></li>
-</ul>
-</section>
-<section id="bases-de-datos-columnares">
-<h2>Bases de datos columnares<a class="headerlink" href="#bases-de-datos-columnares" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="apache-cassandra">
-<h2>Apache Cassandra<a class="headerlink" href="#apache-cassandra" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Apache Cassandra es una base de datos distribuida NoSQL de código abierto.</p></li>
-<li><p>La escalabilidad lineal y la tolerancia a fallas comprobada en hardware básico o infraestructura en la nube la convierten en la plataforma perfecta para datos de misión crítica.</p>
+<li><p>PyLucene incorpora una VM de Java con Lucene en un proceso de Python.</p></li>
+<li><p>El módulo de Python llamado <em>lucene</em> es generado por máquina por JCC.</p>
 <ul>
-<li><p>Extraído de: <a class="reference external" href="https://cassandra.apache.org/_/index.html">https://cassandra.apache.org/_/index.html</a>.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://lucene.apache.org/pylucene/">https://lucene.apache.org/pylucene/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Híbrida</p></li>
-<li><p>La arquitectura sin servidor maestro y la baja latencia significan que Cassandra resistirá una interrupción completa del centro de datos sin pérdida de datos, en nubes públicas o privadas, o en las instalaciones.</p></li>
+<li><p>Lucene Core tiene una serie de proyectos relacionados, entre los cuales se encuentran:</p></li>
 </ul>
 <ul class="simple">
-<li><p>Tolerante a fallos</p></li>
-<li><p>El soporte de Cassandra para la replicación en varios centros de datos es el mejor de su clase, lo que proporciona una latencia más baja para sus usuarios y la tranquilidad de saber que puede sobrevivir a las interrupciones regionales.</p></li>
-<li><p>Los nodos con fallas se pueden reemplazar sin tiempo de inactividad.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Centrada en la calidad</p></li>
-<li><p>Para garantizar la confiabilidad y la estabilidad, Cassandra se prueba en clústeres de hasta 1,000 nodos y con cientos de casos de uso y esquemas del mundo real probados con pruebas de reproducción, fuzz, basadas en propiedades, inyección de fallas y de rendimiento.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Desempeño</p></li>
-<li><p>Cassandra supera sistemáticamente a las populares alternativas de NoSQL en pruebas comparativas y aplicaciones reales, principalmente debido a las elecciones de arquitectura tomadas.</p></li>
-<li><p><a class="reference external" href="https://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf">https://vldb.org/pvldb/vol5/p1724_tilmannrabl_vldb2012.pdf</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Cassandra transmite datos entre nodos durante las operaciones de escalado, como agregar un nuevo nodo o centro de datos durante las horas pico de tráfico.</p></li>
-<li><p>Zero Copy Streaming lo hace hasta 5 veces más rápido sin <em>vnodes</em> para una arquitectura más elástica, especialmente en entornos de nube y Kubernetes.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Distribuida</p></li>
-<li><p>Cassandra es adecuada para aplicaciones que no pueden darse el lujo de perder datos, incluso cuando un centro de datos completo deja de funcionar.</p></li>
-<li><p>No hay puntos únicos de falla. No hay cuellos de botella en la red. Todos los nodos del clúster son idénticos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Opciones</p></li>
-<li><p>Se puede elegir entre replicación síncrona o asíncrona para cada actualización. Las operaciones asincrónicas de alta disponibilidad se optimizan con funciones como <em>Hinted Handoff</em> y <em>Read Repair</em>.</p></li>
-<li><p>La función de registro de auditoría para operadores rastrea la actividad DML, DDL y DCL con un impacto mínimo en el rendimiento normal de la carga de trabajo, mientras que <em>fqltool</em> permite la captura y reproducción de cargas de trabajo de producción para su análisis.</p></li>
-</ul>
-</section>
-<section id="tutorial-cassandra">
-<h2>Tutorial Cassandra<a class="headerlink" href="#tutorial-cassandra" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Se utilizará una imagen de Docker con Cassandra para realizar el tutorial</p></li>
-<li><p><a class="reference external" href="https://cassandra.apache.org/_/quickstart.html">https://cassandra.apache.org/_/quickstart.html</a></p></li>
-</ul>
-</section>
-<section id="apache-hbase">
-<h2>Apache HBase<a class="headerlink" href="#apache-hbase" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es una base de datos distribuida no relacional open source modelada en base al artículo científico Google’s Bigtable: A Distributed Storage System for Structured Data de Chang et al.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Así como Bigtable aprovecha el almacenamiento de datos distribuido proporcionado por el sistema de archivos de Google, Apache HBase proporciona capacidades similares a las de Bigtable junto con Hadoop y HDFS.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Extraído de: Apache HBase Docs &amp; website: <a class="reference external" href="https://hbase.apache.com/">https://hbase.apache.com/</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Se utiliza Apache HBase cuando se necesita acceso de lectura/escritura aleatorio y en tiempo real a Big Data.</p></li>
-<li><p>El objetivo de HBase es el alojamiento de tablas muy grandes:</p>
+<li><p>Manifold: Framework de código abierto para conectar repositorios de contenido de origen, como Microsoft Sharepoint y EMC Documentum, a repositorios o índices de destino, como Apache Solr, Open Search Server o ElasticSearch.</p>
 <ul>
-<li><p>Miles de millones de filas por millones de columnas.</p></li>
-<li><p>Utilizando clusters con hardware de bajo coste.</p></li>
+<li><p><a class="reference external" href="https://manifoldcf.apache.org/en_US/index.html">https://manifoldcf.apache.org/en_US/index.html</a>.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://LUCENE.net">LUCENE.net</a>: biblioteca de motor de búsqueda de alto rendimiento para .NET.</p>
+<ul>
+<li><p><a class="reference external" href="https://lucenenet.apache.org/">https://lucenenet.apache.org/</a>.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>BerkeleyDB es un ejemplo de una base de datos NoSQL local, mientras que HBase es en gran medida una base de datos distribuida.</p></li>
-<li><p>Técnicamente hablando, HBase es más un “almacén de datos” que una “base de datos” porque carece de muchas de las funciones que se encuentran en un RDBMS, como columnas escritas, índices secundarios, activadores y lenguajes de consulta avanzados, etc.</p></li>
-</ul>
-<ul class="simple">
-<li><p>HBase tiene muchas características que admiten escalado tanto lineal como modular.</p></li>
-<li><p>Los clústeres de HBase se expanden agregando <em>Region Servers</em> que están alojados en servidores con hardware de bajo coste.</p></li>
-<li><p>Si un clúster se expande de 10 a 20 <em>Region Servers</em>, por ejemplo, se duplica tanto en términos de almacenamiento como de capacidad de procesamiento.</p></li>
-</ul>
-</section>
-<section id="caracteristicas-de-hbase">
-<h2>Características de HBase<a class="headerlink" href="#caracteristicas-de-hbase" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Lecturas/escrituras consistentes: HBase no es un DataStore “eventualmente consistente”. Esto lo hace muy adecuado para tareas como la agregación de contadores de alta velocidad.</p></li>
-<li><p>Fragmentación automática: las tablas de HBase se distribuyen en el clúster a través de regiones, y las regiones se dividen y redistribuyen automáticamente a medida que aumentan los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Conmutación por error automática de <em>Region Server</em></p></li>
-<li><p>Integración de Hadoop/HDFS: HBase es compatible con HDFS de fábrica como su sistema de archivos distribuido.</p></li>
-<li><p>MapReduce: HBase admite procesamiento en paralelo masivo a través de MapReduce para usar HBase como fuente y receptor.</p></li>
-</ul>
-<ul class="simple">
-<li><p>API de cliente de Java: HBase admite una API de Java fácil de usar para el acceso programático.</p></li>
-<li><p>API Thrift/REST: HBase también es compatible con Thrift y REST para front-ends que no son de Java.</p></li>
-<li><p>Block Cache y Bloom Filters: HBase admite <em>Block Cache</em> y <em>Bloom Filters</em> para la optimización de consultas de gran volumen.</p></li>
-<li><p>Gestión operativa: HBase proporciona páginas web integradas para obtener información operativa y métricas JMX.</p></li>
-</ul>
-<ul class="simple">
-<li><p>HBase, se basa en HDFS y proporciona búsquedas rápidas de registros (y actualizaciones) para tablas grandes.</p></li>
-<li><p>Esto a veces puede ser un punto de confusión conceptual.</p></li>
-<li><p>HBase coloca internamente sus datos en “StoreFiles” indexados que existen en HDFS para búsquedas de alta velocidad.</p></li>
-</ul>
-</section>
-<section id="usos-de-apache-hbase">
-<h2>Usos de Apache HBase<a class="headerlink" href="#usos-de-apache-hbase" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>HDFS es un sistema de archivos distribuido muy adecuado para el almacenamiento de archivos de gran tamaño.</p></li>
-<li><p>Su documentación establece que, sin embargo, no es un sistema de archivos de propósito general y no proporciona búsquedas rápidas de registros individuales en archivos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Si se tienen cientos de millones o miles de millones de filas, HBase es un buen candidato.</p></li>
-<li><p>Si solo se tienen unos pocos miles/millones de filas, entonces usar un RDBMS tradicional podría ser una mejor opción debido al hecho de que todos los datos pueden terminar en un solo nodo (o dos) y el resto del clúster puede estar sentado inactivo.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Una aplicación construida contra un RDBMS no se puede “portar” a HBase simplemente cambiando un controlador JDBC, por ejemplo.</p></li>
-<li><p>Considere pasar de un RDBMS a HBase como un rediseño completo en lugar de un puerto.</p></li>
-</ul>
-</section>
-<section id="requisitos-de-apache-hbase">
-<h2>Requisitos de Apache HBase<a class="headerlink" href="#requisitos-de-apache-hbase" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Asegurarse de tener suficiente hardware.</p></li>
-<li><p>HDFS no funciona bien con menos de 5 DataNodes (debido a cosas como la replicación de bloques de HDFS que tiene un valor predeterminado de 3), más un NameNode.</p></li>
-<li><p>HBase puede funcionar bastante bien de forma independiente en una computadora portátil, pero esto debe considerarse solo como una configuración de desarrollo.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Tutorial: <a class="reference external" href="https://hbase.apache.org/book.html#quickstart">https://hbase.apache.org/book.html#quickstart</a>.</p></li>
-</ul>
-</section>
-<section id="bases-de-datos-graficas">
-<h2>Bases de datos gráficas<a class="headerlink" href="#bases-de-datos-graficas" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="neo4j">
-<h2>Neo4j<a class="headerlink" href="#neo4j" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Neo4j permite construir aplicaciones y flujos de trabajos de ML.</p></li>
-<li><p>Almacena y administra datos manteniendo relaciones que brindan consultas veloces, un contexto más profundo para el análisis y un modelo de datos modificable sin complicaciones.</p>
+<li><p>Apache Tika: El kit de herramientas Apache Tika detecta y extrae metadatos y texto de más de mil tipos de archivos diferentes (como PPT, XLS y PDF). Todos estos tipos de archivos se pueden analizar a través de una sola interfaz, lo que hace que Tika sea útil para la indexación de motores de búsqueda, el análisis de contenido, la traducción y mucho más.</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://neo4j.com/">https://neo4j.com/</a>.</p></li>
+<li><p><a class="reference external" href="https://tika.apache.org/">https://tika.apache.org/</a>.</p></li>
 </ul>
 </li>
+</ul>
+<ul class="simple">
+<li><p>Nutch es un rastreador web altamente extensible, altamente escalable, maduro y listo para producción que permite una configuración detallada y se adapta a una amplia variedad de tareas de adquisición de datos.</p>
+<ul>
+<li><p><a class="reference external" href="https://nutch.apache.org/">https://nutch.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>La biblioteca Apache OpenNLP es un conjunto de herramientas basado en el aprendizaje automático para el procesamiento de texto en lenguaje natural.</p></li>
+<li><p>Admite las tareas más comunes de NLP, como la tokenización, la segmentación de oraciones, el etiquetado de partes del discurso, la extracción de entidades nombradas, la fragmentación, el análisis y la resolución de correferencias.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://opennlp.apache.org/">https://opennlp.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Apache Mahout es un framework distribuido de álgebra linear y Scala DSL que tiene como objetivo crear aplicaciones de aprendizaje automático (ML) escalables y eficaces.</p>
+<ul>
+<li><p><a class="reference external" href="https://mahout.apache.org/">https://mahout.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="apache-solr">
+<h2>Apache Solr<a class="headerlink" href="#apache-solr" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Solr es un servidor de búsqueda de alto rendimiento creado con Lucene Core.</p></li>
+<li><p>Solr es altamente escalable y proporciona indexación, búsqueda y análisis distribuidos totalmente tolerantes a fallas.</p></li>
+<li><p>Expone las características de Lucene a través de interfaces JSON/HTTP fáciles de usar o clientes nativos para Java y otros lenguajes.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de: <a class="reference external" href="https://solr.apache.org/">https://solr.apache.org/</a>.</p></li>
+<li><p>Imagen Docker Sorl: <a class="reference external" href="https://hub.docker.com/_/solr">https://hub.docker.com/_/solr</a>.</p></li>
+</ul>
+</section>
+<section id="logstash">
+<h2>Logstash<a class="headerlink" href="#logstash" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Logstash se usa para agregar y procesar datos y enviarlos a Elasticsearch.</p></li>
+<li><p>Es una canalización (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que le permite ingerir datos de múltiples fuentes simultáneamente y enriquecerlos y transformarlos antes de que se indexen en Elasticsearch.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Un índice de Elasticsearch es una colección de documentos que están relacionados entre sí.</p></li>
+<li><p>Elasticsearch almacena datos como documentos JSON.</p></li>
+<li><p>Cada documento correlaciona un conjunto de claves (nombres de campos o propiedades) con sus valores correspondientes (cadenas, números, booleanos, fechas, matrices de valores, geolocalizaciones u otros tipos de datos).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Elasticsearch utiliza una estructura de datos denominada índice invertido, que está diseñada para permitir búsquedas de texto completo muy rápidas.</p></li>
+<li><p>Un índice invertido enumera cada palabra única que aparece en cualquier documento e identifica todos los documentos en los que aparece cada palabra.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La indexación se inicia con la API de índice, a través de la cual puede agregar o actualizar un documento JSON en un índice específico.</p></li>
+<li><p>Durante el proceso de indexación, Elasticsearch almacena documentos y crea un índice invertido para que los datos del documento se puedan buscar casi en tiempo real.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Una vez indexados en Elasticsearch, los usuarios pueden ejecutar consultas complejas en sus datos y usar agregaciones para recuperar resúmenes complejos de sus datos.</p></li>
+<li><p>Desde Kibana, los usuarios pueden crear potentes visualizaciones de sus datos, compartir paneles y administrar el Elastic Stack.</p></li>
+</ul>
+</section>
+<section id="kibana">
+<h2>Kibana<a class="headerlink" href="#kibana" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kibana es una herramienta de visualización y gestión de datos para Elasticsearch que brinda histogramas en tiempo real, gráficos circulares y mapas.</p></li>
+<li><p>Kibana también incluye aplicaciones avanzadas, como Canvas, que permite a los usuarios crear infografías dinámicas personalizadas con base en sus datos, y Elastic Maps para visualizar los datos geoespaciales.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Elasticsearch soporta una variedad de lenguajes de programación facilitando clientes para:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Java.</p></li>
+<li><p>JavaScript (Node.js).</p></li>
+<li><p>Go.</p></li>
+<li><p>.NET (C#).</p></li>
+<li><p>PHP.</p></li>
+<li><p>Perl.</p></li>
+<li><p>Python.</p></li>
+<li><p>Ruby.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Cuenta además con herramientas para la línea de comandos:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">certgen</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">certutil</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">croneval</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">keystore</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">migrate</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">certgen</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">certutil</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">croneval</span>
+
+<span class="ne">NameError</span>: name &#39;elasticsearch&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">node</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">saml</span><span class="o">-</span><span class="n">metadata</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">setup</span><span class="o">-</span><span class="n">passwords</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">shard</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">syskeygen</span>
+<span class="n">elasticsearch</span><span class="o">-</span><span class="n">users</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Un documento en Kibana se compone de campos con valores:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un documento puede contener varios campos con valores</span>
+<span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Elastic&quot;</span><span class="p">,</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fuente: (<a class="reference external" href="http://assets.contentstack.io">assets.contentstack.io</a>) [<a class="reference external" href="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt">https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt</a>].</p></li>
+</ul>
+<section id="tutorial-elasticsearch">
+<h3>Tutorial Elasticsearch<a class="headerlink" href="#tutorial-elasticsearch" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Descargar e instalar la máquina virtual de elasticsearch en Bitnami.</p></li>
+<li><p><a class="reference external" href="https://bitnami.com/stack/elasticsearch/virtual-machine">https://bitnami.com/stack/elasticsearch/virtual-machine</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="salesforce-amazon-google-y-microsoft">
+<h2>Salesforce, Amazon, Google y Microsoft<a class="headerlink" href="#salesforce-amazon-google-y-microsoft" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Google y Microsoft.</p></li>
+<li><p>Salesforce adquirió Tableau y google hizo lo mismo con Looker en 2019.</p></li>
+<li><p>La reciente integración entre estos productos le permitirán al usuario modelar datos con LookML y usar Tableau, o Looker para explorar ese modelo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Tableau es una plataforma de análisis de datos que puede ser implementada en la nube, localmente o integrada de forma nativa con Salesforce CRM.</p></li>
+<li><p>Contiene capacidades de IA/ML completamente integradas, gobernanza y gestión de datos, narración visual y colaboración.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://www.tableau.com/">https://www.tableau.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Amazon ofrece Amazon QuickSight, una herramienta de inteligencia empresarial unificada a hiperescala.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://aws.amazon.com/es/quicksight/">https://aws.amazon.com/es/quicksight/</a>.## Apache Superset</p></li>
+</ul>
+</li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>Sus características principales son:</p></li>
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Google Looker conecta, analiza, y visualiza datos en ambientes multicloud.</p></li>
+<li><p>Looker puede facilitar la creación de una plataforma de exploración de datos que facilite el acceso a datos de una manera significativa e intuitiva para la organización.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://looker.com/google-cloud">https://looker.com/google-cloud</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Microsoft cuenta por su parte con PowerBI.</p></li>
+<li><p>PowerBI se conecta a las fuentes de datos, los modela y presenta en paneles con facilidad.</p></li>
+<li><p>Permite obtener respuestas rápidas y con tecnología de IA a preguntas empresariales.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://powerbi.microsoft.com/es-es/">https://powerbi.microsoft.com/es-es/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="apache-superset">
+<h2>Apache Superset<a class="headerlink" href="#apache-superset" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sus características principales son:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="monitoreo-de-datos">
+<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
+<li><p>Apache Flume es útil para procesar datos de registro.</p></li>
+<li><p>Apache Storm se utiliza para el monitoreo de operaciones</p></li>
+<li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
+<li><p>El monitoreo puede ocurrir en el paso de almacenamiento de datos.</p></li>
 </ul>
 </section>
 </section>
@@ -981,7 +1280,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Consulta y visualización de datos</p>
+        <p class="prev-next-title">Bases de datos para Big Data</p>
       </div>
     </a>
     <a class="right-next"
@@ -1008,27 +1307,38 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatos-de-archivos-para-big-data">Formatos de archivos para Big Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-nosql">Bases de datos NoSQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-de-documentos">Bases de datos de documentos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versiones-de-mongodb">Versiones de MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-mongodb">Características de MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-funcionalidades">Principales funcionalidades</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mongodb">Tutorial MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">Bases de datos con pares de valores</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis">Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-de-redis">Arquitectura de Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-redis">Tutorial Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-cassandra">Tutorial Cassandra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hbase">Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-hbase">Características de HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-de-apache-hbase">Usos de Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-de-apache-hbase">Requisitos de Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-graficas">Bases de datos gráficas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j">Neo4j</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-scoop-attic">Apache Scoop (Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-vs-spark">Storm vs. Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-impala">Apache Impala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kudu">Apache Kudu</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hive">Apache Hive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-drill">Apache Drill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presto">Presto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trino">Trino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alluxio">Alluxio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prevencion-y-perdida-de-datos">Prevención y pérdida de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticsearch">Elasticsearch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-lucene">Apache Lucene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-solr">Apache Solr</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logstash">Logstash</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kibana">Kibana</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-elasticsearch">Tutorial Elasticsearch</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-amazon-google-y-microsoft">Salesforce, Amazon, Google y Microsoft</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-superset">Apache Superset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
 </ul>
   </nav></div>
 

@@ -169,13 +169,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -386,7 +385,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso-de-spark">Casos de uso de Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-apache-storm">Características de Apache Storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-vs-spark">Storm vs. Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kafka">Apache Kafka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-apache-kafka">Características de Apache Kafka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transmision-de-eventos">Transmisión de eventos</a></li>
@@ -472,19 +470,19 @@ document.write(`
 <h2>Apache Hadoop YARN<a class="headerlink" href="#apache-hadoop-yarn" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
-<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en demonios separados: un ResourceManager (RM) global y un ApplicationMaster (AM) por aplicación.</p></li>
+<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en demonios separados: un <em>ResourceManager (RM)</em> global y un <em>ApplicationMaster (AM)</em> por aplicación.</p></li>
 <li><p>Una aplicación es un solo trabajo o un DAG de trabajos.</p></li>
-<li><p>El ResourceManager y el NodeManager forman el framework de cálculo de datos.</p></li>
+<li><p>El <em>ResourceManager</em> y el <em>NodeManager</em> forman el framework de cálculo de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El <em>ResourceManager</em> arbitra los recursos entre todas las aplicaciones del sistema.</p></li>
+<li><p>El <em>NodeManager</em> es el agente del framework por máquina que es responsable de los contenedores, monitorea el uso de sus recursos (CPU, memoria, disco, red) e informa al <em>ResourceManager / Scheduler</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La aplicación <em>ApplicationMaster</em> es en efecto una biblioteca específica del framework y tiene la tarea de negociar recursos del <em>ResourceManager</em> y trabajar con los <em>NodeManagers</em> para ejecutar y monitorear las tareas.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a></p></li>
-</ul>
-<ul class="simple">
-<li><p>El ResourceManager arbitra los recursos entre todas las aplicaciones del sistema.</p></li>
-<li><p>El NodeManager es el agente del framework por máquina que es responsable de los contenedores, monitorea el uso de sus recursos (cpu, memoria, disco, red) e informa al ResourceManager / Scheduler.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La aplicación ApplicationMaster es en efecto una biblioteca específica del framework y tiene la tarea de negociar recursos del ResourceManager y trabajar con los NodeManager(s) para ejecutar y monitorear las tareas.</p></li>
 </ul>
 </section>
 <section id="apache-hadoop-mapreduce">
@@ -494,21 +492,21 @@ document.write(`
 </ul>
 <p>Fuente: <span id="id1">[<a class="reference internal" href="intro.html#id5" title="Garry. Turkington. Hadoop Beginner's Guide. Packt Publishing, 2013.">Tur13</a>]</span></p>
 <ul class="simple">
-<li><p>Consta de un único ResourceManager maestro, un NodeManager trabajador por nodo de clúster y MRAppMaster por aplicación.</p></li>
+<li><p>Consta de un único <em>ResourceManager</em> maestro, un <em>NodeManager</em> trabajador por nodo de clúster y <em>MRAppMaster</em> por aplicación.</p></li>
 <li><p>Las aplicaciones especifican las ubicaciones de entrada/salida y el mapa de suministro y reducen las funciones a través de implementaciones de interfaces apropiadas y/o clases abstractas.</p></li>
 <li><p>Estos y otros parámetros del trabajo comprenden la configuración del trabajo.</p></li>
 </ul>
 <ul class="simple">
-<li><p>El cliente de trabajo de Hadoop luego envía el trabajo (jar/ejecutable, etc.) y la configuración al ResourceManager, que entonces asume la responsabilidad de distribuir el software/configuración a los trabajadores, programar tareas y monitorearlas, proporcionando estado e información de diagnóstico al trabajo-cliente.</p></li>
+<li><p>El cliente de trabajo de Hadoop luego envía el trabajo (jar/ejecutable, etc.) y la configuración al <em>ResourceManager</em>, que entonces asume la responsabilidad de distribuir el software/configuración a los trabajadores, programar tareas y monitorearlas, proporcionando estado e información de diagnóstico al trabajo-cliente.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Las aplicaciones de MapReduce no necesitan estar escritas en Java.</p></li>
-<li><p>Hadoop Streaming es una utilidad que permite a los usuarios crear y ejecutar trabajos con cualquier ejecutable (por ejemplo, utilidades de shell) como mapeador y/o reductor.</p></li>
-<li><p>Hadoop Pipes es una API C++ compatible con SWIG para implementar aplicaciones MapReduce (no basadas en JNI™).</p></li>
+<li><p>Las aplicaciones de <em>MapReduce</em> no necesitan estar escritas en Java.</p></li>
+<li><p>Hadoop <em>Streaming</em> es una utilidad que permite a los usuarios crear y ejecutar trabajos con cualquier ejecutable (por ejemplo, utilidades de shell) como mapeador y/o reductor.</p></li>
+<li><p>Hadoop <em>Pipes</em> es una API C++ compatible con SWIG para implementar aplicaciones <em>MapReduce</em> (no basadas en JNI™).</p></li>
 </ul>
 <ul class="simple">
 <li><p>Entradas y salidas:</p></li>
-<li><p>El framework MapReduce opera exclusivamente en pares &lt;clave, valor&gt;, es decir, el framework ve la entrada del trabajo como un conjunto de pares &lt;clave, valor&gt; y produce un conjunto de pares &lt;clave, valor&gt; como la salida de el trabajo, posiblemente de diferentes tipos.</p></li>
+<li><p>El framework <em>MapReduce</em> opera exclusivamente en pares &lt;clave, valor&gt;, es decir, el framework ve la entrada del trabajo como un conjunto de pares &lt;clave, valor&gt; y produce un conjunto de pares &lt;clave, valor&gt; como la salida de el trabajo, posiblemente de diferentes tipos.</p></li>
 </ul>
 <ul>
 <li><p>Tipos de entradas y salidas de un MapReduce job:</p>
@@ -605,7 +603,24 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>También es compatible con un amplio conjunto de herramientas de alto nivel, que incluyen Spark SQL para SQL y procesamiento de datos estructurados, MLlib para aprendizaje automático, GraphX para procesamiento de gráficos y transmisión estructurada para procesamiento incremental y de streaming.</p></li>
+<li><p>Sus funcionalidades básicas son:</p>
+<ul>
+<li><p>Procesamiento de datos en <em>batch/streaming</em> utilizando Python, SQL, Scala, Java o R.</p></li>
+<li><p>Analíticas mediante SQL ejecutando consultas para <em>dashboards</em> e informes más rápidas que la mayoría de los <em>data warehouses</em>.</p></li>
+<li><p>Ciencia de datos en escala realizando <em>Exploratory Data Analysis - EDA</em> con petabytes de datos.</p></li>
+<li><p><em>Machine Learning</em> para entrenar algoritmos en un ordenador portátil usando el mismo código que luego se utilizará en clústeres de miles de máquinas.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>También es compatible con un amplio conjunto de herramientas de alto nivel, que incluyen:</p>
+<ul>
+<li><p>Spark SQL para SQL y procesamiento de datos estructurados,</p></li>
+<li><p>MLlib para aprendizaje automático,</p></li>
+<li><p>GraphX para procesamiento de gráficos, y</p></li>
+<li><p>Transmisión estructurada para procesamiento incremental y de streaming.</p></li>
+</ul>
+</li>
 </ul>
 <ul class="simple">
 <li><p>Spark SQL incluye un optimizador basado en costes, almacenamiento en columnas y generación de código para agilizar las consultas.</p></li>
@@ -727,51 +742,6 @@ document.write(`
 <li><p>Las topologías y los componentes de procesamiento de Storm se pueden definir en cualquier idioma, lo que hace que Storm sea accesible para casi cualquier persona.</p></li>
 </ul>
 </section>
-<section id="storm-vs-spark">
-<h2>Storm vs. Spark<a class="headerlink" href="#storm-vs-spark" title="Permalink to this heading">#</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Situación</p></th>
-<th class="head"><p>Spark</p></th>
-<th class="head"><p>Storm</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stream processing</p></td>
-<td><p>Batch processing</p></td>
-<td><p>Micro-batch processing</p></td>
-</tr>
-<tr class="row-odd"><td><p>Latency</p></td>
-<td><p>Latency of a few seconds</p></td>
-<td><p>Latency of milliseconds</p></td>
-</tr>
-<tr class="row-even"><td><p>Multi-language support</p></td>
-<td><p>Lesser language support</p></td>
-<td><p>Multiple language support</p></td>
-</tr>
-<tr class="row-odd"><td><p>Languages</p></td>
-<td><p>Java – Scala</p></td>
-<td><p>Java – Scala – Clojure</p></td>
-</tr>
-<tr class="row-even"><td><p>Stream sources</p></td>
-<td><p>HDFS</p></td>
-<td><p>Spout</p></td>
-</tr>
-<tr class="row-odd"><td><p>Resource management</p></td>
-<td><p>Yarn, Mesos</p></td>
-<td><p>Yarn, Mesos</p></td>
-</tr>
-<tr class="row-even"><td><p>Provisioning</p></td>
-<td><p>Basic using Ganglia</p></td>
-<td><p>Apache Ambari</p></td>
-</tr>
-<tr class="row-odd"><td><p>Messaging</p></td>
-<td><p>Netty, Akka</p></td>
-<td><p>ZeroMQ, Netty</p></td>
-</tr>
-</tbody>
-</table>
-</section>
 <section id="apache-kafka">
 <h2>Apache Kafka<a class="headerlink" href="#apache-kafka" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -788,12 +758,12 @@ document.write(`
 <ul class="simple">
 <li><p>Alto rendimiento:</p>
 <ul>
-<li><p>Entregue mensajes con un rendimiento limitado de la red utilizando un grupo de máquinas (cluster) con una latencia de tan solo 2 ms.</p></li>
+<li><p>Entrega mensajes con un rendimiento limitado de la red utilizando un grupo de máquinas (cluster) con una latencia de tan solo 2 ms.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Escalable</p>
+<li><p>Escalable:</p>
 <ul>
 <li><p>Es posible escalar clústeres de producción con hasta mil brokers, billones de mensajes por día, petabytes de datos, cientos de miles de particiones.</p></li>
 <li><p>También expandir y contraer elásticamente el almacenamiento y procesamiento.</p></li>
@@ -801,42 +771,42 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>Almacenamiento permanente</p>
+<li><p>Almacenamiento permanente:</p>
 <ul>
-<li><p>Almacene flujos de datos de forma segura en un clúster distribuido, duradero y tolerante a fallas.</p></li>
+<li><p>Almacena flujos de datos de forma segura en un clúster distribuido, duradero y tolerante a fallas.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Alta disponibilidad</p>
+<li><p>Alta disponibilidad:</p>
 <ul>
-<li><p>Estire los clústeres de manera eficiente sobre las zonas de disponibilidad o conecte clústeres separados en regiones geográficas.</p></li>
+<li><p>Extiende los clústeres de manera eficiente sobre las zonas de disponibilidad o los conecta separados en regiones geográficas.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Procesamiento de flujo incorporado</p>
+<li><p>Procesamiento de flujo incorporado:</p>
 <ul>
-<li><p>Procese secuencias de eventos con uniones, agregaciones, filtros, transformaciones y más, utilizando el procesamiento solo una vez con el tiempo de evento.</p></li>
+<li><p>Procesa secuencias de eventos con uniones, agregaciones, filtros, transformaciones y más, utilizando el procesamiento solo una vez con el tiempo de evento.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Conéctese a casi cualquier cosa</p>
+<li><p>Conexión a múltiples fuentes:</p>
 <ul>
 <li><p>La interfaz <em>Connect</em> lista para usar de Kafka se integra con cientos de orígenes de eventos y receptores de eventos, incluidos PostgreSQL, JMS, Elasticsearch, AWS S3 y más.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Bibliotecas de clientes</p>
+<li><p>Bibliotecas de clientes:</p>
 <ul>
 <li><p>Posibilidad de Leer, escribir y procesar flujos de eventos en una amplia gama de lenguajes de programación.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Herramientas de código abierto para grandes ecosistemas</p>
+<li><p>Herramientas de código abierto para grandes ecosistemas:</p>
 <ul>
 <li><p>Gran ecosistema de herramientas de código abierto: existe una amplia gama de herramientas impulsadas por la comunidad.</p></li>
 </ul>
@@ -983,7 +953,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso-de-spark">Casos de uso de Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-apache-storm">Características de Apache Storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-vs-spark">Storm vs. Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kafka">Apache Kafka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-apache-kafka">Características de Apache Kafka</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transmision-de-eventos">Transmisión de eventos</a></li>
