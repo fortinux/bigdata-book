@@ -2,9 +2,9 @@
 [![Fortinux Book Badge](https://fortinux.com/FortinuxBook.svg)](<https://fortinux.github.io/bigdata-book/intro.html>) 
 
 # Introducción a Big Data
-## Apuntes del curso
+## Apuntes de análisis de datos y ML
 
-Introducción a Big Data. Apuntes del curso por Marcelo Horacio Fortino. Versión 2.0.3. Octubre 2023.    
+Introducción a Big Data. Apuntes del curso por Marcelo Horacio Fortino. Versión 2.3.4. Julio 2024.    
 
 Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <http://creativecommons.org/licenses/by-sa/4.0/>. Puede hallar permisos más allá de los concedidos con esta licencia en <https://fortinux.com>. Sugerencias y comentarios a <info@fortinux.com>.     
 
@@ -26,9 +26,7 @@ Esta obra se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARA
     
 ## Introducción
 En el pasado solo las grandes organizaciones podían aprovecharse de Big Data. Empresas  como Walmart, Google, y/o agentes financieros especializados. Actualmente con [Hadoop](https://hadoop.apache.org/ "Hadoop"), hardware de bajo coste (*commodity*) que utiliza el kernel de Linux, y el *cloud computing*, casi cualquier organización se lo puede permitir.
-
-![bigdata Hadoop logo](hadoop-logo.jpg "Apache Hadoop logo")
-
+  
 Basta considerar que hay una revolución de datos: los datos que se generan en el mundo aumentan anualmente un 40%.  Se estima que para el 2025 se crearán más de 180 zetabytes. Fuente: <https://es.statista.com/>. En consecuencia, todos esos datos que obtenemos deben ser tratados para ser convertidos en información y poder así tomar decisiones estratégicas.
 
 ## Objetivos del curso    
@@ -38,24 +36,20 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
 - Desarrollar Machine Learning in-house usando Spark MLlib and TensorFlow.    
     
 ## Temario    
-    
-- Introducción al Big Data y al análisis de datos.
-- Mercado y tendencias del Big Data.
-- Definición de Big Data e historia.
-- Tipos de datos en Big Data.
-- Ejemplos de casos de usos.
-- Buenas prácticas en Big Data y análisis de datos.
-- Procesos de Big Data: *ingest, store, process/query, visualize*.
-- Hadoop: HDFS & MapReduce, YARN.
-- Herramientas y tecnologías: Kafka, Mesos, Redis, CouchDB.
-- Document stores: MongoDB.
-- Column stores: HBase + Cassandra.
-- Big Data analytics: Spark, Storm.
-- Elastic Stack: Logstash, ElasticSearch y Kibana.
-- Técnicas de Machine learning:
-- Spark (MLlib, Streaming).
-- TensorFlow.    
+      
+- Big Data y el análisis de datos: Definición, Mercado, Big Data en España, Tendencias, Machine Learning, AI and Data (MAD) Landscape, Gobierno de datos/Data governance, Serie de normas ISO/IEC 20547, NIST Big Data Interoperability Framework, Gestión de la calidad de los datos, Beneficios, Paradigma, Características: Las V de Big Data,  Historia, Datalakes, Datawarehouses, Hadoop y Spark, Casos de uso y Buenas prácticas en Big Data, Tipos de análisis de datos en Big Data: descriptivo, predictivo y prescriptivo, Big Data analytics y Business Intelligence.
+  
+- Ingesta y almacenamiento de datos: Procesos en Big Data, Ingestión de datos, Cuestiones a considerar, Buenas prácticas, Herramientas, Sistemas de mensajería, Problemas en la ingesta de datos, Modelo semántico de datos (SDM), Almacenamiento de datos (data storage): Persistencia políglota, Herramientas de almacenamiento, HDFS, Apache Ozone, GlusterFS, Ceph, MinIO, Amazon services, MS Azure Data lake store, Google BigQuery, Databricks, Snowflake, Delta Lake, Apache Iceberg, Apache Hudi, NoSQL databases, Herramientas de ASF para Big Data: Apache Mesos, Zookeeper, Ambari, Ranger, Sentry(attic).
+  
+- Bases de datos para Big Data: Formatos de archivo para Big Data, Bases de datos NoSQL, Bases de datos de documentos: MongoDB, Características, Principales funcionalidades, Apache CouchDB, Couchbase, Bases de datos con pares de valores: Redis, Arquitectura, Bases de datos columnares: Apache Cassandra, Tutorial Cassandra, Apache HBase, Características, Usos, Requisitos, Tutorial HBase, Bases de datos de grafos: Neo4j, Stardog, Amazon Neptune.
+  
+- Consulta y visualización de datos: Procesos en Big Data, Procesamiento, análisis y consulta de datos, Apache Scoop(Attic), Spark, Storm, Impala, Kudu, Hive, Drill, Presto, Trino, Apache Hadoop Yarn, Alluxio, Otras herramientas, Perfilado y linaje, Calidad de los datos, Limpieza de datos, Prevención y perdida de datos, Visualización de datos: Elastic Stack, Elasticsearch, Apache Lucene, Apache Sorl, Logstash, Kibana, Salesforce, Amazon, Google y Microsoft, Apache superset, Monitoreo de datos.
+  
+- Aplicaciones para Big Data: Hadoop, Módulos: Hadoop YARN, Hadoop MapReduce, Sistemas de ficheros HDFS, Características, Proyectos relacionados con Apache Hadoop, Tutorial Apache Hadoop, Apache Spark, Características, Casos de uso, Apache Storm, Características, Storm vs. Spark, Apache Kafka, Características, Transmisión de eventos, Procesos.
+- Big Data Science: Introducción a la ciencia de datos, Alcance, Minería de datos, Consideraciones, Cientista de datos, Procesos en la ciencia de datos, CRISP_DM.
+- Big Data Stacks y Machine Learning: Apache Hadoop Stack, BDAS - Berkeley Data Analytics Stack, Stack alternativo, Cloudera, Big Data Cloud, Infraestructura de prueba de Big Data (BDTI). Machine Learning(ML): Tensor Flow, Pasos en ML, Redes Neuronales, Entrenar una red neuronal, Apache MLib, Lenguajes soportados, Desempeño, Estadísticas:Correlación, Tácticas adversarias de ML, Caldera + Atlas.     
+  
     
 ## Bibliografía
 ```{bibliography}
-```  
+``` 

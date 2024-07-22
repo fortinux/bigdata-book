@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es002';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Consulta y visualización de datos" href="BigData-es003.html" />
+    <link rel="next" title="Bases de datos para Big Data" href="BigData-es003.html" />
     <link rel="prev" title="Big Data: Definición y características" href="BigData-es001.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,13 +169,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -377,6 +376,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuestiones-a-considerar">Cuestiones a considerar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">Buenas prácticas en ingestión de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-la-ingesta-de-datos">Herramientas para la ingesta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
@@ -387,40 +387,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ozone">Apache Ozone</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glusterfs">GlusterFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ceph">Ceph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minio">MinIO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-services">Amazon Services</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">Microsoft Azure Data Lake Store</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-bigquery">Google BigQuery</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databricks">Databricks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snowflake">Snowflake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-lake">Delta Lake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-iceberg">Apache Iceberg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hudi">Apache Hudi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-de-documentos">Bases de datos de documentos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-couchdb">Apache CouchDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#couchbase">Couchbase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">Bases de datos con pares de valores</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis-database">Redis database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hbase">Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-graficas">Bases de datos gráficas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-neptune">Amazon Neptune</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stardog">Stardog</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j">Neo4j</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sqoop-in-the-attic">Apache Sqoop (in the Attic)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos-big-data-visualization">Visualización de datos (Big Data Visualization)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-google-y-microsoft">Salesforce, Google y Microsoft</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-big-data">Herramientas para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-apache-para-big-data">Herramientas Apache para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari-in-the-attic">Apache Ambari (in the Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari">Apache Ambari</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ranger">Apache Ranger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry">Apache Sentry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry-attic">Apache Sentry (Attic)</a></li>
 </ul>
             </nav>
         </div>
@@ -438,7 +420,7 @@ document.write(`
 <h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Existen varias metodologías y modelos disponibles en el mercado para la recopilación, almacenamiento, consulta, visualización de datos, y su posterior acción.</p></li>
-<li><p>Provienen del mundo de la minería de datos y de la comunidad KDD (<em>Knowledge Discovery in Databases</em>).</p></li>
+<li><p>Provienen del mundo de la minería de datos, y entre ellas se pueden mencionar KDD (<em>Knowledge Discovery in Databases</em>), SEMMA y CRISP-DM.</p></li>
 <li><p>CRISP-DM (<em>Cross Industry Standard Process for Data Mining</em>) por ejemplo, es un modelo de procesos estandarizado e iterativo centrado en el negocio.</p></li>
 <li><p>Fue desarrollado para ser distribuido libremente y promueve las mejores prácticas en minería de datos. Más información en la sección <a class="reference internal" href="BigData-es007.html#content-references-crisp-dm"><span class="std std-ref">Procesos en la ciencia de datos</span></a>.</p></li>
 </ul>
@@ -493,13 +475,12 @@ document.write(`
 <li><p>Éstas pueden aumentar cada día tanto en cantidad como en volumen de datos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Frecuencia de datos:</p></li>
-<li><p>Los datos se pueden procesar en tiempo real o por lotes.</p></li>
+<li><p>En cuanto a la frecuencia los datos se pueden procesar en tiempo real o por lotes.</p></li>
 <li><p>En tiempo real, el procesamiento ocurre cuando los datos se reciben al mismo tiempo que se generan.</p></li>
 <li><p>Los datos por lotes se almacenan mediante un proceso por lotes fijo en algún intervalo de tiempo y luego se trasladan al flujo del proceso de administración de datos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>La ingestión de datos se puede realizar utilizando formatos de distinto tipo.</p>
+<li><p>La ingestión de datos se puede realizar utilizando formatos de distinto tipo:</p>
 <ul>
 <li><p>Datos estructurados (formato tabular).</p></li>
 <li><p>Semi-estructurados (ficheros JSON, CSV, etc.).</p></li>
@@ -613,7 +594,7 @@ document.write(`
 <li><p>Elastic Logstash</p>
 <ul>
 <li><p>Tubería (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que ingiere datos de una multitud de fuentes, los transforma simultáneamente y luego los envía al reservatorio (<em>stash</em>), por ejemplo Elasticsearch.</p></li>
-<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/">https://www.elastic.co/</a>.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/es/logstash">https://www.elastic.co/es/logstash</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -627,6 +608,9 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://beam.apache.org/">https://beam.apache.org/</a>.</p></li>
+</ul>
+<ul class="simple">
 <li><p>Apache Samza</p>
 <ul>
 <li><p>Permite crear aplicaciones con estado que procesan datos en tiempo real desde múltiples fuentes, incluido Apache Kafka.</p></li>
@@ -636,6 +620,41 @@ document.write(`
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>Apache Airflow</p>
+<ul>
+<li><p>Apache Airflow es una plataforma que permite crear, programar temporalmente, y monitorar flujos de trabajo utilizando Python como lenguaje.</p></li>
+<li><p>Automatiza la ingestas de datos, acciones de mantenimiento periódicas y realiza tareas de administración.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://airflow.apache.org/">https://airflow.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Un flujo de trabajo de ejemplo puede ser:</p>
+<ul>
+<li><p>Obtener datos de una base de datos relacional como PosgreSQL para enviarlos a Kafka.</p></li>
+<li><p>Transformar los datos con Apache Spark y finalmente enviar un mensaje de finalización.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Mage AI</p>
+<ul>
+<li><p>Mage AI es una herramienta open source orientada a crear canalizaciones para transformar e integrar datos.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://www.mage.ai/">https://www.mage.ai/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Materialize es un almacén de datos útil para análisis en tiempo real que ofrece actualizaciones de vista incrementales.</p>
+<ul>
+<li><p>Extraído de: <a class="reference external" href="https://materialize.com/">https://materialize.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="otras-herramientas">
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fivetran es una cloud-based platform para ETL.</p>
 <ul>
@@ -846,6 +865,7 @@ document.write(`
 <li><p>Ozone: Un <em>object store</em> para Hadoop, la próxima generación de HDFS.</p></li>
 <li><p>GlusterFS: Sistema de archivos distribuido confiable.</p></li>
 <li><p>Ceph: Proporciona almacenamiento de objetos, bloques y sistemas de archivos en un solo clúster.</p></li>
+<li><p>MinIO: Un <em>object store</em> para la insfraestructura de datos de IA.</p></li>
 <li><p>Cloud storage: Amazon S3 Storage Service, IBM Cloud Object Storage, Azure Blob Storage, Google Cloud Storage.</p></li>
 </ul>
 </section>
@@ -953,6 +973,18 @@ document.write(`
 </li>
 </ul>
 </section>
+<section id="minio">
+<h2>MinIO<a class="headerlink" href="#minio" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MinIO es un <em>object store</em> de alto desempeño compatible con S3.</p></li>
+<li><p>Ha sido construido para cargas de trabajo de larga escala AI/ML en <em>datalakes</em> y bases de datos.</p></li>
+<li><p>Se puede ejecutar en cualquier <em>cloud vendor</em> o en infraestructuras <em>on-premises</em>.</p></li>
+<li><p>Tiene licencia dual: open source GNU AGPL v3 y licencia comercial para empresas.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://min.io/">https://min.io/</a>.</p></li>
+</ul>
+</section>
 <section id="amazon-services">
 <h2>Amazon Services<a class="headerlink" href="#amazon-services" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -1035,6 +1067,36 @@ document.write(`
 </li>
 </ul>
 </section>
+<section id="delta-lake">
+<h2>Delta Lake<a class="headerlink" href="#delta-lake" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Delta Lake es un marco de almacenamiento de código abierto que permite crear una arquitectura <em>Lakehouse</em> independiente del formato con motores informáticos que incluyen Spark, PrestoDB, Flink, Trino, Hive, Snowflake, Google BigQuery, Athena, Redshift, Databricks, y Azure Fabric.</p></li>
+<li><p>Cuenta con una API para los lenguajes de programación Scala, Java, Rust y Python.</p></li>
+<li><p>Puede además leer tablas Delta con los clientes Iceberg y Hudi utilizando el formato <em>Delta Universal</em>, también llamado <em>UniForm</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://delta.io/">https://delta.io/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-iceberg">
+<h2>Apache Iceberg<a class="headerlink" href="#apache-iceberg" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Iceberg es un formato de alto rendimiento para tablas analíticas enormes. Iceberg aporta la confiabilidad y simplicidad de las tablas SQL a big data, al tiempo que hace posible que motores como Spark, Trino, Flink, Presto, Hive e Impala trabajen de forma segura con las mismas tablas al mismo tiempo.</em></p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://iceberg.apache.org/">https://iceberg.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-hudi">
+<h2>Apache Hudi<a class="headerlink" href="#apache-hudi" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Hudi es una plataforma de lago de datos transaccional que aporta capacidades de base de datos y almacén de datos al lago de datos.</p></li>
+<li><p>Hudi reinventa el lento procesamiento de datos por lotes con un nuevo y potente framework de procesamiento incremental para análisis de baja latencia a nivel de minutos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://hudi.apache.org/">https://hudi.apache.org/</a>.</p></li>
+</ul>
+</section>
 <section id="nosql-databases">
 <h2>NoSQL databases<a class="headerlink" href="#nosql-databases" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -1043,310 +1105,33 @@ document.write(`
 <li><p>Las bases de datos relacionales, por otro lado, tienen un diseño estructurado y tabular.</p></li>
 </ul>
 <ul class="simple">
+<li><p>Bases de datos basadas en columnas están optimizadas para los trabajos analíticos intensivos de lectura.</p>
+<ul>
+<li><p><em>Online Analytical Processing (OLAP)</em>.</p></li>
+</ul>
+</li>
+<li><p>Bases de datos basadas en filas son mejores para trabajos intensivos de escritura transaccional.</p>
+<ul>
+<li><p><em>Online Transactional Processing (OLTP)</em>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
 <li><p>Existen diversos tipos de bases de datos No SQL:</p>
 <ul>
 <li><p>Bases de datos de documentos (MongoDB, Couch DB)</p></li>
 <li><p>Pares de valores (Amazon DynamoDB, Redis)</p></li>
 <li><p>Columnares (Apache Cassandra, Apache HBase)</p></li>
-<li><p>Gráficas (Neo4j, Stardog)</p></li>
+<li><p>De grafos (Neo4j, Stardog)</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="bases-de-datos-de-documentos">
-<h2>Bases de datos de documentos<a class="headerlink" href="#bases-de-datos-de-documentos" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="mongodb">
-<h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this heading">#</a></h2>
+<section id="herramientas-apache-para-big-data">
+<h2>Herramientas Apache para Big Data<a class="headerlink" href="#herramientas-apache-para-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>MongoDB es una base de datos distribuida de propósito general, basada en documentos, creada para desarrolladores de aplicaciones modernas y para la era de la nube.</p></li>
-<li><p>MongoDB es una base de datos de documentos, lo que significa que almacena datos en documentos similares a JSON.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://www.mongodb.com/">https://www.mongodb.com/</a>.</p></li>
+<li><p>Algunas de las herramientas de la Apache Software Foundation <a class="reference external" href="https://apache.org/">https://apache.org/</a> para Big Data:</p></li>
 </ul>
-</li>
-</ul>
-</section>
-<section id="apache-couchdb">
-<h2>Apache CouchDB<a class="headerlink" href="#apache-couchdb" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Apache CouchDB es una base de datos NoSQL orientada a documentos de código abierto, implementada en Erlang.</p></li>
-<li><p>CouchDB usa múltiples formatos y protocolos para almacenar, transferir y procesar sus datos.</p></li>
-<li><p>Utiliza JSON para almacenar datos, JavaScript como lenguaje de consulta usando MapReduce, y HTTP para una API.</p></li>
-</ul>
-<ul class="simple">
-<li><p>El protocolo <em>Couch Replication</em> permite que los datos fluyan sin problemas entre los clústeres de servidores y los teléfonos móviles / navegadores web.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://couchdb.apache.org/">https://couchdb.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="couchbase">
-<h2>Couchbase<a class="headerlink" href="#couchbase" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Couchbase es una base de datos en la nube NoSQL distribuida.</p></li>
-<li><p>Ofrece versatilidad, rendimiento, escalabilidad y un valor financiero inigualables en implementaciones informáticas en la nube, en las instalaciones híbridas, en la nube distribuida y en edge computing.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://couchbase.com/">https://couchbase.com/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="bases-de-datos-con-pares-de-valores">
-<h2>Bases de datos con pares de valores<a class="headerlink" href="#bases-de-datos-con-pares-de-valores" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="redis-database">
-<h2>Redis database<a class="headerlink" href="#redis-database" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Redis es un almacén de estructura de datos en memoria de código abierto (con licencia BSD), que se utiliza como base de datos, caché y agente de mensajes.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://redislabs.com/">https://redislabs.com/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="bases-de-datos-columnares">
-<h2>Bases de datos columnares<a class="headerlink" href="#bases-de-datos-columnares" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="apache-cassandra">
-<h2>Apache Cassandra<a class="headerlink" href="#apache-cassandra" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Apache Cassandra es una base de datos distribuida NoSQL de código abierto.</p></li>
-<li><p>La escalabilidad lineal y la tolerancia a fallas comprobada en hardware básico o infraestructura en la nube la convierten en la plataforma perfecta para datos de misión crítica.</p></li>
-<li><p>El soporte de Cassandra para la replicación en múltiples centros de datos es el mejor en su clase, lo que proporciona una latencia más baja para sus usuarios.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://cassandra.apache.org/">https://cassandra.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="apache-hbase">
-<h2>Apache HBase<a class="headerlink" href="#apache-hbase" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es una base de datos distribuida no relacional open source modelada en base al artículo científico <em>Google’s Bigtable: A Distributed Storage System for Structured Data</em> de Chang et al.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Así como Bigtable aprovecha el almacenamiento de datos distribuido proporcionado por el sistema de archivos de Google, Apache HBase proporciona capacidades similares a las de Bigtable junto con Hadoop y HDFS.</p>
-<ul>
-<li><p>Extraído de: Apache HBase Docs &amp; website: <a class="reference external" href="https://hbase.apache.com/">https://hbase.apache.com/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="bases-de-datos-graficas">
-<h2>Bases de datos gráficas<a class="headerlink" href="#bases-de-datos-graficas" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="amazon-neptune">
-<h2>Amazon Neptune<a class="headerlink" href="#amazon-neptune" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Amazon Neptune es un motor de base de datos de gráficos de alto rendimiento optimizado para almacenar miles de millones de relaciones y consultar el gráfico con una latencia de milisegundos.</p></li>
-<li><p>Admite los modelos de gráficos populares Property Graph y Resource Description Framework (RDF) del W3C, así como sus lenguajes de consulta asociados, Apache TinkerPop Gremlin y SPARQL.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://aws.amazon.com/es/nosql/graph/">https://aws.amazon.com/es/nosql/graph/</a>.</p></li>
-<li><p><a class="reference external" href="https://aws.amazon.com/es/neptune/">https://aws.amazon.com/es/neptune/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="stardog">
-<h2>Stardog<a class="headerlink" href="#stardog" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Stardog es la única plataforma de gráficos que conecta datos en la capa de cómputo en lugar de la capa de almacenamiento.</p></li>
-<li><p>No se necesita migrar las bases de datos ni copiarlas.</p></li>
-<li><p>Los conectores facilitan la virtualización de datos en Stardog y consultan los datos conectados mediante aplicaciones, herramientas de BI y más.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://www.stardog.com/">https://www.stardog.com/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Cómo funcionan los gráficos de conocimiento:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.stardog.com/knowledge-graph/">https://www.stardog.com/knowledge-graph/</a>.</p></li>
-</ul>
-</li>
-<li><p>Tutorial Stardog:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.stardog.com/tutorials/getting-started-1">https://www.stardog.com/tutorials/getting-started-1</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="neo4j">
-<h2>Neo4j<a class="headerlink" href="#neo4j" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Neo4j permite construir aplicaciones y flujos de trabajos de ML.</p></li>
-<li><p>Almacena y administra datos manteniendo relaciones que brindan consultas veloces, un contexto más profundo para el análisis y un modelo de datos modificable sin complicaciones.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://neo4j.com/">https://neo4j.com/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="procesamiento-analisis-y-consulta-de-datos">
-<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Los datos recolectados en la fase anterior serán procesados en este paso.</p></li>
-<li><p>Aquí, el sistema de procesamiento de canalización de datos enruta los datos a un destino diferente, clasifica el flujo de datos y es el primer punto donde puede tener lugar el análisis.</p></li>
-<li><p>Esta es la capa donde las consultas (<em>queries</em>) y el proceso analítico activo se ejecutan.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Para ello, los analistas emplean diferentes herramientas y estrategias como, por ejemplo:</p>
-<ul>
-<li><p>Modelado estadístico</p></li>
-<li><p>Algoritmos</p></li>
-<li><p>Inteligencia artificial (AI)</p></li>
-<li><p>Minería de datos</p></li>
-<li><p>Aprendizaje automático (ML)</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Para análisis fuera de línea, se utiliza un sistema de procesamiento por lotes simple.</p></li>
-<li><p>Apache Sqoop es la aplicación que se encarga de esto.</p></li>
-<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p></li>
-<li><p>Spark por otro lado, es utilizado mayoritariamente para el análisis y procesamiento de datos en tiempo real.</p></li>
-<li><p>Otra herramienta conocida pero menos utilizada es Apache Storm.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>KNIME hace que la comprensión de datos y el diseño de flujos de trabajo de ciencia de datos y componentes reutilizables sean accesibles para todos.</p>
-<ul>
-<li><p><a class="reference external" href="https://www.knime.com/">https://www.knime.com/</a>.</p></li>
-</ul>
-</li>
-<li><p>Apache Mahout es un framework distribuido de álgebra linear y Scala DSL matemáticamente expresivo.</p>
-<ul>
-<li><p><a class="reference external" href="https://mahout.apache.org/">https://mahout.apache.org/</a>.</p></li>
-</ul>
-</li>
-<li><p>Weka 3: Machine Learning Software en Java para hacer análisis simple.</p>
-<ul>
-<li><p><a class="reference external" href="https://www.cs.waikato.ac.nz/ml/weka/">https://www.cs.waikato.ac.nz/ml/weka/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="apache-sqoop-in-the-attic">
-<h2>Apache Sqoop (in the Attic)<a class="headerlink" href="#apache-sqoop-in-the-attic" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Se puede usar Sqoop para importar datos desde un sistema de administración de bases de datos relacionales (RDBMS) como MySQL, Oracle, o un mainframe al sistema de archivos distribuidos de Hadoop (HDFS), transformar los datos utilizando Hadoop MapReduce, y luego exportar los datos nuevamente a un RDBMS.</p></li>
-</ul>
-</section>
-<section id="apache-spark">
-<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Framework de procesamiento paralelo y de código abierto para ejecutar aplicaciones de análisis de datos a gran escala en sistemas agrupados.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://spark.apache.org/">https://spark.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Se utiliza para realizar trabajos informáticos con grandes cargas de datos junto a Apache Kafka.</p></li>
-<li><p>Fue desarrollado en la University of California, Berkeley.</p></li>
-<li><p>Con Spark ejecutándose en Apache Hadoop YARN, los desarrolladores pueden crear aplicaciones para explotar el poder de Spark, obtener información y enriquecer sus cargas de trabajo de ciencia de datos dentro de un único conjunto de datos compartidos en Hadoop.</p></li>
-</ul>
-</section>
-<section id="apache-storm">
-<h2>Apache Storm<a class="headerlink" href="#apache-storm" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es un sistema distribuido open source para procesar datos en tiempo real durante la ingesta de datos.</p></li>
-<li><p>Es escalable, tiene tolerancia a fallos, y es fácil de configurar y operar.</p></li>
-<li><p>Facilita el procesamiento confiable de flujos ilimitados de datos, haciendo para el procesamiento en tiempo real lo que Hadoop hizo para el procesamiento por lotes.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://storm.apache.org/">https://storm.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Casos de uso:</p>
-<ul>
-<li><p>Análisis en tiempo real</p></li>
-<li><p>Aprendizaje automático</p></li>
-<li><p>Monitoreo continuo de operaciones</p></li>
-<li><p>RPC distribuido, ETL, y más.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="visualizacion-de-datos-big-data-visualization">
-<h2>Visualización de datos (Big Data Visualization)<a class="headerlink" href="#visualizacion-de-datos-big-data-visualization" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>La fase de visualización o presentación es donde los usuarios pueden sentir el VALOR de los DATOS.</p></li>
-<li><p>La visualización de hallazgos ayuda a tomar mejores decisiones de negocios.</p></li>
-<li><p>Aquí se generan informes por tipo de audiencia (comerciales, marketing, estrategia, técnicos, etc).</p></li>
-</ul>
-</section>
-<section id="elastic-stack">
-<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Elasticsearch es el componente central de Elastic Stack, un conjunto de herramientas de código abierto para la ingesta, el enriquecimiento, el almacenamiento, el análisis y la visualización de datos.</p></li>
-<li><p>El ELK Stack se compone de las aplicaciones Elasticsearch, Logstash, Kibana, y Beats.</p></li>
-<li><p>Actualmente se lo conoce como Elastic Stack, nombre que le permite agregar nuevas funcionalidades.</p></li>
-<li><p>Kibana es la interfaz de usuario gratuita y abierta que permite visualizar los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://www.elastic.co/what-is/elasticsearch">https://www.elastic.co/what-is/elasticsearch</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Casos de uso:</p>
-<ul>
-<li><p>Búsqueda de aplicaciones</p></li>
-<li><p>Búsqueda de sitio web</p></li>
-<li><p>Búsqueda Empresarial</p></li>
-<li><p>Logging y analíticas de log</p></li>
-<li><p>Métricas de infraestructura y monitoreo de contenedores</p></li>
-<li><p>Monitoreo de rendimiento de aplicaciones</p></li>
-<li><p>Análisis y visualización de datos geoespaciales</p></li>
-<li><p>Analítica de Seguridad</p></li>
-<li><p>Analítica de Negocios</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="salesforce-google-y-microsoft">
-<h2>Salesforce, Google y Microsoft<a class="headerlink" href="#salesforce-google-y-microsoft" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Google y Microsoft.</p></li>
-<li><p>Salesforce adquirió Tableau y google hizo lo mismo con Looker en 2019.</p></li>
-<li><p>La reciente integración entre estos productos le permitirán al usuario modelar datos con LookML y usar Tableau, o Looker para explorar ese modelo.</p></li>
-</ul>
-<ul class="simple">
-<li><p><a class="reference external" href="https://looker.com/google-cloud">https://looker.com/google-cloud</a>.</p></li>
-<li><p><a class="reference external" href="https://www.tableau.com/">https://www.tableau.com/</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Microsoft cuenta por su parte con PowerBI.</p>
-<ul>
-<li><p><a class="reference external" href="https://powerbi.microsoft.com/es-es/">https://powerbi.microsoft.com/es-es/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="monitoreo-de-datos">
-<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
-<li><p>Apache Flume es útil para procesar datos de registro.</p></li>
-<li><p>Apache Storm se utiliza para el monitoreo de operaciones.</p></li>
-<li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
-<li><p>El monitoreo puede ocurrir en el paso de almacenamiento de datos.</p></li>
-</ul>
-</section>
-<section id="herramientas-para-big-data">
-<h2>Herramientas para Big Data<a class="headerlink" href="#herramientas-para-big-data" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="apache-mesos">
 <h2>Apache Mesos<a class="headerlink" href="#apache-mesos" title="Permalink to this heading">#</a></h2>
@@ -1362,6 +1147,13 @@ document.write(`
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>Una comparativa entre las tecnologías Apache mesos junto al gestor de contenedores Marathon <a class="reference external" href="https://mesosphere.github.io/marathon/">https://mesosphere.github.io/marathon/</a> y Kubernetes:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.baeldung.com/ops/mesos-kubernetes-comparison">https://www.baeldung.com/ops/mesos-kubernetes-comparison</a>.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="apache-zookeeper">
 <h2>Apache Zookeeper<a class="headerlink" href="#apache-zookeeper" title="Permalink to this heading">#</a></h2>
@@ -1373,8 +1165,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="apache-ambari-in-the-attic">
-<h2>Apache Ambari (in the Attic)<a class="headerlink" href="#apache-ambari-in-the-attic" title="Permalink to this heading">#</a></h2>
+<section id="apache-ambari">
+<h2>Apache Ambari<a class="headerlink" href="#apache-ambari" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El proyecto Apache Ambari tiene como objetivo simplificar la administración de Hadoop mediante el desarrollo de software para el aprovisionamiento, la administración y el monitoreo de clústeres de Apache Hadoop.</p></li>
 <li><p>Ambari proporciona una interfaz de usuario web de administración de Hadoop intuitiva y fácil de usar respaldada por sus API RESTful.</p>
@@ -1394,31 +1186,12 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="apache-sentry">
-<h2>Apache Sentry<a class="headerlink" href="#apache-sentry" title="Permalink to this heading">#</a></h2>
+<section id="apache-sentry-attic">
+<h2>Apache Sentry (Attic)<a class="headerlink" href="#apache-sentry-attic" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Apache Sentry™ es un sistema para hacer cumplir la autorización detallada basada en roles para datos y metadatos almacenados en un clúster de Hadoop.</p>
+<li><p>Apache Sentry™ es un sistema para hacer cumplir la autorización detallada basada en roles para datos y metadatos almacenados en un clúster de Hadoop. Está en el <em>attic</em> desde diciembre del 2020.</p>
 <ul>
 <li><p>Extraído de: <a class="reference external" href="https://sentry.apache.org/">https://sentry.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="apache-airflow">
-<h2>Apache Airflow<a class="headerlink" href="#apache-airflow" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Apache Airflow es una plataforma que permite crear, programar temporalmente, y monitorar flujos de trabajo utilizando Python como lenguaje.</p></li>
-<li><p>Automatiza la ingestas de datos, acciones de mantenimiento periódicas y realiza tareas de administración.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://airflow.apache.org/">https://airflow.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Un flujo de trabajo de ejemplo puede ser:</p>
-<ul>
-<li><p>Obtener datos de una base de datos relacional como PosgreSQL para enviarlos a Kafka.</p></li>
-<li><p>Transformar los datos con Apache Spark y finalmente enviar un mensaje de finalización.</p></li>
 </ul>
 </li>
 </ul>
@@ -1469,7 +1242,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Consulta y visualización de datos</p>
+        <p class="prev-next-title">Bases de datos para Big Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1493,6 +1266,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuestiones-a-considerar">Cuestiones a considerar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">Buenas prácticas en ingestión de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-la-ingesta-de-datos">Herramientas para la ingesta de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
@@ -1503,40 +1277,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ozone">Apache Ozone</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glusterfs">GlusterFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ceph">Ceph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minio">MinIO</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-services">Amazon Services</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">Microsoft Azure Data Lake Store</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-bigquery">Google BigQuery</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databricks">Databricks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snowflake">Snowflake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-lake">Delta Lake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-iceberg">Apache Iceberg</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hudi">Apache Hudi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-de-documentos">Bases de datos de documentos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">MongoDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-couchdb">Apache CouchDB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#couchbase">Couchbase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-con-pares-de-valores">Bases de datos con pares de valores</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis-database">Redis database</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hbase">Apache HBase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-graficas">Bases de datos gráficas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-neptune">Amazon Neptune</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stardog">Stardog</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neo4j">Neo4j</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sqoop-in-the-attic">Apache Sqoop (in the Attic)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos-big-data-visualization">Visualización de datos (Big Data Visualization)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-google-y-microsoft">Salesforce, Google y Microsoft</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-big-data">Herramientas para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-apache-para-big-data">Herramientas Apache para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari-in-the-attic">Apache Ambari (in the Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari">Apache Ambari</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ranger">Apache Ranger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry">Apache Sentry</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry-attic">Apache Sentry (Attic)</a></li>
 </ul>
   </nav></div>
 

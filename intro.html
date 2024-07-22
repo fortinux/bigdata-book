@@ -168,13 +168,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -371,7 +370,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apuntes-del-curso">Apuntes del curso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apuntes-de-analisis-de-datos-y-ml">Apuntes de análisis de datos y ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-del-curso">Objetivos del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temario">Temario</a></li>
@@ -391,9 +390,9 @@ document.write(`
 <a class="reference external" href="https://fortinux.github.io/bigdata-book/intro.html"><img alt="Fortinux Book Badge" src="https://fortinux.com/FortinuxBook.svg" /></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-big-data">
 <h1>Introducción a Big Data<a class="headerlink" href="#introduccion-a-big-data" title="Permalink to this heading">#</a></h1>
-<section id="apuntes-del-curso">
-<h2>Apuntes del curso<a class="headerlink" href="#apuntes-del-curso" title="Permalink to this heading">#</a></h2>
-<p>Introducción a Big Data. Apuntes del curso por Marcelo Horacio Fortino. Versión 2.0.3. Octubre 2023.</p>
+<section id="apuntes-de-analisis-de-datos-y-ml">
+<h2>Apuntes de análisis de datos y ML<a class="headerlink" href="#apuntes-de-analisis-de-datos-y-ml" title="Permalink to this heading">#</a></h2>
+<p>Introducción a Big Data. Apuntes del curso por Marcelo Horacio Fortino. Versión 2.3.4. Julio 2024.</p>
 <p>Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a>. Puede hallar permisos más allá de los concedidos con esta licencia en <a class="reference external" href="https://fortinux.com">https://fortinux.com</a>. Sugerencias y comentarios a <a class="reference external" href="mailto:info&#37;&#52;&#48;fortinux&#46;com">info<span>&#64;</span>fortinux<span>&#46;</span>com</a>.</p>
 <p>Todas las marcas son propiedad de sus respectivos dueños. Apache Hadoop, Hadoop, Apache, the Apache feather logo, y el Apache Hadoop project logo son marcas registradas o marcas de la Apache Software Foundation en los Estados Unidos y otros países. Copyright © 2006-2022 The Apache Software Foundation.</p>
 <table class="colwidths-auto table">
@@ -440,7 +439,6 @@ document.write(`
 <section id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
 <p>En el pasado solo las grandes organizaciones podían aprovecharse de Big Data. Empresas  como Walmart, Google, y/o agentes financieros especializados. Actualmente con <a class="reference external" href="https://hadoop.apache.org/">Hadoop</a>, hardware de bajo coste (<em>commodity</em>) que utiliza el kernel de Linux, y el <em>cloud computing</em>, casi cualquier organización se lo puede permitir.</p>
-<p><img alt="bigdata Hadoop logo" src="_images/hadoop-logo.jpg" /></p>
 <p>Basta considerar que hay una revolución de datos: los datos que se generan en el mundo aumentan anualmente un 40%.  Se estima que para el 2025 se crearán más de 180 zetabytes. Fuente: <a class="reference external" href="https://es.statista.com/">https://es.statista.com/</a>. En consecuencia, todos esos datos que obtenemos deben ser tratados para ser convertidos en información y poder así tomar decisiones estratégicas.</p>
 </section>
 <section id="objetivos-del-curso">
@@ -454,22 +452,13 @@ document.write(`
 <section id="temario">
 <h2>Temario<a class="headerlink" href="#temario" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Introducción al Big Data y al análisis de datos.</p></li>
-<li><p>Mercado y tendencias del Big Data.</p></li>
-<li><p>Definición de Big Data e historia.</p></li>
-<li><p>Tipos de datos en Big Data.</p></li>
-<li><p>Ejemplos de casos de usos.</p></li>
-<li><p>Buenas prácticas en Big Data y análisis de datos.</p></li>
-<li><p>Procesos de Big Data: <em>ingest, store, process/query, visualize</em>.</p></li>
-<li><p>Hadoop: HDFS &amp; MapReduce, YARN.</p></li>
-<li><p>Herramientas y tecnologías: Kafka, Mesos, Redis, CouchDB.</p></li>
-<li><p>Document stores: MongoDB.</p></li>
-<li><p>Column stores: HBase + Cassandra.</p></li>
-<li><p>Big Data analytics: Spark, Storm.</p></li>
-<li><p>Elastic Stack: Logstash, ElasticSearch y Kibana.</p></li>
-<li><p>Técnicas de Machine learning:</p></li>
-<li><p>Spark (MLlib, Streaming).</p></li>
-<li><p>TensorFlow.</p></li>
+<li><p>Big Data y el análisis de datos: Definición, Mercado, Big Data en España, Tendencias, Machine Learning, AI and Data (MAD) Landscape, Gobierno de datos/Data governance, Serie de normas ISO/IEC 20547, NIST Big Data Interoperability Framework, Gestión de la calidad de los datos, Beneficios, Paradigma, Características: Las V de Big Data,  Historia, Datalakes, Datawarehouses, Hadoop y Spark, Casos de uso y Buenas prácticas en Big Data, Tipos de análisis de datos en Big Data: descriptivo, predictivo y prescriptivo, Big Data analytics y Business Intelligence.</p></li>
+<li><p>Ingesta y almacenamiento de datos: Procesos en Big Data, Ingestión de datos, Cuestiones a considerar, Buenas prácticas, Herramientas, Sistemas de mensajería, Problemas en la ingesta de datos, Modelo semántico de datos (SDM), Almacenamiento de datos (data storage): Persistencia políglota, Herramientas de almacenamiento, HDFS, Apache Ozone, GlusterFS, Ceph, MinIO, Amazon services, MS Azure Data lake store, Google BigQuery, Databricks, Snowflake, Delta Lake, Apache Iceberg, Apache Hudi, NoSQL databases, Herramientas de ASF para Big Data: Apache Mesos, Zookeeper, Ambari, Ranger, Sentry(attic).</p></li>
+<li><p>Bases de datos para Big Data: Formatos de archivo para Big Data, Bases de datos NoSQL, Bases de datos de documentos: MongoDB, Características, Principales funcionalidades, Apache CouchDB, Couchbase, Bases de datos con pares de valores: Redis, Arquitectura, Bases de datos columnares: Apache Cassandra, Tutorial Cassandra, Apache HBase, Características, Usos, Requisitos, Tutorial HBase, Bases de datos de grafos: Neo4j, Stardog, Amazon Neptune.</p></li>
+<li><p>Consulta y visualización de datos: Procesos en Big Data, Procesamiento, análisis y consulta de datos, Apache Scoop(Attic), Spark, Storm, Impala, Kudu, Hive, Drill, Presto, Trino, Apache Hadoop Yarn, Alluxio, Otras herramientas, Perfilado y linaje, Calidad de los datos, Limpieza de datos, Prevención y perdida de datos, Visualización de datos: Elastic Stack, Elasticsearch, Apache Lucene, Apache Sorl, Logstash, Kibana, Salesforce, Amazon, Google y Microsoft, Apache superset, Monitoreo de datos.</p></li>
+<li><p>Aplicaciones para Big Data: Hadoop, Módulos: Hadoop YARN, Hadoop MapReduce, Sistemas de ficheros HDFS, Características, Proyectos relacionados con Apache Hadoop, Tutorial Apache Hadoop, Apache Spark, Características, Casos de uso, Apache Storm, Características, Storm vs. Spark, Apache Kafka, Características, Transmisión de eventos, Procesos.</p></li>
+<li><p>Big Data Science: Introducción a la ciencia de datos, Alcance, Minería de datos, Consideraciones, Cientista de datos, Procesos en la ciencia de datos, CRISP_DM.</p></li>
+<li><p>Big Data Stacks y Machine Learning: Apache Hadoop Stack, BDAS - Berkeley Data Analytics Stack, Stack alternativo, Cloudera, Big Data Cloud, Infraestructura de prueba de Big Data (BDTI). Machine Learning(ML): Tensor Flow, Pasos en ML, Redes Neuronales, Entrenar una red neuronal, Apache MLib, Lenguajes soportados, Desempeño, Estadísticas:Correlación, Tácticas adversarias de ML, Caldera + Atlas.</p></li>
 </ul>
 </section>
 <section id="bibliografia">
@@ -561,7 +550,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apuntes-del-curso">Apuntes del curso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apuntes-de-analisis-de-datos-y-ml">Apuntes de análisis de datos y ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-del-curso">Objetivos del curso</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temario">Temario</a></li>
