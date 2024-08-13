@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es004MongoDB';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -474,12 +476,21 @@ document.write(`
 <ul class="simple">
 <li><p>Una vez conectada la base de datos, se utiliza la shell <em>MongoSH</em> localizada en la parte inferior de la pantalla para crear una base de datos:</p></li>
 </ul>
+<p>use gettingStarted</p>
 <ul class="simple">
 <li><p>Inserir un documento en la base de datos:</p></li>
 </ul>
+<p>db.people.insertOne({
+name: { first: ‘Alan’, last: ‘Turing’ },
+birth: new Date(‘Jun 23, 1912’),
+death: new Date(‘Jun 07, 1954’),
+contribs: [ ‘Turing machine’, ‘Turing test’, ‘Turingery’ ],
+views : Long(1250000)
+})</p>
 <ul class="simple">
 <li><p>Verificar si está todo correcto:</p></li>
 </ul>
+<p>db.people.find({ “name.last”: “Turing” })</p>
 </section>
 <section id="consultar-documentos">
 <h2>Consultar documentos<a class="headerlink" href="#consultar-documentos" title="Permalink to this heading">#</a></h2>
@@ -489,30 +500,52 @@ document.write(`
 <ul class="simple">
 <li><p>Crear una nueva base de datos llamada “inventario”:</p></li>
 </ul>
+<p>use inventario</p>
 <ul class="simple">
 <li><p>Ingresar datos en la base de datos:</p></li>
 </ul>
+<p>db.inventario.insertMany([
+{ item: “journal”, qty: 25, size: { h: 14, w: 21, uom: “cm” }, status: “A” },
+{ item: “notebook”, qty: 50, size: { h: 8.5, w: 11, uom: “in” }, status: “A” },
+{ item: “paper”, qty: 100, size: { h: 8.5, w: 11, uom: “in” }, status: “D” },
+{ item: “planner”, qty: 75, size: { h: 22.85, w: 30, uom: “cm” }, status: “D” },
+{ item: “postcard”, qty: 45, size: { h: 10, w: 15.25, uom: “cm” }, status: “A” }
+]);</p>
 <ul class="simple">
 <li><p>Seleccionar todos los documentos en “inventario”:</p></li>
 </ul>
+<p>db.inventario.find( {} )</p>
 <ul class="simple">
 <li><p>Esta orden es similar a la utilizada en SQL: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">inventario</span></code></p></li>
 </ul>
 <ul class="simple">
 <li><p>Seleccionar todos los documentos donde la clave “status” es igual a “D”:</p></li>
 </ul>
+<p>db.inventario.find( { status: “D” } )</p>
+<p>SELECT * FROM inventario WHERE status = “D”</p>
 <ul class="simple">
 <li><p>Mostrar todos los documents de “inventario” donde “status” es igual a “A” o “D”:</p></li>
 </ul>
+<p>db.inventario.find( { status: { $in: [ “A”, “D” ] } } )</p>
+<p>SELECT * FROM inventario WHERE status in (“A”, “D”)</p>
 <ul class="simple">
 <li><p>Recuperar todos los documentos de “inventario” donde “status” es igual a “A” y “qty” es menor que ($lt) 30:</p></li>
 </ul>
+<p>db.inventario.find( { status: “A”, qty: { $lt: 30 } } )</p>
+<p>SELECT * FROM inventario WHERE status = “A” AND qty &lt; 30</p>
 <ul class="simple">
 <li><p>Recuperar todos los documentos de “inventario” donde “status” es igual a “A” o “qty” es menor que ($lt) 30:</p></li>
 </ul>
+<p>db.inventario.find( { <span class="math notranslate nohighlight">\(or: [ { status: &quot;A&quot; }, { qty: { \)</span>lt: 30 } } ] } )</p>
+<p>SELECT * FROM inventario WHERE status = “A” OR qty &lt; 30</p>
 <ul class="simple">
 <li><p>Recuperar todos los documentos de “inventario” donde “status” es igual a “A” y/o “qty” es menor que ($lt) 30, o item comienza con la letra p:</p></li>
 </ul>
+<p>db.inventario.find( {
+status: “A”,
+<span class="math notranslate nohighlight">\(or: [ { qty: { \)</span>lt: 30 } }, { item: /^p/ } ]
+} )</p>
+<p>SELECT * FROM inventario WHERE status = “A” AND ( qty &lt; 30 OR item LIKE “p%”)</p>
 </section>
 </section>
 
