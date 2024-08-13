@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Frameworks y aplicaciones" href="BigData-es005.html" />
-    <link rel="prev" title="Bases de datos para Big Data" href="BigData-es004.html" />
+    <link rel="prev" title="Consulta y visualización de datos" href="BigData-es004.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,13 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -474,47 +474,12 @@ document.write(`
 <ul class="simple">
 <li><p>Una vez conectada la base de datos, se utiliza la shell <em>MongoSH</em> localizada en la parte inferior de la pantalla para crear una base de datos:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">gettingStarted</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">use</span> <span class="n">gettingStarted</span>
-        <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Inserir un documento en la base de datos:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">insertOne</span><span class="p">({</span>
-  <span class="n">name</span><span class="p">:</span> <span class="p">{</span> <span class="n">first</span><span class="p">:</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="n">last</span><span class="p">:</span> <span class="s1">&#39;Turing&#39;</span> <span class="p">},</span>
-  <span class="n">birth</span><span class="p">:</span> <span class="n">new</span> <span class="n">Date</span><span class="p">(</span><span class="s1">&#39;Jun 23, 1912&#39;</span><span class="p">),</span>
-  <span class="n">death</span><span class="p">:</span> <span class="n">new</span> <span class="n">Date</span><span class="p">(</span><span class="s1">&#39;Jun 07, 1954&#39;</span><span class="p">),</span>
-  <span class="n">contribs</span><span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;Turing machine&#39;</span><span class="p">,</span> <span class="s1">&#39;Turing test&#39;</span><span class="p">,</span> <span class="s1">&#39;Turingery&#39;</span> <span class="p">],</span>
-  <span class="n">views</span> <span class="p">:</span> <span class="n">Long</span><span class="p">(</span><span class="mi">1250000</span><span class="p">)</span>
-<span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Verificar si está todo correcto:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="s2">&quot;name.last&quot;</span><span class="p">:</span> <span class="s2">&quot;Turing&quot;</span> <span class="p">})</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="consultar-documentos">
 <h2>Consultar documentos<a class="headerlink" href="#consultar-documentos" title="Permalink to this heading">#</a></h2>
@@ -524,130 +489,30 @@ document.write(`
 <ul class="simple">
 <li><p>Crear una nueva base de datos llamada “inventario”:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">use</span> <span class="n">inventario</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Ingresar datos en la base de datos:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">inventario</span><span class="o">.</span><span class="n">insertMany</span><span class="p">([</span>
-   <span class="p">{</span> <span class="n">item</span><span class="p">:</span> <span class="s2">&quot;journal&quot;</span><span class="p">,</span> <span class="n">qty</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="p">{</span> <span class="n">h</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="n">uom</span><span class="p">:</span> <span class="s2">&quot;cm&quot;</span> <span class="p">},</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span> <span class="p">},</span>
-   <span class="p">{</span> <span class="n">item</span><span class="p">:</span> <span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">qty</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="p">{</span> <span class="n">h</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="n">uom</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span> <span class="p">},</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span> <span class="p">},</span>
-   <span class="p">{</span> <span class="n">item</span><span class="p">:</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="n">qty</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="p">{</span> <span class="n">h</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="n">uom</span><span class="p">:</span> <span class="s2">&quot;in&quot;</span> <span class="p">},</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span> <span class="p">},</span>
-   <span class="p">{</span> <span class="n">item</span><span class="p">:</span> <span class="s2">&quot;planner&quot;</span><span class="p">,</span> <span class="n">qty</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="p">{</span> <span class="n">h</span><span class="p">:</span> <span class="mf">22.85</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="n">uom</span><span class="p">:</span> <span class="s2">&quot;cm&quot;</span> <span class="p">},</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span> <span class="p">},</span>
-   <span class="p">{</span> <span class="n">item</span><span class="p">:</span> <span class="s2">&quot;postcard&quot;</span><span class="p">,</span> <span class="n">qty</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="p">{</span> <span class="n">h</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mf">15.25</span><span class="p">,</span> <span class="n">uom</span><span class="p">:</span> <span class="s2">&quot;cm&quot;</span> <span class="p">},</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span> <span class="p">}</span>
-<span class="p">]);</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Seleccionar todos los documentos en “inventario”:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">inventario</span><span class="o">.</span><span class="n">find</span><span class="p">(</span> <span class="p">{}</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Esta orden es similar a la utilizada en SQL: <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">inventario</span></code></p></li>
 </ul>
 <ul class="simple">
 <li><p>Seleccionar todos los documentos donde la clave “status” es igual a “D”:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db</span><span class="o">.</span><span class="n">inventario</span><span class="o">.</span><span class="n">find</span><span class="p">(</span> <span class="p">{</span> <span class="n">status</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span> <span class="p">}</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">inventario</span> <span class="n">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Mostrar todos los documents de “inventario” donde “status” es igual a “A” o “D”:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>db.inventario.find( { status: { $in: [ &quot;A&quot;, &quot;D&quot; ] } } )
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">inventario</span> <span class="n">WHERE</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Recuperar todos los documentos de “inventario” donde “status” es igual a “A” y “qty” es menor que ($lt) 30:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>db.inventario.find( { status: &quot;A&quot;, qty: { $lt: 30 } } )
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">inventario</span> <span class="n">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span> <span class="n">AND</span> <span class="n">qty</span> <span class="o">&lt;</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Recuperar todos los documentos de “inventario” donde “status” es igual a “A” o “qty” es menor que ($lt) 30:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>db.inventario.find( { $or: [ { status: &quot;A&quot; }, { qty: { $lt: 30 } } ] } )
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">inventario</span> <span class="n">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span> <span class="n">OR</span> <span class="n">qty</span> <span class="o">&lt;</span> <span class="mi">30</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Recuperar todos los documentos de “inventario” donde “status” es igual a “A” y/o “qty” es menor que ($lt) 30, o item comienza con la letra p:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>db.inventario.find( {
-     status: &quot;A&quot;,
-     $or: [ { qty: { $lt: 30 } }, { item: /^p/ } ]
-} )
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">inventario</span> <span class="n">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span> <span class="n">AND</span> <span class="p">(</span> <span class="n">qty</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="n">OR</span> <span class="n">item</span> <span class="n">LIKE</span> <span class="s2">&quot;p%&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -687,7 +552,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Bases de datos para Big Data</p>
+        <p class="prev-next-title">Consulta y visualización de datos</p>
       </div>
     </a>
     <a class="right-next"

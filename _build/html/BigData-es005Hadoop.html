@@ -169,13 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -414,61 +414,18 @@ document.write(`
 <ul class="simple">
 <li><p>Una vez instalado Apache Hadoop se deberán abrir los puertos del servidor para los distintos servicios web del framework.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">8042</span><span class="p">,</span> <span class="mi">8088</span><span class="p">,</span> <span class="mi">8188</span><span class="p">,</span> <span class="mi">19888</span><span class="p">,</span> <span class="mi">9780</span><span class="p">,</span> <span class="mi">9868</span><span class="p">,</span> <span class="mi">9864</span><span class="p">,</span> <span class="mi">10002</span> <span class="n">proto</span> <span class="n">tcp</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">8042</span><span class="p">,</span> <span class="mi">8088</span><span class="p">,</span> <span class="mi">8188</span><span class="p">,</span> <span class="mi">19888</span><span class="p">,</span> <span class="mi">9780</span><span class="p">,</span> <span class="mi">9868</span><span class="p">,</span> <span class="mi">9864</span><span class="p">,</span> <span class="mi">10002</span> <span class="n">proto</span> <span class="n">tcp</span>
-         <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Mostrar el estado de los servicios</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">status</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Iniciar un servicio</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">start</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Reiniciar un servicio</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">restart</span> <span class="n">apache</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Detener todos los servicios</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">stop</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="ejecutar-tareas-de-pruebas-en-hadoop">
 <h2>Ejecutar tareas de pruebas en Hadoop<a class="headerlink" href="#ejecutar-tareas-de-pruebas-en-hadoop" title="Permalink to this heading">#</a></h2>
@@ -476,40 +433,10 @@ document.write(`
 <li><p>Ejecutar una tarea (job) de test en Hadoop con mapreduce</p></li>
 <li><p>Este ejemplo obtiene una estimación del número PI</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hadoop</span> <span class="n">jar</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">mapreduce</span><span class="o">/</span><span class="n">hadoop</span><span class="o">-</span><span class="n">mapreduce</span><span class="o">-</span><span class="n">examples</span><span class="o">-*.</span><span class="n">jar</span> <span class="n">pi</span> <span class="mi">10</span> <span class="mi">100</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Ejecutar una tarea con mapreduce involucrando a HDFS</p></li>
 <li><p>Este ejemplo cuenta la cantidad de palabras y letras c que aparecen en el texto</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;A Cuesta le cuesta subir la cuesta y en medio de la cuesta va y se acuesta.&quot;</span> <span class="o">|</span> \ 
-<span class="n">hadoop</span> <span class="n">fs</span> <span class="o">-</span><span class="n">put</span> <span class="o">-</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">hdfs</span><span class="o">-</span><span class="n">ejemplo</span><span class="o">-</span><span class="nb">input</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hadoop</span> <span class="n">jar</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">mapreduce</span><span class="o">/</span><span class="n">hadoop</span><span class="o">-</span><span class="n">mapreduce</span><span class="o">-</span><span class="n">examples</span><span class="o">-*.</span><span class="n">jar</span> \
-<span class="n">grep</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">hdfs</span><span class="o">-</span><span class="n">ejemplo</span><span class="o">-</span><span class="nb">input</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">hdfs</span><span class="o">-</span><span class="n">ejemplo</span><span class="o">-</span><span class="n">output</span> <span class="s1">&#39;c*&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hadoop</span> <span class="n">fs</span> <span class="o">-</span><span class="n">cat</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">hdfs</span><span class="o">-</span><span class="n">ejemplo</span><span class="o">-</span><span class="n">output</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="n">r</span><span class="o">-</span><span class="mi">00000</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="apache-hive">
 <h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Permalink to this heading">#</a></h2>
@@ -520,86 +447,19 @@ document.write(`
 <ul class="simple">
 <li><p>Para conectarse a Hive a través de un túnel SSH:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beeline</span> <span class="o">-</span><span class="n">u</span> <span class="n">jdbc</span><span class="p">:</span><span class="n">hive2</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">10000</span> <span class="o">-</span><span class="n">n</span> <span class="n">hadoop</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Acceder a la información básica</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Crear una base de datos</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span> <span class="n">databases</span><span class="p">;</span>
-<span class="n">show</span> <span class="n">tables</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">basededatos</span><span class="p">;</span>    <span class="c1"># También se puede usar la orden CREATE SCHEMA</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>También se puede utilizar JDBC para crear una base de datos.</p></li>
 <li><p>El script se guarda en un fichero llamado HiveCreateDb.java con el siguiente código:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import java.sql.SQLException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.DriverManager;
-
-public class HiveCreateDb {
-   private static String driverName = &quot;org.apache.hadoop.hive.jdbc.HiveDriver&quot;;
-   
-   public static void main(String[] args) throws SQLException {
-      // Register driver and create driver instance
-   
-      Class.forName(driverName);
-      // get connection
-      
-      Connection con = DriverManager.getConnection(&quot;jdbc:hive://localhost:10000/default&quot;, &quot;&quot;, &quot;&quot;);
-      Statement stmt = con.createStatement();
-      
-      stmt.executeQuery(&quot;CREATE DATABASE basededatos&quot;);
-      System.out.println(“Base de datos creada exitosamente.”);
-      
-      con.close();
-   }
-}
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Para compilar y ejecutar el programa:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">javac</span> <span class="n">HiveCreateDb</span><span class="o">.</span><span class="n">java</span>
-<span class="n">java</span> <span class="n">HiveCreateDb</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Documentación: <a class="reference external" href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted">https://cwiki.apache.org/confluence/display/Hive/GettingStarted</a></p>
 </section>
 <section id="apache-spark">
@@ -607,100 +467,30 @@ public class HiveCreateDb {
 <ul class="simple">
 <li><p>Abrir el puerto 4040</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">4040</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Crear el fichero a analizar</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vim</span> <span class="n">entrada</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Entrar a la shell de spark</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spark</span><span class="o">-</span><span class="n">shell</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">help</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Crear el RDD para el fichero entrada.txt</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="n">inputfile</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">&quot;entrada.txt&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Contar las palabras:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">inputfile</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="n">line</span> <span class="o">=&gt;</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">word</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="n">_</span><span class="o">+</span><span class="n">_</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Mostrar para tareas de debugging el RDD</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">toDebugString</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Guardar en memoria</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Guardar la salida en un fichero</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="n">outputfile</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s2">&quot;salida.txt&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Almacenamiento no persistente de RDD</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Fuentes:</p></li>
 <li><p><a class="reference external" href="https://docs.bitnami.com/virtual-machine/apps/hadoop/">https://docs.bitnami.com/virtual-machine/apps/hadoop/</a>.</p></li>

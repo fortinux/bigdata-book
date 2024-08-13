@@ -171,6 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
@@ -399,7 +400,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-prescriptivo">Análisis prescriptivo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-analytics-y-business-intelligence">Big Data analytics y Business Intelligence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-libres-de-datos">Fuentes libres de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-big-data">Herramientas para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asf-herramientas-para-big-data">ASF: Herramientas para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop">Apache Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-de-apache-hadoop">Módulos de Apache Hadoop</a></li>
 </ul>
@@ -422,7 +423,7 @@ document.write(`
 <li><p>¿Cómo extraigo información valiosa e <em>insights</em> sobre las tendencias, correlaciones y patrones que existen en Big Data?</p></li>
 </ul>
 <ul class="simple">
-<li><p>En el pasado solo las grandes organizaciones podían aprovecharse de Big Data.</p>
+<li><p>En el pasado solo las grandes organizaciones podían aprovecharse de Big Data:</p>
 <ul>
 <li><p>Walmart, Google, agentes financieros especializados.</p></li>
 </ul>
@@ -582,7 +583,7 @@ document.write(`
 <section id="mad-2024">
 <h2>MAD 2024<a class="headerlink" href="#mad-2024" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>En el informe de 2024 el autor mueve el objetivo del <em>landscape</em> Big Data hacia la IA resaltando como tendencia la interacción de los datos no estructurados, utilizados en los modelos LLM, para entrenar los datos internos de las organizaciones como.</p></li>
+<li><p>En el informe de 2024 el autor mueve el objetivo del <em>landscape</em> Big Data hacia la IA resaltando como tendencia la interacción de los datos no estructurados, utilizados en los modelos LLM, para entrenar los datos internos de las organizaciones.</p></li>
 <li><p>En este sentido comenta el rápido crecimiento de las empresas OpenAI, Anthropic, Palantir, Midjourney y Perplexity AI, entre otras; y el aumento de la valoración de las 7 magníficas (Nvidia, Meta, Amazon, Microsoft, Alphabet, Apple and Tesla) en la bolsa de Nueva York (2023).</p>
 <ul>
 <li><p>Fuente: <a class="reference external" href="https://mattturck.com/mad2024/#more-1805">https://mattturck.com/mad2024/#more-1805</a>.</p></li>
@@ -593,17 +594,18 @@ document.write(`
 <li><p>En el informe de <em>Inside Big Data</em> <a class="reference external" href="https://insidebigdata.com/2024/01/18/big-data-industry-predictions-for-2024/">https://insidebigdata.com/2024/01/18/big-data-industry-predictions-for-2024/</a> para 2024, el CEO de <a class="reference external" href="https://www.bristlecone.com/">https://www.bristlecone.com/</a> señala que los LLM (<em>Large Language Models</em>) de la IA generativa han introducido nuevas oportunidades para unir Big Data y la toma de decisiones. Esto es debido a que los <em>Intelligent Agents</em> entienden y responden a las consultas hechas en lenguaje natural.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Por último, la lista de <em>Inside Big Data</em> IMPACT 50 LIST for Q1 2024 <a class="reference external" href="https://insidebigdata.com/2024/01/18/the-insidebigdata-impact-50-list-for-q1-2024/">https://insidebigdata.com/2024/01/18/the-insidebigdata-impact-50-list-for-q1-2024/</a> muestra, listando a las empresas más importantes, cómo el mercado ha evolucionado hacia la IA. Ellas son: OpenAI, Microsoft AI, NVIDIA, Hugging Face (Pre-trained ML models), Google AI y DeepMind, Amazon Web Services, Snowflake, Databricks, Intel AI, e IBM, en este orden.</p></li>
+<li><p>Por último, la lista de <em>Inside Big Data</em> IMPACT 50 LIST for Q1 2024 <a class="reference external" href="https://insidebigdata.com/2024/01/18/the-insidebigdata-impact-50-list-for-q1-2024/">https://insidebigdata.com/2024/01/18/the-insidebigdata-impact-50-list-for-q1-2024/</a> muestra, listando a las empresas más importantes, cómo el mercado ha evolucionado hacia la IA. Ellas son: OpenAI, Microsoft AI, NVIDIA, Hugging Face (<em>Pre-trained ML models</em>), Google AI y DeepMind, Amazon Web Services, Snowflake, Databricks, Intel AI, e IBM, en este orden.</p></li>
 </ul>
 <!--<a id="gobierno-datos"></a> -->
 </section>
 <section id="gobierno-de-datos-data-governance">
 <h2>Gobierno de datos / Data governance<a class="headerlink" href="#gobierno-de-datos-data-governance" title="Permalink to this heading">#</a></h2>
-<ul>
+<ul class="simple">
 <li><p>El gobierno de datos es una serie de principios, estándares y prácticas que se aplican de punta a punta en el ciclo de vida de los datos (recolección, almacenamiento, uso, protección, archivo y eliminación) para asegurar que los mismos sean confiables y consistentes.</p></li>
-<li><p>Para ello establece estructuras organizacionales, confirma responsables de datos, Hace cumplir reglas y políticas, documenta procesos y registra métricas y términos de negocio comunes.</p>
-<p>Fuente: <a class="reference external" href="https://www.informatica.com/blogs/data-governance-vs-data-management-whats-the-difference.html">https://www.informatica.com/blogs/data-governance-vs-data-management-whats-the-difference.html</a>.</p>
-</li>
+<li><p>Para ello establece estructuras organizacionales, confirma responsables de datos, Hace cumplir reglas y políticas, documenta procesos y registra métricas y términos de negocio comunes.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.informatica.com/blogs/data-governance-vs-data-management-whats-the-difference.html">Informatica.com</a>.</p></li>
 </ul>
 <!--<a id="iso-20547"></a>   -->
 </section>
@@ -1013,7 +1015,7 @@ document.write(`
 <section id="analisis-descriptivo">
 <h2>Análisis descriptivo<a class="headerlink" href="#analisis-descriptivo" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Mineria de datos (<em>Data mining</em>): Se utiliza para filtrar conjuntos de datos en busca de patrones y relaciones.</p></li>
+<li><p>Minería de datos (<em>Data mining</em>): Se utiliza para filtrar conjuntos de datos en busca de patrones y relaciones.</p></li>
 </ul>
 <ul class="simple">
 <li><p>¿Qué hay en los datos?</p>
@@ -1021,7 +1023,7 @@ document.write(`
 <li><p>Asociación.</p></li>
 <li><p>Análisis exploratorio.</p></li>
 <li><p>Segmentación.</p></li>
-<li><p>Clustering (no supervisado): agrupar los datos en categorías basadas en alguna medida de similitud o distancia.</p></li>
+<li><p><em>Clustering</em> (no supervisado): agrupar los datos en categorías basadas en alguna medida de similitud o distancia.</p></li>
 <li><p>Reducción de la dimensión: proceso de reducción del número de variables aleatorias que se tratan.</p></li>
 </ul>
 </li>
@@ -1101,8 +1103,14 @@ document.write(`
 <li><p><a class="reference external" href="http://aws.amazon.com/datasets/">http://aws.amazon.com/datasets/</a></p></li>
 </ul>
 </section>
-<section id="herramientas-para-big-data">
-<h2>Herramientas para Big Data<a class="headerlink" href="#herramientas-para-big-data" title="Permalink to this heading">#</a></h2>
+<section id="asf-herramientas-para-big-data">
+<h2>ASF: Herramientas para Big Data<a class="headerlink" href="#asf-herramientas-para-big-data" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La ASF (<em>Apache Software Foundation</em>) <a class="reference external" href="https://apache.org/">https://apache.org/</a> desarrolla, administra e incuba cientos de proyectos de código de fuente abierta (<em>open source</em>) de nivel empresarial utilizados mundialmente.</p></li>
+<li><p>Actualmente administra más de 70 proyectos relacionados con Big Data <a class="reference external" href="https://projects.apache.org/projects.html?category#big-data">https://projects.apache.org/projects.html?category#big-data</a>.</p></li>
+<li><p>Entre ellos, se pueden mencionar Hadoop para el procesamientos en lotes (<em>batch processing</em>) de grandes conjuntos de datos, Spark para procesamiento <em>in-memory</em> de datos y analítica, Kafka para la ingesta de datos en tiempo real y <em>streaming</em>; y Cassandra o HBase almacenamiento NoSQL escalable de datos.</p></li>
+<li><p>El blog de la ASF se encuentra en <a class="reference external" href="https://news.apache.org/">https://news.apache.org/</a>.</p></li>
+</ul>
 </section>
 <section id="apache-hadoop">
 <h2>Apache Hadoop<a class="headerlink" href="#apache-hadoop" title="Permalink to this heading">#</a></h2>
@@ -1267,7 +1275,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-prescriptivo">Análisis prescriptivo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-analytics-y-business-intelligence">Big Data analytics y Business Intelligence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fuentes-libres-de-datos">Fuentes libres de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-para-big-data">Herramientas para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asf-herramientas-para-big-data">ASF: Herramientas para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop">Apache Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-de-apache-hadoop">Módulos de Apache Hadoop</a></li>
 </ul>

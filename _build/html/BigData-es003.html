@@ -171,6 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Bases de datos para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
@@ -389,6 +390,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-redis">Tutorial Redis</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ignite">Apache Ignite</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-cassandra">Tutorial Cassandra</a></li>
@@ -427,14 +429,14 @@ document.write(`
 <li><p>Beneficios de elegir un formato apropiado de archivos:</p>
 <ul>
 <li><p>Tiempos de lectura y escritura más veloces.</p></li>
-<li><p>Se pueden dividir en múltiples discos.</p></li>
+<li><p>Los datos se pueden dividir en múltiples discos.</p></li>
 <li><p>Compatibilidad con la evolución del esquema.</p></li>
 <li><p>Soporte de compresión.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Formatos de archivos optimizados para Apache Hadoop:</p>
+<li><p>Formatos de archivos binarios optimizados para Apache Hadoop:</p>
 <ul>
 <li><p>Apache Optimized Row Columnar (ORC) <a class="reference external" href="https://orc.apache.org/">https://orc.apache.org/</a></p></li>
 <li><p>Apache Parquet (almacenamiento en columnas) <a class="reference external" href="https://parquet.apache.org/documentation/latest/">https://parquet.apache.org/documentation/latest/</a></p></li>
@@ -475,10 +477,10 @@ document.write(`
 <ul class="simple">
 <li><p>Existen diversos tipos de bases de datos No SQL:</p>
 <ul>
-<li><p>Bases de datos de documentos (MongoDB, Couch DB).</p></li>
-<li><p>Pares de valores (Amazon DynamoDB, Redis).</p></li>
-<li><p>Columnares (Apache Cassandra, Apache HBase).</p></li>
-<li><p>De grafos (Neo4j, Stardog).</p></li>
+<li><p>Bases de datos de documentos (<a class="reference external" href="https://www.mongodb.com/es">MongoDB</a>, <a class="reference external" href="https://couchdb.apache.org/">Couch DB</a>).</p></li>
+<li><p>Pares de valores (<a class="reference external" href="https://aws.amazon.com/es/dynamodb/">Amazon DynamoDB</a>, <a class="reference external" href="https://redis.io/">Redis</a>).</p></li>
+<li><p>Columnares (<a class="reference external" href="https://cassandra.apache.org/_/index.html">Apache Cassandra</a>, <a class="reference external" href="https://hbase.apache.org/">Apache HBase</a>).</p></li>
+<li><p>De grafos (<a class="reference external" href="https://neo4j.com/">Neo4j</a>, <a class="reference external" href="https://www.stardog.com/">Stardog</a>).</p></li>
 </ul>
 </li>
 </ul>
@@ -489,7 +491,7 @@ document.write(`
 <section id="mongodb">
 <h2>MongoDB<a class="headerlink" href="#mongodb" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de big data.</p></li>
+<li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de Big Data.</p></li>
 <li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
 <li><p>Las bases de datos relacionales, por otro lado, tienen un diseño estructurado y tabular.</p></li>
 </ul>
@@ -627,6 +629,8 @@ document.write(`
 <li><p>Apache CouchDB es una base de datos NoSQL orientada a documentos de código abierto, implementada en Erlang.</p></li>
 <li><p>CouchDB usa múltiples formatos y protocolos para almacenar, transferir y procesar sus datos.</p></li>
 <li><p>Utiliza JSON para almacenar datos, JavaScript como lenguaje de consulta usando MapReduce, y HTTP para una API.</p></li>
+</ul>
+<ul class="simple">
 <li><p>El protocolo <em>Couch Replication</em> permite que los datos fluyan sin problemas entre los clústeres de servidores y los teléfonos móviles / navegadores web.</p>
 <ul>
 <li><p>Fuente: <a class="reference external" href="https://couchdb.apache.org/">https://couchdb.apache.org/</a>.</p></li>
@@ -651,11 +655,11 @@ document.write(`
 <section id="redis">
 <h2>Redis<a class="headerlink" href="#redis" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Redis es un almacén de estructura de datos en memoria (<em>in-memory data structure store</em>) de código abierto (con licencia BSD), que se utiliza como base de datos, caché y agente de mensajes.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://redis.io/">https://redis.io/</a>.</p></li>
+<li><p>Redis es un almacén de estructura de datos en memoria (<em>in-memory data structure store</em>) de código abierto (con licencia BSD), que se utiliza como base de datos, caché y vector (búsquedas).</p></li>
+<li><p>Sus caso de uso incluyen: <em>caching</em>, deduplicación, ingesta rápida de datos, <em>feature stores</em>, gestión de sesiones, y búsquedas vectoriales.</p></li>
 </ul>
-</li>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://redis.io/">https://redis.io/</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Su estructura de datos soporta:</p>
@@ -843,6 +847,20 @@ document.write(`
 </ul>
 </section>
 </section>
+<section id="apache-ignite">
+<h2>Apache Ignite<a class="headerlink" href="#apache-ignite" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Ignite es una base de datos distribuida para aplicaciones de alto desempeño con <em>In‑Memory Speed</em>.</p></li>
+<li><p>Aunque tanto Spark como Ignite se basan en una arquitectura de procesamiento distribuido en memoria, Ignite está pensado para ofrecer análisis programáticos en tiempo real, comunicación de máquina a máquina y procesamiento transaccional de alto desempeño.</p></li>
+<li><p>Spark en cambio está diseñado para análisis interactivos y aplicaciones de aprendizaje automático.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Ignite puede servir por ejemplo para sistemas de procesamiento de transacciones como operaciones bursátiles, detección de fraudes, modelado y análisis en tiempo real.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://ignite.apache.org/">https://ignite.apache.org/</a>.</p></li>
+</ul>
+</section>
 <section id="bases-de-datos-columnares">
 <h2>Bases de datos columnares<a class="headerlink" href="#bases-de-datos-columnares" title="Permalink to this heading">#</a></h2>
 </section>
@@ -857,17 +875,26 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>Híbrida</p></li>
+<li><p>Híbrida:</p>
+<ul>
 <li><p>La arquitectura sin servidor maestro y la baja latencia significan que Cassandra resistirá una interrupción completa del centro de datos sin pérdida de datos, en nubes públicas o privadas, o en las instalaciones.</p></li>
 </ul>
+</li>
+</ul>
 <ul class="simple">
-<li><p>Tolerante a fallos</p></li>
+<li><p>Tolerante a fallos:</p>
+<ul>
 <li><p>El soporte de Cassandra para la replicación en varios centros de datos es el mejor de su clase, lo que proporciona una latencia más baja para sus usuarios y la tranquilidad de saber que puede sobrevivir a las interrupciones regionales.</p></li>
 <li><p>Los nodos con fallas se pueden reemplazar sin tiempo de inactividad.</p></li>
 </ul>
+</li>
+</ul>
 <ul class="simple">
-<li><p>Centrada en la calidad</p></li>
+<li><p>Centrada en la calidad:</p>
+<ul>
 <li><p>Para garantizar la confiabilidad y la estabilidad, Cassandra se prueba en clústeres de hasta 1,000 nodos y con cientos de casos de uso y esquemas del mundo real probados con pruebas de reproducción, fuzz, basadas en propiedades, inyección de fallas y de rendimiento.</p></li>
+</ul>
+</li>
 </ul>
 <ul class="simple">
 <li><p>Desempeño:</p>
@@ -882,14 +909,20 @@ document.write(`
 <li><p><em>Zero Copy Streaming</em> lo hace hasta 5 veces más rápido sin <em>vnodes</em> para una arquitectura más elástica, especialmente en entornos de nube y Kubernetes.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Distribuida</p></li>
+<li><p>Distribuida:</p>
+<ul>
 <li><p>Cassandra es adecuada para aplicaciones que no pueden darse el lujo de perder datos, incluso cuando un centro de datos completo deja de funcionar.</p></li>
 <li><p>No hay puntos únicos de falla. No hay cuellos de botella en la red. Todos los nodos del clúster son idénticos.</p></li>
 </ul>
+</li>
+</ul>
 <ul class="simple">
-<li><p>Opciones</p></li>
+<li><p>Opciones:</p>
+<ul>
 <li><p>Se puede elegir entre replicación síncrona o asíncrona para cada actualización. Las operaciones asincrónicas de alta disponibilidad se optimizan con funciones como <em>Hinted Handoff</em> y <em>Read Repair</em>.</p></li>
 <li><p>La función de registro de auditoría para operadores rastrea la actividad DML, DDL y DCL con un impacto mínimo en el rendimiento normal de la carga de trabajo, mientras que <em>fqltool</em> permite la captura y reproducción de cargas de trabajo de producción para su análisis.</p></li>
+</ul>
+</li>
 </ul>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://cassandra.apache.org/_/cassandra-basics.html">https://cassandra.apache.org/_/cassandra-basics.html</a>.</p></li>
@@ -939,7 +972,7 @@ document.write(`
 <li><p>Fragmentación automática: las tablas de HBase se distribuyen en el clúster a través de regiones, y las regiones se dividen y redistribuyen automáticamente a medida que aumentan los datos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Conmutación por error automática de <em>Region Server</em></p></li>
+<li><p>Conmutación por error automática de <em>Region Server</em>.</p></li>
 <li><p>Integración de Hadoop/HDFS: HBase es compatible con HDFS de fábrica como su sistema de archivos distribuido.</p></li>
 <li><p>MapReduce: HBase admite procesamiento en paralelo masivo a través de MapReduce para usar HBase como fuente y receptor.</p></li>
 </ul>
@@ -1149,6 +1182,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-redis">Tutorial Redis</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ignite">Apache Ignite</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bases-de-datos-columnares">Bases de datos columnares</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-cassandra">Apache Cassandra</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-cassandra">Tutorial Cassandra</a></li>

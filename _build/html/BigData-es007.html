@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Big Data stacks y Machine Learning" href="BigData-es008.html" />
-    <link rel="prev" title="Elastic stack" href="BigData-es006.html" />
+    <link rel="prev" title="Tutorial Apache Kafka" href="BigData-es005Kafka.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,13 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -374,11 +374,13 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-ciencia-de-datos">Introducción a la ciencia de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-de-la-ciencia-de-datos">Alcance de la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdd">KDD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mineria-de-datos">Minería de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cientistas-de-datos">Cientistas de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-la-ciencia-de-datos">Procesos en la ciencia de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crisp-dm">CRISP-DM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semma">SEMMA</a></li>
 </ul>
             </nav>
         </div>
@@ -428,18 +430,54 @@ document.write(`
 <li><p>Para ello se hace con un conjunto heterogéneo de métodos y procesos que la pueden convertir, según la Wikipedia <span id="id3">[<a class="reference internal" href="intro.html#id8" title="Wikipedia. Ciencia de datos — wikipedia, la enciclopedia libre. 2023. [Internet; descargado 29-septiembre-2023]. URL: https://es.wikipedia.org/w/index.php?title=Ciencia_de_datos&amp;oldid=154154961.">Wik23</a>]</span> en <em>una ciencia, un paradigma de investigación, un método de investigación, una disciplina, un flujo de trabajo o una profesión</em>.​</p></li>
 </ul>
 </section>
+<section id="kdd">
+<h2>KDD<a class="headerlink" href="#kdd" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El proceso KDD (<em>knowledge discovery in databases</em>) o descubrimiento de conocimiento en bases de datos sirve para extraer conocimiento de los datos en el contexto de grandes bases de datos.</p></li>
+<li><p>Es utilizado por los investigadores para aprendizaje automático, reconocimiento de patrones en bases de datos, estadísticas, inteligencia artificial, adquisición de conocimiento para sistemas expertos, y visualización de datos.</p></li>
+<li><p>En este contexto, emplea métodos de minería de datos para extraer lo que se considera conocimiento mediante preprocesamiento, submuestreo y las transformaciones necesarias en los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El proceso KDD puede envolver la repetición de los siguientes pasos:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Desarrollar el conocimiento del dominio de la aplicación, los conocimientos previos, y el objetivo del usuario final.</p></li>
+<li><p>Establecer un conjunto de datos o un subconjunto de variables, o datos de ejemplo donde el descubrimiento va a ser realizado.</p></li>
+<li><p>Limpiar <em>outliers</em>, gestionar campos vacíos, eliminar datos innecesarios, etc.</p></li>
+<li><p>Utilizar métodos de reducción de dimensionalidad o transformación para reducir el número de variables o para encontrar representaciones invariantes de los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Decidir la tarea de minería de daatos a realizar: clasificación, regresión, clustering, etc.</p></li>
+<li><p>Seleccionar el algoritmo de minería de datos (modelos y parámetros, métodos).</p></li>
+<li><p>Realizar la minería de datos buscando patrones de interés.</p></li>
+<li><p>Interpretar los patrones obtenidos.</p></li>
+<li><p>Consolidad el conocimiento adquirido.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html">https://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Recursos:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/kdd-process-in-data-mining/">https://www.geeksforgeeks.org/kdd-process-in-data-mining/</a>.</p></li>
+<li><p><a class="reference external" href="https://www.javatpoint.com/kdd-process-in-data-mining">https://www.javatpoint.com/kdd-process-in-data-mining</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="mineria-de-datos">
 <h2>Minería de datos<a class="headerlink" href="#mineria-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La minería de datos (<em>data mining</em>) nació a finales de los años ‘90 cuando las grandes organizaciones ya contaban con una sustancial cantidad de datos.</p></li>
-<li><p>También llamada exploración de datos (<em>knowledge discovery in databases - KDD</em>) es un campo de la estadística y las ciencias de la computación.</p></li>
-<li><p>El objetivo de la minería de datos es descubrir patrones en grandes volúmenes de conjuntos de datos (big data).</p></li>
+<li><p>El objetivo de la minería de datos es descubrir patrones en grandes volúmenes de conjuntos de datos (Big Data).</p></li>
 </ul>
 <ul class="simple">
 <li><p>Se podría también definir <em>data mining</em> como <em>la aplicación de algoritmos específicos para extraer patrones de los datos</em> (NIST <span id="id4">[<a class="reference internal" href="intro.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span>. Pág.26.</p></li>
 </ul>
 <ul class="simple">
 <li><p>La minería de datos no solamente necesita conocimientos de estadística y matemática sino además saber como los datos fueron producidos y de que manera se pueden utilizar.</p></li>
+</ul>
+<ul class="simple">
 <li><p>En este contexto, a mediados de los 2000 nació la ciencia de datos que juntaba varias disciplinas para poder extraer información:</p>
 <ul>
 <li><p>Conocimiento de los datos y procesos.</p></li>
@@ -563,6 +601,24 @@ document.write(`
 <li><p>Fuente:  Shearer, C. (2000) The CRISP-DM Model: The New Blueprint for Data Mining. Journal of Data Warehousing, 5, 13-22. <span id="id8">[<a class="reference internal" href="intro.html#id9" title="C Shearer. The CRISP-DM model: the new blueprint for data mining. Journal of Data Warehousing, 5:13–22, 2000.">She00</a>]</span></p></li>
 </ul>
 </section>
+<section id="semma">
+<h2>SEMMA<a class="headerlink" href="#semma" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El modelo SEMMA (<em>Sample,Explore, Modify, Model, Assess</em>) fue desarrollado por la empresa SAS para tareas de <em>datamining</em> y consta de cinco pasos:</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Sample</em>: identifica, combina, particiona, y obtiene muestras de conjuntos de datos, entre otras tareas.</p></li>
+<li><p><em>Explore</em>: Explora los conjuntos de datos de forma estadística y gráfica; graficando los datos, onteniendo estadísticas descriptivas, identificando variables importantes y realizando análisis de asociación.</p></li>
+<li><p><em>Modify</em>: Prepara los datos para el análisis; creando variables adicionales, transformando variables existentes, identificando <em>outliers</em>, reemplazando valores inexistentes, desempeñando <em>cluster analysis</em>, y analizando datos con SOMs (<em>self-organizing maps</em>) o redes <em>Kohonen</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Model</em>: Ajusta un modelo predictivo a una variable objetivo. Entre los modelos disponibles se encuentran los árboles de decisión, redes neuronales, <em>least angle regressions</em>, <em>support vector machines</em>, regresión lineal, y regresiones logísticas.</p></li>
+<li><p><em>Assess</em>: Compara los modelos predictivos que compiten entre sí y generan gráficos que representan el porcentaje de encuestados, el porcentaje de <em>respondents captures</em>, el aumento y las ganancias.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://documentation.sas.com/doc/en/emcs/14.3/n0pejm83csbja4n1xueveo2uoujy.htm">https://documentation.sas.com/doc/en/emcs/14.3/n0pejm83csbja4n1xueveo2uoujy.htm</a>.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -596,12 +652,12 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="BigData-es006.html"
+       href="BigData-es005Kafka.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Elastic stack</p>
+        <p class="prev-next-title">Tutorial Apache Kafka</p>
       </div>
     </a>
     <a class="right-next"
@@ -630,11 +686,13 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-ciencia-de-datos">Introducción a la ciencia de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-de-la-ciencia-de-datos">Alcance de la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdd">KDD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mineria-de-datos">Minería de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cientistas-de-datos">Cientistas de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-la-ciencia-de-datos">Procesos en la ciencia de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crisp-dm">CRISP-DM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semma">SEMMA</a></li>
 </ul>
   </nav></div>
 

@@ -171,6 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
@@ -371,26 +372,33 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Consulta y visualización de datos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-scoop-attic">Apache Scoop (Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motores-de-consultas">Motores de consultas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-vs-spark">Storm vs. Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-impala">Apache Impala</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kudu">Apache Kudu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hive">Apache Hive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-drill">Apache Drill</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presto">Presto</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trino">Trino</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-hue">Otras herramientas: Hue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alluxio">Alluxio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analitica-de-datos-en-tiempo-real">Analítica de datos en tiempo real</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-doris">Apache Doris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-druid">Apache Druid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kylin">Apache Kylin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prevencion-y-perdida-de-datos">Prevención y pérdida de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticsearch">Elasticsearch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-lucene">Apache Lucene</a></li>
@@ -404,6 +412,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-superset">Apache Superset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -430,7 +441,7 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>En este apartado se verán las fases de análisis y consulta de datos, y visualización.</p></li>
+<li><p>En este apartado se verán las fases de procesamiento, análisis y consulta de datos; y visualización.</p></li>
 </ul>
 </section>
 <section id="procesamiento-analisis-y-consulta-de-datos">
@@ -509,6 +520,14 @@ document.write(`
 <li><p>Sqoop utiliza MapReduce para importar y exportar los datos, lo cual proporciona procesamiento en paralelo y tolerancia a fallos.</p></li>
 </ul>
 </section>
+<section id="motores-de-consultas">
+<h2>Motores de consultas<a class="headerlink" href="#motores-de-consultas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Los motores de consultas SQL (<em>SQL query engine</em>) permiten realizar consultas a grandes cantidades de datos (<em>terabytes</em> o <em>petabytes</em>) en distintas fuentes simultáneamente.</p></li>
+<li><p>Las consultas pueden localizar datos, actualizarlos, agregarlos, etc.</p></li>
+<li><p>Entre las herramientas más populares de esta categoría se encuentran <em>Spark, Impala, Hive</em>, y <em>Presto/Trino</em>; entre otras.</p></li>
+</ul>
+</section>
 <section id="apache-spark">
 <h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -523,9 +542,9 @@ document.write(`
 <li><p>Sus funcionalidades básicas son:</p>
 <ul>
 <li><p>Procesamiento de datos en <em>batch/streaming</em> utilizando Python, SQL, Scala, Java o R.</p></li>
-<li><p>Analíticas mediante SQL ejecutando consultas para <em>dashboards</em> e informes más rápudas que la mayoría de los <em>data warehouses</em>.</p></li>
+<li><p>Analíticas mediante SQL ejecutando consultas para <em>dashboards</em> e informes de forma más rápida que la mayoría de los <em>data warehouses</em>.</p></li>
 <li><p>Ciencia de datos en escala realizando <em>Exploratory Data Analysis - EDA</em> con petabytes de datos.</p></li>
-<li><p>Machine learning para entrenar algoritmos en un <em>laptop</em> usando el mismo código que luego se utilizará en clústeres de miles de máquinas.</p></li>
+<li><p><em>Machine learning</em> para entrenar algoritmos en un <em>laptop</em> usando el mismo código que luego se utilizará en clústeres de miles de máquinas.</p></li>
 </ul>
 </li>
 </ul>
@@ -543,78 +562,6 @@ document.write(`
 <li><p>Se utiliza para realizar trabajos informáticos con grandes cargas de datos junto a Apache Kafka.</p></li>
 <li><p>Con Spark ejecutándose en Apache Hadoop YARN, los desarrolladores pueden crear aplicaciones para explotar el poder de Spark, obtener información y enriquecer sus cargas de trabajo de ciencia de datos dentro de un único conjunto de datos compartidos en Hadoop.</p></li>
 </ul>
-</section>
-<section id="apache-storm">
-<h2>Apache Storm<a class="headerlink" href="#apache-storm" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es un sistema distribuido open source para procesar datos en tiempo real durante la ingesta de datos.</p></li>
-<li><p>Es escalable, tiene tolerancia a fallos, y es fácil de configurar y operar.</p></li>
-<li><p>Facilita el procesamiento confiable de flujos ilimitados de datos, haciendo para el procesamiento en tiempo real lo que Hadoop hizo para el procesamiento por lotes.</p>
-<ul>
-<li><p>Extraído de: <a class="reference external" href="https://storm.apache.org/">https://storm.apache.org/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>No existe ningún truco que convierta a Hadoop en un sistema en tiempo real.</p></li>
-<li><p>El procesamiento de datos en tiempo real tiene un conjunto de requisitos fundamentalmente diferente al procesamiento por lotes.</p></li>
-<li><p>Apache Storm agrega a Hadoop esta funcionalidad de manera sencilla.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Casos de uso:</p>
-<ul>
-<li><p>Análisis en tiempo real</p></li>
-<li><p>Aprendizaje automático</p></li>
-<li><p>Monitoreo continuo de operaciones</p></li>
-<li><p>RPC distribuido, ETL, y más.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="storm-vs-spark">
-<h2>Storm vs. Spark<a class="headerlink" href="#storm-vs-spark" title="Permalink to this heading">#</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Situation</p></th>
-<th class="head"><p>Spark</p></th>
-<th class="head"><p>Storm</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Stream processing</p></td>
-<td><p>Batch processing</p></td>
-<td><p>Micro-batch processing</p></td>
-</tr>
-<tr class="row-odd"><td><p>Latency</p></td>
-<td><p>Latency of a few seconds</p></td>
-<td><p>Latency of milliseconds</p></td>
-</tr>
-<tr class="row-even"><td><p>Multi-language support</p></td>
-<td><p>Lesser language support</p></td>
-<td><p>Multiple language support</p></td>
-</tr>
-<tr class="row-odd"><td><p>Languages</p></td>
-<td><p>Java – Scala</p></td>
-<td><p>Java – Scala – Clojure</p></td>
-</tr>
-<tr class="row-even"><td><p>Stream sources</p></td>
-<td><p>HDFS</p></td>
-<td><p>Spout</p></td>
-</tr>
-<tr class="row-odd"><td><p>Resource management</p></td>
-<td><p>Yarn, Mesos</p></td>
-<td><p>Yarn, Mesos</p></td>
-</tr>
-<tr class="row-even"><td><p>Provisioning</p></td>
-<td><p>Basic using Ganglia</p></td>
-<td><p>Apache Ambari</p></td>
-</tr>
-<tr class="row-odd"><td><p>Messaging</p></td>
-<td><p>Netty, Akka</p></td>
-<td><p>ZeroMQ, Netty</p></td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="apache-impala">
 <h2>Apache Impala<a class="headerlink" href="#apache-impala" title="Permalink to this heading">#</a></h2>
@@ -647,7 +594,7 @@ document.write(`
 <section id="apache-hive">
 <h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Apache Hive es una infraestructura de almacenamiento de datos construida sobre Apache Hadoop para proporcionar resúmenes de datos, consultas ad-hoc y análisis de grandes conjuntos de datos.</p></li>
+<li><p>Apache Hive es una infraestructura de almacenamiento de datos (<em>data warehouse</em>) construida sobre Apache Hadoop para proporcionar resúmenes de datos, consultas ad-hoc y análisis de grandes conjuntos de datos.</p></li>
 <li><p>Los analistas de datos usan Hive para consultar, resumir, explorar y analizar esos datos, y luego convertirlos en información empresarial procesable.</p>
 <ul>
 <li><p>Fuente: <a class="reference external" href="https://hive.apache.org/">https://hive.apache.org/</a>.</p></li>
@@ -671,7 +618,7 @@ document.write(`
 <ul class="simple">
 <li><p>Ofrece soporte de autenticación mediante kerberos y se integra con <em>Apache Ranger</em> y <em>Apache Atlas</em> para seguridad y <em>observability</em>.</p></li>
 <li><p>Compactación de datos <em>out-of-the-box</em> y soporte para tablas de <em>Apache Iceberg</em>.</p></li>
-<li><p>Incluye LLAP (<em>Low Latency Analytical Processing</em>), un planificador de consultas y costes utilizando <em>Apache Calcite</em> <a class="reference external" href="https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive">https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive</a> y replicación.</p></li>
+<li><p>Incluye LLAP (<em>Low Latency Analytical Processing</em>), un planificador de consultas y costes utilizando <em>Apache Calcite</em> <a class="reference external" href="https://calcite.apache.org/">https://calcite.apache.org/</a> y replicación: <a class="reference external" href="https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive">https://cwiki.apache.org/confluence/display/Hive/Cost-based+optimization+in+Hive</a>.</p></li>
 </ul>
 </section>
 <section id="apache-drill">
@@ -726,23 +673,15 @@ document.write(`
 <li><p>Se puede descargar el libro <em>Trino: The Definitive Guide, 2nd Edition</em> (los autores son los creadores de Trino) registrándose en <a class="reference external" href="https://www.starburst.io/info/oreilly-trino-guide/">https://www.starburst.io/info/oreilly-trino-guide/</a>.</p></li>
 </ul>
 </section>
-<section id="apache-hadoop-yarn">
-<h2>Apache Hadoop YARN<a class="headerlink" href="#apache-hadoop-yarn" title="Permalink to this heading">#</a></h2>
+<section id="otras-herramientas-hue">
+<h2>Otras herramientas: Hue<a class="headerlink" href="#otras-herramientas-hue" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
-<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en servicios separados: un <em>ResourceManager</em> (RM) global y un <em>ApplicationMaster</em> (AM) por aplicación.</p></li>
-<li><p>Una aplicación es un solo trabajo o un DAG de trabajos.</p></li>
-<li><p>El <em>ResourceManager</em> y el <em>NodeManager</em> forman el framework de cálculo de datos.</p></li>
+<li><p>Hue es un asistente open source de SQL para bases de datos y <em>data warehouses</em>.</p></li>
+<li><p>Provee un editor de código SQL con componentes y autocompletado que permite conectarse a cualquier base de datos.</p>
+<ul>
+<li><p>Fuente: <a class="reference external" href="https://gethue.com/">https://gethue.com/</a>.</p></li>
 </ul>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>El <em>ResourceManager</em> arbitra los recursos entre todas las aplicaciones del sistema.</p></li>
-<li><p>El <em>NodeManager</em> es el agente del framework por máquina que es responsable de los contenedores, monitorea el uso de sus recursos (cpu, memoria, disco, red) e informa al <em>ResourceManager/Scheduler</em>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La aplicación <em>ApplicationMaster</em> es en efecto una biblioteca específica del framework y tiene la tarea de negociar recursos del <em>ResourceManager</em> y trabajar con el/los <em>NodeManager(s)</em> para ejecutar y monitorear las tareas.</p></li>
+</li>
 </ul>
 </section>
 <section id="alluxio">
@@ -756,21 +695,56 @@ document.write(`
 <li><p>Fuente: <a class="reference external" href="https://www.alluxio.io/data-orchestration/">https://www.alluxio.io/data-orchestration/</a>.</p></li>
 </ul>
 </section>
-<section id="otras-herramientas">
-<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this heading">#</a></h2>
+<section id="analitica-de-datos-en-tiempo-real">
+<h2>Analítica de datos en tiempo real<a class="headerlink" href="#analitica-de-datos-en-tiempo-real" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="apache-doris">
+<h2>Apache Doris<a class="headerlink" href="#apache-doris" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Doris es un moderno <em>data warehouse open source</em> para analíticas en tiempo real.</p></li>
+<li><p>Puede ser utilizado para realizar informes de análisis, consultas <em>ad-hoc</em>, unificar almacenes de datos o acelerar consultas a lagos de datos.</p></li>
+<li><p>Permite construir aplicaciones para análisis del comportamiento del usuario, <em>A/B testing, log analysis</em>, análisis de perfiles de usuario, o de pedidos de ventas.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://doris.apache.org/">https://doris.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-druid">
+<h2>Apache Druid<a class="headerlink" href="#apache-druid" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Druid es una base de datos diseñada para análisis en tiempo real (consultas OLAP) en grandes conjuntos de datos.</p></li>
+<li><p>Se especializa en casos de uso donde la ingesta de datos en tiempo real, un desempeño veloz en las consultas y una disponibulidad alta son importantes.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://druid.apache.org/">https://druid.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-kylin">
+<h2>Apache Kylin<a class="headerlink" href="#apache-kylin" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Kylin es un almacén de datos analíticos distribuido de código abierto para Big Data.</p></li>
+<li><p>Diseñado para proporcionar capacidad OLAP (procesamiento analítico en línea) para Big Data.</p></li>
+<li><p>Al renovar el cubo multidimensional y la tecnología de precálculo en Hadoop y Spark, Kylin puede lograr una velocidad de consulta casi constante independientemente del volumen de datos en constante crecimiento.</p></li>
+<li><p>Al reducir la latencia de las consultas de minutos a menos de un segundo, Kylin devuelve la analítica en línea a los grandes datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://kylin.apache.org/">https://kylin.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-pinot">
+<h2>Apache Pinot<a class="headerlink" href="#apache-pinot" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Pinot es una plataforma de código abierto de analítica en tiempo real ideal para obtener información ultrarrápida, escalabilidad sin esfuerzo y decisiones rentables basadas en datos.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://pinot.apache.org/">https://pinot.apache.org/</a>.</p></li>
+</ul>
+</section>
+<section id="vertica">
+<h2>Vertica<a class="headerlink" href="#vertica" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Vertica es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
 <li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
 <ul>
 <li><p>Extraído de <a class="reference external" href="https://www.vertica.com/landing-page/start-your-free-trial-today/">https://www.vertica.com/landing-page/start-your-free-trial-today/</a>.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Hue es un asistente open source de SQL para bases de datos y <em>data warehouses</em>.</p></li>
-<li><p>Provee un editor de código SQL con componentes y autocompletado que permite conectarse a cualquier base de datos.</p>
-<ul>
-<li><p>Fuente: <a class="reference external" href="https://gethue.com/">https://gethue.com/</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -823,8 +797,9 @@ document.write(`
 <li><p>La identificación de dicha pérdida de datos necesita un control cuidadoso y procesos de evaluación de la calidad en el flujo del proceso de ingesta de datos.</p></li>
 </ul>
 </section>
-<section id="visualizacion-de-datos">
-<h2>Visualización de datos<a class="headerlink" href="#visualizacion-de-datos" title="Permalink to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos">
+<h1>Visualización de datos<a class="headerlink" href="#visualizacion-de-datos" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>La fase de visualización o presentación es donde los usuarios pueden sentir el VALOR de los DATOS.</p></li>
 <li><p>La visualización de hallazgos ayuda a tomar mejores decisiones de negocios.</p></li>
@@ -858,7 +833,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-</section>
 <section id="elastic-stack">
 <h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -999,6 +973,9 @@ document.write(`
 <li><p>Una vez indexados en Elasticsearch, los usuarios pueden ejecutar consultas complejas en sus datos y usar agregaciones para recuperar resúmenes complejos de sus datos.</p></li>
 <li><p>Desde Kibana, los usuarios pueden crear potentes visualizaciones de sus datos, compartir paneles y administrar el Elastic Stack.</p></li>
 </ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.elastic.co/logstash">https://www.elastic.co/logstash</a>.</p></li>
+</ul>
 </section>
 <section id="kibana">
 <h2>Kibana<a class="headerlink" href="#kibana" title="Permalink to this heading">#</a></h2>
@@ -1022,59 +999,12 @@ document.write(`
 <ul class="simple">
 <li><p>Cuenta además con herramientas para la línea de comandos:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">certgen</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">certutil</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">croneval</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">keystore</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">migrate</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">certgen</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">certutil</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">croneval</span>
-
-<span class="ne">NameError</span>: name &#39;elasticsearch&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">node</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">saml</span><span class="o">-</span><span class="n">metadata</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">setup</span><span class="o">-</span><span class="n">passwords</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">shard</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">syskeygen</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">users</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Un documento en Kibana se compone de campos con valores:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un documento puede contener varios campos con valores</span>
-<span class="p">{</span>
-  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Elastic&quot;</span><span class="p">,</span>
-  <span class="o">...</span>
-  <span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Fuente: (<a class="reference external" href="http://assets.contentstack.io">assets.contentstack.io</a>) [<a class="reference external" href="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt">https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt</a>].</p></li>
 </ul>
@@ -1089,7 +1019,7 @@ document.write(`
 <section id="salesforce-amazon-google-y-microsoft">
 <h2>Salesforce, Amazon, Google y Microsoft<a class="headerlink" href="#salesforce-amazon-google-y-microsoft" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Google y Microsoft.</p></li>
+<li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Amazon, Google y Microsoft.</p></li>
 <li><p>Salesforce adquirió Tableau y google hizo lo mismo con Looker en 2019.</p></li>
 <li><p>La reciente integración entre estos productos le permitirán al usuario modelar datos con LookML y usar Tableau, o Looker para explorar ese modelo.</p></li>
 </ul>
@@ -1104,98 +1034,17 @@ document.write(`
 <ul class="simple">
 <li><p>Amazon ofrece Amazon QuickSight, una herramienta de inteligencia empresarial unificada a hiperescala.</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://aws.amazon.com/es/quicksight/">https://aws.amazon.com/es/quicksight/</a>.## Apache Superset</p></li>
+<li><p>Fuente: <a class="reference external" href="https://aws.amazon.com/es/quicksight/">https://aws.amazon.com/es/quicksight/</a>.</p></li>
 </ul>
 </li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.## Apache Superset</p></li>
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>Sus características principales son:</p></li>
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Google Looker conecta, analiza, y visualiza datos en ambientes multicloud.</p></li>
-<li><p>Looker puede facilitar la creación de una plataforma de exploración de datos que facilite el acceso a datos de una manera significativa e intuitiva para la organización.</p></li>
+<li><p>Looker puede facilitar la creación de una plataforma de exploración de datos que facilite el acceso a datos de una manera significativa e intuitiva para la organización.</p>
+<ul>
 <li><p>Fuente: <a class="reference external" href="https://looker.com/google-cloud">https://looker.com/google-cloud</a>.</p></li>
+</ul>
+</li>
 </ul>
 <ul class="simple">
 <li><p>Microsoft cuenta por su parte con PowerBI.</p></li>
@@ -1239,7 +1088,6 @@ document.write(`
 <li><p>Apache Flume es útil para procesar datos de registro.</p></li>
 <li><p>Apache Storm se utiliza para el monitoreo de operaciones</p></li>
 <li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
-<li><p>El monitoreo puede ocurrir en el paso de almacenamiento de datos.</p></li>
 </ul>
 </section>
 </section>
@@ -1307,26 +1155,33 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Consulta y visualización de datos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-analisis-y-consulta-de-datos">Procesamiento, análisis y consulta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-scoop-attic">Apache Scoop (Attic)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motores-de-consultas">Motores de consultas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-storm">Apache Storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#storm-vs-spark">Storm vs. Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-impala">Apache Impala</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kudu">Apache Kudu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hive">Apache Hive</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-drill">Apache Drill</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presto">Presto</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trino">Trino</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-hue">Otras herramientas: Hue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alluxio">Alluxio</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analitica-de-datos-en-tiempo-real">Analítica de datos en tiempo real</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-doris">Apache Doris</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-druid">Apache Druid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kylin">Apache Kylin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prevencion-y-perdida-de-datos">Prevención y pérdida de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elastic-stack">Elastic Stack</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elasticsearch">Elasticsearch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-lucene">Apache Lucene</a></li>
@@ -1340,6 +1195,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-superset">Apache Superset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

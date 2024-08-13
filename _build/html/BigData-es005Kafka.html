@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es005Kafka';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Elastic stack" href="BigData-es006.html" />
+    <link rel="next" title="Big Data Science" href="BigData-es007.html" />
     <link rel="prev" title="Tutorial Apache Hadoop" href="BigData-es005Hadoop.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,13 +169,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BigData-es001.html">Definición y características</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es002.html">Ingesta y almacenamiento de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Consulta y visualización de datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial Apache Kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es006.html">Elastic stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
@@ -407,68 +407,18 @@ document.write(`
 <li><p>Una vez instalado Apache Kafka se deberán abrir los puertos del servidor para los distintos servicios del framework.</p></li>
 <li><p>Puerto 9092 para Kafka y puerto 2181 para Zookeeper.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">9092</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">9092</span>
-         <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ufw</span> <span class="n">allow</span> <span class="mi">2081</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Mostrar el estado de los servicios</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">status</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Iniciar un servicio</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">start</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Reiniciar un servicio</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">restart</span> <span class="n">apache</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Detener todos los servicios</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">ctlscript</span><span class="o">.</span><span class="n">sh</span> <span class="n">stop</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="ejecutar-un-productor-y-un-consumidor-en-kafka">
 <h2>Ejecutar un productor y un consumidor en Kafka<a class="headerlink" href="#ejecutar-un-productor-y-un-consumidor-en-kafka" title="Permalink to this heading">#</a></h2>
@@ -476,54 +426,15 @@ document.write(`
 <li><p>Crear y colectar un tópico en Kafka utilizando la consola.</p></li>
 <li><p>Se inicia exportando la configuración de autenticación a Kafka.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">KAFKA_OPTS</span><span class="o">=</span><span class="s2">&quot;-Djava.security.auth.login.config=/opt/bitnami/kafka/config/kafka_jaas.conf&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Crear un nuevo tópico con una única partición y una única réplica.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">topics</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">create</span> <span class="o">--</span><span class="n">zookeeper</span> \ 
-<span class="n">SERVER</span><span class="o">-</span><span class="n">IP</span><span class="p">:</span><span class="mi">2181</span> <span class="o">--</span><span class="n">replication</span><span class="o">-</span><span class="n">factor</span> <span class="mi">1</span> <span class="o">--</span><span class="n">partitions</span> <span class="mi">1</span> <span class="o">--</span><span class="n">topic</span> <span class="n">test</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Crear un nuevo productor y generar el mensaje para el tópico.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">producer</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">broker</span><span class="o">-</span><span class="nb">list</span> \
-<span class="n">SERVER</span><span class="o">-</span><span class="n">IP</span><span class="p">:</span><span class="mi">9092</span> <span class="o">--</span><span class="n">producer</span><span class="o">.</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">producer</span><span class="o">.</span><span class="n">properties</span> <span class="o">--</span><span class="n">topic</span> <span class="n">test</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  <span class="n">Este</span> <span class="n">es</span> <span class="n">mi</span> <span class="n">primer</span> <span class="n">mensaje</span>
-  <span class="o">...</span> <span class="n">y</span> <span class="n">este</span> <span class="n">es</span> <span class="n">el</span> <span class="n">segundo</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Recuperar y presentar los mensajes.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">kafka</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">consumer</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">bootstrap</span><span class="o">-</span><span class="n">server</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">9092</span> \
-<span class="o">--</span><span class="n">topic</span> <span class="n">test</span> <span class="o">--</span><span class="n">consumer</span><span class="o">.</span><span class="n">config</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">bitnami</span><span class="o">/</span><span class="n">kafka</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">consumer</span><span class="o">.</span><span class="n">properties</span> <span class="o">--</span><span class="n">from</span><span class="o">-</span><span class="n">beginning</span>
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
 <li><p>Fuentes:</p></li>
 <li><p><a class="reference external" href="https://docs.bitnami.com/virtual-machine/apps/kafka/">https://docs.bitnami.com/virtual-machine/apps/kafka/</a>.</p></li>
@@ -572,11 +483,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="BigData-es006.html"
+       href="BigData-es007.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Elastic stack</p>
+        <p class="prev-next-title">Big Data Science</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
