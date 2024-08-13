@@ -414,18 +414,23 @@ document.write(`
 <ul class="simple">
 <li><p>Una vez instalado Apache Hadoop se deberán abrir los puertos del servidor para los distintos servicios web del framework.</p></li>
 </ul>
+<p>sudo ufw allow 8042, 8088, 8188, 19888, 9780, 9868, 9864, 10002 proto tcp</p>
 <ul class="simple">
 <li><p>Mostrar el estado de los servicios</p></li>
 </ul>
+<p>sudo /opt/bitnami/ctlscript.sh status</p>
 <ul class="simple">
 <li><p>Iniciar un servicio</p></li>
 </ul>
+<p>sudo /opt/bitnami/ctlscript.sh start</p>
 <ul class="simple">
 <li><p>Reiniciar un servicio</p></li>
 </ul>
+<p>sudo /opt/bitnami/ctlscript.sh restart apache</p>
 <ul class="simple">
 <li><p>Detener todos los servicios</p></li>
 </ul>
+<p>sudo /opt/bitnami/ctlscript.sh stop</p>
 </section>
 <section id="ejecutar-tareas-de-pruebas-en-hadoop">
 <h2>Ejecutar tareas de pruebas en Hadoop<a class="headerlink" href="#ejecutar-tareas-de-pruebas-en-hadoop" title="Permalink to this heading">#</a></h2>
@@ -433,10 +438,16 @@ document.write(`
 <li><p>Ejecutar una tarea (job) de test en Hadoop con mapreduce</p></li>
 <li><p>Este ejemplo obtiene una estimación del número PI</p></li>
 </ul>
+<p>hadoop jar /opt/bitnami/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-*.jar pi 10 100</p>
 <ul class="simple">
 <li><p>Ejecutar una tarea con mapreduce involucrando a HDFS</p></li>
 <li><p>Este ejemplo cuenta la cantidad de palabras y letras c que aparecen en el texto</p></li>
 </ul>
+<p>echo “A Cuesta le cuesta subir la cuesta y en medio de la cuesta va y se acuesta.” | \
+hadoop fs -put - /tmp/hdfs-ejemplo-input</p>
+<p>hadoop jar /opt/bitnami/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-<em>.jar <br />
+grep /tmp/hdfs-ejemplo-input /tmp/hdfs-ejemplo-output ‘c</em>’</p>
+<p>hadoop fs -cat /tmp/hdfs-ejemplo-output/part-r-00000</p>
 </section>
 <section id="apache-hive">
 <h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Permalink to this heading">#</a></h2>
@@ -447,19 +458,49 @@ document.write(`
 <ul class="simple">
 <li><p>Para conectarse a Hive a través de un túnel SSH:</p></li>
 </ul>
+<p>beeline -u jdbc:hive2://localhost:10000 -n hadoop</p>
 <ul class="simple">
 <li><p>Acceder a la información básica</p></li>
 </ul>
+<p>help</p>
 <ul class="simple">
 <li><p>Crear una base de datos</p></li>
 </ul>
+<p>show databases;
+show tables;</p>
+<p>CREATE DATABASE basededatos;    # También se puede usar la orden CREATE SCHEMA</p>
 <ul class="simple">
 <li><p>También se puede utilizar JDBC para crear una base de datos.</p></li>
 <li><p>El script se guarda en un fichero llamado HiveCreateDb.java con el siguiente código:</p></li>
 </ul>
+<p>import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.DriverManager;</p>
+<p>public class HiveCreateDb {
+private static String driverName = “org.apache.hadoop.hive.jdbc.HiveDriver”;</p>
+<p>public static void main(String[] args) throws SQLException {
+// Register driver and create driver instance</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Class.forName(driverName);
+  // get connection
+  
+  Connection con = DriverManager.getConnection(&quot;jdbc:hive://localhost:10000/default&quot;, &quot;&quot;, &quot;&quot;);
+  Statement stmt = con.createStatement();
+  
+  stmt.executeQuery(&quot;CREATE DATABASE basededatos&quot;);
+  System.out.println(“Base de datos creada exitosamente.”);
+  
+  con.close();
+</pre></div>
+</div>
+<p>}
+}</p>
 <ul class="simple">
 <li><p>Para compilar y ejecutar el programa:</p></li>
 </ul>
+<p>javac HiveCreateDb.java
+java HiveCreateDb</p>
 <p>Documentación: <a class="reference external" href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted">https://cwiki.apache.org/confluence/display/Hive/GettingStarted</a></p>
 </section>
 <section id="apache-spark">
@@ -467,30 +508,40 @@ document.write(`
 <ul class="simple">
 <li><p>Abrir el puerto 4040</p></li>
 </ul>
+<p>sudo ufw allow 4040</p>
 <ul class="simple">
 <li><p>Crear el fichero a analizar</p></li>
 </ul>
+<p>vim entrada.txt</p>
 <ul class="simple">
 <li><p>Entrar a la shell de spark</p></li>
 </ul>
+<p>spark-shell</p>
+<p>:help</p>
 <ul class="simple">
 <li><p>Crear el RDD para el fichero entrada.txt</p></li>
 </ul>
+<p>val inputfile = sc.textFile(“entrada.txt”)</p>
 <ul class="simple">
 <li><p>Contar las palabras:</p></li>
 </ul>
+<p>val counts = inputfile.flatMap(line =&gt; line.split(” “)).map(word =&gt; (word, 1)).reduceByKey(<em>+</em>);</p>
 <ul class="simple">
 <li><p>Mostrar para tareas de debugging el RDD</p></li>
 </ul>
+<p>counts.toDebugString</p>
 <ul class="simple">
 <li><p>Guardar en memoria</p></li>
 </ul>
+<p>counts.cache()</p>
 <ul class="simple">
 <li><p>Guardar la salida en un fichero</p></li>
 </ul>
+<p>val outputfile = sc.textFile(“salida.txt”)</p>
 <ul class="simple">
 <li><p>Almacenamiento no persistente de RDD</p></li>
 </ul>
+<p>counts.unpersist()</p>
 <ul class="simple">
 <li><p>Fuentes:</p></li>
 <li><p><a class="reference external" href="https://docs.bitnami.com/virtual-machine/apps/hadoop/">https://docs.bitnami.com/virtual-machine/apps/hadoop/</a>.</p></li>
