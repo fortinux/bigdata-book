@@ -376,6 +376,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop">Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-de-apache-hadoop">Módulos de Apache Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-procesamiento-dag">Modelo de procesamiento DAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-mapreduce">Apache Hadoop MapReduce</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-ficheros-hdfs">Sistema de ficheros HDFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-hdfs">Características de HDFS</a></li>
@@ -408,10 +409,10 @@ document.write(`
 <section id="aplicaciones-para-big-data">
 <h2>Aplicaciones para Big Data<a class="headerlink" href="#aplicaciones-para-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Hadoop: HDFS &amp; MapReduce</p></li>
-<li><p>Apache Storm</p></li>
-<li><p>Apache Spark</p></li>
-<li><p>Apache Kafka</p></li>
+<li><p>Hadoop: HDFS, YARN &amp; MapReduce.</p></li>
+<li><p>Apache Spark.</p></li>
+<li><p>Apache Storm.</p></li>
+<li><p>Apache Kafka.</p></li>
 </ul>
 </section>
 <section id="hadoop">
@@ -452,7 +453,7 @@ document.write(`
 <ul class="simple">
 <li><p>Hadoop YARN</p>
 <ul>
-<li><p>Un framework para job scheduling y gestión de recursos de los clusters.</p></li>
+<li><p>Un framework para <em>job scheduling</em> y gestión de recursos de los clústeres.</p></li>
 <li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a>.</p></li>
 </ul>
@@ -474,9 +475,9 @@ document.write(`
 <li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
 <li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en demonios separados: un <em>ResourceManager (RM)</em> global y un <em>ApplicationMaster (AM)</em> por aplicación.</p></li>
 <li><p>Una aplicación es un solo trabajo o un DAG de trabajos.</p></li>
-<li><p>El <em>ResourceManager</em> y el <em>NodeManager</em> forman el framework de cálculo de datos.</p></li>
 </ul>
 <ul class="simple">
+<li><p>El <em>ResourceManager</em> y el <em>NodeManager</em> forman el framework de cálculo de datos.</p></li>
 <li><p>El <em>ResourceManager</em> arbitra los recursos entre todas las aplicaciones del sistema.</p></li>
 <li><p>El <em>NodeManager</em> es el agente del framework por máquina que es responsable de los contenedores, monitorea el uso de sus recursos (CPU, memoria, disco, red) e informa al <em>ResourceManager / Scheduler</em>.</p></li>
 </ul>
@@ -487,10 +488,23 @@ document.write(`
 <li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a></p></li>
 </ul>
 </section>
+<section id="modelo-de-procesamiento-dag">
+<h2>Modelo de procesamiento DAG<a class="headerlink" href="#modelo-de-procesamiento-dag" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Un modelo de procesamiento DAG (gráfico acíclico dirigido - <em>directed acyclic graph</em>) representa las dependencias entre tareas en un flujo de trabajo o canalización.</p></li>
+<li><p>Éstas se representan como nodos en un DAG, donde los bordes representan las dependencias entre tareas que solamente se puede ejecutar una vez que se hayan completado todas sus dependencias.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Apache Spark, Apache Flink y Apache Beam implementan su modelo de procesamiento como un DAG mientras que Apache Airflow o Dagster <a class="reference external" href="https://dagster.io/">https://dagster.io/</a> son motores de orquestación que utilizan DAGa para definir tareas y dependencias en los trabajo a realizar.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.hopsworks.ai/dictionary/dag-processing-model">https://www.hopsworks.ai/dictionary/dag-processing-model</a>.</p></li>
+</ul>
+</section>
 <section id="apache-hadoop-mapreduce">
 <h2>Apache Hadoop MapReduce<a class="headerlink" href="#apache-hadoop-mapreduce" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Es un framework de software para escribir fácilmente aplicaciones que procesan grandes cantidades de datos (conjuntos de datos de varios terabytes) en paralelo en grandes clústeres (miles de nodos) de hardware básico de manera confiable y tolerante a fallas.</p></li>
+<li><p>Es un framework de software para escribir fácilmente aplicaciones que procesan grandes cantidades de datos (conjuntos de datos de varios <em>terabytes</em>) en paralelo en grandes clústeres (miles de nodos) de hardware básico de manera confiable y tolerante a fallas.</p></li>
 </ul>
 <p>Fuente: <span id="id1">[<a class="reference internal" href="intro.html#id5" title="Garry. Turkington. Hadoop Beginner's Guide. Packt Publishing, 2013.">Tur13</a>]</span></p>
 <ul class="simple">
@@ -520,7 +534,7 @@ document.write(`
 <h2>Sistema de ficheros HDFS<a class="headerlink" href="#sistema-de-ficheros-hdfs" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>HDFS es un sistema de ficheros basado en Java que provee almacenamiento confiable y escalable.</p></li>
-<li><p>Fue diseñado para abarcar grandes grupos de servidores básicos (commodity servers).</p></li>
+<li><p>Fue diseñado para abarcar grandes grupos de servidores básicos (<em>commodity servers</em>).</p></li>
 <li><p>HDFS contiene una gran cantidad de datos y proporciona un acceso a los mismos de manera sencilla y fácil.</p>
 <ul>
 <li><p>Extraído de: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html">https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a>.</p></li>
@@ -560,7 +574,7 @@ document.write(`
 <li><p>HDFS fue construido para soportar aplicaciones con grandes conjuntos de datos, incluyendo ficheros con <em>terabytes</em> de tamaño.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Utiliza una arquitectura maestro/esclavo, en la que cada clúster consta de un solo NameNode que administra las operaciones del sistema de archivos y admite DataNodes que administran el almacenamiento de datos en nodos de cómputo individuales.</p></li>
+<li><p>Utiliza una arquitectura maestro/esclavo, en la que cada clúster consta de un solo <em>NameNode</em> que administra las operaciones del sistema de archivos y admite <em>DataNodes</em> que administran el almacenamiento de datos en nodos de cómputo individuales.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Cuando HDFS toma datos, divide la información en partes separadas y las distribuye a diferentes nodos en un clúster, lo que permite el procesamiento paralelo.</p></li>
@@ -620,7 +634,7 @@ document.write(`
 <li><p>Spark SQL para SQL y procesamiento de datos estructurados,</p></li>
 <li><p>MLlib para aprendizaje automático,</p></li>
 <li><p>GraphX para procesamiento de gráficos, y</p></li>
-<li><p>Transmisión estructurada para procesamiento incremental y de streaming.</p></li>
+<li><p>Transmisión estructurada para procesamiento incremental y en <em>streaming</em>.</p></li>
 </ul>
 </li>
 </ul>
@@ -635,7 +649,7 @@ document.write(`
 </ul>
 <ul class="simple">
 <li><p>Velocidad: Se ejecutan cargas de trabajo 100 veces más rápidas.</p></li>
-<li><p>Apache Spark logra un alto rendimiento tanto para datos por lotes como en streaming, utilizando un programador DAG de última generación, un optimizador de consultas y un motor de ejecución física.</p></li>
+<li><p>Apache Spark logra un alto rendimiento tanto para datos por lotes como en <em>streaming</em>, utilizando un programador DAG de última generación, un optimizador de consultas y un motor de ejecución física.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Se ejecuta en todas partes: Se puede ejecutar Spark utilizando su modo de clúster independiente, en EC2, en Hadoop YARN, en Mesos o en Kubernetes.</p></li>
@@ -692,9 +706,9 @@ document.write(`
 <ul class="simple">
 <li><p>Casos de uso:</p>
 <ul>
-<li><p>Análisis en tiempo real</p></li>
-<li><p>Aprendizaje automático</p></li>
-<li><p>Monitoreo continuo de operaciones</p></li>
+<li><p>Análisis en tiempo real.</p></li>
+<li><p>Aprendizaje automático.</p></li>
+<li><p>Monitoreo continuo de operaciones.</p></li>
 <li><p>RPC distribuido, ETL, y más.</p></li>
 </ul>
 </li>
@@ -713,7 +727,7 @@ document.write(`
 <ul class="simple">
 <li><p>Storm se puede utilizar para:</p>
 <ul>
-<li><p>Procesamiento de mensajes y actualización de bases de datos (stream processing).</p></li>
+<li><p>Procesamiento de mensajes y actualización de bases de datos (<em>stream processing</em>).</p></li>
 <li><p>Consulta continua sobre flujos de datos y transmisión de los resultados a los clientes (computación continua).</p></li>
 <li><p>Paralelizar una consulta intensa como una consulta de búsqueda sobre la marcha (RPC distribuido), y más.</p></li>
 </ul>
@@ -743,6 +757,9 @@ document.write(`
 <ul class="simple">
 <li><p>Independiente del lenguaje de programación: el procesamiento en tiempo real robusto y escalable no debe limitarse a una sola plataforma.</p></li>
 <li><p>Las topologías y los componentes de procesamiento de Storm se pueden definir en cualquier idioma, lo que hace que Storm sea accesible para casi cualquier persona.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://storm.apache.org/releases/2.6.3/Concepts.html">https://storm.apache.org/releases/2.6.3/Concepts.html</a>.</p></li>
 </ul>
 </section>
 <section id="storm-vs-spark">
@@ -806,14 +823,14 @@ document.write(`
 <ul class="simple">
 <li><p>Alto rendimiento:</p>
 <ul>
-<li><p>Entrega mensajes con un rendimiento limitado de la red utilizando un grupo de máquinas (cluster) con una latencia de tan solo 2 ms.</p></li>
+<li><p>Entrega mensajes con un rendimiento limitado de la red utilizando un grupo de máquinas (clúster) con una latencia de tan solo 2 ms.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
 <li><p>Escalable:</p>
 <ul>
-<li><p>Es posible escalar clústeres de producción con hasta mil brokers, billones de mensajes por día, petabytes de datos, cientos de miles de particiones.</p></li>
+<li><p>Es posible escalar clústeres de producción con hasta mil <em>brokers</em>, billones de mensajes por día, <em>petabytes</em> de datos, cientos de miles de particiones.</p></li>
 <li><p>También expandir y contraer elásticamente el almacenamiento y procesamiento.</p></li>
 </ul>
 </li>
@@ -991,6 +1008,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop">Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-de-apache-hadoop">Módulos de Apache Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-procesamiento-dag">Modelo de procesamiento DAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-mapreduce">Apache Hadoop MapReduce</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-ficheros-hdfs">Sistema de ficheros HDFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-hdfs">Características de HDFS</a></li>
