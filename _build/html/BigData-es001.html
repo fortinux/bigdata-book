@@ -388,9 +388,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-del-big-data">Características del Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-v-del-big-data">Otras V del Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos">Tipos de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatos-de-archivos-para-big-data">Formatos de archivos para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historia-del-big-data">Historia del Big Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-lakes-data-warehouses">Data Lakes - Data Warehouses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouses-data-lakes-lakehouses">Data Warehouses / Data Lakes / Lakehouses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop-y-spark">Hadoop y Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso-de-big-data">Casos de uso de Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-big-data">Buenas prácticas para Big Data</a></li>
@@ -790,38 +789,6 @@ document.write(`
 <li><p>Para mayor información sobre los tipos de datos existe la norma ISO/IEC 11404:2007 (<em>International Organization for Standardization / International Electrotechnical Commission</em>) <em>General Purpose Datatypes.</em></p></li>
 </ul>
 </section>
-<section id="formatos-de-archivos-para-big-data">
-<h2>Formatos de archivos para Big Data<a class="headerlink" href="#formatos-de-archivos-para-big-data" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Beneficios de elegir un formato apropiado de archivos:</p>
-<ul>
-<li><p>Tiempos de lectura y escritura más veloces.</p></li>
-<li><p>Se pueden dividir en múltiples discos.</p></li>
-<li><p>Compatibilidad con la evolución del esquema.</p></li>
-<li><p>Soporte de compresión.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Formatos de archivos optimizados para Apache Hadoop:</p>
-<ul>
-<li><p>Apache Optimized Row Columnar (ORC) <a class="reference external" href="https://orc.apache.org/">https://orc.apache.org/</a></p></li>
-<li><p>Apache Parquet (almacenamiento en columnas) <a class="reference external" href="https://parquet.apache.org/documentation/latest/">https://parquet.apache.org/documentation/latest/</a></p></li>
-<li><p>Apache Avro (almacenamiento en fila) <a class="reference external" href="https://avro.apache.org/">https://avro.apache.org/</a></p></li>
-<li><p>Avro es popular en sistemas de streaming con Kafka y Schema Registry gracias a su rendimiento.</p></li>
-</ul>
-</li>
-</ul>
-<ul class="simple">
-<li><p>Otros formatos de archivos:</p>
-<ul>
-<li><p>JSON <a class="reference external" href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a>.</p></li>
-<li><p>CSV / TSV.</p></li>
-<li><p>XML.</p></li>
-</ul>
-</li>
-</ul>
-</section>
 <section id="historia-del-big-data">
 <h2>Historia del Big Data<a class="headerlink" href="#historia-del-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -839,7 +806,7 @@ document.write(`
 <li><p>Hoy se cuenta con la escalabilidad y elasticidad de <em>cloud data warehouses</em> y <em>data lakes</em>:</p>
 <ul>
 <li><p>Snowflake (<em>cloud data warehouse</em>).</p></li>
-<li><p>Databricks (<em>data lakes</em>).</p></li>
+<li><p>Databricks (<em>data lake</em>).</p></li>
 <li><p>Amazon Redshift / EMR.</p></li>
 <li><p>Google BigQuery / Dataproc.</p></li>
 <li><p>Azure SQL Data Warehouse (SQL DW) / HD Insights.</p></li>
@@ -847,14 +814,17 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="data-lakes-data-warehouses">
-<h2>Data Lakes - Data Warehouses<a class="headerlink" href="#data-lakes-data-warehouses" title="Permalink to this heading">#</a></h2>
+<section id="data-warehouses-data-lakes-lakehouses">
+<h2>Data Warehouses / Data Lakes / Lakehouses<a class="headerlink" href="#data-warehouses-data-lakes-lakehouses" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La diferencia a grandes rasgos entre los lagos de datos y los almacenes de datos es:</p></li>
 </ul>
 <ul class="simple">
 <li><p>Los Lagos de datos (<em>Data lakes</em>) son grandes repositorios de datos sin procesar en una variedad de formatos, que son de bajo coste y escalables pero que en principio no soportan transacciones, calidad de datos, etc. (ML).</p></li>
 <li><p>Los Almacenes de datos (<em>Data warehouses</em>) por otro lado, contienen datos estructurados y capacidad de realizar transacciones y gobernanza. (BI).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Delta Lake <a class="reference external" href="https://delta.io/">https://delta.io/</a> por otro lado, es un framework de almacenamiento de código abierto que permite crear una arquitectura Lakehouse sobre un lago de datos para proporcionar procesamiento de datos en streaming y por lotes.</p></li>
 </ul>
 </section>
 <section id="hadoop-y-spark">
@@ -1108,7 +1078,7 @@ document.write(`
 <ul class="simple">
 <li><p>La ASF (<em>Apache Software Foundation</em>) <a class="reference external" href="https://apache.org/">https://apache.org/</a> desarrolla, administra e incuba cientos de proyectos de código de fuente abierta (<em>open source</em>) de nivel empresarial utilizados mundialmente.</p></li>
 <li><p>Actualmente administra más de 70 proyectos relacionados con Big Data <a class="reference external" href="https://projects.apache.org/projects.html?category#big-data">https://projects.apache.org/projects.html?category#big-data</a>.</p></li>
-<li><p>Entre ellos, se pueden mencionar Hadoop para el procesamientos en lotes (<em>batch processing</em>) de grandes conjuntos de datos, Spark para procesamiento <em>in-memory</em> de datos y analítica, Kafka para la ingesta de datos en tiempo real y <em>streaming</em>; y Cassandra o HBase almacenamiento NoSQL escalable de datos.</p></li>
+<li><p>Entre ellos, se pueden mencionar Hadoop para el procesamientos en lotes (<em>batch processing</em>) de grandes conjuntos de datos, Spark para procesamiento <em>in-memory</em> de datos y analítica, Kafka para la ingesta de datos en tiempo real y <em>streaming</em>; y Cassandra o HBase para el almacenamiento NoSQL escalable de datos.</p></li>
 <li><p>El blog de la ASF se encuentra en <a class="reference external" href="https://news.apache.org/">https://news.apache.org/</a>.</p></li>
 </ul>
 </section>
@@ -1263,9 +1233,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-del-big-data">Características del Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-v-del-big-data">Otras V del Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos">Tipos de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatos-de-archivos-para-big-data">Formatos de archivos para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historia-del-big-data">Historia del Big Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-lakes-data-warehouses">Data Lakes - Data Warehouses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouses-data-lakes-lakehouses">Data Warehouses / Data Lakes / Lakehouses</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop-y-spark">Hadoop y Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso-de-big-data">Casos de uso de Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-big-data">Buenas prácticas para Big Data</a></li>
