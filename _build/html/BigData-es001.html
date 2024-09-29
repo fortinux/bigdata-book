@@ -380,6 +380,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ai-and-data-mad-landscape">2021 Machine Learning, AI and Data (MAD) Landscape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mad-2024">MAD 2024</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gobierno-de-datos-data-governance">Gobierno de datos / Data governance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-atlas">Apache Atlas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-normas-iso-iec-20547">Serie de normas ISO/IEC 20547</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nist-big-data-interoperability-framework">NIST Big Data Interoperability Framework</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-la-calidad-de-los-datos">Gestión de la calidad de los datos</a></li>
@@ -390,7 +391,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos">Tipos de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historia-del-big-data">Historia del Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouses-data-lakes-lakehouses">Data Warehouses / Data Lakes / Lakehouses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop-y-spark">Hadoop y Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-y-apache-spark">Apache Hadoop y Apache Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso-de-big-data">Casos de uso de Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-big-data">Buenas prácticas para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-analisis-de-datos-en-big-data">Tipos de análisis de datos en Big Data</a></li>
@@ -441,10 +442,13 @@ document.write(`
 <li><p>Con base en estadísticas del mercado, se cree que los datos generados en el mundo aumentan a un ritmo del 40% anualmente. Para 2025 se crearán más de 180 zetabytes según la plataforma global de datos y <em>business intelligence</em> Statista <a class="reference external" href="https://www.statista.com/statistics/871513/worldwide-data-created/">https://www.statista.com/statistics/871513/worldwide-data-created/</a>.</p></li>
 <li><p>Statista aumentó estos valores luego de la pandemia de COVID-19 ya que hubo un enorme cambio de costumbres en el mercado laboral y social al llevar varias de las interacciones humanas al ámbito virtual; aumentando en consecuencia la cantidad de datos disponibles.</p></li>
 </ul>
+<ul class="simple">
+<li><p>Por su parte IDC predijo en 2018 que la <em>Global Datasphere</em> crecerá desde los 33 Zettabytes en 2018 hasta los 175 Zettabytes en 2025.</p>
 <ul>
-<li><p>Por su parte IDC predijo en 2018 que la <em>Global Datasphere</em> crecerá desde los 33 Zettabytes en aquel año hasta los 175 Zettabytes en 2025.</p>
-<p>Fuente: The Digitization of the World – From Edge to Core. IDC White Paper. Doc# US44413318. Noviembre 2018.</p>
+<li><p>Fuente: The Digitization of the World – From Edge to Core. IDC White Paper. Doc# US44413318. Noviembre 2018.</p></li>
+</ul>
 </li>
+<li><p>Vivimos en la era del zettabyte: <a class="reference external" href="https://es.wikipedia.org/wiki/Era_del_zettabyte">https://es.wikipedia.org/wiki/Era_del_zettabyte</a>.</p></li>
 </ul>
 </section>
 <section id="definicion-de-big-data">
@@ -471,7 +475,7 @@ document.write(`
 <ul class="simple">
 <li><p>El mercado global de Big Data y análisis de negocios ha crecido saludablemente durante los últimos años.</p></li>
 <li><p>122 billones de dolares estadounidenses de ingresos a nivel global en 2015, hasta los estimados 189 billones de dólares estadounidenses en 2019.</p></li>
-<li><p>IDC proyecta que los ingresos crecerán hasta los 274 billones de dólares estadounidenses en 2022.</p>
+<li><p>La proyección de IDC para los ingresos en 2022 ha sido de 274 billones de dólares estadounidenses en 2022.</p>
 <ul>
 <li><p>Fuente: PCMag. <a class="reference external" href="https://www.pcmag.com/news/the-big-data-market-is-set-to-skyrocket-by-2022">https://www.pcmag.com/news/the-big-data-market-is-set-to-skyrocket-by-2022</a>. Junio 2019.</p></li>
 </ul>
@@ -480,7 +484,7 @@ document.write(`
 <ul class="simple">
 <li><p>Snowflake tiene una capitalización de mercado de 69 billones de dólares estadounidenses.</p></li>
 <li><p>Palantir a su vez alcanzó los 22 billones de dólares estadounidenses en 2019 (40 B. en 2022).</p></li>
-<li><p>Datadog era una empresa de 12 billones de dólares estadounidenses (25 B. en 2022)</p>
+<li><p>Datadog era una empresa valuada en 12 billones de dólares estadounidenses (25 B. en 2022).</p>
 <ul>
 <li><p>Fuente: Matt Turck.</p></li>
 <li><p><a class="reference external" href="https://mattturck.com/data2020/">https://mattturck.com/data2020/</a>. Septiembre, 2020.</p></li>
@@ -606,12 +610,22 @@ document.write(`
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://www.informatica.com/blogs/data-governance-vs-data-management-whats-the-difference.html">Informatica.com</a>.</p></li>
 </ul>
+</section>
+<section id="apache-atlas">
+<h2>Apache Atlas<a class="headerlink" href="#apache-atlas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Atlas ofrece un conjunto de servicios escalables y extensibles de gobernanza para que las organizaciones puedan cumplir sus objetivos de <em>compliance</em> en Hadoop, permitiendo además su integración con el resto del ecosistema de datos de la organización.</p></li>
+<li><p>Gestiona los metadatos abiertos y permite construir un catálogo de todos los activos de datos, clasificando, gobernando y facilitando la colaboración entre los cientistas de datos, analistas de negocios, y el equipo de gobernanza.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://atlas.apache.org/#/">https://atlas.apache.org/#/</a>.</p></li>
+</ul>
 <!--<a id="iso-20547"></a>   -->
 </section>
 <section id="serie-de-normas-iso-iec-20547">
 <h2>Serie de normas ISO/IEC 20547<a class="headerlink" href="#serie-de-normas-iso-iec-20547" title="Permalink to this heading">#</a></h2>
 <ul>
-<li><p>La serie ISO/IEC 20547 está destinada a proporcionar a los usuarios un enfoque estandarizado para desarrollar e implementar arquitecturas de Big data y proporcionar referencias para enfoques.</p></li>
+<li><p>La serie ISO/IEC 20547 está destinada a proporcionar a los usuarios un enfoque estandarizado para desarrollar e implementar arquitecturas de Big Data y proporcionar referencias para enfoques.</p></li>
 <li><p>El vocabulario y los conceptos comunes están descritos en la ISO/IEC 20546.</p>
 <p>Fuente: Getting big on data <a class="reference external" href="https://www.iso.org/news/ref2578.html">https://www.iso.org/news/ref2578.html</a>.</p>
 </li>
@@ -672,7 +686,7 @@ document.write(`
 <section id="benificios-aportados-por-el-big-data">
 <h2>Benificios aportados por el Big Data<a class="headerlink" href="#benificios-aportados-por-el-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>La importancia de la analítica de big data ha aumentado junto con la variedad de datos no estructurados que pueden ser analizados para obtener información:</p>
+<li><p>La importancia de la analítica de Big Data ha aumentado junto con la variedad de datos no estructurados que pueden ser analizados para obtener información:</p>
 <ul>
 <li><p>Contenido de las redes sociales, textos, <em>clickstream data</em>.</p></li>
 <li><p>Sensores del Internet de las cosas (IoT).</p></li>
@@ -768,6 +782,9 @@ document.write(`
 <section id="tipos-de-datos">
 <h2>Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
+<li><p>Los tipos de datos se pueden dividir en:</p></li>
+</ul>
+<ul class="simple">
 <li><p>Datos estructurados (modelo relacional de datos):</p>
 <ul>
 <li><p>Datos que están guardados en bases de datos relacionales.</p></li>
@@ -824,13 +841,13 @@ document.write(`
 <li><p>Los Almacenes de datos (<em>Data warehouses</em>) por otro lado, contienen datos estructurados y capacidad de realizar transacciones y gobernanza. (BI).</p></li>
 </ul>
 <ul class="simple">
-<li><p>Delta Lake <a class="reference external" href="https://delta.io/">https://delta.io/</a> por otro lado, es un framework de almacenamiento de código abierto que permite crear una arquitectura Lakehouse sobre un lago de datos para proporcionar procesamiento de datos en streaming y por lotes.</p></li>
+<li><p>Delta Lake <a class="reference external" href="https://delta.io/">https://delta.io/</a> por otro lado, es un framework de almacenamiento de código abierto que permite crear una arquitectura <em>Lakehouse</em> sobre un lago de datos para proporcionar procesamiento de datos en tiempo real y por lotes.</p></li>
 </ul>
 </section>
-<section id="hadoop-y-spark">
-<h2>Hadoop y Spark<a class="headerlink" href="#hadoop-y-spark" title="Permalink to this heading">#</a></h2>
+<section id="apache-hadoop-y-apache-spark">
+<h2>Apache Hadoop y Apache Spark<a class="headerlink" href="#apache-hadoop-y-apache-spark" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>El desarrollo de frameworks open-source, como Hadoop y Spark, fue esencial para el crecimiento de Big Data ya que permitieron trabajar más dinámicamente junto con un almacenamiento de grandes volúmenes de datos más económico.</p></li>
+<li><p>El desarrollo de frameworks open-source, como Hadoop y Spark, fue esencial para el crecimiento de Big Data ya que facilitaron formas de trabajo más dinámicas y almacenamiento de grandes volúmenes de datos de forma más económica.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Actualmente los proveedores de plataformas en la nube permiten a cualquier organización montar una estructura para análisis con Hadoop o con herramientas propias, e utilizarla bajo demanda.</p></li>
@@ -846,38 +863,38 @@ document.write(`
 <ul class="simple">
 <li><p>Agricultura</p>
 <ul>
-<li><p>Seguimiento de cultivos</p></li>
-<li><p>Optimización de equipamiento</p></li>
-<li><p>Agricultura de precisión</p></li>
+<li><p>Seguimiento de cultivos.</p></li>
+<li><p>Optimización de equipamiento.</p></li>
+<li><p>Agricultura de precisión.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
 <li><p>Telecomunicaciones</p>
 <ul>
-<li><p>Predicción del <em>churn</em></p></li>
-<li><p>Optimización de la red</p></li>
-<li><p>Segmentación</p></li>
+<li><p>Predicción del <em>churn</em>.</p></li>
+<li><p>Optimización de la red.</p></li>
+<li><p>Segmentación.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
 <li><p>Utilidad pública (<em>utilities</em>)</p>
 <ul>
-<li><p>Predicción del <em>churn</em></p></li>
-<li><p>Optimización de la red</p></li>
-<li><p>Personalización de tarifas</p></li>
+<li><p>Predicción del <em>churn</em>.</p></li>
+<li><p>Optimización de la red.</p></li>
+<li><p>Personalización de tarifas.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Fuente: Databench Europe <a class="reference external" href="https://www.databench.eu/">https://www.databench.eu/</a></p></li>
+<li><p>Fuente: Databench Europe <a class="reference external" href="https://www.databench.eu/">https://www.databench.eu/</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Industria de la aviación</p>
 <ul>
 <li><p>Las líneas aéreas colectan una gran cantidad de datos como preferencias de vuelos de los clientes, control del tráfico aéreo, gestión de equipajes, mantenimiento de las aeronaves, rutas de vuelo, y más.</p></li>
-<li><p>Big data provee nuevas perspectivas para optimizar las operaciones y brindar un mejor servicio al cliente.</p></li>
+<li><p>Big Data provee nuevas perspectivas para optimizar las operaciones y brindar un mejor servicio al cliente.</p></li>
 </ul>
 </li>
 </ul>
@@ -885,7 +902,7 @@ document.write(`
 <li><p>Sector bancario</p>
 <ul>
 <li><p>La inmensa cantidad de datos estructurados y no estructurados que las instituciones financieras obtienen les permiten tomar decisiones más certeras.</p></li>
-<li><p>Ellas también pueden prevenir fraudes utilizando big data analytics.</p></li>
+<li><p>Ellas también pueden prevenir fraudes utilizando Big Data analytics.</p></li>
 </ul>
 </li>
 </ul>
@@ -903,7 +920,7 @@ document.write(`
 <ul class="simple">
 <li><p>Sector manufacturero</p>
 <ul>
-<li><p>Big data analytics le permite a la industria entender mejor como su propia cadena de valor funciona.</p></li>
+<li><p>Big Data analytics le permite a la industria entender mejor como su propia cadena de valor funciona.</p></li>
 <li><p>Es usado también para el mantenimiento preventivo del equipamiento industrial.</p></li>
 <li><p>La industria 4.0 tiende al uso intensivo de IA en todos sus procesos.</p></li>
 </ul>
@@ -915,7 +932,7 @@ document.write(`
 <ul class="simple">
 <li><p>Venta minorista</p>
 <ul>
-<li><p>Con big data analytics, los vendedores minoristas pueden entender mejor las preferencias y el comportamiento de sus clientes, sus hábitos de compra; y predecir tendencias.</p></li>
+<li><p>Con Big Data analytics, los vendedores minoristas pueden entender mejor las preferencias y el comportamiento de sus clientes, sus hábitos de compra; y predecir tendencias.</p></li>
 </ul>
 </li>
 </ul>
@@ -941,7 +958,7 @@ document.write(`
 <section id="buenas-practicas-para-big-data">
 <h2>Buenas prácticas para Big Data<a class="headerlink" href="#buenas-practicas-para-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Big data analytics utiliza datos tanto de fuentes internas como externas.</p></li>
+<li><p>Big Data analytics utiliza datos tanto de fuentes internas como externas.</p></li>
 <li><p>Los datos deben ser estar organizados y gestionados para obtener un óptimo rendimiento.</p></li>
 </ul>
 <ul class="simple">
@@ -957,7 +974,7 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>Para el análisis de big data en tiempo real, se utiliza un motor de procesamiento de flujo de datos como Spark a través de un almacén de datos (<em>data warehouse</em>).</p></li>
+<li><p>Para el análisis de Big Data en tiempo real, se utiliza un motor de procesamiento de flujo de datos como Spark a través de un almacén de datos (<em>data warehouse</em>).</p></li>
 <li><p>Para los datos sin procesar (<em>data lake</em>) se utiliza Hadoop y su HDFS (<em>Hadoop Distributed File System</em>).</p></li>
 </ul>
 <ul class="simple">
@@ -1053,7 +1070,7 @@ document.write(`
 <section id="big-data-analytics-y-business-intelligence">
 <h2>Big Data analytics y Business Intelligence<a class="headerlink" href="#big-data-analytics-y-business-intelligence" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Business Intelligence se basa en datos estructurados en un data warehouse y puede mostrar qué y dónde ocurrió un evento.</p></li>
+<li><p>Business Intelligence se basa en datos estructurados en un <em>datawarehouse</em> y puede mostrar qué y dónde ocurrió un evento.</p></li>
 <li><p>El análisis de Big Data utiliza conjuntos de datos estructurados y no estructurados encontrando relaciones mientras explica por qué sucedieron los eventos.</p></li>
 <li><p>También puede predecir si un evento volverá a ocurrir.</p></li>
 </ul>
@@ -1068,7 +1085,7 @@ document.write(`
 <li><p><a class="reference external" href="https://developers.facebook.com/docs/graph-api">https://developers.facebook.com/docs/graph-api</a></p></li>
 <li><p><a class="reference external" href="https://www.healthdata.gov/">https://www.healthdata.gov/</a></p></li>
 <li><p><a class="reference external" href="http://content.digital.nhs.uk/home">http://content.digital.nhs.uk/home</a></p></li>
-<li><p><a class="reference external" href="https://trends.google.com/trends/explore">https://trends.google.com/trends/explore</a></p></li>
+<li><p><a class="reference external" href="https://www.wikidata.org/wiki/Wikidata:Main_Page">https://www.wikidata.org/wiki/Wikidata:Main_Page</a></p></li>
 <li><p><a class="reference external" href="https://www.google.com/finance">https://www.google.com/finance</a></p></li>
 <li><p><a class="reference external" href="http://aws.amazon.com/datasets/">http://aws.amazon.com/datasets/</a></p></li>
 </ul>
@@ -1121,7 +1138,7 @@ document.write(`
 <ul class="simple">
 <li><p>Hadoop YARN</p>
 <ul>
-<li><p>Un framework para job scheduling y gestión de recursos de los clusters.</p></li>
+<li><p>Un framework para <em>job scheduling</em> y gestión de recursos de los clusters.</p></li>
 <li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html/">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html/</a>.</p></li>
 </ul>
@@ -1144,7 +1161,7 @@ document.write(`
 <li><p>Soluciones Hadoop:</p>
 <ul>
 <li><p>Cloudera Data Platform <a class="reference external" href="https://www.cloudera.com/">https://www.cloudera.com/</a>.</p></li>
-<li><p>Hortonworks (Adquirida por Cloudera)</p></li>
+<li><p>Hortonworks (Adquirida por Cloudera).</p></li>
 <li><p>Amazon ERM <a class="reference external" href="https://aws.amazon.com/es/emr/">https://aws.amazon.com/es/emr/</a>.</p></li>
 <li><p>Google Dataproc <a class="reference external" href="https://cloud.google.com/dataproc/">https://cloud.google.com/dataproc/</a>.</p></li>
 <li><p>Microsoft HDInsight <a class="reference external" href="https://azure.microsoft.com/es-es/services/hdinsight/">https://azure.microsoft.com/es-es/services/hdinsight/</a>.</p></li>
@@ -1225,6 +1242,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-ai-and-data-mad-landscape">2021 Machine Learning, AI and Data (MAD) Landscape</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mad-2024">MAD 2024</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gobierno-de-datos-data-governance">Gobierno de datos / Data governance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-atlas">Apache Atlas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-normas-iso-iec-20547">Serie de normas ISO/IEC 20547</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nist-big-data-interoperability-framework">NIST Big Data Interoperability Framework</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-la-calidad-de-los-datos">Gestión de la calidad de los datos</a></li>
@@ -1235,7 +1253,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-datos">Tipos de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historia-del-big-data">Historia del Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouses-data-lakes-lakehouses">Data Warehouses / Data Lakes / Lakehouses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop-y-spark">Hadoop y Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-y-apache-spark">Apache Hadoop y Apache Spark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casos-de-uso-de-big-data">Casos de uso de Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-para-big-data">Buenas prácticas para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-analisis-de-datos-en-big-data">Tipos de análisis de datos en Big Data</a></li>

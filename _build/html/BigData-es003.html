@@ -438,11 +438,27 @@ document.write(`
 <ul class="simple">
 <li><p>Formatos de archivos binarios optimizados para Apache Hadoop:</p>
 <ul>
-<li><p>Apache ORC - <em>Optimized Row Columnar</em> (almacenamiento en columnas) <a class="reference external" href="https://orc.apache.org/">https://orc.apache.org/</a>.</p></li>
-<li><p>Apache Parquet (almacenamiento en columnas) <a class="reference external" href="https://parquet.apache.org/documentation/latest/">https://parquet.apache.org/documentation/latest/</a>.</p></li>
-<li><p>Apache Avro (almacenamiento en fila) <a class="reference external" href="https://avro.apache.org/">https://avro.apache.org/</a>.</p></li>
-<li><p>Avro es popular en sistemas de streaming con Kafka y Schema Registry gracias a su rendimiento.</p></li>
+<li><p>Apache ORC - <em>Optimized Row Columnar</em> (almacenamiento en columnas) <a class="reference external" href="https://orc.apache.org/">https://orc.apache.org/</a>.</p>
+<ul>
+<li><p>Optimizado para Hive.</p></li>
+</ul>
+</li>
+<li><p>Apache Parquet (almacenamiento en columnas) <a class="reference external" href="https://parquet.apache.org/">https://parquet.apache.org/</a>.</p></li>
+<li><p>Apache Avro (almacenamiento en fila) <a class="reference external" href="https://avro.apache.org/">https://avro.apache.org/</a>.</p>
+<ul>
+<li><p>Popular en sistemas de streaming con Kafka y Schema Registry gracias a su rendimiento.</p></li>
+</ul>
+</li>
 <li><p>Apache Arrow (almacenamiento <em>in-memory columnar</em>) <a class="reference external" href="https://arrow.apache.org/overview/">https://arrow.apache.org/overview/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Comparaciones entre los distintos tipos de formatos:</p>
+<ul>
+<li><p>File Format s for Big Data Storage Systems <a class="reference external" href="https://doi.org/10.35940/ijeat.A1196.109119">https://doi.org/10.35940/ijeat.A1196.109119</a>.</p></li>
+<li><p><a class="reference external" href="https://www.slideshare.net/databricks/the-apache-spark-file-format-ecosystem">https://www.slideshare.net/databricks/the-apache-spark-file-format-ecosystem</a>.</p></li>
+<li><p><a class="reference external" href="https://www.adaltas.com/en/2020/07/23/benchmark-study-of-different-file-format/">https://www.adaltas.com/en/2020/07/23/benchmark-study-of-different-file-format/</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -456,7 +472,14 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>Comparativa entre distintos formatos: <a class="reference external" href="https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data">https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data</a>.</p></li>
+<li><p>Comparativas entre los distintos tipos de formatos:</p>
+<ul>
+<li><p>File Format s for Big Data Storage Systems <a class="reference external" href="https://doi.org/10.35940/ijeat.A1196.109119">https://doi.org/10.35940/ijeat.A1196.109119</a>.</p></li>
+<li><p><a class="reference external" href="https://www.slideshare.net/databricks/the-apache-spark-file-format-ecosystem">https://www.slideshare.net/databricks/the-apache-spark-file-format-ecosystem</a>.</p></li>
+<li><p><a class="reference external" href="https://www.adaltas.com/en/2020/07/23/benchmark-study-of-different-file-format/">https://www.adaltas.com/en/2020/07/23/benchmark-study-of-different-file-format/</a>.</p></li>
+<li><p><a class="reference external" href="https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data">https://www.upsolver.com/blog/the-file-format-fundamentals-of-big-data</a>.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="bases-de-datos-nosql">
@@ -469,12 +492,12 @@ document.write(`
 <ul class="simple">
 <li><p>Bases de datos basadas en columnas están optimizadas para los trabajos analíticos intensivos de lectura.</p>
 <ul>
-<li><p><em>Online Analytical Processing (OLAP)</em></p></li>
+<li><p><em>Online Analytical Processing (OLAP)</em>.</p></li>
 </ul>
 </li>
 <li><p>Bases de datos basadas en filas son mejores para trabajos intensivos de escritura transaccional.</p>
 <ul>
-<li><p><em>Online Transactional Processing (OLTP)</em></p></li>
+<li><p><em>Online Transactional Processing (OLTP)</em>.</p></li>
 </ul>
 </li>
 </ul>
@@ -513,7 +536,7 @@ document.write(`
 </ul>
 <ul class="simple">
 <li><p>MongoDB también ofrece Atlas, una opción de servicio alojado de MongoDB Enterprise en la nube que no requiere gastos generales de instalación y ofrece un nivel gratuito para comenzar.</p></li>
-<li><p><a class="reference external" href="https://www.mongodb.com/cloud/atlas/signup">https://www.mongodb.com/cloud/atlas/signup</a></p></li>
+<li><p><a class="reference external" href="https://www.mongodb.com/cloud/atlas/signup">https://www.mongodb.com/cloud/atlas/signup</a>.</p></li>
 </ul>
 </section>
 <section id="caracteristicas-de-mongodb">
@@ -690,7 +713,7 @@ document.write(`
 <ul>
 <li><p>Escalado lineal a cientos de millones de operaciones por segundo.</p></li>
 <li><p>Distribución global Activo-Activo con latencia local.</p></li>
-<li><p>Redis en Flash para admitir grandes conjuntos de datos y minimizar los costos de infraestructura.</p></li>
+<li><p>Redis en Flash para admitir grandes conjuntos de datos y minimizar los costes de infraestructura.</p></li>
 <li><p>99,999% de tiempo de actividad.</p></li>
 </ul>
 </li>
@@ -780,7 +803,7 @@ document.write(`
 <ul class="simple">
 <li><p>Cada base de datos puede contener pocos o muchos fragmentos (<em>shards</em>) de Redis.</p></li>
 <li><p>La fragmentación es transparente para las aplicaciones de Redis.</p></li>
-<li><p>Shards maestros en las base de datos procesan operaciones de datos para un subconjunto dado de claves.</p></li>
+<li><p><em>Shards</em> maestros en las base de datos procesan operaciones de datos para un subconjunto dado de claves.</p></li>
 <li><p>La cantidad de shards por base de datos es configurable y depende de las necesidades de rendimiento de las aplicaciones.</p></li>
 </ul>
 <ul class="simple">
@@ -891,7 +914,7 @@ document.write(`
 <ul class="simple">
 <li><p>Centrada en la calidad:</p>
 <ul>
-<li><p>Para garantizar la confiabilidad y la estabilidad, Cassandra se prueba en clústeres de hasta 1,000 nodos y con cientos de casos de uso y esquemas del mundo real probados con pruebas de reproducción, fuzz, basadas en propiedades, inyección de fallas y de rendimiento.</p></li>
+<li><p>Para garantizar la confiabilidad y la estabilidad, Cassandra se prueba en clústeres de hasta 1000 nodos y con cientos de casos de uso y esquemas del mundo real probados con <em>fuzz</em>, pruebas de reproducción basadas en propiedades, pruebas de inyección de fallas y de rendimiento.</p></li>
 </ul>
 </li>
 </ul>
@@ -943,7 +966,7 @@ document.write(`
 <li><p>Así como Bigtable aprovecha el almacenamiento de datos distribuido proporcionado por el sistema de archivos de Google, Apache HBase proporciona capacidades similares a las de Bigtable junto con Hadoop y HDFS.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Extraído de: Apache HBase Docs &amp; website: <a class="reference external" href="https://hbase.apache.org/">https://hbase.apache.org/</a>.</p></li>
+<li><p>Extraído del sitio web y de Apache HBase Docs: <a class="reference external" href="https://hbase.apache.org/">https://hbase.apache.org/</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Se utiliza Apache HBase cuando se necesita acceso de lectura/escritura aleatorio y en tiempo real a Big Data.</p></li>
@@ -984,7 +1007,7 @@ document.write(`
 <ul class="simple">
 <li><p>HBase, se basa en HDFS y proporciona búsquedas rápidas de registros (y actualizaciones) para tablas grandes.</p></li>
 <li><p>Esto a veces puede ser un punto de confusión conceptual.</p></li>
-<li><p>HBase coloca internamente sus datos en “StoreFiles” indexados que existen en HDFS para búsquedas de alta velocidad.</p></li>
+<li><p>HBase coloca internamente sus datos en <em>StoreFiles</em> indexados que existen en HDFS para búsquedas de alta velocidad.</p></li>
 </ul>
 </section>
 <section id="usos-de-apache-hbase">
@@ -998,8 +1021,8 @@ document.write(`
 <li><p>Si solo se tienen unos pocos miles/millones de filas, entonces usar un RDBMS tradicional podría ser una mejor opción debido al hecho de que todos los datos pueden terminar en un solo nodo (o dos) y el resto del clúster puede estar sentado inactivo.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Una aplicación construida contra un RDBMS no se puede “portar” a HBase simplemente cambiando un controlador JDBC, por ejemplo.</p></li>
-<li><p>Considere pasar de un RDBMS a HBase como un rediseño completo en lugar de un puerto.</p></li>
+<li><p>Una aplicación construida contra un RDBMS no se puede migrar a HBase simplemente cambiando un controlador JDBC.</p></li>
+<li><p>Para pasar de un RDBMS a HBase se debe rediseñar por completo la base de datos.</p></li>
 </ul>
 </section>
 <section id="requisitos-de-apache-hbase">

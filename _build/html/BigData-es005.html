@@ -473,7 +473,12 @@ document.write(`
 <h2>Apache Hadoop YARN<a class="headerlink" href="#apache-hadoop-yarn" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Tecnología de gestión de clústeres en Hadoop de segunda generación.</p></li>
-<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en demonios separados: un <em>ResourceManager (RM)</em> global y un <em>ApplicationMaster (AM)</em> por aplicación.</p></li>
+<li><p>La idea de YARN es dividir las funcionalidades de gestión de recursos y programación/supervisión de trabajos en demonios separados:</p>
+<ul>
+<li><p>Un <em>ResourceManager (RM)</em> global.</p></li>
+<li><p>Un <em>ApplicationMaster (AM)</em> por aplicación.</p></li>
+</ul>
+</li>
 <li><p>Una aplicación es un solo trabajo o un DAG de trabajos.</p></li>
 </ul>
 <ul class="simple">
@@ -525,7 +530,7 @@ document.write(`
 <li><p>El framework <em>MapReduce</em> opera exclusivamente en pares &lt;clave, valor&gt;, es decir, el framework ve la entrada del trabajo como un conjunto de pares &lt;clave, valor&gt; y produce un conjunto de pares &lt;clave, valor&gt; como la salida de el trabajo, posiblemente de diferentes tipos.</p></li>
 </ul>
 <ul>
-<li><p>Tipos de entradas y salidas de un MapReduce job:</p>
+<li><p>Tipos de entradas y salidas de un <em>MapReduce job</em>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">(input)</span> <span class="pre">&lt;k1,</span> <span class="pre">v1&gt;</span> <span class="pre">-&gt;</span> <span class="pre">map</span> <span class="pre">-&gt;</span> <span class="pre">&lt;k2,</span> <span class="pre">v2&gt;</span> <span class="pre">-&gt;</span> <span class="pre">combine</span> <span class="pre">-&gt;</span> <span class="pre">&lt;k2,</span> <span class="pre">v2&gt;</span> <span class="pre">-&gt;</span> <span class="pre">reduce</span> <span class="pre">-&gt;</span> <span class="pre">&lt;k3,</span> <span class="pre">v3&gt;</span> <span class="pre">(output)</span></code></p>
 </li>
 </ul>
@@ -555,7 +560,7 @@ document.write(`
 <ul class="simple">
 <li><p>Las aplicaciones que se ejecutan en HDFS tienen grandes conjuntos de datos.</p></li>
 <li><p>Las aplicaciones HDFS necesitan un modelo de acceso de escritura única, lectura múltiple para archivos, lo que permite un acceso de datos de alto rendimiento.</p></li>
-<li><p>Una aplicación MapReduce o una aplicación de rastreo web encaja perfectamente con este modelo.</p></li>
+<li><p>Una aplicación <em>MapReduce</em> o una aplicación de rastreo web encaja perfectamente con este modelo.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Mover computación es más barato que mover datos.</p></li>
@@ -605,7 +610,7 @@ document.write(`
 <h2>Tutorial Apache Hadoop<a class="headerlink" href="#tutorial-apache-hadoop" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Instalación de Hadoop en CentOS 8</p></li>
-<li><p>Fuente: <a class="reference external" href="https://fortinux.com/linux-2-tutoriales/hadoop-installation-centos8/#more-1750">https://fortinux.com/linux-2-tutoriales/hadoop-installation-centos8/#more-1750</a></p></li>
+<li><p>Fuente: <a class="reference external" href="https://fortinux.com/linux-2-tutoriales/hadoop-installation-centos8/">https://fortinux.com/linux-2-tutoriales/hadoop-installation-centos8/</a>.</p></li>
 </ul>
 </section>
 <section id="apache-spark">
@@ -662,7 +667,7 @@ document.write(`
 <li><p>La máquina en la que se ejecuta la aplicación Spark (<em>Spark Context</em>) se denomina nodo de controlador (<em>driver node</em>), que ejecuta varias operaciones paralelas en los nodos de trabajo del clúster.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Spark utiliza el concepto de un conjunto de datos distribuido resiliente (RDD), que representa una colección de objetos de solo lectura particionados en un conjunto de máquinas que se pueden reconstruir si se pierde una partición.</p></li>
+<li><p>Spark utiliza el concepto de un conjunto de datos distribuido resiliente (<em>Resilient Distributed Dataset - RDD</em>), que representa una colección de objetos de solo lectura particionados en un conjunto de máquinas que se pueden reconstruir si se pierde una partición.</p></li>
 </ul>
 <ul class="simple">
 <li><p>La seguridad en Spark está DESACTIVADA de forma predeterminada.</p></li>
@@ -680,7 +685,7 @@ document.write(`
 <li><p>Con Spark ejecutándose en Apache Hadoop YARN, los desarrolladores pueden crear aplicaciones para explotar el poder de Spark, obtener información y enriquecer sus cargas de trabajo de ciencia de datos dentro de un único conjunto de datos compartidos en Hadoop.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Monitoramento del tránsito automotor utilizando IoT, Kafka y Spark Streaming.</p></li>
+<li><p>Ejemplo: Monitoramento del tránsito automotor utilizando IoT, Kafka y Spark Streaming.</p></li>
 <li><p><a class="reference external" href="https://www.infoq.com/articles/traffic-data-monitoring-iot-kafka-and-spark-streaming/">https://www.infoq.com/articles/traffic-data-monitoring-iot-kafka-and-spark-streaming/</a>.</p></li>
 </ul>
 </section>
