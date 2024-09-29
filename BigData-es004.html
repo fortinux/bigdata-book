@@ -470,11 +470,10 @@ document.write(`
 <li><p>Con Hadoop, la ingesta de datos, el almacenamiento, el proceso y el análisis se volvieron fáciles de trabajar cuando se cuenta con una gran cantidad de datos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Para análisis fuera de línea, se utiliza un sistema de procesamiento por lotes simple.</p></li>
-<li><p>Apache Sqoop es la aplicación que se encarga de esto.</p></li>
+<li><p>Para análisis fuera de línea, se utiliza un sistema de procesamiento por lotes simple: Apache Sqoop es la aplicación que se encarga de esto.</p></li>
 <li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p></li>
 <li><p>Spark por otro lado, es utilizado mayoritariamente para el análisis y procesamiento de datos en tiempo real.</p></li>
-<li><p>Otra herramienta pero menos utilizada es Apache Storm.</p>
+<li><p>Otra herramienta utilizada es Apache Storm.</p>
 <ul>
 <li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
 </ul>
@@ -494,9 +493,9 @@ document.write(`
 <li><p><a class="reference external" href="https://mahout.apache.org/">https://mahout.apache.org/</a>.</p></li>
 </ul>
 </li>
-<li><p>Weka 3: Machine Learning Software en Java para hacer análisis simple.</p>
+<li><p>Weka 3: Machine Learning Software en Java para hacer análisis de manera simple.</p>
 <ul>
-<li><p><a class="reference external" href="https://www.cs.waikato.ac.nz/ml/weka/">https://www.cs.waikato.ac.nz/ml/weka/</a>.</p></li>
+<li><p><a class="reference external" href="https://ml.cms.waikato.ac.nz/weka/">https://ml.cms.waikato.ac.nz/weka/</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -505,7 +504,7 @@ document.write(`
 <h2>Apache Scoop (Attic)<a class="headerlink" href="#apache-scoop-attic" title="Permalink to this heading">#</a></h2>
 <p><em>Apache Attic <a class="reference external" href="https://attic.apache.org/">https://attic.apache.org/</a> es utilizado por la Apache Software Foundation como espacio para los proyectos que ya han llegado a su final de vida y no cuentan con más desarrollo ni mantenimiento.</em></p>
 <ul class="simple">
-<li><p>Transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
+<li><p><em>Apache Scoop</em> transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
 <ul>
 <li><p>Extraído de: <a class="reference external" href="https://sqoop.apache.org/">https://sqoop.apache.org/</a>.</p></li>
 </ul>
@@ -587,9 +586,9 @@ document.write(`
 <li><p>Apache Kudu es un motor de almacenamiento columnar open source para datos estructurados.</p></li>
 <li><p>Está diseñado y optimizado para análisis de big data en datos que cambian rápidamente o para un rendimiento rápido en consultas analíticas - OLAP.</p></li>
 <li><p>Es distribuido, permite varios tipos de partición de datos y carga compartida en varios servidores.</p></li>
-<li><p>Es parte del ecosistema Hadoop y se integra con frameworks de procesamiento de datos como Spark, Impala y MapReduce.</p>
+<li><p>Es parte del ecosistema Hadoop y se integra con frameworks de procesamiento de datos como Spark, Impala, NiFi y MapReduce.</p>
 <ul>
-<li><p><a class="reference external" href="https://kudu.apache.org/">https://kudu.apache.org/</a></p></li>
+<li><p><a class="reference external" href="https://kudu.apache.org/">https://kudu.apache.org/</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -666,9 +665,9 @@ document.write(`
 <h2>Trino<a class="headerlink" href="#trino" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Trino es un motor de consulta SQL distribuido diseñado para consultar grandes conjuntos de datos distribuidos en una o más fuentes de datos heterogéneas.</p></li>
-<li><p>Son los fundadores del proyecto Presto que tuvieron que cambiarle el nombre por cuestiones legales.</p>
+<li><p>Son los fundadores del proyecto Presto que han tenido que cambiarle el nombre por cuestiones legales.</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://trino.io/">https://trino.io/</a></p></li>
+<li><p>Fuente: <a class="reference external" href="https://trino.io/">https://trino.io/</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -744,10 +743,10 @@ document.write(`
 <section id="vertica">
 <h2>Vertica<a class="headerlink" href="#vertica" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Vertica es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
+<li><p><em>Vertica</em> es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
 <li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
 <ul>
-<li><p>Extraído de <a class="reference external" href="https://www.vertica.com/landing-page/start-your-free-trial-today/">https://www.vertica.com/landing-page/start-your-free-trial-today/</a>.</p></li>
+<li><p>Extraído de <a class="reference external" href="https://www.opentext.com/products/vertica-data-platform">https://www.opentext.com/products/vertica-data-platform</a>.</p></li>
 </ul>
 </li>
 </ul>
@@ -784,7 +783,7 @@ document.write(`
 <h2>Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La ingesta de datos se considera de alta calidad si cumple con las necesidades comerciales y satisface el uso previsto, de modo que sea útil para tomar decisiones de negocio con éxito.</p></li>
-<li><p>Por lo tanto, es un paso importante entender la dimensión de mayor interés e implementar métodos para lograrla.</p></li>
+<li><p>Por lo tanto, es un paso importante establecer la dimensión de mayor interés e implementar métodos para lograrla.</p></li>
 </ul>
 </section>
 <section id="limpieza-de-datos">

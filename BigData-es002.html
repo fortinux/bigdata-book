@@ -392,6 +392,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-beam">Apache Beam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-samza">Apache Samza</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro">Astro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbt">DBT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Otras herramientas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
@@ -413,7 +415,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hudi">Apache Hudi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-xtable">Apache XTable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-apache-para-big-data">Herramientas Apache para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-la-asf-para-big-data">Herramientas de la ASF para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari">Apache Ambari</a></li>
@@ -452,7 +454,7 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
-<li><p>Veremos a continuación las fases una a una más en detalle.</p></li>
+<li><p>Se verán a continuación las fases una a una más en detalle.</p></li>
 </ul>
 </section>
 <section id="ingestion-de-datos">
@@ -465,8 +467,8 @@ document.write(`
 <ul class="simple">
 <li><p>Su destinación es generalmente:</p>
 <ul>
-<li><p>Un almacén de datos (<em>data warehouse</em>): <em>Snowflake, Amazon Redshift, Google BigQuery, Azure Synapse</em>, o</p></li>
-<li><p>Un lago de datos: (<em>data lake</em>): <em>Databricks</em> con datos estructurados, semi estructurados y no estructurados.</p></li>
+<li><p>Un Almacén de datos (<em>data warehouse</em>): <em>Snowflake, Amazon Redshift, Google BigQuery, Azure Synapse</em>, o</p></li>
+<li><p>Un Lago de datos: (<em>data lake</em>): <em>Databricks</em> con datos estructurados, semi estructurados y no estructurados.</p></li>
 </ul>
 </li>
 </ul>
@@ -479,10 +481,10 @@ document.write(`
 <li><p>Variedad (formato: datos estructurados, Semi-estructurados, no estructurados).</p></li>
 </ul>
 <ul class="simple">
-<li><p>Otras cuestiones a tener en cuenta son la veracidad de esos datos (si son confiables) y el valor de los mismos.</p></li>
+<li><p>Otras cuestiones a tener en cuenta son la veracidad de esos datos (si son confiables), su variabilidad, y el valor de los mismos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>La velocidad de datos se ocupa de la velocidad a la que fluyen los datos desde diferentes fuentes, como máquinas, redes, IoT, interacción humana, sitios de medios, redes sociales.</p></li>
+<li><p>La velocidad de datos se ocupa de la velocidad a la que fluyen los datos desde diferentes fuentes, como máquinas, redes, IoT, interacción humana, sitios de medios, y redes sociales, entre otras.</p></li>
 <li><p>El movimiento de datos puede ser masivo o continuo en la ingestión de datos.</p></li>
 </ul>
 <ul class="simple">
@@ -539,7 +541,7 @@ document.write(`
 </ul>
 <ul class="simple">
 <li><p>Integraciones:</p></li>
-<li><p>Todo el tiempo los datos siguen aumentando en el proceso de ingesta de datos, llegan datos nuevos y se modifican los datos antiguos, por lo cual a veces cada nueva integración puede tardar entre unos días y unos meses en completarse.</p></li>
+<li><p>La cantidad de datos aumenta continuamente en el proceso de ingesta de datos, llegan datos nuevos y se modifican los datos antiguos, por lo cual a veces cada nueva integración puede tardar entre unos días y unos meses en completarse.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Alta precisión:</p></li>
@@ -555,7 +557,7 @@ document.write(`
 <li><p>Mantener la escalabilidad:</p></li>
 <li><p>La ingesta de datos se puede aumentar o disminuir durante algunos períodos de tiempo.</p></li>
 <li><p>El uso y tratamiento de los datos no es uniforme.</p></li>
-<li><p>Se debe hacer que la canalización sea tan escalable que pueda manejar cualquier cantidad de datos que lleguen a una velocidad variable.</p></li>
+<li><p>Se debe hacer que la canalización sea tan escalable que pueda manejar cualquier volumen de datos que lleguen a una velocidad variable.</p></li>
 </ul>
 </section>
 <section id="problemas-en-la-ingesta-de-datos">
@@ -729,10 +731,30 @@ document.write(`
 <ul class="simple">
 <li><p>Un flujo de trabajo de ejemplo puede ser:</p>
 <ul>
-<li><p>Obtener datos de una base de datos relacional como PosgreSQL para enviarlos a Kafka.</p></li>
+<li><p>Obtener datos de una base de datos relacional como PostgreSQL para enviarlos a Kafka.</p></li>
 <li><p>Transformar los datos con Apache Spark y finalmente enviar un mensaje de finalización.</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="astro">
+<h2>Astro<a class="headerlink" href="#astro" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Astro es la versión comercial de Apache Airflow. Facilita la construcción, ejecución y observación de los datos de la organización en una única plataforma.</p></li>
+<li><p>Permite integrar además la inteligencia artificial y los LLM (<em>Large Language Models</em>) para acelerar la innovación.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.astronomer.io/">https://www.astronomer.io/</a>.</p></li>
+</ul>
+</section>
+<section id="dbt">
+<h2>DBT<a class="headerlink" href="#dbt" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>DBT (<em>Data Build Tool</em>) permite a los ingenieros de datos y analistas realizar transformaciones en los datos escribiendo sentencias SQL de tipo SELECT.</p></li>
+<li><p>Internamente, DBT traduce estas sentencias en tablas y en vistas, de esta forma facilita la creación de transformaciones sobre los datos disponibles en el almacén de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.getdbt.com/">https://www.getdbt.com/</a>.</p></li>
 </ul>
 </section>
 <section id="id3">
@@ -1159,16 +1181,16 @@ document.write(`
 <ul class="simple">
 <li><p>Existen diversos tipos de bases de datos No SQL:</p>
 <ul>
-<li><p>Bases de datos de documentos (MongoDB, Couch DB)</p></li>
-<li><p>Pares de valores (Amazon DynamoDB, Redis)</p></li>
-<li><p>Columnares (Apache Cassandra, Apache HBase)</p></li>
-<li><p>De grafos (Neo4j, Stardog)</p></li>
+<li><p>Bases de datos de documentos (MongoDB, Couch DB).</p></li>
+<li><p>Pares de valores (Amazon DynamoDB, Redis).</p></li>
+<li><p>Columnares (Apache Cassandra, Apache HBase).</p></li>
+<li><p>De grafos (Neo4j, Stardog).</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="herramientas-apache-para-big-data">
-<h2>Herramientas Apache para Big Data<a class="headerlink" href="#herramientas-apache-para-big-data" title="Permalink to this heading">#</a></h2>
+<section id="herramientas-de-la-asf-para-big-data">
+<h2>Herramientas de la ASF para Big Data<a class="headerlink" href="#herramientas-de-la-asf-para-big-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Algunas de las herramientas de la ASF (<em>Apache Software Foundation</em>) <a class="reference external" href="https://apache.org/">https://apache.org/</a> para Big Data:</p></li>
 </ul>
@@ -1321,6 +1343,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-beam">Apache Beam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-samza">Apache Samza</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro">Astro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbt">DBT</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Otras herramientas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
@@ -1342,7 +1366,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hudi">Apache Hudi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-xtable">Apache XTable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-apache-para-big-data">Herramientas Apache para Big Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-la-asf-para-big-data">Herramientas de la ASF para Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari">Apache Ambari</a></li>
