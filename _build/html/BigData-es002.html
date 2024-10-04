@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Ingesta y almacenamiento de datos &#8212; Curso Introducción a Big Data</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es002';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +137,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -151,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso Introducción a Big Data - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso Introducción a Big Data - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +216,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -332,26 +345,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -430,12 +445,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ingesta-y-almacenamiento-de-datos">
-<h1>Ingesta y almacenamiento de datos<a class="headerlink" href="#ingesta-y-almacenamiento-de-datos" title="Permalink to this heading">#</a></h1>
+<h1>Ingesta y almacenamiento de datos<a class="headerlink" href="#ingesta-y-almacenamiento-de-datos" title="Link to this heading">#</a></h1>
 <section id="procesos-en-big-data">
-<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this heading">#</a></h2>
+<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Existen varias metodologías y modelos disponibles en el mercado para la recopilación, almacenamiento, consulta, visualización de datos, y su posterior acción.</p></li>
 <li><p>Provienen del mundo de la minería de datos, y entre ellas se pueden mencionar KDD (<em>Knowledge Discovery in Databases</em>), SEMMA y CRISP-DM.</p></li>
@@ -458,7 +473,7 @@ document.write(`
 </ul>
 </section>
 <section id="ingestion-de-datos">
-<h2>Ingestión de datos<a class="headerlink" href="#ingestion-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Ingestión de datos<a class="headerlink" href="#ingestion-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Obtención, procesado (separación, agrupación, filtrado) y limpieza de datos (eliminar duplicados y errores).</p></li>
 <li><p>Es el primer paso donde se obtienen los datos que provienen de varias fuentes y que irán a dispositivos de almacenamiento para su posterior acceso, uso y análisis por parte de la organización.</p></li>
@@ -474,7 +489,7 @@ document.write(`
 </ul>
 </section>
 <section id="cuestiones-a-considerar">
-<h2>Cuestiones a considerar<a class="headerlink" href="#cuestiones-a-considerar" title="Permalink to this heading">#</a></h2>
+<h2>Cuestiones a considerar<a class="headerlink" href="#cuestiones-a-considerar" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Velocidad de la entrada de datos (frecuencia: <em>Batch, Real-Time</em>).</p></li>
 <li><p>Volumen de los datos.</p></li>
@@ -509,7 +524,7 @@ document.write(`
 <p>Fuente: <span id="id2">[<a class="reference internal" href="intro.html#id7" title="Edd. Dumbill. Planning for Big Data: A CIO's Handbook to the Changing Data Landscape. O’Reilly Media, Inc., 2012.">Dum12</a>]</span></p>
 </section>
 <section id="buenas-practicas-en-ingestion-de-datos">
-<h2>Buenas prácticas en ingestión de datos<a class="headerlink" href="#buenas-practicas-en-ingestion-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Buenas prácticas en ingestión de datos<a class="headerlink" href="#buenas-practicas-en-ingestion-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Ancho de banda de la red:</p></li>
 <li><p>El flujo de datos (<em>Data Pipeline</em>) debe poder competir con el tráfico comercial.</p></li>
@@ -561,7 +576,7 @@ document.write(`
 </ul>
 </section>
 <section id="problemas-en-la-ingesta-de-datos">
-<h2>Problemas en la ingesta de datos<a class="headerlink" href="#problemas-en-la-ingesta-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Problemas en la ingesta de datos<a class="headerlink" href="#problemas-en-la-ingesta-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Cuando existen numerosas fuentes de Big Data con diferentes formatos, el mayor desafío para el negocio es ingerir datos a una velocidad razonable y procesarlos de manera eficiente.</p></li>
 <li><p>De esta manera los datos pueden priorizarse y en consecuencia mejorar la toma de decisiones de negocio.</p></li>
@@ -577,14 +592,14 @@ document.write(`
 </ul>
 </section>
 <section id="procesamiento-de-datos-en-tiempo-real">
-<h2>Procesamiento de datos en tiempo real<a class="headerlink" href="#procesamiento-de-datos-en-tiempo-real" title="Permalink to this heading">#</a></h2>
+<h2>Procesamiento de datos en tiempo real<a class="headerlink" href="#procesamiento-de-datos-en-tiempo-real" title="Link to this heading">#</a></h2>
 <p><img alt="Ingesta de datos en Big Data" src="_images/analitica-datos-fortinux.png" /></p>
 <ul class="simple">
 <li><p>Imagen: Ingesta de datos en tiempo real en Big Data. Autor: M.H.Fortino(2024).</p></li>
 </ul>
 </section>
 <section id="apache-spark">
-<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this heading">#</a></h2>
+<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Spark es un motor de procesamiento rápido y general compatible con datos de Hadoop.</p></li>
 <li><p>Puede ejecutarse en clústeres de Hadoop a través de YARN o de modo independiente.</p></li>
@@ -597,7 +612,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-flume">
-<h2>Apache Flume<a class="headerlink" href="#apache-flume" title="Permalink to this heading">#</a></h2>
+<h2>Apache Flume<a class="headerlink" href="#apache-flume" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un servicio distribuido, confiable y de alta disponibilidad que colecta, agrupa y mueve eficientemente grandes cantidades de logs y datos.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://flume.apache.org/">https://flume.apache.org/</a>.</p></li>
@@ -620,17 +635,17 @@ document.write(`
 </ul>
 </section>
 <section id="apache-flink">
-<h2>Apache Flink<a class="headerlink" href="#apache-flink" title="Permalink to this heading">#</a></h2>
+<h2>Apache Flink<a class="headerlink" href="#apache-flink" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Framework utilizado para el procesamiento de flujos distribuidos (<em>distributed stream</em>) que facilita resultados precisos, aún en el caso de datos que están desordenados o que llegan con retraso en la distribución.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://flink.apache.org/">https://flink.apache.org/</a>.</p></li>
 </ul>
 </section>
 <section id="sistemas-de-mensajeria">
-<h2>Sistemas de mensajería<a class="headerlink" href="#sistemas-de-mensajeria" title="Permalink to this heading">#</a></h2>
+<h2>Sistemas de mensajería<a class="headerlink" href="#sistemas-de-mensajeria" title="Link to this heading">#</a></h2>
 </section>
 <section id="apache-kafka">
-<h2>Apache Kafka<a class="headerlink" href="#apache-kafka" title="Permalink to this heading">#</a></h2>
+<h2>Apache Kafka<a class="headerlink" href="#apache-kafka" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es una plataforma de transmisión de eventos distribuidos de código abierto utilizada por miles de empresas para canalizaciones de datos de alto rendimiento, análisis de streaming, integración de datos y aplicaciones de misión crítica.</p></li>
 <li><p>Es también un sistema de mensajería escalable que permite a los usuarios publicar y consumir grandes cantidades de mensajes en tiempo real por suscripción.</p></li>
@@ -649,7 +664,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-activemq">
-<h2>Apache ActiveMQ<a class="headerlink" href="#apache-activemq" title="Permalink to this heading">#</a></h2>
+<h2>Apache ActiveMQ<a class="headerlink" href="#apache-activemq" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es el sistema de mensajería multi protocolo open source más popular del mercado.</p></li>
 <li><p>Se conecta a clientes escritos en JavaScript, C, C++, Python, .Net, y más.</p></li>
@@ -662,7 +677,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-pulsar">
-<h2>Apache Pulsar<a class="headerlink" href="#apache-pulsar" title="Permalink to this heading">#</a></h2>
+<h2>Apache Pulsar<a class="headerlink" href="#apache-pulsar" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Pulsar es una plataforma de eventos distribuidos cloud similar a Kafka originalmente creada por Yahoo!</p></li>
 <li><p><a class="reference external" href="https://pulsar.apache.org/">https://pulsar.apache.org/</a>.</p></li>
@@ -670,7 +685,7 @@ document.write(`
 </ul>
 </section>
 <section id="pub-sub">
-<h2>Pub/Sub<a class="headerlink" href="#pub-sub" title="Permalink to this heading">#</a></h2>
+<h2>Pub/Sub<a class="headerlink" href="#pub-sub" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es un sistema de mensajería que combina la escalabilidad horizontal de Apache Kafka y Pulsar con funciones del middleware como colas y filtros de mensajes no entregados de Apache ActiveMQ y RabbitMQ.</p></li>
 <li><p>Se complementa con Dataflow, que controla la anulación de mensajes duplicados, el procesamiento “solo una vez” y generación de marcas de agua a partir de eventos con marcas de tiempo.</p></li>
@@ -679,17 +694,17 @@ document.write(`
 </ul>
 </section>
 <section id="otras-herramientas">
-<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Permalink to this heading">#</a></h2>
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Link to this heading">#</a></h2>
 </section>
 <section id="logstash">
-<h2>Logstash<a class="headerlink" href="#logstash" title="Permalink to this heading">#</a></h2>
+<h2>Logstash<a class="headerlink" href="#logstash" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Canalización (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que ingiere datos de una multitud de fuentes, los transforma simultáneamente y luego los envía al reservatorio (<em>stash</em>), por ejemplo Elasticsearch.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/es/logstash">https://www.elastic.co/es/logstash</a>.</p></li>
 </ul>
 </section>
 <section id="apache-nifi">
-<h2>Apache Nifi<a class="headerlink" href="#apache-nifi" title="Permalink to this heading">#</a></h2>
+<h2>Apache Nifi<a class="headerlink" href="#apache-nifi" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es una de las mejores herramientas de <em>data ingestion</em> del mercado.</p></li>
 <li><p>Proveee un sistema fácil de usar, poderoso y confiable para procesar y distribuir datos.</p></li>
@@ -702,7 +717,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-beam">
-<h2>Apache Beam<a class="headerlink" href="#apache-beam" title="Permalink to this heading">#</a></h2>
+<h2>Apache Beam<a class="headerlink" href="#apache-beam" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es un modelo de programación unificado que permite implementar trabajos de procesamiento de datos por lotes y de <em>streaming</em> en cualquier motor de ejecución.</p></li>
 <li><p>Lee los datos desde diversas fuentes, ejecuta la lógica del negocio para <em>batch</em> y <em>streaming</em>, y finalmente los deposita en las soluciones de almacenamiento disponibles.</p></li>
@@ -713,7 +728,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-samza">
-<h2>Apache Samza<a class="headerlink" href="#apache-samza" title="Permalink to this heading">#</a></h2>
+<h2>Apache Samza<a class="headerlink" href="#apache-samza" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Permite crear aplicaciones con estado que procesan datos en tiempo real desde múltiples fuentes, incluido Apache Kafka.</p></li>
 <li><p>Admite opciones de implementación flexibles para ejecutarse en YARN o como una biblioteca independiente.</p></li>
@@ -722,7 +737,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-airflow">
-<h2>Apache Airflow<a class="headerlink" href="#apache-airflow" title="Permalink to this heading">#</a></h2>
+<h2>Apache Airflow<a class="headerlink" href="#apache-airflow" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Airflow es una plataforma que permite crear, programar temporalmente, y monitorar flujos de trabajo utilizando Python como lenguaje.</p></li>
 <li><p>Automatiza la ingestas de datos, acciones de mantenimiento periódicas y realiza tareas de administración.</p></li>
@@ -738,7 +753,7 @@ document.write(`
 </ul>
 </section>
 <section id="astro">
-<h2>Astro<a class="headerlink" href="#astro" title="Permalink to this heading">#</a></h2>
+<h2>Astro<a class="headerlink" href="#astro" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Astro es la versión comercial de Apache Airflow. Facilita la construcción, ejecución y observación de los datos de la organización en una única plataforma.</p></li>
 <li><p>Permite integrar además la inteligencia artificial y los LLM (<em>Large Language Models</em>) para acelerar la innovación.</p></li>
@@ -748,7 +763,7 @@ document.write(`
 </ul>
 </section>
 <section id="dbt">
-<h2>DBT<a class="headerlink" href="#dbt" title="Permalink to this heading">#</a></h2>
+<h2>DBT<a class="headerlink" href="#dbt" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>DBT (<em>Data Build Tool</em>) permite a los ingenieros de datos y analistas realizar transformaciones en los datos escribiendo sentencias SQL de tipo SELECT.</p></li>
 <li><p>Internamente, DBT traduce estas sentencias en tablas y en vistas, de esta forma facilita la creación de transformaciones sobre los datos disponibles en el almacén de datos.</p></li>
@@ -758,7 +773,7 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2>Otras herramientas<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Otras herramientas<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Mage AI es una herramienta open source orientada a crear canalizaciones para transformar e integrar datos.</p>
 <ul>
@@ -792,7 +807,7 @@ document.write(`
 </ul>
 </section>
 <section id="modelo-semantico-de-datos-sdm">
-<h2>Modelo semántico de datos (SDM)<a class="headerlink" href="#modelo-semantico-de-datos-sdm" title="Permalink to this heading">#</a></h2>
+<h2>Modelo semántico de datos (SDM)<a class="headerlink" href="#modelo-semantico-de-datos-sdm" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El modelo semántico de datos (SDM) también cambia con el tiempo.</p></li>
 <li><p>Se necesita un modelo de datos (<em>DM</em>) en el que se incluya información semántica.</p></li>
@@ -858,7 +873,7 @@ document.write(`
 </ul>
 </section>
 <section id="almacenamiento-de-datos-data-storage">
-<h2>Almacenamiento de datos (Data Storage)<a class="headerlink" href="#almacenamiento-de-datos-data-storage" title="Permalink to this heading">#</a></h2>
+<h2>Almacenamiento de datos (Data Storage)<a class="headerlink" href="#almacenamiento-de-datos-data-storage" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El almacenamiento se convierte en un desafío cuando el tamaño de los datos es muy grande.</p></li>
 <li><p>Varias posibles soluciones pueden ayudar a resolver este problema.</p></li>
@@ -875,7 +890,7 @@ document.write(`
 </ul>
 </section>
 <section id="persistencia-poliglota">
-<h2>Persistencia políglota<a class="headerlink" href="#persistencia-poliglota" title="Permalink to this heading">#</a></h2>
+<h2>Persistencia políglota<a class="headerlink" href="#persistencia-poliglota" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Se necesitan diferentes tipos de bases de datos para manejar las diferentes variedades de datos, pero el uso de las mismas crea una sobrecarga en el sistema.</p></li>
 <li><p>Es por este motivo que hay un nuevo concepto en el mundo de las bases de datos: la persistencia políglota. Es la idea de usar múltiples bases de datos para impulsar una sola aplicación.</p>
@@ -905,7 +920,7 @@ document.write(`
 </ul>
 </section>
 <section id="herramientas-de-almacenamiento-para-big-data">
-<h2>Herramientas de almacenamiento para Big Data<a class="headerlink" href="#herramientas-de-almacenamiento-para-big-data" title="Permalink to this heading">#</a></h2>
+<h2>Herramientas de almacenamiento para Big Data<a class="headerlink" href="#herramientas-de-almacenamiento-para-big-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>HDFS : <em>Hadoop Distributed File System</em>.</p></li>
 <li><p>Ozone: Un <em>object store</em> para Hadoop, la próxima generación de HDFS.</p></li>
@@ -916,7 +931,7 @@ document.write(`
 </ul>
 </section>
 <section id="hdfs">
-<h2>HDFS<a class="headerlink" href="#hdfs" title="Permalink to this heading">#</a></h2>
+<h2>HDFS<a class="headerlink" href="#hdfs" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>HDFS es un sistema de ficheros basado en Java que provee almacenamiento confiable y escalable.</p></li>
 <li><p>Fue diseñado para abarcar grandes grupos de servidores básicos (commodity servers).</p></li>
@@ -943,7 +958,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-ozone">
-<h2>Apache Ozone<a class="headerlink" href="#apache-ozone" title="Permalink to this heading">#</a></h2>
+<h2>Apache Ozone<a class="headerlink" href="#apache-ozone" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Ozone es un <em>object store</em> escalable, redundante, y distribuído para Hadoop.</p></li>
 <li><p>Además de escalar a billones de objetos de cualquier tamaño, Ozone puede trabajar puede funcionar de manera efectiva en entornos en contenedores como Kubernetes y YARN.</p>
@@ -968,7 +983,7 @@ document.write(`
 </ul>
 </section>
 <section id="glusterfs">
-<h2>GlusterFS<a class="headerlink" href="#glusterfs" title="Permalink to this heading">#</a></h2>
+<h2>GlusterFS<a class="headerlink" href="#glusterfs" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Gluster es un sistema de ficheros en red escalable libre y de fuente abierta.</p>
 <ul>
@@ -995,7 +1010,7 @@ document.write(`
 </ul>
 </section>
 <section id="ceph">
-<h2>Ceph<a class="headerlink" href="#ceph" title="Permalink to this heading">#</a></h2>
+<h2>Ceph<a class="headerlink" href="#ceph" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La base de Ceph es el <em>Reliable Autonomic Distributed Object Store (RADOS)</em></p></li>
 <li><p>Proporciona a las aplicaciones almacenamiento de objetos, bloques y sistemas de archivos en un solo clúster de almacenamiento unificado.</p></li>
@@ -1020,7 +1035,7 @@ document.write(`
 </ul>
 </section>
 <section id="minio">
-<h2>MinIO<a class="headerlink" href="#minio" title="Permalink to this heading">#</a></h2>
+<h2>MinIO<a class="headerlink" href="#minio" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>MinIO es un <em>object store</em> de alto desempeño compatible con S3.</p></li>
 <li><p>Ha sido construido para cargas de trabajo de larga escala AI/ML en <em>datalakes</em> y bases de datos.</p></li>
@@ -1032,7 +1047,7 @@ document.write(`
 </ul>
 </section>
 <section id="amazon-services">
-<h2>Amazon Services<a class="headerlink" href="#amazon-services" title="Permalink to this heading">#</a></h2>
+<h2>Amazon Services<a class="headerlink" href="#amazon-services" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Amazon Simple Storage Service (Amazon S3) es un almacenamiento de objetos con una interfaz web simple que permite almacenar y recuparar cualquier volumen de datos desde cualquier lugar en Internet.</p></li>
 <li><p>Está diseñado para entregar un 99.999% de durabilidad y escalar a más de trillones de objetos en todo el mundo.</p>
@@ -1059,7 +1074,7 @@ document.write(`
 </ul>
 </section>
 <section id="microsoft-azure-data-lake-store">
-<h2>Microsoft Azure Data Lake Store<a class="headerlink" href="#microsoft-azure-data-lake-store" title="Permalink to this heading">#</a></h2>
+<h2>Microsoft Azure Data Lake Store<a class="headerlink" href="#microsoft-azure-data-lake-store" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Lago de datos seguro y escalable de forma masiva para sus cargas de trabajo de análisis de alto rendimiento.</p></li>
 <li><p>Fuente: <a class="reference external" href="https://azure.microsoft.com/es-es/services/storage/data-lake-storage/">https://azure.microsoft.com/es-es/services/storage/data-lake-storage/</a>.</p></li>
@@ -1073,7 +1088,7 @@ document.write(`
 </ul>
 </section>
 <section id="google-bigquery">
-<h2>Google BigQuery<a class="headerlink" href="#google-bigquery" title="Permalink to this heading">#</a></h2>
+<h2>Google BigQuery<a class="headerlink" href="#google-bigquery" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Almacén de datos multinube de alta escalabilidad, rentable y sin servidor.</p>
 <ul>
@@ -1092,10 +1107,10 @@ document.write(`
 </ul>
 </section>
 <section id="data-warehouses-data-lakes-lakehouses">
-<h2>Data warehouses / Data lakes / Lakehouses<a class="headerlink" href="#data-warehouses-data-lakes-lakehouses" title="Permalink to this heading">#</a></h2>
+<h2>Data warehouses / Data lakes / Lakehouses<a class="headerlink" href="#data-warehouses-data-lakes-lakehouses" title="Link to this heading">#</a></h2>
 </section>
 <section id="snowflake">
-<h2>Snowflake<a class="headerlink" href="#snowflake" title="Permalink to this heading">#</a></h2>
+<h2>Snowflake<a class="headerlink" href="#snowflake" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Nacido como almacén de datos Snowflake facilita el almacenamiento, procesamiento, y brinda soluciones analíticas flexibles y veloces de manera fácil con una escalabilidad casi infinita, habilitada automáticamente o sobre la marcha.</p></li>
 <li><p>Está alojado en Amazon AWS.</p>
@@ -1106,7 +1121,7 @@ document.write(`
 </ul>
 </section>
 <section id="databricks">
-<h2>Databricks<a class="headerlink" href="#databricks" title="Permalink to this heading">#</a></h2>
+<h2>Databricks<a class="headerlink" href="#databricks" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Fundada en 2013 por los creadores originales de Apache Spark, Delta Lake y MLflow, Databricks reúne ingeniería de datos, ciencia y análisis en una plataforma abierta y unificada para que los equipos de datos puedan colaborar e innovar más rápido.</p></li>
 <li><p>Está alojado en Microsoft Azure.</p>
@@ -1117,7 +1132,7 @@ document.write(`
 </ul>
 </section>
 <section id="delta-lake">
-<h2>Delta Lake<a class="headerlink" href="#delta-lake" title="Permalink to this heading">#</a></h2>
+<h2>Delta Lake<a class="headerlink" href="#delta-lake" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Delta Lake es un <em>framework</em> de almacenamiento de código abierto que permite crear una arquitectura <em>Lakehouse</em> independiente del formato sobre un lago de datos con motores informáticos que incluyen Spark, PrestoDB, Flink, Trino, Hive, Snowflake, Google BigQuery, Athena, Redshift, Databricks, y Azure Fabric.</p></li>
 <li><p>Proporciona transacciones ACID, manejo escalable de metadatos y unifica el procesamiento de datos por lotes y streaming sobre lagos de datos existentes, como S3, ADLS, GCS y HDFS.</p></li>
@@ -1129,7 +1144,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-iceberg">
-<h2>Apache Iceberg<a class="headerlink" href="#apache-iceberg" title="Permalink to this heading">#</a></h2>
+<h2>Apache Iceberg<a class="headerlink" href="#apache-iceberg" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>Iceberg es un formato de alto rendimiento para tablas analíticas enormes. Iceberg aporta la confiabilidad y simplicidad de las tablas SQL a big data, al tiempo que hace posible que motores como Spark, Trino, Flink, Presto, Hive e Impala trabajen de forma segura con las mismas tablas al mismo tiempo.</em></p></li>
 </ul>
@@ -1138,7 +1153,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-hudi">
-<h2>Apache Hudi<a class="headerlink" href="#apache-hudi" title="Permalink to this heading">#</a></h2>
+<h2>Apache Hudi<a class="headerlink" href="#apache-hudi" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Hudi es una plataforma de lago de datos transaccional que aporta capacidades de base de datos y almacén de datos al lago de datos.</p></li>
 <li><p>Hudi reinventa el lento procesamiento de datos por lotes con un nuevo y potente framework de procesamiento incremental para análisis de baja latencia a nivel de minutos.</p></li>
@@ -1150,7 +1165,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-xtable">
-<h2>Apache XTable<a class="headerlink" href="#apache-xtable" title="Permalink to this heading">#</a></h2>
+<h2>Apache XTable<a class="headerlink" href="#apache-xtable" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache XTable foca en la interoperabilidad entre los distintos formatos de tablas de lagos de datos como Apache Hudi, Delta Lake, y Apache Iceberg.</p></li>
 <li><p>Actúa como capa intermedia que traduce los metadatos de los formatos de tablas de la fuente al destino sin necesidad de duplicar o reescribir los ficheros de datos.</p></li>
@@ -1160,7 +1175,7 @@ document.write(`
 </ul>
 </section>
 <section id="nosql-databases">
-<h2>NoSQL databases<a class="headerlink" href="#nosql-databases" title="Permalink to this heading">#</a></h2>
+<h2>NoSQL databases<a class="headerlink" href="#nosql-databases" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Las bases de datos NoSQL, (no solo SQL) o no relacionales, se utilizan mayoritariamente para la recopilación y análisis de Big Data.</p></li>
 <li><p>Permiten la organización dinámica de datos no estructurados.</p></li>
@@ -1190,13 +1205,13 @@ document.write(`
 </ul>
 </section>
 <section id="herramientas-de-la-asf-para-big-data">
-<h2>Herramientas de la ASF para Big Data<a class="headerlink" href="#herramientas-de-la-asf-para-big-data" title="Permalink to this heading">#</a></h2>
+<h2>Herramientas de la ASF para Big Data<a class="headerlink" href="#herramientas-de-la-asf-para-big-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Algunas de las herramientas de la ASF (<em>Apache Software Foundation</em>) <a class="reference external" href="https://apache.org/">https://apache.org/</a> para Big Data:</p></li>
 </ul>
 </section>
 <section id="apache-mesos">
-<h2>Apache Mesos<a class="headerlink" href="#apache-mesos" title="Permalink to this heading">#</a></h2>
+<h2>Apache Mesos<a class="headerlink" href="#apache-mesos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un núcleo (<em>kernel</em>) de sistemas distribuidos.</p></li>
 <li><p>Mesos está construido usando los mismos principios que el <em>kernel</em> de Linux, solo que en un nivel diferente de abstracción.</p></li>
@@ -1218,7 +1233,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-zookeeper">
-<h2>Apache Zookeeper<a class="headerlink" href="#apache-zookeeper" title="Permalink to this heading">#</a></h2>
+<h2>Apache Zookeeper<a class="headerlink" href="#apache-zookeeper" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>ZooKeeper es un servicio centralizado para mantener la información de configuración, nombrar, brindar sincronización distribuida y servicios grupales.</p>
 <ul>
@@ -1228,7 +1243,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-ambari">
-<h2>Apache Ambari<a class="headerlink" href="#apache-ambari" title="Permalink to this heading">#</a></h2>
+<h2>Apache Ambari<a class="headerlink" href="#apache-ambari" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El proyecto Apache Ambari tiene como objetivo simplificar la administración de Hadoop mediante el desarrollo de software para el aprovisionamiento, la administración y el monitoreo de clústeres de Apache Hadoop.</p></li>
 <li><p>Ambari proporciona una interfaz de usuario web de administración de Hadoop intuitiva y fácil de usar respaldada por sus API RESTful.</p>
@@ -1239,7 +1254,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-ranger">
-<h2>Apache Ranger<a class="headerlink" href="#apache-ranger" title="Permalink to this heading">#</a></h2>
+<h2>Apache Ranger<a class="headerlink" href="#apache-ranger" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Ranger™ es un framework para habilitar, monitorear y administrar la seguridad integral de los datos en toda la plataforma Hadoop.</p>
 <ul>
@@ -1249,7 +1264,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-sentry-attic">
-<h2>Apache Sentry (Attic)<a class="headerlink" href="#apache-sentry-attic" title="Permalink to this heading">#</a></h2>
+<h2>Apache Sentry (Attic)<a class="headerlink" href="#apache-sentry-attic" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Sentry™ es un sistema para hacer cumplir la autorización detallada basada en roles para datos y metadatos almacenados en un clúster de Hadoop. Está en el <em>attic</em> desde diciembre del 2020.</p>
 <ul>
@@ -1287,8 +1302,8 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="BigData-es001.html"
@@ -1316,6 +1331,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1393,6 +1409,7 @@ By Fortinux - Marcelo Horacio Fortino
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1419,8 +1436,8 @@ By Fortinux - Marcelo Horacio Fortino
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
