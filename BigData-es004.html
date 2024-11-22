@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Consulta y visualización de datos &#8212; Curso Introducción a Big Data</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es004';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +137,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -151,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso Introducción a Big Data - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso Introducción a Big Data - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +216,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -332,26 +345,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -391,6 +406,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-druid">Apache Druid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kylin">Apache Kylin</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
@@ -426,12 +442,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="consulta-y-visualizacion-de-datos">
-<h1>Consulta y visualización de datos<a class="headerlink" href="#consulta-y-visualizacion-de-datos" title="Permalink to this heading">#</a></h1>
+<h1>Consulta y visualización de datos<a class="headerlink" href="#consulta-y-visualizacion-de-datos" title="Link to this heading">#</a></h1>
 <section id="procesos-en-big-data">
-<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Permalink to this heading">#</a></h2>
+<h2>Procesos en Big Data<a class="headerlink" href="#procesos-en-big-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Para el NIST Big Data interoperability Framework (NBDIF) - Version 3.0 Final <span id="id1">[<a class="reference internal" href="intro.html#id3" title="Wo Chang and Nancy Grady. Nist big data interoperability framework: volume 1, definitions. 2019-10-21 2019. doi:https://doi.org/10.6028/NIST.SP.1500-1r2.">CG19</a>]</span> (Pág.29), el ciclo de vida del análisis de los datos se compone de cinco fases:</p>
 <ul>
@@ -448,7 +464,7 @@ document.write(`
 </ul>
 </section>
 <section id="procesamiento-analisis-y-consulta-de-datos">
-<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Procesamiento, análisis y consulta de datos<a class="headerlink" href="#procesamiento-analisis-y-consulta-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Los datos recolectados en la fase anterior serán procesados en este paso.</p></li>
 <li><p>Aquí, el sistema de procesamiento de canalización de datos enruta los datos a un destino diferente, clasifica el flujo de datos y es el primer punto donde puede tener lugar el análisis.</p></li>
@@ -501,7 +517,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-scoop-attic">
-<h2>Apache Scoop (Attic)<a class="headerlink" href="#apache-scoop-attic" title="Permalink to this heading">#</a></h2>
+<h2>Apache Scoop (Attic)<a class="headerlink" href="#apache-scoop-attic" title="Link to this heading">#</a></h2>
 <p><em>Apache Attic <a class="reference external" href="https://attic.apache.org/">https://attic.apache.org/</a> es utilizado por la Apache Software Foundation como espacio para los proyectos que ya han llegado a su final de vida y no cuentan con más desarrollo ni mantenimiento.</em></p>
 <ul class="simple">
 <li><p><em>Apache Scoop</em> transfiere eficientemente datos estructurados entre Apache Hadoop y las bases de datos relacionales.</p>
@@ -523,7 +539,7 @@ document.write(`
 </ul>
 </section>
 <section id="motores-de-consultas">
-<h2>Motores de consultas<a class="headerlink" href="#motores-de-consultas" title="Permalink to this heading">#</a></h2>
+<h2>Motores de consultas<a class="headerlink" href="#motores-de-consultas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Los motores de consultas SQL (<em>SQL query engine</em>) permiten realizar consultas a grandes cantidades de datos (<em>terabytes</em> o <em>petabytes</em>) en distintas fuentes simultáneamente.</p></li>
 <li><p>Las consultas pueden localizar datos, actualizarlos, agregarlos, etc.</p></li>
@@ -531,7 +547,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-spark">
-<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Permalink to this heading">#</a></h2>
+<h2>Apache Spark<a class="headerlink" href="#apache-spark" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Framework de procesamiento paralelo y de código abierto para ejecutar aplicaciones de análisis de datos a gran escala en sistemas agrupados.</p></li>
 <li><p>Utilizado por más del 80% de las empresas <em>Fortune 500</em> y miles de otras empresas en todo el mundo.</p></li>
@@ -566,7 +582,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-impala">
-<h2>Apache Impala<a class="headerlink" href="#apache-impala" title="Permalink to this heading">#</a></h2>
+<h2>Apache Impala<a class="headerlink" href="#apache-impala" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Impala eleva el nivel de rendimiento de las consultas SQL en Apache Hadoop al mismo tiempo que conserva una experiencia de usuario familiar.</p></li>
 <li><p>Con Impala, se puede consultar datos, ya sea que estén almacenados en HDFS o Apache HBase, incluidas las funciones SELECT, JOIN y agregadas, en tiempo real.</p>
@@ -581,7 +597,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-kudu">
-<h2>Apache Kudu<a class="headerlink" href="#apache-kudu" title="Permalink to this heading">#</a></h2>
+<h2>Apache Kudu<a class="headerlink" href="#apache-kudu" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Kudu es un motor de almacenamiento columnar open source para datos estructurados.</p></li>
 <li><p>Está diseñado y optimizado para análisis de big data en datos que cambian rápidamente o para un rendimiento rápido en consultas analíticas - OLAP.</p></li>
@@ -594,7 +610,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-hive">
-<h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Permalink to this heading">#</a></h2>
+<h2>Apache Hive<a class="headerlink" href="#apache-hive" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Hive es una infraestructura de almacenamiento de datos (<em>data warehouse</em>) construida sobre Apache Hadoop para proporcionar resúmenes de datos, consultas ad-hoc y análisis de grandes conjuntos de datos.</p></li>
 <li><p>Los analistas de datos usan Hive para consultar, resumir, explorar y analizar esos datos, y luego convertirlos en información empresarial procesable.</p>
@@ -624,7 +640,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-drill">
-<h2>Apache Drill<a class="headerlink" href="#apache-drill" title="Permalink to this heading">#</a></h2>
+<h2>Apache Drill<a class="headerlink" href="#apache-drill" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Es un motor SQL para Hadoop, NoSQL y almacenamiento en la nube.</p></li>
 <li><p>Soporta variadas bases de datos NoSQL y sistemas de ficheros:</p>
@@ -644,7 +660,7 @@ document.write(`
 </ul>
 </section>
 <section id="presto">
-<h2>Presto<a class="headerlink" href="#presto" title="Permalink to this heading">#</a></h2>
+<h2>Presto<a class="headerlink" href="#presto" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Motor SQL desarrollado por Meta (Facebook) para análisis ad-hoc e informes rápidos.</p></li>
 <li><p>Es un motor de consulta SQL distribuido de código abierto que ejecuta consultas analíticas interactivas en fuentes de datos de todos los tamaños, desde gigabytes hasta petabytes.</p>
@@ -662,7 +678,7 @@ document.write(`
 </ul>
 </section>
 <section id="trino">
-<h2>Trino<a class="headerlink" href="#trino" title="Permalink to this heading">#</a></h2>
+<h2>Trino<a class="headerlink" href="#trino" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Trino es un motor de consulta SQL distribuido diseñado para consultar grandes conjuntos de datos distribuidos en una o más fuentes de datos heterogéneas.</p></li>
 <li><p>Son los fundadores del proyecto Presto que han tenido que cambiarle el nombre por cuestiones legales.</p>
@@ -676,7 +692,7 @@ document.write(`
 </ul>
 </section>
 <section id="otras-herramientas-hue">
-<h2>Otras herramientas: Hue<a class="headerlink" href="#otras-herramientas-hue" title="Permalink to this heading">#</a></h2>
+<h2>Otras herramientas: Hue<a class="headerlink" href="#otras-herramientas-hue" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hue es un asistente open source de SQL para bases de datos y <em>data warehouses</em>.</p></li>
 <li><p>Provee un editor de código SQL con componentes y autocompletado que permite conectarse a cualquier base de datos.</p>
@@ -687,7 +703,7 @@ document.write(`
 </ul>
 </section>
 <section id="alluxio">
-<h2>Alluxio<a class="headerlink" href="#alluxio" title="Permalink to this heading">#</a></h2>
+<h2>Alluxio<a class="headerlink" href="#alluxio" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Alluxio es una plataforma de orquestación de datos (<em>data orchestration platform</em>) que habilita la separación entre las capas de cómputo y almacenamiento.</p></li>
 <li><p>Brinda velocidad y agilidad a las cargas de datos en Big Data e inteligencia artificial reduciendo costes gracias a la eliminación de datos duplicados.</p></li>
@@ -698,10 +714,10 @@ document.write(`
 </ul>
 </section>
 <section id="analitica-de-datos-en-tiempo-real">
-<h2>Analítica de datos en tiempo real<a class="headerlink" href="#analitica-de-datos-en-tiempo-real" title="Permalink to this heading">#</a></h2>
+<h2>Analítica de datos en tiempo real<a class="headerlink" href="#analitica-de-datos-en-tiempo-real" title="Link to this heading">#</a></h2>
 </section>
 <section id="apache-doris">
-<h2>Apache Doris<a class="headerlink" href="#apache-doris" title="Permalink to this heading">#</a></h2>
+<h2>Apache Doris<a class="headerlink" href="#apache-doris" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Doris es un moderno <em>data warehouse open source</em> para analíticas en tiempo real.</p></li>
 <li><p>Puede ser utilizado para realizar informes de análisis, consultas <em>ad-hoc</em>, unificar almacenes de datos o acelerar consultas a lagos de datos.</p></li>
@@ -712,7 +728,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-druid">
-<h2>Apache Druid<a class="headerlink" href="#apache-druid" title="Permalink to this heading">#</a></h2>
+<h2>Apache Druid<a class="headerlink" href="#apache-druid" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Druid es una base de datos diseñada para análisis en tiempo real (consultas OLAP) en grandes conjuntos de datos.</p></li>
 <li><p>Se especializa en casos de uso donde la ingesta de datos en tiempo real, un desempeño veloz en las consultas y una disponibulidad alta son importantes.</p></li>
@@ -722,7 +738,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-kylin">
-<h2>Apache Kylin<a class="headerlink" href="#apache-kylin" title="Permalink to this heading">#</a></h2>
+<h2>Apache Kylin<a class="headerlink" href="#apache-kylin" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Kylin es un almacén de datos analíticos distribuido de código abierto para Big Data.</p></li>
 <li><p>Diseñado para proporcionar capacidad OLAP (procesamiento analítico en línea) para Big Data.</p></li>
@@ -734,14 +750,21 @@ document.write(`
 </ul>
 </section>
 <section id="apache-pinot">
-<h2>Apache Pinot<a class="headerlink" href="#apache-pinot" title="Permalink to this heading">#</a></h2>
+<h2>Apache Pinot<a class="headerlink" href="#apache-pinot" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Pinot es una plataforma de código abierto de analítica en tiempo real ideal para obtener información ultrarrápida, escalabilidad sin esfuerzo y decisiones rentables basadas en datos.</p></li>
 <li><p>Fuente: <a class="reference external" href="https://pinot.apache.org/">https://pinot.apache.org/</a>.</p></li>
 </ul>
 </section>
+<section id="clickhouse">
+<h2>ClickHouse<a class="headerlink" href="#clickhouse" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>ClickHouse es un sistema de gestión de bases de datos - SGDB (<em>database management system - DBMS</em>) columnar de alto desempeño que permite realizar análisis OLAP (<em>online analytical processing</em>).</p></li>
+<li><p><a class="reference external" href="https://clickhouse.com/">https://clickhouse.com/</a>.</p></li>
+</ul>
+</section>
 <section id="vertica">
-<h2>Vertica<a class="headerlink" href="#vertica" title="Permalink to this heading">#</a></h2>
+<h2>Vertica<a class="headerlink" href="#vertica" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>Vertica</em> es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
 <li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
@@ -752,7 +775,7 @@ document.write(`
 </ul>
 </section>
 <section id="perfilado-de-datos-y-linaje">
-<h2>Perfilado de datos y linaje<a class="headerlink" href="#perfilado-de-datos-y-linaje" title="Permalink to this heading">#</a></h2>
+<h2>Perfilado de datos y linaje<a class="headerlink" href="#perfilado-de-datos-y-linaje" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Perfilado de datos y linaje (<em>data profiling and lineage</em>) son técnicas que permiten identificar la calidad de los datos y su ciclo de vida durante las varias fases que percorren.</p></li>
 <li><p>Es importante capturar los metadatos en cada paso del proceso para que puedan ser utilizados posteriormente para verificación y personalización.</p></li>
@@ -780,20 +803,20 @@ document.write(`
 </ul>
 </section>
 <section id="calidad-de-los-datos">
-<h2>Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Permalink to this heading">#</a></h2>
+<h2>Calidad de los datos<a class="headerlink" href="#calidad-de-los-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La ingesta de datos se considera de alta calidad si cumple con las necesidades comerciales y satisface el uso previsto, de modo que sea útil para tomar decisiones de negocio con éxito.</p></li>
 <li><p>Por lo tanto, es un paso importante establecer la dimensión de mayor interés e implementar métodos para lograrla.</p></li>
 </ul>
 </section>
 <section id="limpieza-de-datos">
-<h2>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>La limpieza de datos (<em>data cleansing</em>) significa implementar varias soluciones para corregir datos incorrectos o corruptos.</p></li>
 </ul>
 </section>
 <section id="prevencion-y-perdida-de-datos">
-<h2>Prevención y pérdida de datos<a class="headerlink" href="#prevencion-y-perdida-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Prevención y pérdida de datos<a class="headerlink" href="#prevencion-y-perdida-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Deben existir políticas para asegurarse de que se resuelvan las lagunas en la pérdida de datos.</p></li>
 <li><p>La identificación de dicha pérdida de datos necesita un control cuidadoso y procesos de evaluación de la calidad en el flujo del proceso de ingesta de datos.</p></li>
@@ -801,7 +824,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="visualizacion-de-datos">
-<h1>Visualización de datos<a class="headerlink" href="#visualizacion-de-datos" title="Permalink to this heading">#</a></h1>
+<h1>Visualización de datos<a class="headerlink" href="#visualizacion-de-datos" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>La fase de visualización o presentación es donde los usuarios pueden sentir el VALOR de los DATOS.</p></li>
 <li><p>La visualización de hallazgos ayuda a tomar mejores decisiones de negocios.</p></li>
@@ -836,7 +859,7 @@ document.write(`
 </li>
 </ul>
 <section id="elastic-stack">
-<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Permalink to this heading">#</a></h2>
+<h2>Elastic Stack<a class="headerlink" href="#elastic-stack" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>En sus inicios el ELK Stack se componía de las aplicaciones Elasticsearch, Logstash, Kibana, y Beats.</p></li>
 <li><p>Actualmente se lo conoce como Elastic Stack, nombre que le permite agregar nuevas funcionalidades.</p></li>
@@ -864,7 +887,7 @@ document.write(`
 </ul>
 </section>
 <section id="elasticsearch">
-<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this heading">#</a></h2>
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Elasticsearch es un motor de análisis y búsqueda de código abierto distribuido para todo tipo de datos, incluidos textuales, numéricos, geoespaciales, estructurados y no estructurados.</p></li>
 <li><p>Elasticsearch se basa en Apache Lucene y fue lanzado por primera vez en 2010 por Elasticsearch N.V. (ahora conocido como Elastic).</p></li>
@@ -878,7 +901,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-lucene">
-<h2>Apache Lucene<a class="headerlink" href="#apache-lucene" title="Permalink to this heading">#</a></h2>
+<h2>Apache Lucene<a class="headerlink" href="#apache-lucene" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Lucene Core es una biblioteca de Java que proporciona potentes funciones de indexación y búsqueda, así como funciones de corrección ortográfica, resaltado de aciertos y análisis/tokenización avanzados.</p></li>
 <li><p>El subproyecto PyLucene proporciona enlaces de Python para Lucene Core.</p>
@@ -941,7 +964,7 @@ document.write(`
 </ul>
 </section>
 <section id="apache-solr">
-<h2>Apache Solr<a class="headerlink" href="#apache-solr" title="Permalink to this heading">#</a></h2>
+<h2>Apache Solr<a class="headerlink" href="#apache-solr" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Solr es un servidor de búsqueda de alto rendimiento creado con Lucene Core.</p></li>
 <li><p>Solr es altamente escalable y proporciona indexación, búsqueda y análisis distribuidos totalmente tolerantes a fallas.</p></li>
@@ -953,7 +976,7 @@ document.write(`
 </ul>
 </section>
 <section id="logstash">
-<h2>Logstash<a class="headerlink" href="#logstash" title="Permalink to this heading">#</a></h2>
+<h2>Logstash<a class="headerlink" href="#logstash" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Logstash se usa para agregar y procesar datos y enviarlos a Elasticsearch.</p></li>
 <li><p>Es una canalización (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que le permite ingerir datos de múltiples fuentes simultáneamente y enriquecerlos y transformarlos antes de que se indexen en Elasticsearch.</p></li>
@@ -980,7 +1003,7 @@ document.write(`
 </ul>
 </section>
 <section id="kibana">
-<h2>Kibana<a class="headerlink" href="#kibana" title="Permalink to this heading">#</a></h2>
+<h2>Kibana<a class="headerlink" href="#kibana" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Kibana es una herramienta de visualización y gestión de datos para Elasticsearch que brinda histogramas en tiempo real, gráficos circulares y mapas.</p></li>
 <li><p>Kibana también incluye aplicaciones avanzadas, como Canvas, que permite a los usuarios crear infografías dinámicas personalizadas con base en sus datos, y Elastic Maps para visualizar los datos geoespaciales.</p></li>
@@ -1027,7 +1050,7 @@ elasticsearch-users</p>
 <li><p>Fuente: (<a class="reference external" href="http://assets.contentstack.io">assets.contentstack.io</a>) [<a class="reference external" href="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt">https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt</a>].</p></li>
 </ul>
 <section id="tutorial-elasticsearch">
-<h3>Tutorial Elasticsearch<a class="headerlink" href="#tutorial-elasticsearch" title="Permalink to this heading">#</a></h3>
+<h3>Tutorial Elasticsearch<a class="headerlink" href="#tutorial-elasticsearch" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Descargar e instalar la máquina virtual de elasticsearch en Bitnami.</p></li>
 <li><p><a class="reference external" href="https://bitnami.com/stack/elasticsearch/virtual-machine">https://bitnami.com/stack/elasticsearch/virtual-machine</a>.</p></li>
@@ -1035,7 +1058,7 @@ elasticsearch-users</p>
 </section>
 </section>
 <section id="salesforce-amazon-google-y-microsoft">
-<h2>Salesforce, Amazon, Google y Microsoft<a class="headerlink" href="#salesforce-amazon-google-y-microsoft" title="Permalink to this heading">#</a></h2>
+<h2>Salesforce, Amazon, Google y Microsoft<a class="headerlink" href="#salesforce-amazon-google-y-microsoft" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Otras herramientas de modelización y visualización de datos son las proporcionadas por Salesforce, Amazon, Google y Microsoft.</p></li>
 <li><p>Salesforce adquirió Tableau y google hizo lo mismo con Looker en 2019.</p></li>
@@ -1075,7 +1098,7 @@ elasticsearch-users</p>
 </ul>
 </section>
 <section id="apache-superset">
-<h2>Apache Superset<a class="headerlink" href="#apache-superset" title="Permalink to this heading">#</a></h2>
+<h2>Apache Superset<a class="headerlink" href="#apache-superset" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
 <li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
@@ -1099,7 +1122,7 @@ elasticsearch-users</p>
 <li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.</p></li>
 </ul>
 <section id="tutorial-apache-superset">
-<h3>Tutorial Apache Superset<a class="headerlink" href="#tutorial-apache-superset" title="Permalink to this heading">#</a></h3>
+<h3>Tutorial Apache Superset<a class="headerlink" href="#tutorial-apache-superset" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Clonar el repositorio <a class="github reference external" href="https://github.com/apache/superset">apache/superset</a> siguiendo las instrucciones de la página <a class="reference external" href="https://superset.apache.org/docs/quickstart">https://superset.apache.org/docs/quickstart</a> para ejecutar un contenedor con Apache Superset.</p></li>
 <li><p>Crear un gráfico de barras con la suma de ventas por trimestre utilizando la tabla <em>cleaned_sales_data</em>.</p></li>
@@ -1107,7 +1130,7 @@ elasticsearch-users</p>
 </section>
 </section>
 <section id="monitoreo-de-datos">
-<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
 <li><p>Apache Flume es útil para procesar datos de registro.</p></li>
@@ -1144,8 +1167,8 @@ elasticsearch-users</p>
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="BigData-es003.html"
@@ -1174,6 +1197,7 @@ elasticsearch-users</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1199,6 +1223,7 @@ elasticsearch-users</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-druid">Apache Druid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kylin">Apache Kylin</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
@@ -1246,6 +1271,7 @@ By Fortinux - Marcelo Horacio Fortino
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -1272,8 +1298,8 @@ By Fortinux - Marcelo Horacio Fortino
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
