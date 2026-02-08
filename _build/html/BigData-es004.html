@@ -399,6 +399,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-drill">Apache Drill</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presto">Presto</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trino">Trino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-phoenix">Apache Phoenix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-hue">Otras herramientas: Hue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alluxio">Alluxio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analitica-de-datos-en-tiempo-real">Analítica de datos en tiempo real</a></li>
@@ -691,6 +692,18 @@ document.write(`
 <li><p>Se puede descargar el libro <em>Trino: The Definitive Guide, 2nd Edition</em> (los autores son los creadores de Trino) registrándose en <a class="reference external" href="https://www.starburst.io/info/oreilly-trino-guide/">https://www.starburst.io/info/oreilly-trino-guide/</a>.</p></li>
 </ul>
 </section>
+<section id="apache-phoenix">
+<h2>Apache Phoenix<a class="headerlink" href="#apache-phoenix" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Phoenix permite realizar OLTP y analíticas operacionales en Hadoop para aplicaciones con baja lacencia.</p></li>
+<li><p>Brinda el poder de SQL y las APIs JDBC para realizar transacciones ACID completas.</p></li>
+<li><p>Contiene funcionalidades del mundo NoSQL utilizando como almacén HBase.</p></li>
+<li><p>Se integra con otros productos Hadoop como por ejemplo Spark, Hive, Pig, Flume, y Map Reduce.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://phoenix.apache.org/index.html">https://phoenix.apache.org/index.html</a>.</p></li>
+</ul>
+</section>
 <section id="otras-herramientas-hue">
 <h2>Otras herramientas: Hue<a class="headerlink" href="#otras-herramientas-hue" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -710,7 +723,7 @@ document.write(`
 <li><p>Permite también trabajar con <em>object stores</em>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://www.alluxio.io/data-orchestration/">https://www.alluxio.io/data-orchestration/</a>.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://documentation.alluxio.io/ee-ai-en/">https://documentation.alluxio.io/ee-ai-en/</a>.</p></li>
 </ul>
 </section>
 <section id="analitica-de-datos-en-tiempo-real">
@@ -759,8 +772,12 @@ document.write(`
 <section id="clickhouse">
 <h2>ClickHouse<a class="headerlink" href="#clickhouse" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>ClickHouse es un sistema de gestión de bases de datos - SGDB (<em>database management system - DBMS</em>) columnar de alto desempeño que permite realizar análisis OLAP (<em>online analytical processing</em>).</p></li>
+<li><p><em>ClickHouse</em> es un sistema de gestión de bases de datos - SGDB (<em>database management system - DBMS</em>) columnar de alto desempeño que permite realizar análisis OLAP (<em>online analytical processing</em>).</p></li>
 <li><p><a class="reference external" href="https://clickhouse.com/">https://clickhouse.com/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>ClickStack</em> es un stack open source para observability de <em>ClickHouse</em>.</p></li>
+<li><p><a class="reference external" href="https://clickhouse.com/clickstack">https://clickhouse.com/clickstack</a>.</p></li>
 </ul>
 </section>
 <section id="vertica">
@@ -793,6 +810,14 @@ document.write(`
 </li>
 </ul>
 <ul class="simple">
+<li><p><em>Great expectations</em> <a class="reference external" href="https://greatexpectations.io/">https://greatexpectations.io/</a> ofrece también soluciones open source para la gestión de la calidad de los datos: el framework <em>GX Core</em> y su opción cloud <em>GX Cloud</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>OpenMetadata</em> es una plataforma unificada de metadatos que realiza descubierta (<em>data discovery</em>), <em>data observability</em>, y gobernanza de datos (<em>data governance</em>).</p></li>
+<li><p>Ofrece un repositorio de metadatos centralizado, linaje de datos y colaboración para el equipo de datos integrada.</p></li>
+<li><p>Fuente <a class="reference external" href="https://docs.open-metadata.org/latest">https://docs.open-metadata.org/latest</a>.</p></li>
+</ul>
+<ul class="simple">
 <li><p><em>OpenLineage</em> es un framework open source para la recopilación y el análisis del linaje de datos.</p></li>
 <li><p>Permite una recopilación consistente de metadatos de linaje, creando una comprensión más profunda de cómo se producen y utilizan los datos.</p></li>
 <li><p>se integra con <em>Airflow, Spark</em> y <em>dbt</em>.</p>
@@ -800,6 +825,10 @@ document.write(`
 <li><p>Extraído de: <a class="reference external" href="https://openlineage.io/">https://openlineage.io/</a>.</p></li>
 </ul>
 </li>
+</ul>
+<ul class="simple">
+<li><p><em>Marquez</em> ofrece una solución completa basada en <em>OpenLineage</em> <a class="reference external" href="https://marquezproject.ai/">https://marquezproject.ai/</a>.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://marquezproject.ai/docs/quickstart">https://marquezproject.ai/docs/quickstart</a>.</p></li>
 </ul>
 </section>
 <section id="calidad-de-los-datos">
@@ -1102,6 +1131,7 @@ elasticsearch-users</p>
 <ul class="simple">
 <li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
 <li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>La versión comercial de sus creadores es Preset <a class="reference external" href="https://preset.io/">https://preset.io/</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Sus características principales son:</p></li>
@@ -1216,6 +1246,7 @@ elasticsearch-users</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-drill">Apache Drill</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presto">Presto</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trino">Trino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-phoenix">Apache Phoenix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas-hue">Otras herramientas: Hue</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alluxio">Alluxio</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analitica-de-datos-en-tiempo-real">Analítica de datos en tiempo real</a></li>
