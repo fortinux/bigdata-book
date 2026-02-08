@@ -389,27 +389,27 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingestion-de-datos">Ingestión de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medallion-architecture">Medallion architecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuestiones-a-considerar">Cuestiones a considerar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">Buenas prácticas en ingestión de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos-en-tiempo-real">Procesamiento de datos en tiempo real</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-flume">Apache Flume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-flume-attic">Apache Flume (Attic)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-flink">Apache Flink</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kafka">Apache Kafka</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-activemq">Apache ActiveMQ</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pulsar">Apache Pulsar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pub-sub">Pub/Sub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logstash">Logstash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-nifi">Apache Nifi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logstash">Logstash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-beam">Apache Beam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-samza">Apache Samza</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro">Astro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbt">DBT</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kafka">Apache Kafka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-activemq">Apache ActiveMQ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pulsar">Apache Pulsar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pub-sub">Pub/Sub</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistencia-poliglota">Persistencia políglota</a></li>
@@ -422,7 +422,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-services">Amazon Services</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">Microsoft Azure Data Lake Store</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-bigquery">Google BigQuery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouses-data-lakes-lakehouses">Data warehouses / Data lakes / Lakehouses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouse-data-lake-lake-house">Data warehouse / Data lake / Lake house</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snowflake">Snowflake</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databricks">Databricks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-lake">Delta Lake</a></li>
@@ -431,8 +431,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-xtable">Apache XTable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-la-asf-para-big-data">Herramientas de la ASF para Big Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos-attic">Apache Mesos (Attic)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-knox">Apache Knox</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari">Apache Ambari</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ranger">Apache Ranger</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry-attic">Apache Sentry (Attic)</a></li>
@@ -488,6 +489,23 @@ document.write(`
 </li>
 </ul>
 </section>
+<section id="medallion-architecture">
+<h2>Medallion architecture<a class="headerlink" href="#medallion-architecture" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Se denomina arquitectura del medallón (<em>Medallion architecture</em>) a la práctica de organizar los datos en un <em>lake house</em> incorporando tres capas para mejorar la calidad de los datos, realizar análisis, y poder gestionarlos.</p></li>
+<li><p>Las tres capas son:</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Bronze layer</em>: Datos sin procesar.</p></li>
+<li><p><em>Silver layer</em>: Tareas de ETL. Datos transformados y limpios.</p></li>
+<li><p><em>Gold layer</em>: Datos listos para utilizar en el día a día y realizar análisis.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuentes:</p></li>
+<li><p><a class="reference external" href="https://www.databricks.com/glossary/medallion-architecture">https://www.databricks.com/glossary/medallion-architecture</a>.</p></li>
+<li><p><a class="reference external" href="https://blog.bismart.com/arquitectura-medallion-data-lakehouse">https://blog.bismart.com/arquitectura-medallion-data-lakehouse</a>.</p></li>
+</ul>
+</section>
 <section id="cuestiones-a-considerar">
 <h2>Cuestiones a considerar<a class="headerlink" href="#cuestiones-a-considerar" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -503,14 +521,14 @@ document.write(`
 <li><p>El movimiento de datos puede ser masivo o continuo en la ingestión de datos.</p></li>
 </ul>
 <ul class="simple">
-<li><p>El volumen de los datos gestionados puede ser enorme.</p></li>
-<li><p>Los datos son generados desde diversas fuentes.</p></li>
-<li><p>Éstas pueden aumentar cada día tanto en cantidad como en volumen de datos.</p></li>
-</ul>
-<ul class="simple">
 <li><p>En cuanto a la frecuencia los datos se pueden procesar en tiempo real o por lotes.</p></li>
 <li><p>En tiempo real el procesamiento ocurre cuando los datos se reciben al mismo tiempo que se generan.</p></li>
 <li><p>Los datos por lotes se almacenan mediante un proceso por lotes fijo en algún intervalo de tiempo y luego se trasladan al flujo del proceso de administración de datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El volumen de los datos gestionados puede ser enorme.</p></li>
+<li><p>Los datos son generados desde diversas fuentes.</p></li>
+<li><p>Éstas pueden aumentar cada día tanto en cantidad como en volumen de datos.</p></li>
 </ul>
 <ul class="simple">
 <li><p>La ingestión de datos se puede realizar utilizando formatos de distinto tipo:</p>
@@ -611,8 +629,8 @@ document.write(`
 <li><p>Más información en la sección <em>Motores de consultas</em> de estos apuntes.</p></li>
 </ul>
 </section>
-<section id="apache-flume">
-<h2>Apache Flume<a class="headerlink" href="#apache-flume" title="Link to this heading">#</a></h2>
+<section id="apache-flume-attic">
+<h2>Apache Flume (Attic)<a class="headerlink" href="#apache-flume-attic" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un servicio distribuido, confiable y de alta disponibilidad que colecta, agrupa y mueve eficientemente grandes cantidades de logs y datos.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://flume.apache.org/">https://flume.apache.org/</a>.</p></li>
@@ -641,68 +659,6 @@ document.write(`
 <li><p>Extraído de: <a class="reference external" href="https://flink.apache.org/">https://flink.apache.org/</a>.</p></li>
 </ul>
 </section>
-<section id="sistemas-de-mensajeria">
-<h2>Sistemas de mensajería<a class="headerlink" href="#sistemas-de-mensajeria" title="Link to this heading">#</a></h2>
-</section>
-<section id="apache-kafka">
-<h2>Apache Kafka<a class="headerlink" href="#apache-kafka" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es una plataforma de transmisión de eventos distribuidos de código abierto utilizada por miles de empresas para canalizaciones de datos de alto rendimiento, análisis de streaming, integración de datos y aplicaciones de misión crítica.</p></li>
-<li><p>Es también un sistema de mensajería escalable que permite a los usuarios publicar y consumir grandes cantidades de mensajes en tiempo real por suscripción.</p></li>
-<li><p>Extraído de: <a class="reference external" href="https://kafka.apache.org/">https://kafka.apache.org/</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La transmisión de eventos es el equivalente digital del sistema nervioso central del cuerpo humano.</p></li>
-<li><p>Es la base tecnológica para el mundo ‘siempre activo’ donde las empresas están cada vez más definidas por software y automatizadas, y donde el usuario de software es más software (Inteligencia Artificial).</p></li>
-</ul>
-<ul class="simple">
-<li><p>Técnicamente hablando, la transmisión de eventos es la práctica de capturar datos en tiempo real de fuentes de eventos como bases de datos, sensores, dispositivos móviles, servicios en la nube y aplicaciones de software en forma de flujos de eventos; almacenar estos flujos de eventos de forma duradera para su posterior recuperación; manipular, procesar y reaccionar a los flujos de eventos en tiempo real y retrospectivamente; y enrutar los flujos de eventos a diferentes tecnologías de destino según sea necesario.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La version comercial de Apache Kafka es Confluent <a class="reference external" href="https://www.confluent.io/es-es/">https://www.confluent.io/es-es/</a>.</p></li>
-<li><p>Otro <em>broker</em> de mensajería es RabbitMQ <a class="reference external" href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a>.</p></li>
-</ul>
-</section>
-<section id="apache-activemq">
-<h2>Apache ActiveMQ<a class="headerlink" href="#apache-activemq" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es el sistema de mensajería multi protocolo open source más popular del mercado.</p></li>
-<li><p>Se conecta a clientes escritos en JavaScript, C, C++, Python, .Net, y más.</p></li>
-<li><p>Integra aplicaciones multiplataforma utilizando el protocolo AMQP.</p></li>
-<li><p>Intercambia mensajes mediante STOMP sobre <em>websockets</em>, gestiona dispositivos IoT con MQTT.</p></li>
-<li><p>Soporta la infraestructura JMS (<em>Java Message Service</em>).</p></li>
-</ul>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://activemq.apache.org/">https://activemq.apache.org/</a></p></li>
-</ul>
-</section>
-<section id="apache-pulsar">
-<h2>Apache Pulsar<a class="headerlink" href="#apache-pulsar" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Apache Pulsar es una plataforma de eventos distribuidos cloud similar a Kafka originalmente creada por Yahoo!</p></li>
-<li><p><a class="reference external" href="https://pulsar.apache.org/">https://pulsar.apache.org/</a>.</p></li>
-<li><p>La versión comercial de sus creadores es StreamNative <a class="reference external" href="https://streamnative.io/">https://streamnative.io/</a>.</p></li>
-</ul>
-</section>
-<section id="pub-sub">
-<h2>Pub/Sub<a class="headerlink" href="#pub-sub" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Es un sistema de mensajería que combina la escalabilidad horizontal de Apache Kafka y Pulsar con funciones del middleware como colas y filtros de mensajes no entregados de Apache ActiveMQ y RabbitMQ.</p></li>
-<li><p>Se complementa con Dataflow, que controla la anulación de mensajes duplicados, el procesamiento “solo una vez” y generación de marcas de agua a partir de eventos con marcas de tiempo.</p></li>
-<li><p>Para usar Dataflow se escribe la canalización con el SDK de Apache Beam y luego se ejecuta.</p></li>
-<li><p><a class="reference external" href="https://cloud.google.com/pubsub/docs/overview">https://cloud.google.com/pubsub/docs/overview</a></p></li>
-</ul>
-</section>
-<section id="otras-herramientas">
-<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Link to this heading">#</a></h2>
-</section>
-<section id="logstash">
-<h2>Logstash<a class="headerlink" href="#logstash" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Canalización (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que ingiere datos de una multitud de fuentes, los transforma simultáneamente y luego los envía al reservatorio (<em>stash</em>), por ejemplo Elasticsearch.</p></li>
-<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/es/logstash">https://www.elastic.co/es/logstash</a>.</p></li>
-</ul>
-</section>
 <section id="apache-nifi">
 <h2>Apache Nifi<a class="headerlink" href="#apache-nifi" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -714,6 +670,13 @@ document.write(`
 <li><p>Documentación: <a class="reference external" href="https://nifi.apache.org/docs/nifi-docs/html/getting-started.html">https://nifi.apache.org/docs/nifi-docs/html/getting-started.html</a>.</p></li>
 <li><p>Caso de uso: <em>Best practices and lessons learnt from Running Apache NiFi at Renault</em><br />
 <a class="reference external" href="https://fr.slideshare.net/Hadoop_Summit/best-practices-and-lessons-learnt-from-running-apache-nifi-at-renault">https://fr.slideshare.net/Hadoop_Summit/best-practices-and-lessons-learnt-from-running-apache-nifi-at-renault</a>.</p></li>
+</ul>
+</section>
+<section id="logstash">
+<h2>Logstash<a class="headerlink" href="#logstash" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Canalización (<em>pipeline</em>) de procesamiento de datos del lado del servidor de código abierto que ingiere datos de una multitud de fuentes, los transforma simultáneamente y luego los envía al reservatorio (<em>stash</em>), por ejemplo Elasticsearch.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://www.elastic.co/es/logstash">https://www.elastic.co/es/logstash</a>.</p></li>
 </ul>
 </section>
 <section id="apache-beam">
@@ -772,8 +735,8 @@ document.write(`
 <li><p>Fuente: <a class="reference external" href="https://www.getdbt.com/">https://www.getdbt.com/</a>.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>Otras herramientas<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="otras-herramientas">
+<h2>Otras herramientas<a class="headerlink" href="#otras-herramientas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Mage AI es una herramienta open source orientada a crear canalizaciones para transformar e integrar datos.</p>
 <ul>
@@ -804,6 +767,58 @@ document.write(`
 <li><p>Extraído de: <a class="reference external" href="https://materialize.com/">https://materialize.com/</a>.</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="sistemas-de-mensajeria">
+<h2>Sistemas de mensajería<a class="headerlink" href="#sistemas-de-mensajeria" title="Link to this heading">#</a></h2>
+</section>
+<section id="apache-kafka">
+<h2>Apache Kafka<a class="headerlink" href="#apache-kafka" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es una plataforma de transmisión de eventos distribuidos de código abierto utilizada por miles de empresas para canalizaciones de datos de alto rendimiento, análisis de streaming, integración de datos y aplicaciones de misión crítica.</p></li>
+<li><p>Es también un sistema de mensajería escalable que permite a los usuarios publicar y consumir grandes cantidades de mensajes en tiempo real por suscripción.</p></li>
+<li><p>Extraído de: <a class="reference external" href="https://kafka.apache.org/">https://kafka.apache.org/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La transmisión de eventos es el equivalente digital del sistema nervioso central del cuerpo humano.</p></li>
+<li><p>Es la base tecnológica para el mundo ‘siempre activo’ donde las empresas están cada vez más definidas por software y automatizadas, y donde el usuario de software es más software (Inteligencia Artificial).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Técnicamente hablando, la transmisión de eventos es la práctica de capturar datos en tiempo real de fuentes de eventos como bases de datos, sensores, dispositivos móviles, servicios en la nube y aplicaciones de software en forma de flujos de eventos; almacenar estos flujos de eventos de forma duradera para su posterior recuperación; manipular, procesar y reaccionar a los flujos de eventos en tiempo real y retrospectivamente; y enrutar los flujos de eventos a diferentes tecnologías de destino según sea necesario.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La version comercial de Apache Kafka es Confluent <a class="reference external" href="https://www.confluent.io/es-es/">https://www.confluent.io/es-es/</a>.</p></li>
+<li><p>Otro <em>broker</em> de mensajería es RabbitMQ <a class="reference external" href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a>.</p></li>
+</ul>
+</section>
+<section id="apache-activemq">
+<h2>Apache ActiveMQ<a class="headerlink" href="#apache-activemq" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es el sistema de mensajería multi protocolo open source más popular del mercado.</p></li>
+<li><p>Se conecta a clientes escritos en JavaScript, C, C++, Python, .Net, y más.</p></li>
+<li><p>Integra aplicaciones multiplataforma utilizando el protocolo AMQP.</p></li>
+<li><p>Intercambia mensajes mediante STOMP sobre <em>websockets</em>, gestiona dispositivos IoT con MQTT.</p></li>
+<li><p>Soporta la infraestructura JMS (<em>Java Message Service</em>).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://activemq.apache.org/">https://activemq.apache.org/</a></p></li>
+</ul>
+</section>
+<section id="apache-pulsar">
+<h2>Apache Pulsar<a class="headerlink" href="#apache-pulsar" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Pulsar es una plataforma de eventos distribuidos cloud similar a Kafka originalmente creada por Yahoo!</p></li>
+<li><p><a class="reference external" href="https://pulsar.apache.org/">https://pulsar.apache.org/</a>.</p></li>
+<li><p>La versión comercial de sus creadores es StreamNative <a class="reference external" href="https://streamnative.io/">https://streamnative.io/</a>.</p></li>
+</ul>
+</section>
+<section id="pub-sub">
+<h2>Pub/Sub<a class="headerlink" href="#pub-sub" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Es un sistema de mensajería que combina la escalabilidad horizontal de Apache Kafka y Pulsar con funciones del middleware como colas y filtros de mensajes no entregados de Apache ActiveMQ y RabbitMQ.</p></li>
+<li><p>Se complementa con Dataflow, que controla la anulación de mensajes duplicados, el procesamiento “solo una vez” y generación de marcas de agua a partir de eventos con marcas de tiempo.</p></li>
+<li><p>Para usar Dataflow se escribe la canalización con el SDK de Apache Beam y luego se ejecuta.</p></li>
+<li><p><a class="reference external" href="https://cloud.google.com/pubsub/docs/overview">https://cloud.google.com/pubsub/docs/overview</a></p></li>
 </ul>
 </section>
 <section id="modelo-semantico-de-datos-sdm">
@@ -1106,8 +1121,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="data-warehouses-data-lakes-lakehouses">
-<h2>Data warehouses / Data lakes / Lakehouses<a class="headerlink" href="#data-warehouses-data-lakes-lakehouses" title="Link to this heading">#</a></h2>
+<section id="data-warehouse-data-lake-lake-house">
+<h2>Data warehouse / Data lake / Lake house<a class="headerlink" href="#data-warehouse-data-lake-lake-house" title="Link to this heading">#</a></h2>
 </section>
 <section id="snowflake">
 <h2>Snowflake<a class="headerlink" href="#snowflake" title="Link to this heading">#</a></h2>
@@ -1210,8 +1225,8 @@ document.write(`
 <li><p>Algunas de las herramientas de la ASF (<em>Apache Software Foundation</em>) <a class="reference external" href="https://apache.org/">https://apache.org/</a> para Big Data:</p></li>
 </ul>
 </section>
-<section id="apache-mesos">
-<h2>Apache Mesos<a class="headerlink" href="#apache-mesos" title="Link to this heading">#</a></h2>
+<section id="apache-mesos-attic">
+<h2>Apache Mesos (Attic)<a class="headerlink" href="#apache-mesos-attic" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un núcleo (<em>kernel</em>) de sistemas distribuidos.</p></li>
 <li><p>Mesos está construido usando los mismos principios que el <em>kernel</em> de Linux, solo que en un nivel diferente de abstracción.</p></li>
@@ -1240,6 +1255,13 @@ document.write(`
 <li><p>Extraído de: <a class="reference external" href="https://zookeeper.apache.org/">https://zookeeper.apache.org/</a>.</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="apache-knox">
+<h2>Apache Knox<a class="headerlink" href="#apache-knox" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El <em>gateway</em> Apache Knox™ es un portal de aplicaciones para interactuar con las API REST y las interfaces de usuario de las implementaciones de Apache Hadoop.</p></li>
+<li><p>Fuente <a class="reference external" href="https://knox.apache.org/">https://knox.apache.org/</a>.</p></li>
 </ul>
 </section>
 <section id="apache-ambari">
@@ -1341,27 +1363,27 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-big-data">Procesos en Big Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingestion-de-datos">Ingestión de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#medallion-architecture">Medallion architecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuestiones-a-considerar">Cuestiones a considerar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-en-ingestion-de-datos">Buenas prácticas en ingestión de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problemas-en-la-ingesta-de-datos">Problemas en la ingesta de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesamiento-de-datos-en-tiempo-real">Procesamiento de datos en tiempo real</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-spark">Apache Spark</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-flume">Apache Flume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-flume-attic">Apache Flume (Attic)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-flink">Apache Flink</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kafka">Apache Kafka</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-activemq">Apache ActiveMQ</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pulsar">Apache Pulsar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pub-sub">Pub/Sub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logstash">Logstash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-nifi">Apache Nifi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logstash">Logstash</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-beam">Apache Beam</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-samza">Apache Samza</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro">Astro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dbt">DBT</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-herramientas">Otras herramientas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-mensajeria">Sistemas de mensajería</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kafka">Apache Kafka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-activemq">Apache ActiveMQ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pulsar">Apache Pulsar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pub-sub">Pub/Sub</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistencia-poliglota">Persistencia políglota</a></li>
@@ -1374,7 +1396,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amazon-services">Amazon Services</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-azure-data-lake-store">Microsoft Azure Data Lake Store</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-bigquery">Google BigQuery</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouses-data-lakes-lakehouses">Data warehouses / Data lakes / Lakehouses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-warehouse-data-lake-lake-house">Data warehouse / Data lake / Lake house</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#snowflake">Snowflake</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#databricks">Databricks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-lake">Delta Lake</a></li>
@@ -1383,8 +1405,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-xtable">Apache XTable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nosql-databases">NoSQL databases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-la-asf-para-big-data">Herramientas de la ASF para Big Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos">Apache Mesos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mesos-attic">Apache Mesos (Attic)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-zookeeper">Apache Zookeeper</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-knox">Apache Knox</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ambari">Apache Ambari</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-ranger">Apache Ranger</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-sentry-attic">Apache Sentry (Attic)</a></li>
