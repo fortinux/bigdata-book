@@ -15,6 +15,10 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+# Ejemplo de correlación en Python 
+# Fuente:
+# https://spark.apache.org/docs/latest/ml-statistics.html
+
 from pyspark.ml.linalg import Vectors
 from pyspark.ml.stat import Correlation
 
@@ -35,13 +39,16 @@ print("Spearman correlation matrix:\n" + str(r2[0]))
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyspark[39;00m[38;5;21;01m.[39;00m[38;5;21;01mml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlinalg[39;00m [38;5;28;01mimport[39;00m Vectors
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyspark[39;00m[38;5;21;01m.[39;00m[38;5;21;01mml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstat[39;00m [38;5;28;01mimport[39;00m Correlation
-[1;32m      4[0m data [38;5;241m=[39m [(Vectors[38;5;241m.[39msparse([38;5;241m4[39m, [([38;5;241m0[39m, [38;5;241m1.0[39m), ([38;5;241m3[39m, [38;5;241m-[39m[38;5;241m2.0[39m)]),),
-[1;32m      5[0m         (Vectors[38;5;241m.[39mdense([[38;5;241m4.0[39m, [38;5;241m5.0[39m, [38;5;241m0.0[39m, [38;5;241m3.0[39m]),),
-[1;32m      6[0m         (Vectors[38;5;241m.[39mdense([[38;5;241m6.0[39m, [38;5;241m7.0[39m, [38;5;241m0.0[39m, [38;5;241m8.0[39m]),),
-[1;32m      7[0m         (Vectors[38;5;241m.[39msparse([38;5;241m4[39m, [([38;5;241m0[39m, [38;5;241m9.0[39m), ([38;5;241m3[39m, [38;5;241m1.0[39m)]),)]
+Cell [0;32mIn[1], line 5[0m
+[1;32m      1[0m [38;5;66;03m# Ejemplo de correlación en Python [39;00m
+[1;32m      2[0m [38;5;66;03m# Fuente:[39;00m
+[1;32m      3[0m [38;5;66;03m# https://spark.apache.org/docs/latest/ml-statistics.html[39;00m
+[0;32m----> 5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyspark[39;00m[38;5;21;01m.[39;00m[38;5;21;01mml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlinalg[39;00m [38;5;28;01mimport[39;00m Vectors
+[1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyspark[39;00m[38;5;21;01m.[39;00m[38;5;21;01mml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstat[39;00m [38;5;28;01mimport[39;00m Correlation
+[1;32m      8[0m data [38;5;241m=[39m [(Vectors[38;5;241m.[39msparse([38;5;241m4[39m, [([38;5;241m0[39m, [38;5;241m1.0[39m), ([38;5;241m3[39m, [38;5;241m-[39m[38;5;241m2.0[39m)]),),
+[1;32m      9[0m         (Vectors[38;5;241m.[39mdense([[38;5;241m4.0[39m, [38;5;241m5.0[39m, [38;5;241m0.0[39m, [38;5;241m3.0[39m]),),
+[1;32m     10[0m         (Vectors[38;5;241m.[39mdense([[38;5;241m6.0[39m, [38;5;241m7.0[39m, [38;5;241m0.0[39m, [38;5;241m8.0[39m]),),
+[1;32m     11[0m         (Vectors[38;5;241m.[39msparse([38;5;241m4[39m, [([38;5;241m0[39m, [38;5;241m9.0[39m), ([38;5;241m3[39m, [38;5;241m1.0[39m)]),)]
 
 [0;31mModuleNotFoundError[0m: No module named 'pyspark'
 

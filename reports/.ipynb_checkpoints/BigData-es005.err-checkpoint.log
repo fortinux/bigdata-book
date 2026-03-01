@@ -19,8 +19,8 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 |------- | ---------------- | -------- | 			
 | Stream processing | Batch processing | Micro-batch processing |
 | Latency | Latency of a few seconds | Latency of milliseconds |
-| Multi-language support | Multi-language support | Lesser language support |
-| Languages | Java - Scala - Python - R - SQL | Java - Scala - Clojure |
+| Multi-language support | Multiple language support | Lesser language support |
+| Languages | Java – Scala - Python - R - SQL | Java – Scala – Clojure |
 | Stream sources | HDFS | Spout |
 | Resource management | Yarn, Mesos | Yarn, Mesos |
 | Provisioning | Basic using Ganglia | Apache Ambari |
@@ -28,9 +28,9 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 
 
-[0;36m  Cell [0;32mIn[1], line 1[0;36m[0m
-[0;31m    | Situation | Spark | Storm |[0m
-[0m    ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;36m  Cell [0;32mIn[1], line 6[0;36m[0m
+[0;31m    | Languages | Java – Scala - Python - R - SQL | Java – Scala – Clojure |[0m
+[0m                       ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid character '–' (U+2013)
 
 

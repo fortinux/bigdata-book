@@ -404,9 +404,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlflow">MLFlow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zenml">ZenML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kubeflow">Kubeflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caldera-atlas">Caldera + Atlas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libros-de-ml-y-estadisticas">Libros de ML y estadísticas</a></li>
 </ul>
             </nav>
         </div>
@@ -649,6 +653,8 @@ document.write(`
 </ul>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://big-data-test-infrastructure.ec.europa.eu/index_en">https://big-data-test-infrastructure.ec.europa.eu/index_en</a>.</p></li>
+<li><p>Portal de <a class="reference external" href="http://datos.gob.es">datos.gob.es</a> con la iniciativa europea BDTI:</p></li>
+<li><p><a class="reference external" href="https://datos.gob.es/es/blog/big-data-test-infrastructure-un-entorno-gratuito-para-que-las-aapp-experimenten-con-sus-datos">https://datos.gob.es/es/blog/big-data-test-infrastructure-un-entorno-gratuito-para-que-las-aapp-experimenten-con-sus-datos</a>.</p></li>
 </ul>
 </section>
 <section id="machine-learning">
@@ -798,13 +804,15 @@ document.write(`
 <li><p>La correlación calcula la matriz de correlación para el conjunto de datos de vectores de entrada utilizando el método especificado.</p></li>
 <li><p>La salida será un <em>dataframe</em> que contiene la matriz de correlación de la columna de vectores.</p></li>
 </ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/latest/ml-statistics.html">https://spark.apache.org/docs/latest/ml-statistics.html</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Aquí se presenta un ejemplo de correlación en Python:</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de correlación en Python </span>
-<span class="c1"># Fuente:</span>
-<span class="c1"># https://spark.apache.org/docs/latest/ml-statistics.html</span>
-
-<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml.stat</span> <span class="kn">import</span> <span class="n">Correlation</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)]),),</span>
@@ -825,16 +833,13 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Ejemplo de correlación en Python </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># Fuente:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># https://spark.apache.org/docs/latest/ml-statistics.html</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">pyspark.ml.stat</span> <span class="kn">import</span> <span class="n">Correlation</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)]),),</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),),</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]),),</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]),)]</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pyspark.ml.stat</span> <span class="kn">import</span> <span class="n">Correlation</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)]),),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),),</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]),),</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]),)]</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pyspark&#39;
 </pre></div>
@@ -844,6 +849,63 @@ document.write(`
 <ul class="simple">
 <li><p>El código fuente del ejemplo completo se encuentra en <em>examples/src/main/python/ml/correlation_example.py</em> en el repositorio de Spark.</p></li>
 <li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/latest/ml-guide.html">https://spark.apache.org/docs/latest/ml-guide.html</a>.</p></li>
+</ul>
+</section>
+<section id="tutorial-mllib">
+<h2>Tutorial MLlib<a class="headerlink" href="#tutorial-mllib" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Práctica: Aplicaciones de ML en datasets.</p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb">https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb</a>.</p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986">https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986</a>.</p></li>
+<li><p><a class="reference external" href="https://sparkbyexamples.com/">https://sparkbyexamples.com/</a>.</p></li>
+</ul>
+</section>
+<section id="mlflow">
+<h2>MLFlow<a class="headerlink" href="#mlflow" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MLflow es un <em>stack</em> completo de MLOps y LLMOps en una única plataforma <em>open source</em>, facilitando una infraestructura de IA abierta, <em>vendor-neutral</em>, y completamente bajo control.</p></li>
+<li><p>Esta plataforma de desarrollo construye agentes de IA y modelos con confianza, mejorando las aplicaciones con seguimiento, observabilidad y evaluaciones de extremo a extremo, todo en una plataforma integrada.</p></li>
+<li><p>Se integra fácilmente con <em>LangChain, OpenAI, PyTorch</em>, y más de 100 marcos de IA.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://mlflow.org/">https://mlflow.org/</a>.</p></li>
+</ul>
+</section>
+<section id="zenml">
+<h2>ZenML<a class="headerlink" href="#zenml" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>ZenML es un marco de código abierto que crea canalizaciones de ML listas para producción.</p></li>
+<li><p>Facilita la orquestación, control de versiones y gobernanza nativa en Kubernetes para canalizaciones de entrenamiento ML, GenAI, o evaluación de agentes de IA.</p></li>
+<li><p>Proporciona un protocolo estandarizado para vincular los pasos de recuperación de datos (LlamaIndex <a class="reference external" href="https://www.llamaindex.ai/">https://www.llamaindex.ai/</a>), razonamiento (LangChain <a class="reference external" href="https://www.langchain.com/">https://www.langchain.com/</a>) y entrenamiento (PyTorch <a class="reference external" href="https://pytorch.org/">https://pytorch.org/</a>) en un único sistema cohesivo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.zenml.io/">https://www.zenml.io/</a>.</p></li>
+</ul>
+</section>
+<section id="kubeflow">
+<h2>Kubeflow<a class="headerlink" href="#kubeflow" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kubeflow es una plataforma desarrollada por Google de código abierto para aprendizaje automático y MLOps en Kubernetes.</p></li>
+<li><p>En Kubeflow el ciclo de vida típico de aprendizaje automático se representan con diferentes componentes de software como por ejemplo: el desarrollo de modelos, el entrenamiento de modelos, la entrega de modelos y el aprendizaje automático automatizado.</p></li>
+<li><p>No es necesario implementar todos los componentes simultáneamente, ellos se pueden implementar por separado.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Kubeflow cuanta además con una serie de proyectos que cubren cada paso del ciclo de vida de la IA:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Kubeflow Spark Operator.</p></li>
+<li><p>Kubeflow Notebooks.</p></li>
+<li><p>Kubeflow Trainer.</p></li>
+<li><p>Kubeflow Katib.</p></li>
+<li><p>Kubeflow Model Registry.</p></li>
+<li><p>KServe.</p></li>
+<li><p>Feast.</p></li>
+<li><p>Kubeflow Pipelines.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Recursos:</p></li>
+<li><p><a class="reference external" href="https://www.kubeflow.org/">https://www.kubeflow.org/</a>.</p></li>
+<li><p><a class="reference external" href="https://www.kubeflow.org/docs/started/architecture/#kubeflow-projects-in-the-ai-lifecycle">https://www.kubeflow.org/docs/started/architecture/#kubeflow-projects-in-the-ai-lifecycle</a>.</p></li>
 </ul>
 </section>
 <section id="tacticas-adversarias-en-ml">
@@ -902,13 +964,14 @@ document.write(`
 <li><p>Fuente: <a class="github reference external" href="https://github.com/mitre-atlas/caldera-atlas">mitre-atlas/caldera-atlas</a>.</p></li>
 </ul>
 </section>
-<section id="tutorial-mllib">
-<h2>Tutorial MLlib<a class="headerlink" href="#tutorial-mllib" title="Link to this heading">#</a></h2>
+<section id="libros-de-ml-y-estadisticas">
+<h2>Libros de ML y estadísticas<a class="headerlink" href="#libros-de-ml-y-estadisticas" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Práctica: Aplicaciones de ML en datasets.</p></li>
-<li><p><a class="reference external" href="https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb">https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb</a>.</p></li>
-<li><p><a class="reference external" href="https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986">https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986</a>.</p></li>
-<li><p><a class="reference external" href="https://sparkbyexamples.com/">https://sparkbyexamples.com/</a>.</p></li>
+<li><p>Approaching (Almost) Any Machine Learning Problem – Abhishek Thakur <a class="reference external" href="https://docdrop.org/download_annotation_doc/AAAMLP-569to.pdf">https://docdrop.org/download_annotation_doc/AAAMLP-569to.pdf</a>.</p></li>
+<li><p>Hands-on Machine Learning with Scikit-Learn, Keras &amp; TensorFlow <a class="reference external" href="http://14.139.161.31/OddSem-0822-1122/Hands-On_Machine_Learning_with_Scikit-Learn-Keras-and-TensorFlow-2nd-Edition-Aurelien-Geron.pdf">http://14.139.161.31/OddSem-0822-1122/Hands-On_Machine_Learning_with_Scikit-Learn-Keras-and-TensorFlow-2nd-Edition-Aurelien-Geron.pdf</a>.</p></li>
+<li><p>Deep Learning with Python <a class="reference external" href="https://tanthiamhuat.wordpress.com/wp-content/uploads/2018/03/deeplearningwithpython.pdf">https://tanthiamhuat.wordpress.com/wp-content/uploads/2018/03/deeplearningwithpython.pdf</a>.</p></li>
+<li><p>Think Stats: Probability and Statistics for Programmers <a class="reference external" href="https://greenteapress.com/thinkstats/thinkstats.pdf">https://greenteapress.com/thinkstats/thinkstats.pdf</a>.</p></li>
+<li><p><a class="reference external" href="https://www.kdnuggets.com/7-statistical-concepts-every-data-scientist-should-master-and-why">https://www.kdnuggets.com/7-statistical-concepts-every-data-scientist-should-master-and-why</a>.</p></li>
 </ul>
 </section>
 </section>
@@ -994,9 +1057,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlflow">MLFlow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zenml">ZenML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kubeflow">Kubeflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caldera-atlas">Caldera + Atlas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#libros-de-ml-y-estadisticas">Libros de ML y estadísticas</a></li>
 </ul>
   </nav></div>
 

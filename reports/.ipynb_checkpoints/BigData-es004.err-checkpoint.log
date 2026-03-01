@@ -15,22 +15,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-| Situation | Spark | Storm |
-|------- | ---------------- | -------- | 			
-| Stream processing | Batch processing | Micro-batch processing |
-| Latency | Latency of a few seconds | Latency of milliseconds |
-| Multi-language support | Multi-language support | Lesser language support |
-| Languages | Java - Scala - Python - R - SQL | Java - Scala - Clojure |
-| Stream sources | HDFS | Spout |
-| Resource management | Yarn, Mesos | Yarn, Mesos |
-| Provisioning | Basic using Ganglia | Apache Ambari |
-| Messaging | Netty, Akka | ZeroMQ, Netty |
+database warehouse.
+
+base description (A16).
+type product kind (A8) = description.
+
+base color (A10).
+base stock (I8).
+base price (R4,2).
+type product (I7) = description, color, stock, price, product kind.
+
+base company name (A20).
+base address (A20).
+base zip (A6).
+base city (A16).
+type supplier (A8) = company name, address, zip, city.
+
+type purchased product (A9) = supplier, product, price.
+...
+base prepaid (R4,2).
+type sale (A7) = sold product, quantity, price, customer, date, prepaid.
+
+end.
 ------------------
 
 
 [0;36m  Cell [0;32mIn[1], line 1[0;36m[0m
-[0;31m    | Situation | Spark | Storm |[0m
-[0m    ^[0m
+[0;31m    database warehouse.[0m
+[0m             ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
 
