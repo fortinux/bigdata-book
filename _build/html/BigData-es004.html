@@ -409,6 +409,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
@@ -428,9 +429,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-elasticsearch">Tutorial Elasticsearch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-amazon-google-y-microsoft">Salesforce, Amazon, Google y Microsoft</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-superset">Apache Superset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-amazon-google-y-microsoft">Salesforce, Amazon, Google y Microsoft</a></li>
 </ul>
 </li>
 </ul>
@@ -789,6 +789,15 @@ document.write(`
 <li><p>Extraído de <a class="reference external" href="https://www.opentext.com/products/vertica-data-platform">https://www.opentext.com/products/vertica-data-platform</a>.</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="monitoreo-de-datos">
+<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
+<li><p>Apache Flume es útil para procesar datos de registro.</p></li>
+<li><p>Apache Storm se utiliza para el monitoreo de operaciones.</p></li>
+<li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
 </ul>
 </section>
 <section id="observability">
@@ -1208,6 +1217,32 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 </ul>
 </section>
 </section>
+<section id="apache-superset">
+<h2>Apache Superset<a class="headerlink" href="#apache-superset" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
+<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
+<li><p>La versión comercial de sus creadores es Preset <a class="reference external" href="https://preset.io/">https://preset.io/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Sus características principales son:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
+<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
+<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
+<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
+<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
+<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
+<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.</p></li>
+</ul>
+</section>
 <section id="salesforce-amazon-google-y-microsoft">
 <h2>Salesforce, Amazon, Google y Microsoft<a class="headerlink" href="#salesforce-amazon-google-y-microsoft" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -1246,41 +1281,6 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li><p>Fuente: <a class="reference external" href="https://powerbi.microsoft.com/es-es/">https://powerbi.microsoft.com/es-es/</a>.</p></li>
 </ul>
 </li>
-</ul>
-</section>
-<section id="apache-superset">
-<h2>Apache Superset<a class="headerlink" href="#apache-superset" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Apache Superset es una moderna plataforma de exploración de datos y visualización.</p></li>
-<li><p>Documentación: <a class="reference external" href="https://superset.apache.org/docs/intro">https://superset.apache.org/docs/intro</a>.</p></li>
-<li><p>La versión comercial de sus creadores es Preset <a class="reference external" href="https://preset.io/">https://preset.io/</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Sus características principales son:</p></li>
-</ul>
-<ul class="simple">
-<li><p>Más de 40+ visualizaciones pre-instaladas.</p></li>
-<li><p>Soporte para <em>drag-and-drop</em> y consultas SQL.</p></li>
-<li><p>Uso de cache para datos que acelera la carga de informes y gráficos.</p></li>
-<li><p>Plantillas <em>Jinja</em> para crear <em>dashboards</em> interactivos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Plantillas CSS para personalizar gráficos e informes.</p></li>
-<li><p>Capa semántica de transformaciones con el lenguaje SQL.</p></li>
-<li><p>Filtros avanzados para análisis de datos más profundos.</p></li>
-<li><p>Acceso a nuevas funcionalidades mediante <em>feature flags</em>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Fuente <a class="reference external" href="https://superset.apache.org/">https://superset.apache.org/</a>.</p></li>
-</ul>
-</section>
-<section id="monitoreo-de-datos">
-<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
-<li><p>Apache Flume es útil para procesar datos de registro.</p></li>
-<li><p>Apache Storm se utiliza para el monitoreo de operaciones</p></li>
-<li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
 </ul>
 </section>
 </section>
@@ -1371,6 +1371,7 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
@@ -1390,9 +1391,8 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-elasticsearch">Tutorial Elasticsearch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-amazon-google-y-microsoft">Salesforce, Amazon, Google y Microsoft</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-superset">Apache Superset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#salesforce-amazon-google-y-microsoft">Salesforce, Amazon, Google y Microsoft</a></li>
 </ul>
 </li>
 </ul>
