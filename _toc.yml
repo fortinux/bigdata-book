@@ -7,12 +7,18 @@ chapters:
 - file: BigData-es001
   title: Definición y características
 - file: BigData-es002
+  title: Ingesta y almacenamiento de datos
 - file: BigData-es003
+  title: Bases de datos para Big Data
 - file: BigData-es004
+  title: Consulta y visualización de datos
 - file: BigData-es004MongoDB
 - file: BigData-es005
+  title: Frameworks y aplicaciones para Big Data
 - file: BigData-es005Hadoop
 - file: BigData-es005Kafka
 - file: BigData-es007
+  title: Big Data Science
 - file: BigData-es008
+  title: AI, ML y DL
 - file: BigData-es008sparkMLlib

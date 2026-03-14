@@ -2,9 +2,9 @@
 [![Fortinux Book Badge](https://fortinux.com/FortinuxBook.svg)](<https://fortinux.github.io/bigdata-book/intro.html>) 
 
 # Introducción a Big Data
-## Apuntes de análisis de datos, ML y AI
+## Apuntes de análisis de datos, AI, ML y DL
 
-Introducción a Big Data. Apuntes de análisis de datos, ML y AI por Marcelo Horacio Fortino. Versión 2.7.8. Marzo 2026.    
+Introducción a Big Data. Apuntes de análisis de datos, AI, ML y DL por Marcelo Horacio Fortino. Versión 3.0.0. Marzo 2026.    
 
 Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <http://creativecommons.org/licenses/by-sa/4.0/>. Puede hallar permisos más allá de los concedidos con esta licencia en <https://fortinux.com>. Sugerencias y comentarios a <info@fortinux.com>.     
 
@@ -15,7 +15,8 @@ Todas las marcas son propiedad de sus respectivos dueños. Apache Hadoop, Hadoop
 | 1.0 | Marcelo Horacio Fortino | 2020/Nov | Fundamentals of Big Data |
 | 1.1 | Marcelo Horacio Fortino | 2022/Feb | Traducido al castellano, actualizado y convertido a markdown - ipynb |    
 | 1.2 | Marcelo Horacio Fortino | 2022/Mar | Convertido en Jupyter Book |    
-| 2.0 | Marcelo Horacio Fortino | 2023/Oct | Actualizados contenidos. Agregado Data Science |    
+| 2.0 | Marcelo Horacio Fortino | 2023/Oct | Actualizados contenidos. Agregado Data Science |   
+| 3.0 | Marcelo Horacio Fortino | 2026/Mar | Ampliados contenidos de AI, ML y DL | 
 
 
 Esta obra se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. El autor no asume ninguna responsabilidad si el lector hace un mal uso de la misma.    
@@ -43,13 +44,15 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
   
 - Bases de datos para Big Data: Formatos de archivo para Big Data (Apache ORC, Parquet, Avro, Arrow), Bases de datos NoSQL, Bases de datos de documentos: MongoDB, Versiones, Características, Principales funcionalidades, Apache CouchDB, Couchbase, Bases de datos con pares de valores: Redis, Arquitectura, Apache Ignite, Bases de datos columnares: Apache Cassandra, Tutorial Cassandra, Apache HBase, Características, Usos, Requisitos, Bases de datos de grafos: Neo4j, Stardog, Amazon Neptune, Bases de datos vectoriales.
 
-- Consulta y visualización de datos: Procesos en Big Data, Procesamiento, análisis y consulta de datos, Apache Scoop(Attic), Motores de consultas, Apache Spark, Apache Impala, Apache Kudu, Apache Hive, Apache Drill, Presto, Trino, Apache Phoenix, Otras herramientas: Hue, Alluxio, Analítica de datos en tiempo real, Apache Doris, Apache Druid, Apache Kylin, Apache Pinot, ClickHouse, Vertica,  Monitoreo de datos, Observability, Calidad de los datos, Limpieza de datos, Prevención y perdida de datos, DataOps, Perfilado y linaje (Talend Data Fabric, GX Core, OpenMetadata, OpenLineage, Marquez), Modelo semántico de datos (SDM), Visualización de datos: Elastic Stack, Elasticsearch, Apache Lucene, Apache Sorl, Logstash, Kibana, Apache superset (Preset), Salesforce, Amazon, Google y Microsoft.
+- Consulta y visualización de datos: Procesos en Big Data, Procesamiento, análisis y consulta de datos, Apache Scoop(Attic), Motores de consultas, Apache Spark, Apache Impala, Apache Kudu, Apache Hive, Apache Drill, Presto, Trino, Apache Phoenix, Otras herramientas: Hue, Alluxio, Analítica de datos en tiempo real, Apache Doris, Apache Druid, Apache Kylin, Apache Pinot, ClickHouse, Vertica,  Monitoreo de datos, Observability, Calidad de los datos, Limpieza de datos, Prevención y perdida de datos, DataOps, Perfilado y linaje (Talend Data Fabric, GX Core, OpenMetadata, OpenLineage, Marquez), Modelo semántico de datos (SDM), Visualización de datos: Elastic Stack, Elasticsearch, Apache Lucene, Apache Sorl, Logstash, Kibana, Apache superset (Preset), Herramientas de python para análisis y visualización,Salesforce, Amazon, Google y Microsoft.
   
 - Frameworks y aplicaciones para Big Data: Hadoop, Módulos: Hadoop YARN, Modelo de procesamiento DAG, Hadoop MapReduce, Sistemas de ficheros HDFS, Características, Proyectos relacionados con Apache Hadoop, Apache Spark, Características, Casos de uso, Apache Storm, Características, Storm vs. Spark, Apache Kafka, Características, Transmisión de eventos, Procesos.
-- Big Data Science: Introducción a la ciencia de datos, Alcance, KDD, Minería de datos, Consideraciones, Cientista de datos, Procesos en la ciencia de datos, CRISP-DM, SEMMA,
-Técnicas de análisis en Big data.
-- Big Data Stacks y Machine Learning: Apache Hadoop Stack, BDAS - Berkeley Data Analytics Stack, Stack alternativo, Cloudera, Big Data Cloud, Infraestructura de prueba de Big Data (BDTI). 
-- Aprendizaje Automático (Machine Learning - ML): Tensor Flow, Pasos en ML, Redes Neuronales, Entrenar una red neuronal, Apache MLib, Lenguajes soportados, Desempeño, Estadísticas: Correlación, MLFlow, ZenML, Kubeflow, Tácticas adversarias de ML, Caldera +Atlas, Libros de ML y estadísticas.
+  
+- Big Data Science: Introducción a la ciencia de datos, Alcance, KDD, Minería de datos, Consideraciones, Cientista de datos, Procesos en la ciencia de datos, CRISP-DM, SEMMA, Técnicas de análisis en Big data.
+
+- Big Data Stacks y Machine Learning: Apache Hadoop Stack, BDAS - Berkeley Data Analytics Stack, Stack alternativo, Cloudera, Big Data Cloud, Infraestructura de prueba de Big Data (BDTI).
+
+- AI, ML y DL: Bibliotecas para AI, ML y DL, Tensor Flow, Pasos en ML, Redes Neuronales, Entrenar una red neuronal, Pytorch, Keras, JAX, Apache Spark MLib, Lenguajes soportados, Desempeño, Estadísticas: Correlación, MLFlow, ZenML, Kubeflow, Tácticas adversarias de ML, Caldera + Atlas, Libros de ML y estadísticas.
   
     
 ## Bibliografía
