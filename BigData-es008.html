@@ -186,11 +186,11 @@
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Big Data stacks y Machine Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AI, ML y DL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
 </ul>
 
@@ -394,11 +394,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloudera">Cloudera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendizaje-automatico">Aprendizaje Automático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ml-y-dl">AI, ML y DL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-para-ai-ml-y-dl">Bibliotecas para AI, ML y DL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neuronales">Redes neuronales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-una-red-neuronal">Entrenar una red neuronal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch">PyTorch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keras">Keras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jax">JAX</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mllib">Apache MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
@@ -657,8 +661,8 @@ document.write(`
 <li><p><a class="reference external" href="https://datos.gob.es/es/blog/big-data-test-infrastructure-un-entorno-gratuito-para-que-las-aapp-experimenten-con-sus-datos">https://datos.gob.es/es/blog/big-data-test-infrastructure-un-entorno-gratuito-para-que-las-aapp-experimenten-con-sus-datos</a>.</p></li>
 </ul>
 </section>
-<section id="aprendizaje-automatico">
-<h2>Aprendizaje Automático<a class="headerlink" href="#aprendizaje-automatico" title="Link to this heading">#</a></h2>
+<section id="ai-ml-y-dl">
+<h2>AI, ML y DL<a class="headerlink" href="#ai-ml-y-dl" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Si bien se viene estudiando la forma de hacer que las máquinas puedan aprender por si solas desde 1970 aproximadamente, no fue hasta 1983 con la publicación del libro <em>Machine learning: The AI Approach</em> (Ryszard S. Michalski, Tom M. Mitchell, Jaime Carbonell) que la disciplina de aprendizaje automático (<em>Machine Learning - ML</em>) tomó impulso.</p></li>
 <li><p>Ésta fue luego sistematizada en otro libro seminal escrito por T. Mitchell: <em>Machine Learning (1997)</em>.</p></li>
@@ -668,6 +672,13 @@ document.write(`
 • Incluye el aprendizaje supervisado (<em>supervised learning</em>), donde los modelos se entrenan en datos etiquetados; aprendizaje no supervisado (<em>unsupervised learning</em>), donde los patrones se reconocen mediante datos no etiquetados; y aprendizaje de refuerzo (<em>reinforcement learning</em>), en el cual los modelos aprenden a tomar decisiones basados en recompensas o castigos.</p></li>
 </ul>
 <p>Fuente: <span id="id1">[<a class="reference internal" href="intro.html#id6" title="Miroslav Kubat. A Simple Machine-Learning Task, pages 1–18. Springer International Publishing, Cham, 2017. URL: https://doi.org/10.1007/978-3-319-63913-0_1, doi:10.1007/978-3-319-63913-0_1.">Kub17</a>]</span></p>
+</section>
+<section id="bibliotecas-para-ai-ml-y-dl">
+<h2>Bibliotecas para AI, ML y DL<a class="headerlink" href="#bibliotecas-para-ai-ml-y-dl" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Actualmente la bibliotecas más populares para aprendizaje profundo (<em>Deep Learning - DL</em>), son TensorFlow, PyTorch, Keras, y la más reciente JAX.</p></li>
+<li><p>Del mundo python también se destaca Scikit-learn <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>, herramienta simple y eficiente que realiza análisis predictivo y cuenta con algoritmos para ML. Está construída sobre NumPy, SciPy, y matplotlib.</p></li>
+</ul>
 </section>
 <section id="tensorflow">
 <h2>TensorFlow<a class="headerlink" href="#tensorflow" title="Link to this heading">#</a></h2>
@@ -722,6 +733,52 @@ document.write(`
 <li><p>Las redes neuronales se entrenan por descenso de gradiente.</p></li>
 <li><p>Los pesos en cada capa comienzan con valores aleatorios, y estos se mejoran iterativamente con el tiempo para hacer que la red sea más precisa.</p></li>
 <li><p>Se usa una función de pérdida para cuantificar qué tan imprecisa es la red, y se usa un procedimiento llamado retropropagación para determinar si se debe aumentar o disminuir cada peso para reducir la pérdida.</p></li>
+</ul>
+</section>
+<section id="pytorch">
+<h2>PyTorch<a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>PyTorch fue originalmente desarrollada por Meta y actuelmente se gestiona mediante la Py-Torch Foundation, una comunidad de desarrolladores, investigadores y pioneros de la industria de IA que colaboran para llevar adelante los proyectos de la misma.</p></li>
+<li><p>Fundación PyTorch: <a class="reference external" href="https://pytorch.org/">https://pytorch.org/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>PyTorch es un paquete de Python que provee dos funcionalidades de alto nivel:</p>
+<ul>
+<li><p>Un tensor computatacional (similar a NumPy) con una fuerte aceleración para las GPUs.</p></li>
+<li><p>Redes neuronales profundas construidas sobre un sistema de <em>autograd</em> (<em>tape-based auto-grad system</em>) basado en cinta.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Se pueden reutilizar también, de ser necesario, los paquetes de python tipo NumPy, SciPy y Cython para extender PyTorch.</p></li>
+<li><p>Fuente: <a class="github reference external" href="https://github.com/pytorch/pytorch">pytorch/pytorch</a>.</p></li>
+<li><p>Tutorial básico: <a class="reference external" href="https://docs.pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html">https://docs.pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html</a>.</p></li>
+</ul>
+</section>
+<section id="keras">
+<h2>Keras<a class="headerlink" href="#keras" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Keras 3 es una API multi-framework de aprendizaje profundo. Puede se usada para desarrollar componentes modulares compatibles con otros marcos tipo JAX, TensorFlow, o PyTorch.</p></li>
+<li><p>Es simple, flexible, y poderosa, siendo utilizada en organizaciones tipo la NASA o Alphabet.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://keras.io/getting_started/about/">https://keras.io/getting_started/about/</a>.</p></li>
+<li><p>Guías de uso: <a class="reference external" href="https://keras.io/guides/">https://keras.io/guides/</a>.</p></li>
+</ul>
+</section>
+<section id="jax">
+<h2>JAX<a class="headerlink" href="#jax" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Jax es una biblioteca de Python diseñada para realizar investigación de alto desempeño en aprendizaje automático.</p></li>
+<li><p>Es una biblioteca computacional numérica similar a Numpy pero con algunas mejoras claves.</p></li>
+<li><p>Ha sido desarrollada internamente en Google, donde es utilizada por los equipos de Deepmind.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: &lt;<a class="github reference external" href="https://github.com/jax-ml/jax">jax-ml/jax</a>, <a class="reference external" href="https://docs.jax.dev/en/latest/">https://docs.jax.dev/en/latest/</a>&gt;.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El Stack de JAX AI es una colección de blibliotecas seleccionadas por investigadores e ingenieros de Google y otras organizaciones, útiles para implementar y desplegar modelos de las herramientas de IA generativa (GenAI) tipo Imagen o Gemini, entre otras.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://docs.jaxstack.ai/en/latest/index.html">https://docs.jaxstack.ai/en/latest/index.html</a>.</p></li>
 </ul>
 </section>
 <section id="apache-mllib">
@@ -1055,11 +1112,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloudera">Cloudera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendizaje-automatico">Aprendizaje Automático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ml-y-dl">AI, ML y DL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-para-ai-ml-y-dl">Bibliotecas para AI, ML y DL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neuronales">Redes neuronales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-una-red-neuronal">Entrenar una red neuronal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch">PyTorch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keras">Keras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jax">JAX</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mllib">Apache MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
