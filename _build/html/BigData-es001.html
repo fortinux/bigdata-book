@@ -186,11 +186,11 @@
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">AI, ML y DL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
 </ul>
 
@@ -397,6 +397,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mad-2025">MAD 2025</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gobierno-de-datos-data-governance">Gobierno de datos / Data governance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-atlas">Apache Atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalogo-de-datos">Catálogo de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-normas-iso-iec-20547">Serie de normas ISO/IEC 20547</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nist-big-data-interoperability-framework">NIST Big Data Interoperability Framework</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-la-calidad-de-los-datos">Gestión de la calidad de los datos</a></li>
@@ -656,6 +657,19 @@ document.write(`
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://atlas.apache.org/#/">https://atlas.apache.org/#/</a>.</p></li>
 </ul>
+</section>
+<section id="catalogo-de-datos">
+<h2>Catálogo de datos<a class="headerlink" href="#catalogo-de-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Los catálogos de datos (<em>data catalog</em>) actúan como una biblioteca de datos que proveen un lugar centralizado donde se clasifican y describen los datos, permitiendo también hacer consultas y búsquedas.</p></li>
+<li><p>Al igual que Apache Atlas, empresas como Snowflake (<em>Horizon Catalog</em>) y Databricks (<em>Unity Catalog</em>) con sus respectivos productos también ofrecen estas características.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Por su parte <em>OpenMetadata</em> es una plataforma unificada de metadatos que realiza descubierta (<em>data discovery</em>), <em>data observability</em>, y gobernanza de datos (<em>data governance</em>).</p></li>
+<li><p>Ofrece un repositorio de metadatos centralizado, linaje de datos y colaboración para el equipo de datos integrada.</p></li>
+<li><p>Fuente <a class="reference external" href="https://docs.open-metadata.org/latest">https://docs.open-metadata.org/latest</a>.</p></li>
+</ul>
+<p><strong>Más información en la sección <span class="xref std std-ref">content:references:observability</span>.</strong></p>
 <!--<a id="iso-20547"></a>   -->
 </section>
 <section id="serie-de-normas-iso-iec-20547">
@@ -738,7 +752,11 @@ document.write(`
 <li><p>El Reglamento de Gobernanza de Datos (DGA) <a class="reference external" href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32022R0868">https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32022R0868</a> por su parte garantiza un acceso amplio a los datos sin comprometer derechos de propiedad intelectual, privacidad y equidad.</p></li>
 </ul>
 <ul class="simple">
-<li><p>La Ley de Inteligencia Artificial <a class="reference external" href="https://artificialintelligenceact.eu/es/">https://artificialintelligenceact.eu/es/</a> finalmente se puede resumir en cuatro puntos: clasificación de la IA en función de su riesgo, la mayoría de las obligaciones recaen en los proveedores (desarrolladores) de sistemas de IA de alto riesgo, los usuarios son personas físicas o jurídicas que despliegan un sistema de IA a título profesional (no son los usuarios finales afectados) y, establece deberes para los proveedores de IA de propósito general (GPAI).</p></li>
+<li><p>La Ley de Ciberresiliencia (CRA) tiene por objeto proteger a los consumidores y las empresas que compran productos de software o hardware con elementos digitales <a class="reference external" href="https://digital-strategy.ec.europa.eu/es/policies/cyber-resilience-act">https://digital-strategy.ec.europa.eu/es/policies/cyber-resilience-act</a>.</p></li>
+<li><p>En este contexto, entre otras obligaciones, las organizaciones deberían tener un <em>Software Bill of Materials - SBOM</em> como inventorio de cada componente open source de su infraestructura, y deben informar vulnerabilidades a ENISA de los productos digitales dentro de las 24 horas.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La Ley de Inteligencia Artificial (<a class="reference external" href="https://artificialintelligenceact.eu/es/">https://artificialintelligenceact.eu/es/</a> y <a class="reference external" href="https://www.europarl.europa.eu/topics/es/article/20230601STO93804/ley-de-ia-de-la-ue-primera-normativa-sobre-inteligencia-artificial">https://www.europarl.europa.eu/topics/es/article/20230601STO93804/ley-de-ia-de-la-ue-primera-normativa-sobre-inteligencia-artificial</a>) finalmente se puede resumir en cuatro puntos: clasificación de la IA en función de su riesgo, la mayoría de las obligaciones recaen en los proveedores (desarrolladores) de sistemas de IA de alto riesgo, los usuarios son personas físicas o jurídicas que despliegan un sistema de IA a título profesional (no son los usuarios finales afectados) y, establece deberes para los proveedores de IA de propósito general (GPAI).</p></li>
 </ul>
 </section>
 <section id="etica-en-ia-y-sesgos-algoritmicos">
@@ -1118,6 +1136,7 @@ document.write(`
 <ul class="simple">
 <li><p>Biblioteca para Python: <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>.</p></li>
 <li><p>Knime: <a class="reference external" href="https://www.knime.com/">https://www.knime.com/</a>.</p></li>
+<li><p>Kaggle <a class="reference external" href="https://www.kaggle.com/">https://www.kaggle.com/</a>.</p></li>
 <li><p>Lenguaje R: <a class="reference external" href="https://www.r-project.org/">https://www.r-project.org/</a>.</p></li>
 </ul>
 </section>
@@ -1322,6 +1341,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mad-2025">MAD 2025</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gobierno-de-datos-data-governance">Gobierno de datos / Data governance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-atlas">Apache Atlas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalogo-de-datos">Catálogo de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-normas-iso-iec-20547">Serie de normas ISO/IEC 20547</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nist-big-data-interoperability-framework">NIST Big Data Interoperability Framework</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-la-calidad-de-los-datos">Gestión de la calidad de los datos</a></li>

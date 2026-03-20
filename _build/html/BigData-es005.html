@@ -784,29 +784,48 @@ document.write(`
 </section>
 <section id="storm-vs-spark">
 <h2>Storm vs. Spark<a class="headerlink" href="#storm-vs-spark" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">Situation</span> <span class="o">|</span> <span class="n">Spark</span> <span class="o">|</span> <span class="n">Storm</span> <span class="o">|</span>
-<span class="o">|-------</span> <span class="o">|</span> <span class="o">----------------</span> <span class="o">|</span> <span class="o">--------</span> <span class="o">|</span> 			
-<span class="o">|</span> <span class="n">Stream</span> <span class="n">processing</span> <span class="o">|</span> <span class="n">Batch</span> <span class="n">processing</span> <span class="o">|</span> <span class="n">Micro</span><span class="o">-</span><span class="n">batch</span> <span class="n">processing</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Latency</span> <span class="o">|</span> <span class="n">Latency</span> <span class="n">of</span> <span class="n">a</span> <span class="n">few</span> <span class="n">seconds</span> <span class="o">|</span> <span class="n">Latency</span> <span class="n">of</span> <span class="n">milliseconds</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Multi</span><span class="o">-</span><span class="n">language</span> <span class="n">support</span> <span class="o">|</span> <span class="n">Multi</span><span class="o">-</span><span class="n">language</span> <span class="n">support</span> <span class="o">|</span> <span class="n">Lesser</span> <span class="n">language</span> <span class="n">support</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Languages</span> <span class="o">|</span> <span class="n">Java</span> <span class="o">-</span> <span class="n">Scala</span> <span class="o">-</span> <span class="n">Python</span> <span class="o">-</span> <span class="n">R</span> <span class="o">-</span> <span class="n">SQL</span> <span class="o">|</span> <span class="n">Java</span> <span class="o">-</span> <span class="n">Scala</span> <span class="o">-</span> <span class="n">Clojure</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Stream</span> <span class="n">sources</span> <span class="o">|</span> <span class="n">HDFS</span> <span class="o">|</span> <span class="n">Spout</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Resource</span> <span class="n">management</span> <span class="o">|</span> <span class="n">Yarn</span><span class="p">,</span> <span class="n">Mesos</span> <span class="o">|</span> <span class="n">Yarn</span><span class="p">,</span> <span class="n">Mesos</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Provisioning</span> <span class="o">|</span> <span class="n">Basic</span> <span class="n">using</span> <span class="n">Ganglia</span> <span class="o">|</span> <span class="n">Apache</span> <span class="n">Ambari</span> <span class="o">|</span>
-<span class="o">|</span> <span class="n">Messaging</span> <span class="o">|</span> <span class="n">Netty</span><span class="p">,</span> <span class="n">Akka</span> <span class="o">|</span> <span class="n">ZeroMQ</span><span class="p">,</span> <span class="n">Netty</span> <span class="o">|</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="o">|</span> <span class="n">Situation</span> <span class="o">|</span> <span class="n">Spark</span> <span class="o">|</span> <span class="n">Storm</span> <span class="o">|</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Spark</p></th>
+<th class="head"><p>Storm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Stream processing</p></td>
+<td><p>Batch processing</p></td>
+<td><p>Micro-batch processing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Latency</p></td>
+<td><p>Latency of a few seconds</p></td>
+<td><p>Latency of milliseconds</p></td>
+</tr>
+<tr class="row-even"><td><p>Multi-language support</p></td>
+<td><p>Multi-language support</p></td>
+<td><p>Lesser language support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Languages</p></td>
+<td><p>Java - Scala - Python - R - SQL</p></td>
+<td><p>Java - Scala - Clojure</p></td>
+</tr>
+<tr class="row-even"><td><p>Stream sources</p></td>
+<td><p>HDFS</p></td>
+<td><p>Spout</p></td>
+</tr>
+<tr class="row-odd"><td><p>Resource management</p></td>
+<td><p>Yarn, Mesos</p></td>
+<td><p>Yarn, Mesos</p></td>
+</tr>
+<tr class="row-even"><td><p>Provisioning</p></td>
+<td><p>Basic using Ganglia</p></td>
+<td><p>Apache Ambari</p></td>
+</tr>
+<tr class="row-odd"><td><p>Messaging</p></td>
+<td><p>Netty, Akka</p></td>
+<td><p>ZeroMQ, Netty</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
 <section id="apache-kafka">
