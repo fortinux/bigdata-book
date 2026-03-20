@@ -409,7 +409,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-y-monitoreo-de-datos">Gestión y monitoreo de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
@@ -417,6 +417,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataops">DataOps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-versiones-de-datos-cvd">Control de Versiones de Datos (CVD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dvc">DVC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-dvc">Tutorial DVC</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a><ul class="visible nav section-nav flex-column">
@@ -480,6 +483,7 @@ document.write(`
 <li><p>Inteligencia artificial (AI).</p></li>
 <li><p>Minería de datos.</p></li>
 <li><p>Aprendizaje automático (ML).</p></li>
+<li><p>Aprendizaje profundo (DL).</p></li>
 </ul>
 </li>
 </ul>
@@ -776,10 +780,6 @@ document.write(`
 <li><p><em>ClickHouse</em> es un sistema de gestión de bases de datos - SGDB (<em>database management system - DBMS</em>) columnar de alto desempeño que permite realizar análisis OLAP (<em>online analytical processing</em>).</p></li>
 <li><p><a class="reference external" href="https://clickhouse.com/">https://clickhouse.com/</a>.</p></li>
 </ul>
-<ul class="simple">
-<li><p><em>ClickStack</em> es un stack open source para observability de <em>ClickHouse</em>.</p></li>
-<li><p><a class="reference external" href="https://clickhouse.com/clickstack">https://clickhouse.com/clickstack</a>.</p></li>
-</ul>
 </section>
 <section id="vertica">
 <h2>Vertica<a class="headerlink" href="#vertica" title="Link to this heading">#</a></h2>
@@ -792,13 +792,12 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="monitoreo-de-datos">
-<h2>Monitoreo de datos<a class="headerlink" href="#monitoreo-de-datos" title="Link to this heading">#</a></h2>
+<section id="gestion-y-monitoreo-de-datos">
+<h2>Gestión y monitoreo de datos<a class="headerlink" href="#gestion-y-monitoreo-de-datos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza.</p></li>
-<li><p>Apache Flume es útil para procesar datos de registro.</p></li>
-<li><p>Apache Storm se utiliza para el monitoreo de operaciones.</p></li>
-<li><p>Apache Spark sirve para transmisión de datos, procesamiento de gráficos y aprendizaje automático.</p></li>
+<li><p>Por ejemplo, Apache Flume es útil para procesar datos de registro y Apache Storm se utiliza para el monitoreo de operaciones.</p></li>
+<li><p>Las herramientas de observability, DataOps, y los DVC (Data Version Control) facilitan el control y la auditoría de los datos.</p></li>
 </ul>
 </section>
 <section id="observability">
@@ -875,11 +874,6 @@ document.write(`
 <li><p><em>Great expectations</em> <a class="reference external" href="https://greatexpectations.io/">https://greatexpectations.io/</a> ofrece también soluciones open source para la gestión de la calidad de los datos: el framework <em>GX Core</em> y su opción cloud <em>GX Cloud</em>.</p></li>
 </ul>
 <ul class="simple">
-<li><p><em>OpenMetadata</em> es una plataforma unificada de metadatos que realiza descubierta (<em>data discovery</em>), <em>data observability</em>, y gobernanza de datos (<em>data governance</em>).</p></li>
-<li><p>Ofrece un repositorio de metadatos centralizado, linaje de datos y colaboración para el equipo de datos integrada.</p></li>
-<li><p>Fuente <a class="reference external" href="https://docs.open-metadata.org/latest">https://docs.open-metadata.org/latest</a>.</p></li>
-</ul>
-<ul class="simple">
 <li><p><em>OpenLineage</em> es un framework open source para la recopilación y el análisis del linaje de datos.</p></li>
 <li><p>Permite una recopilación consistente de metadatos de linaje, creando una comprensión más profunda de cómo se producen y utilizan los datos.</p></li>
 <li><p>se integra con <em>Airflow, Spark</em> y <em>dbt</em>.</p>
@@ -951,6 +945,34 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li><p><a class="reference external" href="https://latamt.ieeer9.org/index.php/transactions/article/download/673/207">https://latamt.ieeer9.org/index.php/transactions/article/download/673/207</a>.</p></li>
 </ul>
 </li>
+</ul>
+</section>
+<section id="control-de-versiones-de-datos-cvd">
+<h2>Control de Versiones de Datos (CVD)<a class="headerlink" href="#control-de-versiones-de-datos-cvd" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El Control de Versiones de Datos (CVD) permite registrar, rastrear y gestionar los cambios en los conjuntos de datos, similar a lo que hace una herramienta de control de versiones con el software, como por ejemplo Git.</p></li>
+<li><p>Entre las herramientas de CVD se pueden mencionar DVC, LakeFS, y GitLFS.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Git Large File Storage (LFS) <a class="reference external" href="https://git-lfs.com/">https://git-lfs.com/</a> es una extensión de Git que reemplaza grandes ficheros como los de audio, videos, datasets, e imágenes con punteros de texto, mientras que almacena el contenido de los mismos en un servidor remoto.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En el portal de <a class="reference external" href="http://datos.gob.es">datos.gob.es</a> se puede descargar la guía técnica Control de versiones de datos <a class="reference external" href="https://datos.gob.es/sites/default/files/documentacion/files/Guia_DVC_es.pdf">https://datos.gob.es/sites/default/files/documentacion/files/Guia_DVC_es.pdf</a> y una infografía <a class="reference external" href="https://datos.gob.es/sites/default/files/documentacion/files/guia-tecnica-control-versiones-de-datos-ES.pdf">https://datos.gob.es/sites/default/files/documentacion/files/guia-tecnica-control-versiones-de-datos-ES.pdf</a>.</p></li>
+</ul>
+</section>
+<section id="dvc">
+<h2>DVC<a class="headerlink" href="#dvc" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>DVC (Data Version Control) es una herramienta independiente open source focada en los cientistas de datos que trabajan con pequeños conjuntos de datos, por otro lado lakeFS <a class="reference external" href="https://lakefs.io/">https://lakefs.io/</a> se dedica a ofrecer control de versiones para las organizaciones que gestionan proyectos de IA y aprendizaje automático a gran escala.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://dvc.org/">https://dvc.org/</a>.</p></li>
+</ul>
+</section>
+<section id="tutorial-dvc">
+<h2>Tutorial DVC<a class="headerlink" href="#tutorial-dvc" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Realizar los tutoriales:</p></li>
+<li><p>Get Started with DVC <a class="reference external" href="https://doc.dvc.org/start">https://doc.dvc.org/start</a>, y</p></li>
+<li><p>Get Started: Data Pipelines <a class="reference external" href="https://doc.dvc.org/start/data-pipelines/data-pipelines">https://doc.dvc.org/start/data-pipelines/data-pipelines</a>.</p></li>
 </ul>
 </section>
 </section>
@@ -1155,58 +1177,28 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <ul class="simple">
 <li><p>Cuenta además con herramientas para la línea de comandos:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">certgen</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">certutil</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">croneval</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">keystore</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">migrate</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">certgen</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">certutil</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="n">croneval</span>
-
-<span class="ne">NameError</span>: name &#39;elasticsearch&#39; is not defined
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">node</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">saml</span><span class="o">-</span><span class="n">metadata</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">setup</span><span class="o">-</span><span class="n">passwords</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">shard</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">syskeygen</span>
-<span class="n">elasticsearch</span><span class="o">-</span><span class="n">users</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>elasticsearch-certgen<br />
+elasticsearch-certutil<br />
+elasticsearch-croneval<br />
+elasticsearch-keystore<br />
+elasticsearch-migrate</p>
+<p>elasticsearch-node<br />
+elasticsearch-saml-metadata<br />
+elasticsearch-setup-passwords<br />
+elasticsearch-shard<br />
+elasticsearch-syskeygen<br />
+elasticsearch-users</p>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/commands.html</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Un documento en Kibana puede contener varios campos con valores:</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;Elastic&quot;</span><span class="p">,</span>
-  <span class="o">...</span>
-  <span class="o">&lt;</span><span class="n">field</span><span class="o">&gt;</span> <span class="p">:</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>{<br />
+“name” : “Elastic”,<br />
+…<br />
+<field> : <value><br />
+}</p>
 <ul class="simple">
 <li><p>Fuente: (<a class="reference external" href="http://assets.contentstack.io">assets.contentstack.io</a>) [<a class="reference external" href="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt">https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt56ad3f4e2c755f29/5d37c1602a506857d64eff48/es_commands.txt</a>].</p></li>
 </ul>
@@ -1383,7 +1375,7 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoreo-de-datos">Monitoreo de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-y-monitoreo-de-datos">Gestión y monitoreo de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
@@ -1391,6 +1383,9 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataops">DataOps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perfilado-de-datos-y-linaje">Perfilado de datos y linaje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-semantico-de-datos-sdm">Modelo semántico de datos (SDM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-versiones-de-datos-cvd">Control de Versiones de Datos (CVD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dvc">DVC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-dvc">Tutorial DVC</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a><ul class="visible nav section-nav flex-column">
