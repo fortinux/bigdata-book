@@ -4,7 +4,7 @@
 # Introducción a Big Data
 ## Apuntes de análisis de datos, AI, ML y DL
 
-Introducción a Big Data. Apuntes de análisis de datos, AI, ML y DL por Marcelo Horacio Fortino. Versión 3.0.0. Marzo 2026.    
+Introducción a Big Data. Apuntes de análisis de datos, AI, ML y DL por Marcelo Horacio Fortino. Versión 3.0.2. Marzo 2026.    
 
 Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <http://creativecommons.org/licenses/by-sa/4.0/>. Puede hallar permisos más allá de los concedidos con esta licencia en <https://fortinux.com>. Sugerencias y comentarios a <info@fortinux.com>.     
 
@@ -44,7 +44,7 @@ Basta considerar que hay una revolución de datos: los datos que se generan en e
   
 - Bases de datos para Big Data: Formatos de archivo para Big Data (Apache ORC, Parquet, Avro, Arrow), Bases de datos NoSQL, Bases de datos de documentos: MongoDB, Versiones, Características, Principales funcionalidades, Apache CouchDB, Couchbase, Bases de datos con pares de valores: Redis, Arquitectura, Apache Ignite, Bases de datos columnares: Apache Cassandra, Tutorial Cassandra, Apache HBase, Características, Usos, Requisitos, Bases de datos de grafos: Neo4j, Stardog, Amazon Neptune, Bases de datos vectoriales.
 
-- Consulta y visualización de datos: Procesos en Big Data, Procesamiento, análisis y consulta de datos, Apache Scoop(Attic), Motores de consultas, Apache Spark, Apache Impala, Apache Kudu, Apache Hive, Apache Drill, Presto, Trino,  Apache Phoenix, Otras herramientas: Hue, Alluxio, Analítica de datos en tiempo real, Apache Doris, Apache Druid, Apache Kylin, Apache Pinot, ClickHouse, Vertica, Gestión y monitoreo de datos, Observability, Calidad de los datos, Limpieza de datos, Prevención y perdida de datos, DataOps, Perfilado y linaje (Talend Data Fabric, GX Core, OpenLineage, Marquez), Modelo semántico de datos (SDM), Control de Versiones de Datos (CVD), DVC, Visualización de datos: Elastic Stack, Elasticsearch, Apache Lucene, Apache Sorl, Logstash, Kibana, Apache superset (Preset), Herramientas de python para análisis y visualización, Salesforce, Amazon, Google y Microsoft.
+- Consulta y visualización de datos: Procesos en Big Data, Procesamiento, análisis y consulta de datos, Apache Scoop(Attic), Motores de consultas, Apache Spark, Apache Impala, Apache Kudu, Apache Hive, Apache Drill, Presto, Trino, Apache Phoenix, Otras herramientas: Hue, Alluxio, Analítica de datos en tiempo real, Apache Doris, Apache Druid, Apache Kylin, Apache Pinot, ClickHouse, Vertica, Gestión y monitoreo de datos, Observability, Calidad de los datos, Limpieza de datos, Prevención y perdida de datos, DataOps, Perfilado y linaje (Talend Data Fabric, GX Core, OpenLineage, Marquez), Modelo semántico de datos (SDM), Control de Versiones de Datos (CVD), DVC, Visualización de datos: Elastic Stack, Elasticsearch, Apache Lucene, Apache Sorl, Logstash, Kibana, Apache superset (Preset), Herramientas de python para análisis y visualización, Salesforce, Amazon, Google y Microsoft.
   
 - Frameworks y aplicaciones para Big Data: Hadoop, Módulos: Hadoop YARN, Modelo de procesamiento DAG, Hadoop MapReduce, Sistemas de ficheros HDFS, Características, Proyectos relacionados con Apache Hadoop, Apache Spark, Características, Casos de uso, Apache Storm, Características, Storm vs. Spark, Apache Kafka, Características, Transmisión de eventos, Procesos.
   
