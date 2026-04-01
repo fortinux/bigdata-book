@@ -391,7 +391,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop">Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-de-apache-hadoop">Módulos de Apache Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-procesamiento-dag">Modelo de procesamiento DAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-mapreduce">Apache Hadoop MapReduce</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-ficheros-hdfs">Sistema de ficheros HDFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-hdfs">Características de HDFS</a></li>
@@ -506,19 +505,6 @@ document.write(`
 </ul>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html">https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html</a></p></li>
-</ul>
-</section>
-<section id="modelo-de-procesamiento-dag">
-<h2>Modelo de procesamiento DAG<a class="headerlink" href="#modelo-de-procesamiento-dag" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Un modelo de procesamiento DAG (gráfico acíclico dirigido - <em>directed acyclic graph</em>) representa las dependencias entre tareas en un flujo de trabajo o canalización.</p></li>
-<li><p>Éstas se representan como nodos en un DAG, donde los bordes representan las dependencias entre tareas que solamente se puede ejecutar una vez que se hayan completado todas sus dependencias.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Apache Spark, Apache Flink y Apache Beam implementan su modelo de procesamiento como un DAG mientras que Apache Airflow o Dagster <a class="reference external" href="https://dagster.io/">https://dagster.io/</a> son motores de orquestación que utilizan DAGa para definir tareas y dependencias en los trabajo a realizar.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://www.hopsworks.ai/dictionary/dag-processing-model">https://www.hopsworks.ai/dictionary/dag-processing-model</a>.</p></li>
 </ul>
 </section>
 <section id="apache-hadoop-mapreduce">
@@ -1030,7 +1016,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hadoop">Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modulos-de-apache-hadoop">Módulos de Apache Hadoop</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-yarn">Apache Hadoop YARN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-procesamiento-dag">Modelo de procesamiento DAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-hadoop-mapreduce">Apache Hadoop MapReduce</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-de-ficheros-hdfs">Sistema de ficheros HDFS</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-hdfs">Características de HDFS</a></li>

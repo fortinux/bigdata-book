@@ -394,6 +394,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloudera">Cloudera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-data-stacks">AI data stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ml-y-dl">AI, ML y DL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-para-ai-ml-y-dl">Bibliotecas para AI, ML y DL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
@@ -406,11 +407,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mllib">Apache MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyspark">PySpark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlops-frameworks">MLOps Frameworks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlflow">MLFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zenml">ZenML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metaflow">Metaflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kubeflow">Kubeflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caldera-atlas">Caldera + Atlas</a></li>
@@ -431,7 +435,7 @@ document.write(`
 <section id="big-data-stacks">
 <h2>Big data stacks<a class="headerlink" href="#big-data-stacks" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Teniendo en cuenta las numerosas opciones que existen en el mercado para implantar una solución de Big data en la organización, se enumeran a continuación tres arquitecturas que contemplan los procesos de ingestión de datos, almacenamiento, tratamiento y análisis de datos, y presentación.</p></li>
+<li><p>Teniendo en cuenta las numerosas opciones que existen en el mercado para implantar una solución de Big data en la organización, se enumeran a continuación cuatro arquitecturas que contemplan los procesos de ingestión de datos, almacenamiento, tratamiento y análisis de datos, y presentación.</p></li>
 </ul>
 </section>
 <section id="apache-hadoop-stack">
@@ -663,6 +667,31 @@ document.write(`
 <li><p><a class="reference external" href="https://datos.gob.es/es/blog/big-data-test-infrastructure-un-entorno-gratuito-para-que-las-aapp-experimenten-con-sus-datos">https://datos.gob.es/es/blog/big-data-test-infrastructure-un-entorno-gratuito-para-que-las-aapp-experimenten-con-sus-datos</a>.</p></li>
 </ul>
 </section>
+<section id="ai-data-stacks">
+<h2>AI data stacks<a class="headerlink" href="#ai-data-stacks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El ritmo de creación y evolución de las herramientas para Big Data aumenta día a día a causa de la IA. En marzo 2026 un ejemplo de Big data stack podría ser:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Catálogo de datos: DataHub transforma los datos empresariales en un contexto fiable tanto para humanos como para agentes de IA <a class="reference external" href="https://datahub.com/">https://datahub.com/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Almacenamiento:</p>
+<ul>
+<li><p>Sistema de ficheros: Vortex como formato columnar <a class="reference external" href="https://vortex.dev/">https://vortex.dev/</a>.</p></li>
+<li><p>Almacén de objetos: Datachain para Video, Sensores, AI físico, Imágenes médicas, Documentos, etc. <a class="reference external" href="https://datachain.ai/">https://datachain.ai/</a>.</p></li>
+<li><p>Datalakes/Lakeouses: Lakehouse AI nativo multimodal <a class="reference external" href="https://lancedb.com/">https://lancedb.com/</a>.</p></li>
+<li><p>NoSQL para grafos: Base de datos de grafos multiusuario que impulsa GenAI https: &lt;<a class="reference external" href="//www.falkordb.com/">//www.falkordb.com/</a>&gt;.</p></li>
+<li><p>Base de datos para sistemas en tiempo real que impulsan la AI: InfluxDB <a class="reference external" href="https://www.influxdata.com/">https://www.influxdata.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Ingestión de datos: Fivetran, Stitch.</p></li>
+<li><p>Análisis y tratamiento de los datos: dbt.</p></li>
+<li><p>Presentación: Looker, Mode, Periscope.</p></li>
+</ul>
+</section>
 <section id="ai-ml-y-dl">
 <h2>AI, ML y DL<a class="headerlink" href="#ai-ml-y-dl" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -670,10 +699,13 @@ document.write(`
 <li><p>Ésta fue luego sistematizada en otro libro seminal escrito por T. Mitchell: <em>Machine Learning (1997)</em>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>El aprendizaje automático (ML) incluye varias técnicas que le permiten a los algoritmos aprender patrones de datos y luego hacer predicciones probabilísticas para su posterior análisis y toma de decisiones.
-• Incluye el aprendizaje supervisado (<em>supervised learning</em>), donde los modelos se entrenan en datos etiquetados; aprendizaje no supervisado (<em>unsupervised learning</em>), donde los patrones se reconocen mediante datos no etiquetados; y aprendizaje de refuerzo (<em>reinforcement learning</em>), en el cual los modelos aprenden a tomar decisiones basados en recompensas o castigos.</p></li>
+<li><p>El aprendizaje automático (ML) incluye varias técnicas que le permiten a los algoritmos aprender patrones de datos y luego hacer predicciones probabilísticas para su posterior análisis y toma de decisiones.</p></li>
+<li><p>Incluye el aprendizaje supervisado (<em>supervised learning</em>), donde los modelos se entrenan en datos etiquetados; aprendizaje no supervisado (<em>unsupervised learning</em>), donde los patrones se reconocen mediante datos no etiquetados; y aprendizaje de refuerzo (<em>reinforcement learning</em>), en el cual los modelos aprenden a tomar decisiones basados en recompensas o castigos.</p></li>
 </ul>
 <p>Fuente: <span id="id1">[<a class="reference internal" href="intro.html#id6" title="Miroslav Kubat. A Simple Machine-Learning Task, pages 1–18. Springer International Publishing, Cham, 2017. URL: https://doi.org/10.1007/978-3-319-63913-0_1, doi:10.1007/978-3-319-63913-0_1.">Kub17</a>]</span></p>
+<ul class="simple">
+<li><p>Para una introducción básica a ML: <a class="reference external" href="https://www.databricks.com/blog/machine-learning">https://www.databricks.com/blog/machine-learning</a>.</p></li>
+</ul>
 </section>
 <section id="bibliotecas-para-ai-ml-y-dl">
 <h2>Bibliotecas para AI, ML y DL<a class="headerlink" href="#bibliotecas-para-ai-ml-y-dl" title="Link to this heading">#</a></h2>
@@ -691,17 +723,23 @@ document.write(`
 <h2>TensorFlow<a class="headerlink" href="#tensorflow" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>El aprendizaje automático es la práctica de ayudar al software a realizar una tarea sin programación o reglas explícitas.</p></li>
-<li><p>En la programación tradicional de computadoras, un programador especifica las reglas que debe usar la computadora.</p>
-<ul>
-<li><p>Extraído de TensorFlow: <a class="reference external" href="https://www.tensorflow.org/about">https://www.tensorflow.org/about</a>.</p></li>
-</ul>
-</li>
+<li><p>En la programación tradicional de computadoras, un programador especifica las reglas que debe usar la computadora.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Sin embargo, ML requiere una mentalidad diferente.</p></li>
 <li><p>El aprendizaje automático del mundo real se centra mucho más en el análisis de datos que en la codificación.</p></li>
 <li><p>Los programadores proporcionan un conjunto de ejemplos y la computadora aprende patrones a partir de los datos.</p></li>
 <li><p>Se puede entender el aprendizaje automático como “programación con datos”.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de TensorFlow: <a class="reference external" href="https://www.tensorflow.org/about">https://www.tensorflow.org/about</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los tensores son matrices multidimensionales con un tipo uniforme denominado (<em>dtype</em>), en NumPy los tensores son similares a las matrices (<em>np.arrays</em>).</p></li>
+<li><p>Todos los tensores son inmutables como los números y las cadenas de Python. Nunca se puede actualizar el contenido de un tensor, solo se puede crear uno nuevo.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Extraído de <a class="reference external" href="https://www.tensorflow.org/guide/tensor?hl=es">https://www.tensorflow.org/guide/tensor?hl=es</a>.</p></li>
 </ul>
 </section>
 <section id="pasos-en-ml">
@@ -848,6 +886,18 @@ document.write(`
 <li><p>Acceso a datos en HDFS, Apache Cassandra, Apache HBase, Apache Hive y cientos de otras fuentes de datos.</p></li>
 </ul>
 </section>
+<section id="pyspark">
+<h2>PySpark<a class="headerlink" href="#pyspark" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>PySpark es la API de Python para Apache Spark utilizada para procesar datos a gran escala y en tiempo real en un entorno distribuido.</p></li>
+<li><p>Proporciona además una consola PySpark para analizar los datos de forma interactiva, combinando la facilidad de aprendizaje y uso de Python con la potencia de Apache Spark.</p></li>
+<li><p>Es compatible con todas las características de Spark, como <em>Spark SQL, DataFrames, Structured Streaming, Machine Learning (MLlib), Pipelines</em> y <em>Spark Core</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/latest/api/python/index.html">https://spark.apache.org/docs/latest/api/python/index.html</a>.</p></li>
+<li><p>Cheat sheet: <a class="reference external" href="https://www.sparkplayground.com/pyspark-cheat-sheet">https://www.sparkplayground.com/pyspark-cheat-sheet</a>.</p></li>
+</ul>
+</section>
 <section id="estadisticas-en-mllib">
 <h2>Estadísticas en MLlib<a class="headerlink" href="#estadisticas-en-mllib" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -933,6 +983,34 @@ document.write(`
 <li><p><a class="reference external" href="https://sparkbyexamples.com/">https://sparkbyexamples.com/</a>.</p></li>
 </ul>
 </section>
+<section id="mlops-frameworks">
+<h2>MLOps Frameworks<a class="headerlink" href="#mlops-frameworks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>MLOps (<em>machine learning operations</em>) es una disciplina que aplica los principios de automación, control de versiones, y entrega continua (CD) al ciclo de vida completo de ML.</p></li>
+<li><p>Los flujos de trabajo de aprendizaje automático implican conjuntos de datos dinámicos, ejecuciones de entrenamiento no deterministas, requisitos complejos de versionado de modelos, y la necesidad continua de monitorizar el modelo después de su implementación.</p></li>
+<li><p>Es por esto que las prácticas de ingeniería de software tradicionales no son suficientes y es necesario implementar soluciones de MLOps.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Los componentes de un flujo de trabajo MLOps suelen ser:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Monitoramento de los experimentos: métricas, parámetros, y versiones de código enlazadas a cada ejecución para obtener resultados reproducibles.</p></li>
+<li><p>Control de versiones y registro de modelos: para catalogar, versionar y gestionar los modelos de aprendizaje automático entrenados a través de las distintas etapas de su ciclo de vida.</p></li>
+<li><p>Orquestación de flujos de trabajo: para las canalizaciones de ML, desde la ingesta de datos y preprocesado al entrenamiento del modelo, validación, y despliegue.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El almacén de características (feature store): para la coherencia de las características entre el entrenamiento y el servicio.</p></li>
+<li><p>El servicio y la implementación de modelos: para empaquetar los modelos de ML, exponerlos como API e implementalos en entornos de producción.</p></li>
+<li><p>La monitorización y la observabilidad del modelo: para realizar un seguimiento continuo del rendimiento del modelo, el flujo de datos, la distribución de las predicciones, y las métricas de negocio posteriores a la implementación.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Entre las herramientas de MLOps más populares en la actualidad (marzo del 2026) se encuentran MLFlow, ZenML, Metaflow, y Kubeflow.</p></li>
+<li><p>También se encuentran herramientas de orquestación como Airflow, y las de control de versiones de datos como DVC.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.databricks.com/blog/mlops-frameworks-complete-guide-tools-and-platforms-production-ml">MLOps Frameworks: A Complete Guide to Tools and Platforms for Production ML</a>.</p></li>
+</ul>
+</section>
 <section id="mlflow">
 <h2>MLFlow<a class="headerlink" href="#mlflow" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -953,6 +1031,18 @@ document.write(`
 </ul>
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://www.zenml.io/">https://www.zenml.io/</a>.</p></li>
+</ul>
+</section>
+<section id="metaflow">
+<h2>Metaflow<a class="headerlink" href="#metaflow" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Metaflow es un framework open source que permite construir y gestionar proyectos de ML, AI, y ciencia de datos de manera sencilla.</p></li>
+<li><p>Desarrollado en Netflix para facilitar a los científicos de datos e ingenieros de ML la creación de sus propias aplicaciones, modelos y políticas; dejando a Metaflow encargase de la infraestructura de bajo nivel: datos, computación, orquestación y control de versiones.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuentes:</p></li>
+<li><p><a class="reference external" href="https://metaflow.org/">https://metaflow.org/</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.metaflow.org/introduction/why-metaflow">https://docs.metaflow.org/introduction/why-metaflow</a>.</p></li>
 </ul>
 </section>
 <section id="kubeflow">
@@ -1120,6 +1210,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloudera">Cloudera</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#big-data-cloud">Big data cloud</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-data-stacks">AI data stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ml-y-dl">AI, ML y DL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-para-ai-ml-y-dl">Bibliotecas para AI, ML y DL</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
@@ -1132,11 +1223,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-mllib">Apache MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyspark">PySpark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlops-frameworks">MLOps Frameworks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mlflow">MLFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zenml">ZenML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metaflow">Metaflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kubeflow">Kubeflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacticas-adversarias-en-ml">Tácticas adversarias en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caldera-atlas">Caldera + Atlas</a></li>

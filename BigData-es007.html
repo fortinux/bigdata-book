@@ -389,11 +389,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-ciencia-de-datos">Introducción a la ciencia de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-de-la-ciencia-de-datos">Alcance de la ciencia de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdd">KDD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mineria-de-datos">Minería de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cientistas-de-datos">Cientistas de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-la-ciencia-de-datos">Procesos en la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdd">KDD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crisp-dm">CRISP-DM</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semma">SEMMA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnicas-de-analisis-en-big-data">Técnicas de análisis en Big data</a></li>
@@ -444,41 +444,6 @@ document.write(`
 <li><p>La ciencia de datos es un campo académico interdisciplinario.</p></li>
 <li><p>Utiliza elementos de estadística, computación y sistemas científicos para obtener, analizar y presentar datos en forma de información y conocimiento.</p></li>
 <li><p>Para ello se hace con un conjunto heterogéneo de métodos y procesos que la pueden convertir, según la Wikipedia <span id="id3">[<a class="reference internal" href="intro.html#id8" title="Wikipedia. Ciencia de datos — wikipedia, la enciclopedia libre. 2023. [Internet; descargado 29-septiembre-2023]. URL: https://es.wikipedia.org/w/index.php?title=Ciencia_de_datos&amp;oldid=154154961.">Wik23</a>]</span> en <em>una ciencia, un paradigma de investigación, un método de investigación, una disciplina, un flujo de trabajo o una profesión</em>.​</p></li>
-</ul>
-</section>
-<section id="kdd">
-<h2>KDD<a class="headerlink" href="#kdd" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>El proceso KDD (<em>knowledge discovery in databases</em>) o descubrimiento de conocimiento en bases de datos sirve para extraer conocimiento de los datos en el contexto de grandes bases de datos.</p></li>
-<li><p>Es utilizado por los investigadores para aprendizaje automático, reconocimiento de patrones en bases de datos, estadísticas, inteligencia artificial, adquisición de conocimiento para sistemas expertos, y visualización de datos.</p></li>
-<li><p>En este contexto, emplea métodos de minería de datos para extraer lo que se considera conocimiento mediante preprocesamiento, submuestreo y las transformaciones necesarias en los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>El proceso KDD puede envolver la repetición de los siguientes pasos:</p></li>
-</ul>
-<ul class="simple">
-<li><p>Desarrollar el conocimiento del dominio de la aplicación, los conocimientos previos, y el objetivo del usuario final.</p></li>
-<li><p>Establecer un conjunto de datos o un subconjunto de variables, o datos de ejemplo donde el descubrimiento va a ser realizado.</p></li>
-<li><p>Limpiar <em>outliers</em>, gestionar campos vacíos, eliminar datos innecesarios, etc.</p></li>
-<li><p>Utilizar métodos de reducción de dimensionalidad o transformación para reducir el número de variables o para encontrar representaciones invariantes de los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Decidir la tarea de minería de daatos a realizar: clasificación, regresión, clustering, etc.</p></li>
-<li><p>Seleccionar el algoritmo de minería de datos (modelos y parámetros, métodos).</p></li>
-<li><p>Realizar la minería de datos buscando patrones de interés.</p></li>
-<li><p>Interpretar los patrones obtenidos.</p></li>
-<li><p>Consolidad el conocimiento adquirido.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html">https://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Recursos:</p>
-<ul>
-<li><p><a class="reference external" href="https://www.geeksforgeeks.org/kdd-process-in-data-mining/">https://www.geeksforgeeks.org/kdd-process-in-data-mining/</a>.</p></li>
-<li><p><a class="reference external" href="https://www.javatpoint.com/kdd-process-in-data-mining">https://www.javatpoint.com/kdd-process-in-data-mining</a>.</p></li>
-</ul>
-</li>
 </ul>
 </section>
 <section id="mineria-de-datos">
@@ -592,6 +557,41 @@ document.write(`
 <li><p>Las técnicas tradicionales de análisis estadístico reducían, muestreaban o resumían los datos antes de análisis ya que en grandes conjuntos de datos el hardware no podía escalarse al tamaño de los mismos.</p></li>
 <li><p>Los análisis en estadística y minería de datos se centran en la causalidad: ser capaces de describir por qué sucede algo. Descubrir la causa ayuda a los actores a cambiar una tendencia o un resultado.</p></li>
 <li><p>Big Data en cambio puede determinar la correlación (y no necesariamente la causalidad) aunque hacen que sea más factible implementar análisis complejos de tipo causal para datos grandes, complejos y heterogéneos.</p></li>
+</ul>
+</section>
+<section id="kdd">
+<h2>KDD<a class="headerlink" href="#kdd" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>El proceso KDD (<em>knowledge discovery in databases</em>) o descubrimiento de conocimiento en bases de datos sirve para extraer conocimiento de los datos en el contexto de grandes bases de datos.</p></li>
+<li><p>Es utilizado por los investigadores para aprendizaje automático, reconocimiento de patrones en bases de datos, estadísticas, inteligencia artificial, adquisición de conocimiento para sistemas expertos, y visualización de datos.</p></li>
+<li><p>En este contexto, emplea métodos de minería de datos para extraer lo que se considera conocimiento mediante preprocesamiento, submuestreo y las transformaciones necesarias en los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>El proceso KDD puede envolver la repetición de los siguientes pasos:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Desarrollar el conocimiento del dominio de la aplicación, los conocimientos previos, y el objetivo del usuario final.</p></li>
+<li><p>Establecer un conjunto de datos o un subconjunto de variables, o datos de ejemplo donde el descubrimiento va a ser realizado.</p></li>
+<li><p>Limpiar <em>outliers</em>, gestionar campos vacíos, eliminar datos innecesarios, etc.</p></li>
+<li><p>Utilizar métodos de reducción de dimensionalidad o transformación para reducir el número de variables o para encontrar representaciones invariantes de los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Decidir la tarea de minería de daatos a realizar: clasificación, regresión, clustering, etc.</p></li>
+<li><p>Seleccionar el algoritmo de minería de datos (modelos y parámetros, métodos).</p></li>
+<li><p>Realizar la minería de datos buscando patrones de interés.</p></li>
+<li><p>Interpretar los patrones obtenidos.</p></li>
+<li><p>Consolidad el conocimiento adquirido.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html">https://www2.cs.uregina.ca/~dbd/cs831/notes/kdd/1_kdd.html</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Recursos:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/kdd-process-in-data-mining/">https://www.geeksforgeeks.org/kdd-process-in-data-mining/</a>.</p></li>
+<li><p><a class="reference external" href="https://www.javatpoint.com/kdd-process-in-data-mining">https://www.javatpoint.com/kdd-process-in-data-mining</a>.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="crisp-dm">
@@ -725,11 +725,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-ciencia-de-datos">Introducción a la ciencia de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alcance-de-la-ciencia-de-datos">Alcance de la ciencia de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdd">KDD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mineria-de-datos">Minería de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones">Consideraciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cientistas-de-datos">Cientistas de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procesos-en-la-ciencia-de-datos">Procesos en la ciencia de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kdd">KDD</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crisp-dm">CRISP-DM</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semma">SEMMA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnicas-de-analisis-en-big-data">Técnicas de análisis en Big data</a></li>
