@@ -409,8 +409,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pulsar">Apache Pulsar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pub-sub">Pub/Sub</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-orquestacion">Herramientas de orquestación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-procesamiento-dag">Modelo de procesamiento DAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro">Astro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prefect">Prefect</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistencia-poliglota">Persistencia políglota</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">Herramientas de almacenamiento para Big Data</a></li>
@@ -807,6 +809,20 @@ document.write(`
 <section id="herramientas-de-orquestacion">
 <h2>Herramientas de orquestación<a class="headerlink" href="#herramientas-de-orquestacion" title="Link to this heading">#</a></h2>
 </section>
+<section id="modelo-de-procesamiento-dag">
+<h2>Modelo de procesamiento DAG<a class="headerlink" href="#modelo-de-procesamiento-dag" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Un modelo de procesamiento DAG (gráfico acíclico dirigido - <em>directed acyclic graph</em>) representa las dependencias entre tareas en un flujo de trabajo o canalización.</p></li>
+<li><p>Éstas se representan como nodos en un DAG, donde los bordes representan las dependencias entre tareas que solamente se puede ejecutar una vez que se hayan completado todas sus dependencias.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Apache Spark, Apache Flink y Apache Beam implementan su modelo de procesamiento como un DAG mientras que Apache Airflow <a class="reference external" href="https://airflow.apache.org/">https://airflow.apache.org/</a> o Dagster
+<a class="reference external" href="https://dagster.io/">https://dagster.io/</a> son motores de orquestación que utilizan DAGa para definir tareas y dependencias en los trabajo a realizar.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://www.hopsworks.ai/dictionary/dag-processing-model">https://www.hopsworks.ai/dictionary/dag-processing-model</a>.</p></li>
+</ul>
+</section>
 <section id="apache-airflow">
 <h2>Apache Airflow<a class="headerlink" href="#apache-airflow" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -822,6 +838,9 @@ document.write(`
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>Recursos: <a class="reference external" href="https://www.sparkcodehub.com/airflow/fundamentals/introduction">https://www.sparkcodehub.com/airflow/fundamentals/introduction</a>.</p></li>
+</ul>
 </section>
 <section id="astro">
 <h2>Astro<a class="headerlink" href="#astro" title="Link to this heading">#</a></h2>
@@ -832,8 +851,13 @@ document.write(`
 <ul class="simple">
 <li><p>Fuente: <a class="reference external" href="https://www.astronomer.io/">https://www.astronomer.io/</a>.</p></li>
 </ul>
+</section>
+<section id="prefect">
+<h2>Prefect<a class="headerlink" href="#prefect" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Entre otras herramientas de orquestación de flujos de trabajos se pueden mencionar Prefect <a class="reference external" href="https://www.prefect.io/">https://www.prefect.io/</a>, y Dagster <a class="reference external" href="https://dagster.io/">https://dagster.io/</a>.</p></li>
+<li><p>Prefect es un marco de orquestación de flujos de trabajo (<em>workflow orchestration framework</em>) de fuente abierta para python.</p></li>
+<li><p>Como motor que convierte funciones de Python en flujos de datos de nivel de producción con una mínima fricción, permite construir plataformas listas para producción y aplicaciones de IA.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://www.prefect.io/">https://www.prefect.io/</a>.</p></li>
 </ul>
 </section>
 <section id="almacenamiento-de-datos-data-storage">
@@ -1310,8 +1334,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pulsar">Apache Pulsar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pub-sub">Pub/Sub</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-orquestacion">Herramientas de orquestación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-de-procesamiento-dag">Modelo de procesamiento DAG</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-airflow">Apache Airflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro">Astro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prefect">Prefect</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#almacenamiento-de-datos-data-storage">Almacenamiento de datos (Data Storage)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistencia-poliglota">Persistencia políglota</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-de-almacenamiento-para-big-data">Herramientas de almacenamiento para Big Data</a></li>
