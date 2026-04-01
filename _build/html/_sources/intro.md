@@ -4,7 +4,7 @@
 # Introducción a Big Data
 ## Apuntes de análisis de datos, AI, ML y DL
 
-Introducción a Big Data. Apuntes de análisis de datos, AI, ML y DL por Marcelo Horacio Fortino. Versión 3.0.5. Marzo 2026.    
+Introducción a Big Data. Apuntes de análisis de datos, AI, ML y DL por Marcelo Horacio Fortino. Versión 3.1.1. Abril 2026.    
 
 Esta obra está sujeta a la licencia Reconocimiento-CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite <http://creativecommons.org/licenses/by-sa/4.0/>. Puede hallar permisos más allá de los concedidos con esta licencia en <https://fortinux.com>. Sugerencias y comentarios a <info@fortinux.com>.     
 
