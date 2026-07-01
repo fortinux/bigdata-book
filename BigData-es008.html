@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'BigData-es008';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial Spark" href="BigData-es008sparkMLlib.html" />
+    <link rel="next" title="Tutorial Spark MLLib" href="BigData-es008sparkMLlib.html" />
     <link rel="prev" title="Big Data Science" href="BigData-es007.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,13 +185,14 @@
 <li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">AI, ML y DL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Apache Spark, PySpark</a></li>
 </ul>
 
     </div>
@@ -396,7 +397,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-data-stacks">AI data stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ml-y-dl">AI, ML y DL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-para-ai-ml-y-dl">Bibliotecas para AI, ML y DL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-de-python-para-ai-ml-y-dl">Bibliotecas de python para AI, ML y DL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">Scikit-learn</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neuronales">Redes neuronales</a></li>
@@ -408,6 +410,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyspark">PySpark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-canalizaciones-con-kedro">Gestión de canalizaciones con Kedro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>
@@ -707,17 +710,109 @@ document.write(`
 <li><p>Para una introducción básica a ML: <a class="reference external" href="https://www.databricks.com/blog/machine-learning">https://www.databricks.com/blog/machine-learning</a>.</p></li>
 </ul>
 </section>
-<section id="bibliotecas-para-ai-ml-y-dl">
-<h2>Bibliotecas para AI, ML y DL<a class="headerlink" href="#bibliotecas-para-ai-ml-y-dl" title="Link to this heading">#</a></h2>
+<section id="bibliotecas-de-python-para-ai-ml-y-dl">
+<h2>Bibliotecas de python para AI, ML y DL<a class="headerlink" href="#bibliotecas-de-python-para-ai-ml-y-dl" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Actualmente la bibliotecas más populares para aprendizaje profundo (<em>Deep Learning - DL</em>), son TensorFlow, PyTorch, Keras, y la más reciente JAX.</p></li>
-<li><p>Del mundo python también se destaca Scikit-learn, herramienta simple y eficiente que realiza análisis predictivo y cuenta con algoritmos para ML.</p></li>
-<li><p>Está construída sobre NumPy, SciPy, y matplotlib.</p>
+<li><p>Entre las herramientas má populares de python para aprendizaje automático (ML), aprendizaje profundo (DL), LLM / GenAI, y canalizaciones / automoción se encuentran:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Aprendizaje automático (ML)</p>
 <ul>
-<li><p>Fuente: <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>.</p></li>
+<li><p>Scikit-learn <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>, construída sobre <em>NumPy, SciPy</em>, y <em>matplotlib</em>.</p></li>
+<li><p>XGBoost, LightGBM, y CatBoost <a class="reference external" href="https://pythondatabench.com/article/gradient-boosting-python-xgboost-lightgbm-catboost-2026">https://pythondatabench.com/article/gradient-boosting-python-xgboost-lightgbm-catboost-2026</a>.</p></li>
 </ul>
 </li>
 </ul>
+<ul class="simple">
+<li><p>Aprendizaje profundo (DL)</p>
+<ul>
+<li><p>TensorFlow <a class="reference external" href="https://www.tensorflow.org/about">https://www.tensorflow.org/about</a>.</p></li>
+<li><p>PyTorch <a class="reference external" href="https://pytorch.org/">https://pytorch.org/</a>.</p></li>
+<li><p>Keras <a class="reference external" href="https://keras.io/">https://keras.io/</a>.</p></li>
+<li><p>La más reciente JAX <a class="github reference external" href="https://github.com/jax-ml/jax">jax-ml/jax</a>.</p></li>
+<li><p>Transformers (Hugging Face) <a class="reference external" href="https://huggingface.co/docs/transformers/index">https://huggingface.co/docs/transformers/index</a> es el estándar de facto para modelos de aprendizaje profundo preentrenados.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>LLMs y GenAI</p>
+<ul>
+<li><p>Conectan LLMs a fuentes de datos (PDFs, BBDD relacionales, etc.) y construyen agentes de IA.</p></li>
+<li><p>LangChain <a class="reference external" href="https://www.langchain.com/">https://www.langchain.com/</a>.</p></li>
+<li><p>LlamaIndex <a class="reference external" href="https://www.llamaindex.ai/">https://www.llamaindex.ai/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Canalizaciones y automación</p>
+<ul>
+<li><p>MLflow <a class="reference external" href="https://mlflow.org/">https://mlflow.org/</a>.</p></li>
+<li><p>Kedro <a class="reference external" href="https://kedro.org/">https://kedro.org/</a>.</p></li>
+<li><p>Prefect <a class="reference external" href="https://www.prefect.io/">https://www.prefect.io/</a>.</p></li>
+<li><p>Airflow <a class="reference external" href="https://airflow.apache.org/">https://airflow.apache.org/</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scikit-learn">
+<h2>Scikit-learn<a class="headerlink" href="#scikit-learn" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Scikit-learn</em> es una biblioteca de código abierto para el aprendizaje automático que admite aprendizaje supervisado y no supervisado.</p></li>
+<li><p>Ofrece diversas herramientas para el ajuste, selección y evaluación de modelos, el preprocesamiento de datos, y otras utilidades.</p></li>
+<li><p>Desarrollada sobre <em>NumPy, SciPy</em> y <em>matplotlib</em> es apta para uso comercial mediante una licencia BSD.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La versión comercial (<a class="reference external" href="http://probabl.ai">probabl.ai</a>) incorpora la IA para realizar un seguimiento de los experimentos, validar modelos y colaborar en equipo <a class="reference external" href="https://www.probabl.ai/">https://www.probabl.ai/</a>.</p></li>
+<li><p>Entre los paquetes destacados de su catálogo: <a class="reference external" href="https://scikit-learn-central.probabl.ai/#/catalog">https://scikit-learn-central.probabl.ai/#/catalog</a> se encuentran <em>skore, skrub, skops</em>, y <em>TabICL</em>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para instalar <em>scikit-learn</em>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">show</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="c1"># Muestra la versión y localización</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="c1"># Muestra los paquetes instalados en el ambiente</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import sklearn; sklearn.show_versions()&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Un ejemplo de uso de la bibloteca extraído de <a class="reference external" href="https://scikit-learn.org/stable/autoexamples/release_highlights/plot_release_highlights_1_9_0.html">https://scikit-learn.org/stable/autoexamples/release_highlights/plot_release_highlights_1_9_0.html</a>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">make_column_transformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
+
+<span class="n">valor_x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;numero&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="s2">&quot;categoria&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]})</span>
+<span class="n">valor_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="n">canalizacion</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span>
+<span class="n">make_column_transformer</span><span class="p">((</span><span class="n">StandardScaler</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;numero&quot;</span><span class="p">]),</span> <span class="p">(</span><span class="n">OneHotEncoder</span><span class="p">(),[</span><span class="s2">&quot;categoria&quot;</span><span class="p">])),</span>
+<span class="n">LogisticRegression</span><span class="p">(),</span>    <span class="p">)</span>
+
+<span class="n">canalizacion</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">valor_x</span><span class="p">,</span> <span class="n">valor_y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="tensorflow">
 <h2>TensorFlow<a class="headerlink" href="#tensorflow" title="Link to this heading">#</a></h2>
@@ -898,6 +993,41 @@ document.write(`
 <li><p>Cheat sheet: <a class="reference external" href="https://www.sparkplayground.com/pyspark-cheat-sheet">https://www.sparkplayground.com/pyspark-cheat-sheet</a>.</p></li>
 </ul>
 </section>
+<section id="gestion-de-canalizaciones-con-kedro">
+<h2>Gestión de canalizaciones con Kedro<a class="headerlink" href="#gestion-de-canalizaciones-con-kedro" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kedro es un <em>framework open-source</em> escrito en Python que permite crear código para proyectos de ciencia de datos de forma modular, reproducible, y que se pueda mantener.</p></li>
+<li><p>Toma prestados conceptos de la ingeniería de software y los aplica a la creación de flujos de datos para:</p></li>
+<li><p>Gestionar la complejidad proporcionando la estructura para flujos de datos y aprendizaje automático complejos.</p></li>
+<li><p>Estandarizar la creación de código para ingeniería y ciencia de datos, garantizando que los equipos colaboren fácilmente.</p></li>
+<li><p>Realizar una transición fluida del desarrollo a la producción mediante experimentos reproducibles, mantenibles y modulares.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Al contrario de las herramientas de orquestación como <em>Airflow, Luigi, Prefect, Dagster, Flyte</em> y <em>Kubeflow</em>; (que se centran en la ejecución, programación y monitorización de canalizaciones) <em>Kedro</em> se centra en el proceso de creación de canalizaciones.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://kedro.org">https://kedro.org</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para crear un ambiente virtual e instalarlo en el mismo:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear un directorio</span>
+<span class="n">mkdir</span> <span class="n">mi</span><span class="o">-</span><span class="n">kedro</span><span class="o">-</span><span class="n">project</span>
+<span class="c1"># Crear el ambiente virtual dentro del directorio .venv</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
+<span class="c1"># Activar el ambiente virtual</span>
+<span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span> <span class="c1"># macOS / Linux</span>
+<span class="o">.</span>\<span class="o">.</span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">activate</span> <span class="c1"># Windows</span>
+<span class="c1"># Instalar Kedro</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">kedro</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://docs.kedro.org/en/stable/getting-started/install/">https://docs.kedro.org/en/stable/getting-started/install/</a>.</p></li>
+</ul>
+</section>
 <section id="estadisticas-en-mllib">
 <h2>Estadísticas en MLlib<a class="headerlink" href="#estadisticas-en-mllib" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -950,21 +1080,6 @@ document.write(`
 
 <span class="n">r2</span> <span class="o">=</span> <span class="n">Correlation</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="s2">&quot;spearman&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spearman correlation matrix:</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">r2</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pyspark.ml.stat</span> <span class="kn">import</span> <span class="n">Correlation</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)]),),</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]),),</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]),),</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)]),)]</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyspark&#39;
 </pre></div>
 </div>
 </div>
@@ -1183,7 +1298,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial Spark</p>
+        <p class="prev-next-title">Tutorial Spark MLLib</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1212,7 +1327,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-de-prueba-de-big-data-bdti">Infraestructura de prueba de Big Data (BDTI)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-data-stacks">AI data stacks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-ml-y-dl">AI, ML y DL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-para-ai-ml-y-dl">Bibliotecas para AI, ML y DL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-de-python-para-ai-ml-y-dl">Bibliotecas de python para AI, ML y DL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scikit-learn">Scikit-learn</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">TensorFlow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pasos-en-ml">Pasos en ML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redes-neuronales">Redes neuronales</a></li>
@@ -1224,6 +1340,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lenguajes-soportados-por-mllib">Lenguajes soportados por MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno-de-mllib">Desempeño de MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyspark">PySpark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-de-canalizaciones-con-kedro">Gestión de canalizaciones con Kedro</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-en-mllib">Estadísticas en MLlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-correlacion">Estadísticas: correlación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-mllib">Tutorial MLlib</a></li>

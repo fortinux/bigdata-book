@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tutorial Spark &#8212; Curso Introducción a Big Data</title>
+    <title>Tutorial Spark MLLib &#8212; Curso Introducción a Big Data</title>
   
   
   
@@ -184,13 +184,14 @@
 <li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">Big Data stacks y Machine Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">AI, ML y DL</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial Apache Spark, PySpark</a></li>
 </ul>
 
     </div>
@@ -376,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tutorial Spark</h1>
+    <h1>Tutorial Spark MLLib</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,12 +387,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-transformar-y-selecionar">Extraer, transformar y selecionar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformar">Transformar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-utilizando-pyspark">Regresión utilizando PySpark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-sesion-en-spark">Crear sesión en Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizar-datos">Normalizar datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nlp-natural-language-processing">NLP - Natural Language Processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupamiento-clustering">Agrupamiento - Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-utilizando-pyspark">Clasificación utilizando PySpark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-clasificacion-naive-bayes">La clasificación Naive Bayes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-de-multilayer-perceptron">Clasificación de Multilayer Perceptron</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-con-arboles-de-decision">Clasificación con árboles de decisión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-regresion">Modelos de Regresión</a></li>
 </ul>
             </nav>
         </div>
@@ -403,209 +407,132 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-spark">
-<h1>Tutorial Spark<a class="headerlink" href="#tutorial-spark" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-spark-mllib">
+<h1>Tutorial Spark MLLib<a class="headerlink" href="#tutorial-spark-mllib" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Para realizar este tutorial abrimos un cuaderno de Jupyter <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a> en nuestro servidor local o utilizamos Colaboratory: <a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a>.</p></li>
-<li><p>Los pasos son los siguientes:</p></li>
-</ul>
-<ul class="simple">
-<li><p>Actualizamos nuestro sistema operativo e instalamos Java y Scala</p></li>
+<li><p>Para realizar este tutorial abrimos un cuaderno de Jupyter <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a> en nuestro servidor local, utilizar Colaboratory: <a class="reference external" href="https://colab.research.google.com">https://colab.research.google.com</a>, o lanzar un contenedor con Spark.</p></li>
+<li><p>Para esto último, los pasos son los siguientes:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">update</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">v</span> <span class="err">$</span><span class="p">{</span><span class="n">PWD</span><span class="p">}:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span><span class="o">/</span><span class="n">work</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4040</span><span class="p">:</span><span class="mi">4040</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4041</span><span class="p">:</span><span class="mi">4041</span> <span class="o">--</span><span class="n">name</span> <span class="n">pyspark</span> <span class="n">jupyter</span><span class="o">/</span><span class="n">pyspark</span><span class="o">-</span><span class="n">notebook</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="n">apt</span> <span class="n">update</span>
-        <span class="o">^</span>
+    <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">v</span> <span class="err">$</span><span class="p">{</span><span class="n">PWD</span><span class="p">}:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jovyan</span><span class="o">/</span><span class="n">work</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4040</span><span class="p">:</span><span class="mi">4040</span> <span class="o">-</span><span class="n">p</span> <span class="mi">4041</span><span class="p">:</span><span class="mi">4041</span> <span class="o">--</span><span class="n">name</span> <span class="n">pyspark</span> <span class="n">jupyter</span><span class="o">/</span><span class="n">pyspark</span><span class="o">-</span><span class="n">notebook</span>
+           <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">upgrade</span> <span class="o">--</span><span class="n">fix</span><span class="o">-</span><span class="n">broken</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">install</span> <span class="n">default</span><span class="o">-</span><span class="n">jre</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">autoremove</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">install</span> <span class="n">default</span><span class="o">-</span><span class="n">jdk</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">install</span> <span class="n">scala</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">version</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>openjdk version &quot;11.0.13&quot; 2021-10-19
-OpenJDK Runtime Environment (build 11.0.13+8-Ubuntu-0ubuntu1.20.04)
-OpenJDK 64-Bit Server VM (build 11.0.13+8-Ubuntu-0ubuntu1.20.04, mixed mode, sharing)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">javac</span> <span class="o">-</span><span class="n">version</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>javac 11.0.13
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scala</span> <span class="o">-</span><span class="n">version</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">readlink</span> <span class="o">-</span><span class="n">f</span> <span class="err">$</span><span class="p">(</span><span class="n">which</span> <span class="n">java</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/lib/jvm/java-11-openjdk-amd64/bin/java
-</pre></div>
-</div>
-</div>
-</div>
 <ul class="simple">
-<li><p>Descargamos e instalamos Spark</p></li>
+<li><p>Abrimos en el navegador la URL <a class="reference external" href="http://127.0.0.1:8888">http://127.0.0.1:8888</a>. La clave se puede obtener en el log del contenedor.</p></li>
+<li><p>Una vez dentro de <em>Jupyter Lab</em> abrimos un <em>notebook</em> con el kernel de python.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Para <em>Google Colab</em> los pasos son los siguientes:</p></li>
+</ul>
+<ul class="simple">
+<li><p>Se abre un nuevo cuaderno <em>jupyter</em> y se instala <em>Spark</em> y las dependencias y bibliotecas necesarias:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">dlcdn</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">-</span><span class="nb">bin</span><span class="o">-</span><span class="n">hadoop3</span><span class="mf">.2</span><span class="o">.</span><span class="n">tgz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instalación</span>
+<span class="o">!</span>apt<span class="w"> </span>update
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">downloads</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">-</span><span class="nb">bin</span><span class="o">-</span><span class="n">hadoop3</span><span class="mf">.2</span><span class="o">.</span><span class="n">tgz</span><span class="o">.</span><span class="n">asc</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-02-23 15:19:24--  https://downloads.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz.asc
-Resolviendo downloads.apache.org (downloads.apache.org)... 135.181.214.104, 88.99.95.219, 2a01:4f9:3a:2c57::2, ...
-Conectando con downloads.apache.org (downloads.apache.org)[135.181.214.104]:443... conectado.
-Petición HTTP enviada, esperando respuesta... 200 OK
-Longitud: 833 [text/plain]
-Guardando como: “spark-3.2.1-bin-hadoop3.2.tgz.asc.1”
-
-spark-3.2.1-bin-had 100%[===================&gt;]     833  --.-KB/s    en 0s      
-
-2022-02-23 15:19:25 (119 MB/s) - “spark-3.2.1-bin-hadoop3.2.tgz.asc.1” guardado [833/833]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>apt<span class="w"> </span>upgrade
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">downloads</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">-</span><span class="nb">bin</span><span class="o">-</span><span class="n">hadoop3</span><span class="mf">.2</span><span class="o">.</span><span class="n">tgz</span><span class="o">.</span><span class="n">sha512</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>apt<span class="w"> </span>install<span class="w"> </span>default-jre
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">downloads</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">KEYS</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-02-23 15:19:26--  https://downloads.apache.org/spark/KEYS
-Resolviendo downloads.apache.org (downloads.apache.org)... 135.181.214.104, 88.99.95.219, 2a01:4f9:3a:2c57::2, ...
-Conectando con downloads.apache.org (downloads.apache.org)[135.181.214.104]:443... conectado.
-Petición HTTP enviada, esperando respuesta... 200 OK
-Longitud: 101227 (99K)
-Guardando como: “KEYS.1”
-
-KEYS.1              100%[===================&gt;]  98,85K   121KB/s    en 0,8s    
-
-2022-02-23 15:19:28 (121 KB/s) - “KEYS.1” guardado [101227/101227]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>apt<span class="w"> </span>install<span class="w"> </span>default-jdk
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpg</span> <span class="o">--</span><span class="kn">import</span> <span class="nn">KEYS</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>apt<span class="w"> </span>install<span class="w"> </span>scala
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpg</span> <span class="o">--</span><span class="n">verify</span> <span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">-</span><span class="nb">bin</span><span class="o">-</span><span class="n">hadoop3</span><span class="mf">.2</span><span class="o">.</span><span class="n">tgz</span><span class="o">.</span><span class="n">asc</span>  <span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">-</span><span class="nb">bin</span><span class="o">-</span><span class="n">hadoop3</span><span class="mf">.2</span><span class="o">.</span><span class="n">tgz</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gpg: Firmado el jue 20 ene 2022 21:10:50 CET
-gpg:                usando RSA clave CEA888BDB32D983C7F094564AC01E6E9139F610C
-gpg: Firma correcta de &quot;Huaxin Gao (CODE SIGNING KEY) &lt;huaxin.gao11@gmail.com&gt;&quot; [desconocido]
-gpg: ATENCIÓN: ¡Esta clave no está certificada por una firma de confianza!
-gpg:          No hay indicios de que la firma pertenezca al propietario.
-Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E9 139F 610C
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comprobación</span>
+<span class="o">!</span>java<span class="w"> </span>-version
+<span class="o">!</span>javac<span class="w"> </span>-version
+<span class="o">!</span>scala<span class="w"> </span>-version
+<span class="o">!</span>readlink<span class="w"> </span>-f<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>java<span class="k">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="c1"># Crear el directorio para Spark</span>
+<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span>/content/spark-3.5.1-bin-hadoop3
+<span class="c1"># Descargar Spark </span>
+<span class="o">!</span>wget<span class="w"> </span>-q<span class="w"> </span>https://archive.apache.org/dist/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz<span class="w"> </span>-P<span class="w"> </span>/content
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">xvf</span> <span class="n">spark</span><span class="o">-</span><span class="mf">3.2.1</span><span class="o">-</span><span class="nb">bin</span><span class="o">-</span><span class="n">hadoop3</span><span class="mf">.2</span><span class="o">.</span><span class="n">tgz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tar<span class="w"> </span>xvf<span class="w"> </span>spark-3.5.1-bin-hadoop3.tgz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">pyspark</span><span class="o">==</span><span class="m">3</span>.5.1
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>Instalamos e configuramos la biblioteca de Python <em>findspark</em></p></li>
+<li><p>Se agregan las rutas de <em>java</em> y <em>spark</em> al ambiente:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;JAVA_HOME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SPARK_HOME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/content/spark-3.5.1-bin-hadoop3&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="crear-sesion-en-spark">
+<h2>Crear sesión en Spark<a class="headerlink" href="#crear-sesion-en-spark" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>En el cuaderno instalamos y configuramos la biblioteca de Python <em>findspark</em>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -614,37 +541,6 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pwd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/usuario/gitRepos/spark/sparkFiles
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;JAVA_HOME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SPARK_HOME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;spark-3.2.1-bin-hadoop3.2&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Utilizamos la biblioteca <em>findspark</em> para crear un <em>dataframe</em></p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">findspark</span>
@@ -657,16 +553,18 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([{</span><span class="s2">&quot;Hola&quot;</span><span class="p">:</span> <span class="s2">&quot;mundo&quot;</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([{</span><span class="s2">&quot;Hola&quot;</span><span class="p">:</span> <span class="s2">&quot;Mundo&quot;</span><span class="p">}</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="extraer-transformar-y-selecionar">
-<h2>Extraer, transformar y selecionar<a class="headerlink" href="#extraer-transformar-y-selecionar" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Importamos la biblioteca <em>pyspark</em></p></li>
+<li><p>A continuación, la adaptación y traducción del tutorial de MA Raza, Ph.D.</p></li>
+<li><p>Disponible en <a class="reference external" href="https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986">https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Importamos la biblioteca <em>pyspark</em>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -675,20 +573,155 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.2.1
+</div>
+</section>
+<section id="normalizar-datos">
+<h2>Normalizar datos<a class="headerlink" href="#normalizar-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Utilizamos la clase <em>MinMaxScaler</em> en ML para normalizar datos numéricos.</p></li>
+<li><p>Este <em>transformer</em> escala los datos a un rango específico, generalmente entre 0 y 1.</p></li>
+<li><p>Es un paso de preprocesado común en aprendizaje automático.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>En <em>PySpark’s MLlib (Machine Learning Library)</em> las características o funcionalidades son generalmente representadas como <em>Vectors</em> densos o escasos.</p></li>
+<li><p>En este caso se crean vectores densos para estas características.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://krunalkanojiya.com/blog/dense-vs-sparse-vectors">https://krunalkanojiya.com/blog/dense-vs-sparse-vectors</a>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]),),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span><span class="mf">40000.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">]),),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">50000.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]),),</span>
+<span class="p">],[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Aplicamos la transformación de la biblioteca MinMaxScaler:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;sfeatures&quot;</span><span class="p">)</span>
+<span class="n">smodel</span> <span class="o">=</span> <span class="n">features_scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
+<span class="n">sfeatures_df</span> <span class="o">=</span> <span class="n">smodel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sfeatures_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Utilizamos la clase <em>StandardScaler</em> para estandarizar datos en ML.</p></li>
+<li><p><em>StandardScaler</em> es un <em>transformer</em> que estandariza las características eliminando la media y escalándolas a varianza unitaria.</p></li>
+<li><p>Los escala entre -1 y 1.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span>  <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]),),</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span><span class="mf">40000.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">]),),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">50000.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]),),</span>
+    
+<span class="p">],[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_stand_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;sfeatures&quot;</span><span class="p">,</span> <span class="n">withStd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">withMean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">stmodel</span> <span class="o">=</span> <span class="n">features_stand_scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
+<span class="n">stand_sfeatures_df</span> <span class="o">=</span> <span class="n">stmodel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stand_sfeatures_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>La clase <em>Bucketizer</em> transforma los datos en varias frecuencias o <em>buckets</em>.</p></li>
+<li><p>Por ejemplo separando valores en categorías según umbrales predefinidos.</p></li>
+<li><p>Es un paso de preprocesamiento útil para ciertos algoritmos de aprendizaje automático.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span>  <span class="n">Bucketizer</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">splits</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">),</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)]</span>
+<span class="n">b_data</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">800.0</span><span class="p">,),</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.5</span><span class="p">,),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,),</span> <span class="p">(</span><span class="mf">8.2</span><span class="p">,),</span> <span class="p">(</span><span class="mf">90.1</span><span class="p">,)]</span>
+<span class="n">b_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">b_data</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bucketizer</span> <span class="o">=</span> <span class="n">Bucketizer</span><span class="p">(</span><span class="n">splits</span><span class="o">=</span><span class="n">splits</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;bfeatures&quot;</span><span class="p">)</span>
+<span class="n">bucketed_df</span> <span class="o">=</span> <span class="n">bucketizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">b_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bucketed_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="transformar">
-<h2>Transformar<a class="headerlink" href="#transformar" title="Link to this heading">#</a></h2>
+<section id="nlp-natural-language-processing">
+<h2>NLP - Natural Language Processing<a class="headerlink" href="#nlp-natural-language-processing" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Transformar significa escalar, convertir o modificar las características de los datos.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Uno de los primeros pasos en NLP (Natural Language Processing) es convertir el texto en tokens o palabras <em>tokenizadas</em>.</p></li>
+<li><p>Uno de los primeros pasos en NLP (<em>Natural Language Processing</em>) es convertir el texto en <em>tokens</em> o palabras <em>tokenizadas</em>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -717,7 +750,7 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </div>
 </div>
 <ul class="simple">
-<li><p>Para reflejar la importancia de una palabra en un texto utilizamos <em>Term frequency-inverse document frequency (TF-IDF)</em>.</p></li>
+<li><p>Para reflejar la importancia de una palabra en un texto utilizamos <em>Term frequency-inverse document frequency (TF-IDF)</em>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,160 +799,17 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-features.html#tokenizer">https://spark.apache.org/docs/3.0.1/ml-features.html#tokenizer</a></p></li>
-</ul>
-<ul class="simple">
-<li><p>Utilizamos la clase StandardScaler para estandarizar datos en ML.</p></li>
-<li><p>Los escala entre -1 y 1.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span>  <span class="n">StandardScaler</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]),),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span><span class="mf">40000.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">]),),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">50000.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]),),</span>
-    
-<span class="p">],[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_stand_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;sfeatures&quot;</span><span class="p">,</span> <span class="n">withStd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">withMean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">stmodel</span> <span class="o">=</span> <span class="n">features_stand_scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
-<span class="n">stand_sfeatures_df</span> <span class="o">=</span> <span class="n">stmodel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stand_sfeatures_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Fuente: MA Raza, Ph.D. <a class="reference external" href="https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986">https://towardsdatascience.com/machine-learning-with-spark-f1dbc1363986</a>.</p></li>
-<li><p>Spark docs: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-features.html#standardscaler">https://spark.apache.org/docs/3.0.1/ml-features.html#standardscaler</a>.</p></li>
-</ul>
-<ul class="simple">
-<li><p>Utilizamos la clase MinMaxScaler en ML para normalizar datos numéricos.</p></li>
-<li><p>Escala los datos entre 0 y 1.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
-    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10000.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]),),</span>
-    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span><span class="mf">40000.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">]),),</span>
-    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">30.0</span><span class="p">,</span><span class="mf">50000.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]),),</span>
-    
-<span class="p">],[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Aplicamos la transformación de la biblioteca MinMaxScaler.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">features_scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">inputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;sfeatures&quot;</span><span class="p">)</span>
-<span class="n">smodel</span> <span class="o">=</span> <span class="n">features_scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
-<span class="n">sfeatures_df</span> <span class="o">=</span> <span class="n">smodel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">features_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sfeatures_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-features.html#minmaxscaler">https://spark.apache.org/docs/3.0.1/ml-features.html#minmaxscaler</a></p></li>
-<li><p>El ejemplo completo se encuentra en <em>examples/src/main/python/ml/min_max_scaler_example.py</em> dentro del repositorio de Spark.</p></li>
-</ul>
-<ul class="simple">
-<li><p>La clase Bucketizer transforma los datos en varias frecuencias o <em>buckets</em>.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span>  <span class="n">Bucketizer</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">splits</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">),</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)]</span>
-<span class="n">b_data</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">800.0</span><span class="p">,),</span> <span class="p">(</span><span class="o">-</span><span class="mf">10.5</span><span class="p">,),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,),</span> <span class="p">(</span><span class="mf">8.2</span><span class="p">,),</span> <span class="p">(</span><span class="mf">90.1</span><span class="p">,)]</span>
-<span class="n">b_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">b_data</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bucketizer</span> <span class="o">=</span> <span class="n">Bucketizer</span><span class="p">(</span><span class="n">splits</span><span class="o">=</span><span class="n">splits</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;bfeatures&quot;</span><span class="p">)</span>
-<span class="n">bucketed_df</span> <span class="o">=</span> <span class="n">bucketizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">b_df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bucketed_df</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-features.html#bucketizer">https://spark.apache.org/docs/3.0.1/ml-features.html#bucketizer</a></p>
 </section>
-<section id="clustering">
-<h2>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h2>
+<section id="agrupamiento-clustering">
+<h2>Agrupamiento - Clustering<a class="headerlink" href="#agrupamiento-clustering" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Para agrupar datos en un razonable grupo de frecuencias se puede utilizar como técnica el llamado <em>clustering</em>.</p></li>
+<li><p>Para agrupar datos en un razonable grupo de frecuencias se puede utilizar como técnica el llamado <em>clustering</em>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.clustering</span> <span class="kn">import</span> <span class="n">KMeans</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">ClusteringEvaluator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.clustering</span> <span class="kn">import</span> <span class="n">KMeans</span><span class="p">,</span> <span class="n">BisectingKMeans</span>
 <span class="kn">import</span> <span class="nn">glob</span>
 </pre></div>
 </div>
@@ -927,194 +817,208 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga los datos</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;libsvm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/mllib/sample_kmeans_data.txt&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga el dataset</span>
+<span class="o">!</span>wget<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;https://raw.githubusercontent.com/amjadraza/blogs-data/master/spark_ml/clustering_dataset.csv&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrena el modelo k-means</span>
-<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">()</span><span class="o">.</span><span class="n">setK</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">setSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clustering_file_name</span> <span class="o">=</span><span class="s1">&#39;clustering_dataset.csv&#39;</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hace predicciones</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evalua utilizando Silhouette score</span>
-<span class="n">evaluator</span> <span class="o">=</span> <span class="n">ClusteringEvaluator</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">silhouette</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Silhouette with squared euclidean distance = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">silhouette</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shows the result.</span>
-<span class="n">centers</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cluster Centers: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">center</span> <span class="ow">in</span> <span class="n">centers</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">clustering_file_name</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">inferSchema</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-clustering.html#k-means">https://spark.apache.org/docs/3.0.1/ml-clustering.html#k-means</a></p></li>
+<li><p>Convierte los datos tabulares a un formato vectorizado.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vectorAssembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">,</span> <span class="s1">&#39;col3&#39;</span><span class="p">],</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">)</span>
+<span class="n">vcluster_df</span> <span class="o">=</span> <span class="n">vectorAssembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cluster_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vcluster_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Se aplica el algoritmo de <em>k-means</em>.</p></li>
+<li><p><em>KMeans</em> agrupa puntos de datos sin etiquetar en un número predefinido de clústeres, denotado por <em>k</em>.</p></li>
+<li><p>Luego divide <em>n</em> observaciones en <em>k</em> clústeres, donde cada observación pertenece al clúster con la media (centroide) más cercana.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">()</span><span class="o">.</span><span class="n">setK</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">setSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">kmodel</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">vcluster_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">centers</span> <span class="o">=</span> <span class="n">kmodel</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The location of centers: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">centers</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 <ul class="simple">
 <li><p>Otro algoritmo de <em>clustering</em> implementado en MLlib es el llamado <em>Bisecting K-Means</em>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.clustering</span> <span class="kn">import</span> <span class="n">BisectingKMeans</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">ClusteringEvaluator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkmeans</span> <span class="o">=</span> <span class="n">BisectingKMeans</span><span class="p">()</span><span class="o">.</span><span class="n">setK</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">bkmeans</span> <span class="o">=</span> <span class="n">bkmeans</span><span class="o">.</span><span class="n">setSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">bkmodel</span> <span class="o">=</span> <span class="n">bkmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">vcluster_df</span><span class="p">)</span>
+<span class="n">bkcneters</span> <span class="o">=</span> <span class="n">bkmodel</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de datos</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;libsvm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/mllib/sample_kmeans_data.txt&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bkcneters</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrenamiento del modelo bisecting k-means</span>
-<span class="n">bkm</span> <span class="o">=</span> <span class="n">BisectingKMeans</span><span class="p">()</span><span class="o">.</span><span class="n">setK</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">setSeed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">bkm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hace predicciones</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evalua utilizando Silhouette score</span>
-<span class="n">evaluator</span> <span class="o">=</span> <span class="n">ClusteringEvaluator</span><span class="p">()</span>
-
-<span class="n">silhouette</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Silhouette with squared euclidean distance = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">silhouette</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Muestra los resultados</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cluster Centers: &quot;</span><span class="p">)</span>
-<span class="n">centers</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">center</span> <span class="ow">in</span> <span class="n">centers</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-clustering.html#bisecting-k-means">https://spark.apache.org/docs/3.0.1/ml-clustering.html#bisecting-k-means</a></p>
 </section>
-<section id="regresion-utilizando-pyspark">
-<h2>Regresión utilizando PySpark<a class="headerlink" href="#regresion-utilizando-pyspark" title="Link to this heading">#</a></h2>
+<section id="clasificacion-utilizando-pyspark">
+<h2>Clasificación utilizando PySpark<a class="headerlink" href="#clasificacion-utilizando-pyspark" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>En este ejemplo se realizara una regresión logística binomial.</p></li>
+<li><p>En estos ejemplos se utilizará el dataset <em>iris</em> de UCI <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/iris">https://archive.ics.uci.edu/ml/datasets/iris</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Obtenemos el fichero desde Internet con <em>wget</em> e importamos la biblioteca <em>pandas</em>:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se cargan los datos</span>
-<span class="n">training</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;libsvm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/mllib/sample_libsvm_data.txt&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">elasticNetParam</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajusta el modelp</span>
-<span class="n">lrModel</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imprime los coeficientes y el intercepto para la regresión logística</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lrModel</span><span class="o">.</span><span class="n">coefficients</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lrModel</span><span class="o">.</span><span class="n">intercept</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se puede usar también la familia multinomial para clasificación binaria</span>
-<span class="n">mlr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">elasticNetParam</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s2">&quot;multinomial&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ajusta el modelo</span>
-<span class="n">mlrModel</span> <span class="o">=</span> <span class="n">mlr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imprima los coeficientes e intersecciones para la regresión logística con familia multinomial</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multinomial coefficients: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mlrModel</span><span class="o">.</span><span class="n">coefficientMatrix</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multinomial intercepts: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mlrModel</span><span class="o">.</span><span class="n">interceptVector</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/amjadraza/blogs-data/master/spark_ml/iris.csv&quot;</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#binomial-logistic-regression">https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#binomial-logistic-regression</a></p></li>
+<li><p>Se crea el <em>dataframe</em> con el fichero descargado:</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;iris.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Para realizar modelos ML, aplicamos el paso de preprocesamiento en nuestros datos de entrada:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span>  <span class="n">StringIndexer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;iris.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">iris_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">df_iris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Renombramos las columnas:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris_df</span> <span class="o">=</span> <span class="n">iris_df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">),</span>
+                         <span class="n">col</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">),</span>
+                         <span class="n">col</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;petal_length&quot;</span><span class="p">),</span>
+                         <span class="n">col</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;petal_width&quot;</span><span class="p">),</span>
+                         <span class="n">col</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;species&quot;</span><span class="p">),</span>
+                        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Convertimos las columnas en características (<em>features</em>):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vectorAssembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">],</span>
+                                  <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">)</span>
+<span class="n">viris_df</span> <span class="o">=</span> <span class="n">vectorAssembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">iris_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">viris_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indexer</span> <span class="o">=</span> <span class="n">StringIndexer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span><span class="p">)</span>
+<span class="n">iviris_df</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">viris_df</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">viris_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iviris_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="la-clasificacion-naive-bayes">
 <h2>La clasificación Naive Bayes<a class="headerlink" href="#la-clasificacion-naive-bayes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Naive Bayes</em> es una familia de clasificadores probabilísticos simples que aplican el teorema de Bayes con supuestos de independencia ingenuos (<em>naive</em>) entre las características.</p></li>
+<li><p>Se utilizan comúnmente para tareas como la clasificación de texto y la detección de spam.</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>MulticlassClassificationEvaluator</em> se utiliza para valorar el rendimiento de los modelos de ML en tareas de clasificación multiclase.</p></li>
+<li><p>Puede calcular diversas métricas como la puntuación F1, la precisión, la exhaustividad y la exactitud, que son fundamentales para entender el rendimiento de un modelo de clasificación.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">NaiveBayes</span>
@@ -1128,12 +1032,9 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;libsvm&quot;</span><span class="p">)</span> \
-    <span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/mllib/sample_libsvm_data.txt&quot;</span><span class="p">)</span>
-
-<span class="n">splits</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="mi">1234</span><span class="p">)</span>
-<span class="n">train</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">splits</span> <span class="o">=</span> <span class="n">iviris_df</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.4</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1143,16 +1044,16 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nb</span> <span class="o">=</span> <span class="n">NaiveBayes</span><span class="p">(</span><span class="n">smoothing</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">modelType</span><span class="o">=</span><span class="s2">&quot;multinomial&quot;</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nb</span> <span class="o">=</span> <span class="n">NaiveBayes</span><span class="p">(</span><span class="n">modelType</span><span class="o">=</span><span class="s2">&quot;multinomial&quot;</span><span class="p">)</span>
+<span class="n">nbmodel</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="n">predictions_df</span> <span class="o">=</span> <span class="n">nbmodel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1162,85 +1063,274 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">MulticlassClassificationEvaluator</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">MulticlassClassificationEvaluator</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> 
+                                              <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> 
                                               <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test set accuracy = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">accuracy</span><span class="p">))</span>
+<span class="n">nbaccuracy</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions_df</span><span class="p">)</span>
+<span class="n">nbaccuracy</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="clasificacion-de-multilayer-perceptron">
+<h2>Clasificación de Multilayer Perceptron<a class="headerlink" href="#clasificacion-de-multilayer-perceptron" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#naive-bayes">https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#naive-bayes</a></p></li>
+<li><p>La clase <em>MultilayerPerceptronClassifier</em> provee una implementación de una red neuronal (<em>artificial neural network - ANN</em>) para tareas de clasificación.</p></li>
+<li><p>Es un tipo de red neuronal con múltiples capas ocultas, capaz de aprender relaciones no lineales en los datos.</p></li>
+<li><p>Se pueden configurar parámetros como el número de capas, el número de neuronas en cada capa, y las funciones de activación.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">MultilayerPerceptronClassifier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">mlp</span> <span class="o">=</span> <span class="n">MultilayerPerceptronClassifier</span><span class="p">(</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mlp_model</span> <span class="o">=</span> <span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="n">mlp_predictions</span> <span class="o">=</span> <span class="n">mlp_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mlp_evaluator</span> <span class="o">=</span> <span class="n">MulticlassClassificationEvaluator</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> 
+                                                  <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> 
+                                                  <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
+<span class="n">mlp_accuracy</span> <span class="o">=</span> <span class="n">mlp_evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">mlp_predictions</span><span class="p">)</span>
+<span class="n">mlp_accuracy</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="clasificacion-con-arboles-de-decision">
 <h2>Clasificación con árboles de decisión<a class="headerlink" href="#clasificacion-con-arboles-de-decision" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>La clase <em>DecisionTreeClassifier</em>  proporciona una implementación de un algoritmo de árbol de decisión para tareas de clasificación dentro de la biblioteca MLlib de PySpark.</p></li>
+<li><p>Los árboles de decisión son métodos de aprendizaje supervisado no paramétricos que se utilizan tanto para clasificación como para regresión.</p></li>
+<li><p>Funcionan creando un modelo que predice el valor de una variable objetivo aprendiendo reglas de decisión simples inferidas a partir de las características de los datos.</p></li>
+<li><p>Para la clasificación, el objetivo es dividir los datos en subconjuntos que contengan instancias con etiquetas de clase similares.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StringIndexer</span><span class="p">,</span> <span class="n">VectorIndexer</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">MulticlassClassificationEvaluator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargar los datos en formato LIBSVM como un DataFrame</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;libsvm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/mllib/sample_libsvm_data.txt&quot;</span><span class="p">)</span>
-
-<span class="c1"># Index labels agregan metadata a la columna label</span>
-<span class="c1"># Ajuste en todo el conjunto de datos para incluir todas las etiquetas en el índice</span>
-<span class="n">labelIndexer</span> <span class="o">=</span> <span class="n">StringIndexer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;indexedLabel&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="c1"># Identifica automáticamente características categóricas y las indexa</span>
-<span class="c1"># Especifica maxCategories para que las entidades con &gt; 4 valores distintos se traten como continuas</span>
-<span class="n">featureIndexer</span> <span class="o">=</span>\
-    <span class="n">VectorIndexer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;indexedFeatures&quot;</span><span class="p">,</span> <span class="n">maxCategories</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">)</span>
+<span class="n">dt_model</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="n">dt_predictions</span> <span class="o">=</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Divide los datos en conjuntos de entrenamiento y prueba (30% retenido para prueba)</span>
-<span class="p">(</span><span class="n">trainingData</span><span class="p">,</span> <span class="n">testData</span><span class="p">)</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
-
-<span class="c1"># Entrena el modelo DecisionTree</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;indexedLabel&quot;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;indexedFeatures&quot;</span><span class="p">)</span>
-
-<span class="c1"># Encadena índices y árboles en tuna Pipeline</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">stages</span><span class="o">=</span><span class="p">[</span><span class="n">labelIndexer</span><span class="p">,</span> <span class="n">featureIndexer</span><span class="p">,</span> <span class="n">dt</span><span class="p">])</span>
-
-<span class="c1"># Entrena el modelo y ejecuta los indexadores</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainingData</span><span class="p">)</span>
-
-<span class="c1"># Hace predicciones</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">testData</span><span class="p">)</span>
-
-<span class="c1"># Selecciona filas de jemplo para mostrar</span>
-<span class="n">predictions</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="s2">&quot;indexedLabel&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="c1"># Selecciona (predicción, etiqueta verdadera) y calcula el error de prueba</span>
-<span class="n">evaluator</span> <span class="o">=</span> <span class="n">MulticlassClassificationEvaluator</span><span class="p">(</span>
-    <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;indexedLabel&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test Error = </span><span class="si">%g</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">accuracy</span><span class="p">))</span>
-
-<span class="n">treeModel</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">stages</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="c1"># Resumen</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">treeModel</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_evaluator</span> <span class="o">=</span> <span class="n">MulticlassClassificationEvaluator</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> 
+                                                 <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> 
+                                                 <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
+<span class="n">dt_accuracy</span> <span class="o">=</span> <span class="n">dt_evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">dt_predictions</span><span class="p">)</span>
+<span class="n">dt_accuracy</span>
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#decision-tree-classifier">https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#decision-tree-classifier</a></p></li>
-<li><p>Se pueden encontrar otros algoritmos de clasificación de la biblioteca Spark MLLib en:<br />
-<a class="reference external" href="https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#classification">https://spark.apache.org/docs/3.0.1/ml-classification-regression.html#classification</a></p></li>
+<li><p>Se pueden encontrar otros algoritmos de clasificación de la biblioteca Spark MLLib en: <a class="reference external" href="https://spark.apache.org/docs/latest/ml-classification-regression.html#classification">https://spark.apache.org/docs/latest/ml-classification-regression.html#classification</a>.</p></li>
 </ul>
+</section>
+<section id="modelos-de-regresion">
+<h2>Modelos de Regresión<a class="headerlink" href="#modelos-de-regresion" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Los modelos de regresión son útiles para predecir valores futuros utilizando datos del pasado.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.regression</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">VectorAssembler</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>En este ejemplo se utiliza el conjunto de datos (<em>dataset</em>) de <em>Combined Cycle Power Plant</em> para predecir el consumo eléctrico (<em>net hourly electrical output -EP</em>).</p></li>
+</ul>
+<ul class="simple">
+<li><p>Obtenemos el fichero desde Internet con <em>wget</em> e importamos la biblioteca <em>pandas</em>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>wget<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;https://raw.githubusercontent.com/amjadraza/blogs-data/master/spark_ml/ccpp.csv&quot;</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ccpp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;ccpp.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pp_df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">df_ccpp</span><span class="p">)</span>
+<span class="n">pp_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Se crea la columna de características utilizando la clase <em>VectorAssembler</em>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vectorAssembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;AT&quot;</span><span class="p">,</span> <span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="s2">&quot;AP&quot;</span><span class="p">,</span> <span class="s2">&quot;RH&quot;</span><span class="p">],</span> <span class="n">outputCol</span> <span class="o">=</span> <span class="s2">&quot;features&quot;</span><span class="p">)</span>
+<span class="n">vpp_df</span> <span class="o">=</span> <span class="n">vectorAssembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pp_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vpp_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Se establece la regresión linear (<em>Linear Regression</em>):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;PE&quot;</span><span class="p">)</span>
+<span class="n">lr_model</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">vpp_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lr_model</span><span class="o">.</span><span class="n">coefficients</span>
+<span class="n">lr_model</span><span class="o">.</span><span class="n">intercept</span>
+<span class="n">lr_model</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">rootMeanSquaredError</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Un ejemplo utilizando árboles de regresión (<em>Decision Tree Regression</em>):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.regression</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">RegressionEvaluator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vpp_df</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Definir, entrenar y testar los <em>splits</em> de datos:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">splits</span> <span class="o">=</span> <span class="n">vpp_df</span><span class="o">.</span><span class="n">randomSplit</span><span class="p">([</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.3</span><span class="p">])</span>
+<span class="n">train_df</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Se define el modelo del árbol de regresión:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;PE&quot;</span><span class="p">)</span>
+<span class="n">dt_model</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="n">dt_predictions</span> <span class="o">=</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_predictions</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Se evalúa el modelo:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_evaluator</span> <span class="o">=</span> <span class="n">RegressionEvaluator</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;PE&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;rmse&quot;</span><span class="p">)</span>
+<span class="n">dt_rmse</span> <span class="o">=</span> <span class="n">dt_evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">dt_predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The RMSE of Decision Tree regression Model is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dt_rmse</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>La clase <em>GBTRegressor</em> o regresor de árbol potenciado por gradiente (<em>Gradient-Boosted Tree Regressor</em>) es un algoritmo de ML utilizado para tareas de regresión.</p></li>
+<li><p>Construye un conjunto de árboles de decisión de forma secuencial, donde cada nuevo árbol corrige los errores de los anteriores, lo que da como resultado un modelo predictivo más preciso y robusto.</p></li>
+<li><p>Es utilizada con frecuencia para tareas en las que el objetivo es predecir un valor numérico continuo. Un ejemplo con <em>Gradient Boosting</em> puede ser:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.ml.regression</span> <span class="kn">import</span> <span class="n">GBTRegressor</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbt</span> <span class="o">=</span> <span class="n">GBTRegressor</span><span class="p">(</span><span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;PE&quot;</span><span class="p">)</span>
+<span class="n">gbt_model</span> <span class="o">=</span> <span class="n">gbt</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="n">gbt_predictions</span> <span class="o">=</span> <span class="n">gbt_model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbt_evaluator</span> <span class="o">=</span> <span class="n">RegressionEvaluator</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;PE&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;rmse&quot;</span><span class="p">)</span>
+<span class="n">gbt_rmse</span> <span class="o">=</span> <span class="n">gbt_evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">gbt_predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The RMSE of GBT Tree regression Model is </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gbt_rmse</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1299,12 +1389,15 @@ Huellas dactilares de la clave primaria: CEA8 88BD B32D 983C 7F09  4564 AC01 E6E
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-transformar-y-selecionar">Extraer, transformar y selecionar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformar">Transformar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-utilizando-pyspark">Regresión utilizando PySpark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-sesion-en-spark">Crear sesión en Spark</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizar-datos">Normalizar datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nlp-natural-language-processing">NLP - Natural Language Processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agrupamiento-clustering">Agrupamiento - Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-utilizando-pyspark">Clasificación utilizando PySpark</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-clasificacion-naive-bayes">La clasificación Naive Bayes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-de-multilayer-perceptron">Clasificación de Multilayer Perceptron</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-con-arboles-de-decision">Clasificación con árboles de decisión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-regresion">Modelos de Regresión</a></li>
 </ul>
   </nav></div>
 
