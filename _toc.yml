@@ -13,12 +13,16 @@ chapters:
 - file: BigData-es004
   title: Consulta y visualización de datos
 - file: BigData-es004MongoDB
+  title: Tutorial MongoDB
 - file: BigData-es005
   title: Frameworks y aplicaciones para Big Data
 - file: BigData-es005Hadoop
+  title: Tutorial Apache Hadoop
 - file: BigData-es005Kafka
+  title: Tutorial Apache Kafka
 - file: BigData-es007
   title: Big Data Science
 - file: BigData-es008
   title: AI, ML y DL
 - file: BigData-es008sparkMLlib
+  title: Tutorial Apache Spark, PySpark
