@@ -185,13 +185,14 @@
 <li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Consulta y visualización de datos</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es007.html">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">AI, ML y DL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Apache Spark, PySpark</a></li>
 </ul>
 
     </div>
@@ -406,10 +407,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-doris">Apache Doris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-druid">Apache Druid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kylin">Apache Kylin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-y-monitoreo-de-datos">Gestión y monitoreo de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-y-monitoreo-de-datos">Gestión y monitoreo de datos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
@@ -420,6 +423,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-versiones-de-datos-cvd">Control de Versiones de Datos (CVD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dvc">DVC</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-dvc">Tutorial DVC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lakefs">LakeFS</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a><ul class="visible nav section-nav flex-column">
@@ -767,6 +771,17 @@ document.write(`
 <li><p>Fuente: <a class="reference external" href="https://kylin.apache.org/">https://kylin.apache.org/</a>.</p></li>
 </ul>
 </section>
+<section id="vertica">
+<h2>Vertica<a class="headerlink" href="#vertica" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Vertica</em> es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
+<li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
+<ul>
+<li><p>Extraído de <a class="reference external" href="https://www.opentext.com/products/vertica-data-platform">https://www.opentext.com/products/vertica-data-platform</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="apache-pinot">
 <h2>Apache Pinot<a class="headerlink" href="#apache-pinot" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -781,24 +796,13 @@ document.write(`
 <li><p><a class="reference external" href="https://clickhouse.com/">https://clickhouse.com/</a>.</p></li>
 </ul>
 </section>
-<section id="vertica">
-<h2>Vertica<a class="headerlink" href="#vertica" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><em>Vertica</em> es un almacén de datos (<em>data warehouse</em>) de análisis unificado.</p></li>
-<li><p>Ha sido diseñado para ofrecer velocidad, escalabilidad y aprendizaje automático integrado para cargas de trabajo analíticamente intensivas.</p>
-<ul>
-<li><p>Extraído de <a class="reference external" href="https://www.opentext.com/products/vertica-data-platform">https://www.opentext.com/products/vertica-data-platform</a>.</p></li>
-</ul>
-</li>
-</ul>
 </section>
-<section id="gestion-y-monitoreo-de-datos">
-<h2>Gestión y monitoreo de datos<a class="headerlink" href="#gestion-y-monitoreo-de-datos" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="gestion-y-monitoreo-de-datos">
+<h1>Gestión y monitoreo de datos<a class="headerlink" href="#gestion-y-monitoreo-de-datos" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>El seguimiento continuo de los datos es una parte importante de los mecanismos de gobernanza, por ejemplo, Logstash <a class="reference external" href="https://www.elastic.co/logstash">https://www.elastic.co/logstash</a> es útil para procesar datos de registro y Apache Storm <a class="reference external" href="https://storm.apache.org/">https://storm.apache.org/</a> se utiliza para el monitoreo de operaciones.</p></li>
 <li><p>Las herramientas de <em>observability, DataOps</em>, y los DVC (<em>Data Version Control</em>) facilitan el control y la auditoría de los datos.</p></li>
 </ul>
-</section>
 <section id="observability">
 <h2>Observability<a class="headerlink" href="#observability" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -841,7 +845,7 @@ document.write(`
 <li><p>Algunos ejemplos: Soda Core <a class="reference external" href="https://soda.io/">https://soda.io/</a>, Elementary Data <a class="reference external" href="https://www.elementary-data.com/">https://www.elementary-data.com/</a>, DataKitchen <a class="reference external" href="https://datakitchen.io/">https://datakitchen.io/</a>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Fuente: <a class="reference external" href="https://datakitchen.io/the-2026-open-source-data-quality-and-data-observability-landscape/">https://datakitchen.io/the-2026-open-source-data-quality-and-data-observability-landscape/</a>.</p></li>
+<li><p>Fuente: <a class="reference external" href="https://datakitchen.io/the-2026-open-source-data-quality-and-data-observability-landscape/">Data Kitchen</a>.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Recursos:</p></li>
@@ -866,6 +870,21 @@ document.write(`
 <li><p>Combina fuentes de datos y enlaces a los mismos.</p></li>
 <li><p>Crea un mapa para cada sistema y un mapa maestro de la imagen completa.</p></li>
 <li><p>Extraído de: <a class="reference external" href="https://www.talend.com/">https://www.talend.com/</a>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>En el portal de <em><a class="reference external" href="http://datos.gob.es">datos.gob.es</a></em> se puede descargar:</p></li>
+<li><p>La guía técnica Control de versiones de datos <a class="reference external" href="https://datos.gob.es/sites/default/files/documentacion/files/Guia_DVC_es.pdf">https://datos.gob.es/sites/default/files/documentacion/files/Guia_DVC_es.pdf</a>, y</p></li>
+<li><p>una infografía <a class="reference external" href="https://datos.gob.es/sites/default/files/documentacion/files/guia-tecnica-control-versiones-de-datos-ES.pdf">https://datos.gob.es/sites/default/files/documentacion/files/guia-tecnica-control-versiones-de-datos-ES.pdf</a>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>La Guía destaca cuatro conceptos básicos a tener en cuenta:</p>
+<ul>
+<li><p>Instantáneas (<em>snapshots</em>) inmutables de los datos en un momento específico.</p></li>
+<li><p>Linaje (<em>lineage</em>) del registro de transformaciones (datos en bruto, limpieza, procesado, modelado).</p></li>
+<li><p>Metadatos (<em>metadata</em>) para auditoría (autor, fecha, estadísticas, esquema).</p></li>
+<li><p>Huella digital única (<em>checksum</em>) para verificar la integridad del archivo.</p></li>
 </ul>
 </li>
 </ul>
@@ -972,6 +991,17 @@ type sale (A7) = sold product, quantity, price, customer, date, prepaid.</p>
 <li><p>Realizar los tutoriales:</p></li>
 <li><p>Get Started with DVC <a class="reference external" href="https://doc.dvc.org/start">https://doc.dvc.org/start</a>, y</p></li>
 <li><p>Get Started: Data Pipelines <a class="reference external" href="https://doc.dvc.org/start/data-pipelines/data-pipelines">https://doc.dvc.org/start/data-pipelines/data-pipelines</a>.</p></li>
+</ul>
+</section>
+<section id="lakefs">
+<h2>LakeFS<a class="headerlink" href="#lakefs" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>lakeFS es una herramienta de código abierto que transforma el almacenamiento de objetos en un repositorio similar a Git, permitiendo gestionar el <em>datalake</em> como se gestiona el código fuente.</p></li>
+<li><p>lakeFS facilita la creación de operaciones en <em>datalakes</em> repetibles, atómicas y con control de versiones, desde complejos trabajos ETL hasta análisis de datos y ciencia de datos.</p></li>
+<li><p>lakeFS es compatible con AWS S3, Azure Blob Storage y Google Cloud Storage, con la API de S3 y puede utilizar los <em>frameworks</em> de datos como Spark, Hive, AWS Athena, DuckDB y Presto.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="github reference external" href="https://github.com/treeverse/lakeFS">treeverse/lakeFS</a>.</p></li>
 </ul>
 </section>
 </section>
@@ -1371,10 +1401,12 @@ elasticsearch-users</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-doris">Apache Doris</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-druid">Apache Druid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-kylin">Apache Kylin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apache-pinot">Apache Pinot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clickhouse">ClickHouse</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vertica">Vertica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-y-monitoreo-de-datos">Gestión y monitoreo de datos</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-y-monitoreo-de-datos">Gestión y monitoreo de datos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observability">Observability</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calidad-de-los-datos">Calidad de los datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-de-datos">Limpieza de datos</a></li>
@@ -1385,6 +1417,7 @@ elasticsearch-users</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-de-versiones-de-datos-cvd">Control de Versiones de Datos (CVD)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dvc">DVC</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-dvc">Tutorial DVC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lakefs">LakeFS</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-de-datos">Visualización de datos</a><ul class="visible nav section-nav flex-column">
