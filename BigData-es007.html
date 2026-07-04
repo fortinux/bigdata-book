@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -185,13 +185,14 @@
 <li class="toctree-l1"><a class="reference internal" href="BigData-es003.html">Bases de datos para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004.html">Consulta y visualización de datos</a></li>
 
+
 <li class="toctree-l1"><a class="reference internal" href="BigData-es004MongoDB.html">Tutorial MongoDB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005.html">Frameworks y aplicaciones para Big Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Hadoop.html">Tutorial Apache Hadoop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es005Kafka.html">Tutorial Apache Kafka</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Big Data Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="BigData-es008.html">AI, ML y DL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Spark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BigData-es008sparkMLlib.html">Tutorial Apache Spark, PySpark</a></li>
 </ul>
 
     </div>
@@ -610,12 +611,74 @@ document.write(`
 <li><p>Preparación de los datos.</p></li>
 <li><p>Fase de Modelado.</p></li>
 <li><p>Evaluación.</p></li>
-<li><p>Implantación.</p></li>
+<li><p>Implantación o Despliegue.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
 <li><p>Fuente:  Shearer, C. (2000) The CRISP-DM Model: The New Blueprint for Data Mining. Journal of Data Warehousing, 5, 13-22. <span id="id8">[<a class="reference internal" href="intro.html#id9" title="C Shearer. The CRISP-DM model: the new blueprint for data mining. Journal of Data Warehousing, 5:13–22, 2000.">She00</a>]</span></p></li>
+</ul>
+<ul class="simple">
+<li><p>En la primera fase <em>Comprensión del negocio</em> se definen los objetivos de negocio y se determinan los factores claves.</p></li>
+<li><p>Por ejemplo una organización quiere aumentar las ventas en un determinado nicho de mercado por lo tanto se identifican que datos son necesarios para tal fin.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En la segunda fase <em>Comprensión de los datos</em> se recolectan los datos, se hace una descripción de los mismos, se exploran (consultas, analizar relaciones, etc.) y se verifica la calidad de los mismos.</p></li>
+<li><p>Todo debe ser documentado para facilitar los siguientes pasos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En la fase <em>Preparación de los datos</em> hay cinco tareas:</p>
+<ul>
+<li><p>Seleccionar los datos (cuales serán utilizados y el porqué).</p></li>
+<li><p>Limpiar los datos (datos faltantes, duplicados, fuera de rango, etc.).</p></li>
+<li><p>Construir datos faltantes (combinar campos o agregar nuevos).</p></li>
+<li><p>Integrar datos de diversas fuentes (bases de datos, IoT, redes sociales, etc.).</p></li>
+<li><p>Formatear datos (convertir datos numéricos a cadenas de texto, etc.).</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Por ejemplo, en esta fase se realiza el tratamiento de valores atípicos, la eliminación de valores duplicados, o la técnica de imputación, que reemplaza valores faltantes con la media, mediana o utilizando el algoritmo <em>k-nearest neighbors - KNN</em>.</p></li>
+<li><p>Para la normalización de los datos se utilizan las técnicas escalado Min-Max (ajustar los valores a un rango específico), Normalización Z-Score (transformar los datos para que tengan una media de 0 y una desviación estándar de 1), o aplicar una transformación logarítmica
+para reducir la asimetría de los datos.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En la fase de <em>Modelado</em>, hay cuatro tareas:</p>
+<ul>
+<li><p>Seleccionar el modelo: Elegir el tipo de modelo adecuado (clasificación, clustering, etc.).</p></li>
+<li><p>Probar la validez del modelo escogido.</p></li>
+<li><p>Construir el modelo e utilizar los datos de entrenamiento para ajustarlo.</p></li>
+<li><p>Validar el modelo evaluando su rendimiento.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Algunas técnicas y algoritmos utilizados:</p>
+<ul>
+<li><p>Clasificación: Árboles de decisión, redes neuronales.</p></li>
+<li><p>Regresión: Regresión lineal, regresión logística.</p></li>
+<li><p>Clustering: K-means, DBSCAN, clustering jerárquico.</p></li>
+<li><p>Asociación: Algoritmo Apriori, FP-Growth.</p></li>
+<li><p>Métricas de evaluación: precisión, recall, F1-score, y área bajo la curva (AUC).</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Mientras que la fase anterior focaba más en la parte técnica del modelado, en la fase de <em>Evaluación</em> se busca definir qué modelo satisface mejor los objetivos de negocio.</p></li>
+<li><p>Los pasos aquí son: evaluar los resultados, revisar el proceso desde sus inicios para eliminar deficiencias en el mismo, y determinar la siguiente acción a realizar.</p></li>
+</ul>
+<ul class="simple">
+<li><p>En la última fase de <em>Implantación</em> o <em>Despliegue</em> se realizarán las siguientes actividades:</p>
+<ul>
+<li><p>Planificar el despliegue.</p></li>
+<li><p>Planificar el monitoramento y mantenimiento.</p></li>
+<li><p>Producir el informe final.</p></li>
+<li><p>Revisar el proyecto.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Fuente: <a class="reference external" href="https://web.archive.org/web/20220401041957/https://www.the-modeling-agency.com/crisp-dm.pdf">https://web.archive.org/web/20220401041957/https://www.the-modeling-agency.com/crisp-dm.pdf</a>.</p></li>
 </ul>
 </section>
 <section id="semma">
@@ -639,17 +702,28 @@ document.write(`
 <section id="tecnicas-de-analisis-en-big-data">
 <h2>Técnicas de análisis en Big data<a class="headerlink" href="#tecnicas-de-analisis-en-big-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Algunas de las técnicas más utilizadas para hacer análisis en grandes conjuntos de datos son:</p></li>
+<li><p>Agrupamiento (<em>clustering</em>): aprendizaje no supervisado en donde los puntos de datos se agrupan en clústeres según su similitud. Un ejemplo de uso es la detección de anomalías en el sistema o la segmentación de clientes.</p>
+<ul>
+<li><p>Técnicas comunes: <em>K-means</em> (divide los datos en k clústeres), Clustering Jerárquico (jerarquía de clústeres mediante la fusión o división de los ya existentes), o DBSCAN (<em>Density-Based Spatial Clustering of Applications with Noise</em>) que a agrupa puntos que están cercanos unos a otros en densidad.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Clasificación: Predice la clase de un nuevo dato basándose en un modelo entrenado con datos etiquetados.</p></li>
 <li><p>Análisis de árboles de clasificación: es utilizado en el modelado predictivo y para tareas de clasificación, dividiendo los datos en subconjuntos según sus características y asigna una etiqueta de clase a cada uno. Un ejemplo son los árboles de decisión.</p></li>
+</ul>
+<ul class="simple">
 <li><p>Aprendizaje de reglas de asociación: encuentra relaciones o patrones en grandes conjuntos de datos, por ejemplo: producto, horario y frecuencia de compra.</p></li>
+<li><p>Algunos algoritmos utilizados: Apriori y <em>FP-Growth (Frequent Pattern Growth)</em>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Agrupamiento (<em>clustering</em>): aprendizaje no supervisado en donde los puntos de datos se agrupan en clústeres según su similitud. Un ejemplo de uso es la detección de anomalías en el sistema o la segmentación de clientes.</p></li>
 <li><p>Análisis de regresión (<em>regression analysis</em>): modelado de relaciones entre variables dependientes e independientes. Por ejemplo predice las ventas basadas en los costes publicitarios.</p></li>
+<li><p>Regresión lineal: modela la relación entre una variable dependiente y una o más variables independientes mediante una línea recta.</p></li>
+<li><p>Regresión logística: se utiliza para predecir probabilidades de eventos binarios, como sí/no, Verdadero/Falso.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Reducción de la dimensionalidad (<em>dimensionality reduction</em>): reducen el número de características de entrada a la vez que conservan la información esencial. Por ejemplo eliminar columnas vacías o con datos incompletos.
-• Análisis de series temporales: analizan los puntos de datos recopilados a lo largo del tiempo para la previsión, la detección de anomalías y el análisis de tendencias.</p></li>
+<li><p>Reducción de la dimensionalidad (<em>dimensionality reduction</em>): reducen el número de características de entrada a la vez que conservan la información esencial. Por ejemplo eliminar columnas vacías o con datos incompletos.</p></li>
+<li><p>Análisis de series temporales: analizan los puntos de datos recopilados a lo largo del tiempo para la previsión, la detección de anomalías y el análisis de tendencias.</p></li>
 </ul>
 <ul class="simple">
 <li><p>Redes neuronales (<em>neural networks</em>): Un tipo de modelo de aprendizaje automático inspirado en la estructura del cerebro. Consisten en nodos interconectados organizados en capas.</p></li>
